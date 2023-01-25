@@ -1,0 +1,121 @@
+% PLEASE USE THIS FILE AS A TEMPLATE
+% Check file iosart2x.tex for more examples
+
+% add. options: [seceqn,secthm,crcready]
+\documentclass[sw]{iosart2x}
+\usepackage{todonotes}
+%\usepackage{dcolumn}
+
+%%%%%%%%%%% Put your definitions here
+\newcommand{\aw}{AnthroWorks3D}
+
+
+%%%%%%%%%%% End of definitions
+
+\pubyear{2023}
+\volume{0}
+\firstpage{1}
+\lastpage{1}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%\pretitle{}
+\title{ANNO: The Anthropological Notation Ontology}
+\runtitle{Anthropological Notation Ontology}
+%\subtitle{}
+
+% For one author:
+%\author{\inits{N.}\fnms{Name1} \snm{Surname1}\ead[label=e1]{first@somewhere.com}}
+%\address{Department first, \orgname{University or Company name},
+%Abbreviate US states, \cny{Country}\printead[presep={\\}]{e1}}
+\todo{Autorenreihenfolge festlegen, ist momentan vom Poster genommen}
+% Two or more authors:
+\begin{aug}
+\author[A]{\inits{K.}\fnms{Konrad} \snm{Höffner}\ead[label=e1]{konrad.hoeffner@uni-leipzig.de}%
+\thanks{Corresponding author. \printead{e1}.}}
+\author[B]{\inits{A.}\fnms{Andy} \snm{Ludwig}\ead[label=e2]{second@somewhere.com}}
+\author[B]{\inits{M.}\fnms{Marie} \snm{Heuschkel}\ead[label=e3]{third@somewhere.com}}
+\author[B]{\inits{M.}\fnms{Marleen} \snm{Mohaupt}\ead[label=e4]{fourth@somewhere.com}}
+\author[B]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e5]{fifth@somewhere.com}}
+\author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e6]{second@somewhere.com}}
+\author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e7]{second@somewhere.com}}
+\address[A]{Institute for Medical Informatics, Statistics and Epidemiology (IMISE), \orgname{Leipzig University},
+Saxony, \cny{Germany}\printead[presep={\\}]{e1,e7}}
+\address[B]{\orgname{Hochschule Mittweida},
+Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e4,e5,e6}}
+\end{aug}
+
+%\begin{review}{editor}
+%\reviewer{\fnms{First} \snm{Editor}\address{\orgname{University or Company name}, \cny{Country}}}
+%\reviewer{\fnms{Second} \snm{Editor}\address{\orgname{First University or Company name}, \cny{Country}
+%    and \orgname{Second University or Company name}, \cny{Country}}}
+%\end{review}
+%\begin{review}{solicited}
+%\reviewer{\fnms{First} \snm{Solicited reviewer}\address{\orgname{University or Company name}, \cny{Country}}}
+%\reviewer{\snm{anonymous reviewer}}
+%\end{review}
+%\begin{review}{open}
+%\reviewer{\fnms{First} \snm{Open Reviewer}\address{\orgname{University or Company name}, \cny{Country}}}
+%\end{review}
+
+\begin{abstract}
+Anthropology relies on osteometric measurements of human bones, but ...
+In this paper, first, we describe the anthropology domain.
+Then, we discuss design decisions of modelling ANNO.
+Next, we show how ANNO is published for the community.
+Finally, we describe the integration of the ontology into \aw.
+\end{abstract}
+
+\begin{keyword}
+\kwd{Ontology}
+\kwd{Ontology development}
+\kwd{Anthropology}
+\end{keyword}
+
+\end{frontmatter}
+
+%%%%%%%%%%% The article body starts:
+
+% KH: Ich hab hier mal den Text vom Poster als Basis für die Introduction genommen
+\section{Introduction}\label{sec:introduction}
+Historic and forensic anthropology gives insights into the behaviour, culture and way of life of humans of different epochs in the past.
+Osteometry, describes quantitative measurement on the human skeletton.
+Anthropology relies on osteometric measurements which has several problems:
+Bones can only be investigated in place, which requires transport over far distances.
+This causes wear in the bones, and can lead to different measurements.
+This can be alleviated with a digital twin...
+
+\section{Ontology Modelling}
+TODO: Modellierung der Anthropologie-Domäne (u.a. Motivation, related work, was ist neu).
+TODO: Dann könnte man Design-Entscheidungen beschreiben (wie und warum wurden bestimmte Sachverhalte so in der Ontologie modelliert).
+\section{Publication}
+TODO: Bereitstellung der Ontologie für die Community (OLS etc.). 
+\section{Integration into \aw}
+TODO: Integration der Ontologie in die Anwendung.
+%\subsection{}\label{s1.1}
+
+%\begin{figure}[t]
+%\includegraphics{}
+%\caption{Figure caption.}\label{f1}
+%\end{figure}
+
+%\begin{table*}
+%\caption{} \label{t1}
+%\begin{tabular}{lll}
+%\hline
+%&&\\
+%&&\\
+%\hline
+%\end{tabular}
+%\end{table*}
+
+\begin{ack}
+The ANNO project is co-financed with tax funds on the basis of the budget adopted by the Saxon Parliament.
+\end{ack}
+
+\nocite{*}
+\bibliographystyle{ios1}
+\bibliography{anno}
+\end{document}
