@@ -85,12 +85,37 @@ Osteometry, describes quantitative measurement on the human skeletton.
 Anthropology relies on osteometric measurements which has several problems:
 Bones can only be investigated in place, which requires transport over far distances.
 This causes wear in the bones, and can lead to different measurements.
-This can be alleviated with a digital twin...
+This can be alleviated with a digital twin, which can be measured at any location.
+
+\section{Related Work}
+The Foundational Model of Anatomy (FMA) ontology \cite{fma} describes concepts of anatomy.
+\url{https://bioportal.bioontology.org/ontologies/FMA}
 
 \section{Ontology Modelling}
+While there are many textual sources of anthropological systematization, they do not agree in all aspects and there is not a single, formally described, standard.
+ANNO links to concepts of the FMA when they exist, but structures them in a different way.
+The ontology consists of the following core modules:
+
+\subsection{Bones}
+
+\subsection{Anatomical Landmarks}
+Anatomical landmarks are defined either on a bone or an anatomical compound structure.
+\subsection{Osteometric Landmarks}
+
+\subsection{Teeth}
+\subsection{Measurements}
+\subsection{Functions of Sex Determination}
+The sex of a specific individual within a population may be estimated using a function on skelettal measurements that is specific to this population.
+RDF is not optimized for mathematical formulas so we model those as literals.
+
+
+\subsection{Height Functions}
+\subsection{Landmarks}
+
 TODO: Modellierung der Anthropologie-Domäne (u.a. Motivation, related work, was ist neu).
 TODO: Dann könnte man Design-Entscheidungen beschreiben (wie und warum wurden bestimmte Sachverhalte so in der Ontologie modelliert).
 \section{Publication}
+ANNO is published on \url{https://ols.imise.uni-leipzig.de} as well as \url{https://annosaxfdm.de/ontology/}.
 TODO: Bereitstellung der Ontologie für die Community (OLS etc.). 
 \section{Integration into \aw}
 TODO: Integration der Ontologie in die Anwendung.
