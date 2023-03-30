@@ -88,20 +88,60 @@ This causes wear in the bones, and can lead to different measurements.
 This can be alleviated with a digital twin, which can be measured at any location.
 
 \section{Related Work}
-The Foundational Model of Anatomy (FMA) ontology \cite{fma} describes concepts of anatomy.
-\url{https://bioportal.bioontology.org/ontologies/FMA}
+\subsection{Anatomical Nomenclatures}
+There are various nomenclatures for the description of anatomical landmarks.
+These allow a uniform classification of anatomical features and structures:
 
-\section{Ontology Development}
-%TODO: lohnt sich nicht als separate Sektion, woanders mit unterbringen
+The \emph{Terminologia anatomica}~\citep{ta2} (TA) is a hierarchy of anatomical landmarks of the entire human body.
+From its history, the Latin and Greek designations have emerged to allow standardization.
+It is advantageous that these languages no longer show progress and are increasingly losing political power. 
+In TA, the order of structures follows the natural anatomy.
+An anatomical landmark is identified by an individual identification number, the anatomical term, and the English term.
+The identification number is critical because certain landmarks are redundant.
+For example, there is the \emph{processus zygomaticus} at the \emph{os frontale} and the \emph{os temporale}.
+Synonyms, like \emph{zygomatic bone} and \emph{malar bone}, are also given.
+Terms included in the \emph{other} category given include eponyms, which are concepts named after people, places or things.
+For example, \emph{ossa digitorum pedis} (engl. \emph{phalanges of the foot}) are the small bones of the toes and are also denoted as \emph{ossa phalangea pedis} which are named after the Greek word \emph{phalanx} for a dense rectangular infantry formation.
+% chapter 2: Ossa (Bones)
+
+The \emph{Foundational Model of Anatomy} (FMA) ontology~\citep{fma} represents the physical organization of human anatomy.
+%It allows the knowledge it contains to be represented in a human-understandable and machine-interpretable way.
+However, the Latin and Greek designations are not taken into account, due to hypernyms 90\,\% of the terms are re-designated and only 1\,\% contain definitions.
+This has a negative impact on the comprehensibility for users.
+
+Furthermore, in both nomenclatures there is an inconsistent use of singular and plural forms, gaps in lateralized landmarks and numbered series of certain bones (e.g. costae).
+In anatomy, it is also important to distinguish between the medical and anthropological viewpoints.
+For example, relevant anthropological aspects such as the degree of wear of bones are not considered.
+Furthermore, the articular surfaces of the individual bones are particularly important in anthropology.
+Not all articular surfaces (e.g., on the ossa metatarsalia) are defined in the nomenclatures, resulting in further gaps.
+In some cases, contradictions are also found in the definitions of individual landmarks.
+For example, the corpus ossis pubis is placed elsewhere in some sources than in others.
+Another problem is that the individual services do not synchronize and do not offer enough synonyms. % which services? 
+In addition, the anatomical landmarks are not visually represented and are only selectively labeled in known anatomy atlases.
+However, since landmarks are three-dimensional structures, it is essential to provide a marker over the entire landmark and delineate it accurately.
+The delineations must also be clearly described textually.
+However, there are no standardized definitions in anatomy so far and also in the literature the information is sparse.
+For example, in some sources only punctual labels are presented on a figure.
+A similar situation exists with osteometric landmarks.
+Standardized ones are found only on the cranium and mandible.
+However, since there are measurement distances on all bones, the respective start and end points must also be defined.
+These are stated differently in the literature and have a high number of synonyms.
+
+For these reasons, it is necessary to develop uniform, textual, visual and detailed descriptive definitions for the individual landmarks, as well as to represent them in a new and clear way in an ontology.
+The ontology should be easy to understand for the user.
+
+%\url{https://bioportal.bioontology.org/ontologies/FMA}
+
+\subsection{\aw}
+
+
+\section{Ontology Modelling}
 % @Alex ist das CSV->OWL Script irgendwo publiziert, kann man das zitieren?
 The domain experts are provided a spreadsheet-based input template by the ontologists,
 which is transformed to OWL using a custom script.
 % ist das richtig übersetzt?
 Sources are categorized into core, root, and occurrence sources.
 
-
-
-\section{Ontology Modelling}
 While there are many textual sources of anthropological systematization, they do not agree in all aspects and there is not a single, formally described, standard.
 ANNO links to concepts of the FMA when they exist, but structures them in a different way.
 The ontology consists of the following core modules:
