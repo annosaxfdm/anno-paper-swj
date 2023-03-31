@@ -4,6 +4,7 @@
 % add. options: [seceqn,secthm,crcready]
 \documentclass[sw]{iosart2x}
 \usepackage{todonotes}
+\usepackage{cleveref}
 %\usepackage{dcolumn}
 
 %%%%%%%%%%% Put your definitions here
@@ -81,8 +82,8 @@ Finally, we describe the integration of the ontology into \aw{}.
 % KH: Ich hab hier mal den Text vom Poster als Basis für die Introduction genommen
 \section{Introduction}\label{sec:introduction}
 Historic and forensic anthropology gives insights into the behaviour, culture and way of life of humans of different epochs in the past.
-Osteometry, describes quantitative measurement on the human skeletton.
-Anthropology relies on osteometric measurements which has several problems:
+Osteometry describes quantitative measurement on the human skeletton.
+Anthropology relies on osteometric measurements, which has several problems:
 Bones can only be investigated in place, which requires transport over far distances.
 This causes wear in the bones, and can lead to different measurements.
 This can be alleviated with a digital twin, which can be measured at any location.
@@ -99,13 +100,14 @@ An anatomical landmark is identified by an individual identification number, the
 The identification number is critical because certain landmarks are redundant.
 For example, there is the \emph{processus zygomaticus} at the \emph{os frontale} and the \emph{os temporale}.
 Synonyms, like \emph{zygomatic bone} and \emph{malar bone}, are also given.
-Terms included in the \emph{other} category given include eponyms, which are concepts named after people, places or things.
+Terms included in the \emph{other} category include eponyms, which are concepts named after people, places or things.
 For example, \emph{ossa digitorum pedis} (engl. \emph{phalanges of the foot}) are the small bones of the toes and are also denoted as \emph{ossa phalangea pedis} which are named after the Greek word \emph{phalanx} for a dense rectangular infantry formation.
 % chapter 2: Ossa (Bones)
 
 The \emph{Foundational Model of Anatomy} (FMA) ontology~\citep{fma} represents the physical organization of human anatomy.
 %It allows the knowledge it contains to be represented in a human-understandable and machine-interpretable way.
-However, the Latin and Greek designations are not taken into account, due to hypernyms 90\,\% of the terms are re-designated and only 1\,\% contain definitions.
+However, it does not include Greek and Latin labels, which are frequently used by medical professionals.
+Due to hypernyms 90\,\% of the terms are re-designated and only 1\,\% contain definitions.
 This has a negative impact on the comprehensibility for users.
 
 Furthermore, in both nomenclatures there is an inconsistent use of singular and plural forms, gaps in lateralized landmarks and numbered series of certain bones (e.g. costae).
@@ -139,9 +141,14 @@ The ontology should be easy to understand for the user.
 % TODO: clear validation mechanism
 % TODO: top-level ontology?
 % @Alex ist das CSV->OWL Script irgendwo publiziert, kann man das zitieren?
-The domain experts are provided a spreadsheet-based SMOG~\citep{smog} template by the ontologists, which is transformed to an OWL 2 ontology.
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{img/smog.png}
+\caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
+\end{figure}
+The domain experts are provided a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}.
+The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
 % ist das richtig übersetzt?
-Sources are categorized into core, root, and occurrence sources.
+Sources are categorized into core, root, and occurrence sources.\todo{explain}
 
 % Aus dem Projektbericht übersetzt
 \subsection{Selection criteria}
@@ -186,7 +193,13 @@ In addition, for the discriminant functions, the thresholds of sex assignment, c
 
 While there are many textual sources of anthropological systematization, they do not agree in all aspects and there is not a single, formally described, standard.
 ANNO links to concepts of the FMA when they exist, but structures them in a different way.
-The ontology consists of the following core modules:
+
+\begin{figure}[h]
+\includegraphics[width=0.3\textwidth]{img/modules.pdf}
+\caption{The six modules of ANNO.}\label{fig:modules}
+\end{figure}
+
+The ontology consists of the following core modules, see \cref{fig:modules}:
 %For the categories, there were the following spreadsheets: bones, anatomical landmarks, osteometric landmarks, measured distances, function (separately for discriminant and regress functions), anatomical position descriptions, sources used, and osteological terminology.
 \subsection{Bones}
 
@@ -255,6 +268,16 @@ In addition, it is now possible to perform sex determinations using discriminant
 For this purpose, the required measurement sections can be selected.
 The results are only visible in one display.
 The automation allows a time saving, whereby more bones or skeletons can be examined in a shorter time.
+Advantages over the previous approach are:
+
+\begin{itemize}
+\item ontology-oriented generation of placeholders/containers for objects to be imported
+\item variable properties for different bone elements and bone types 
+\item hierarchy for orientation within an examination project according to the ontology tree
+\item categorization of measurements and markers according to specifications from the ontology
+\item generation of input forms based on the specified properties and bone types
+\item automatic generation of measurements
+\end{itemize}
 
 %\subsection{}\label{s1.1}
 
