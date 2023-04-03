@@ -32,14 +32,18 @@
 %\address{Department first, \orgname{University or Company name},
 %Abbreviate US states, \cny{Country}\printead[presep={\\}]{e1}}
 \todo{Autorenreihenfolge festlegen}
+% Höffner, Heuschkel, Schmiedel, Penne, Fritzsch, Ludwig, Mohaupt, Labudde, Uciteli
+% TODO: overleaf
 % Two or more authors:
 \begin{aug}
 \author[B]{\inits{M.}\fnms{Marie} \snm{Heuschkel}\ead[label=e3]{x@somewhere.com}}
 \author[A]{\inits{K.}\fnms{Konrad} \snm{Höffner}\ead[label=e1]{konrad.hoeffner@uni-leipzig.de}%
 \thanks{Corresponding author. \printead{e1}.}}
+\author[B]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e5]{a@somewhere.com}}
+\author[B]{\inits{L.}\fnms{Laura} \snm{Penne}\ead[label=e8]{a@somewhere.com}}
+\author[B]{\inits{H. T.}\fnms{Hamjo Tim} \snm{Fritzsch}\ead[label=e9]{c@somewhere.com}}
 \author[B]{\inits{A.}\fnms{Andy} \snm{Ludwig}\ead[label=e2]{y@somewhere.com}}
 \author[B]{\inits{M.}\fnms{Marleen} \snm{Mohaupt}\ead[label=e4]{z@somewhere.com}}
-\author[B]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e5]{a@somewhere.com}}
 \author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e6]{b@somewhere.com}}
 \author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e7]{c@somewhere.com}}
 \address[A]{Institute for Medical Informatics, Statistics and Epidemiology (IMISE), \orgname{Leipzig University},
@@ -78,6 +82,12 @@ Finally, we describe the integration of the ontology into \aw{}.
 \end{frontmatter}
 
 %%%%%%%%%%% The article body starts:
+% TODO notes from meeting, einarbeiten:
+% 3 Teile Kernmodule mit Use Cases, weitere Komponenten durch Community
+
+
+
+
 
 % KH: Ich hab hier mal den Text vom Poster als Basis für die Introduction genommen
 \section{Introduction}\label{sec:introduction}
@@ -88,7 +98,7 @@ Bones can only be investigated in place, which requires transport over far dista
 This causes wear in the bones, and can lead to different measurements.
 This can be alleviated with a digital twin, which can be measured at any location.
 
-\section{Related Work}
+\section{Background}
 There are various nomenclatures for the description of anatomical landmarks.
 These allow a uniform classification of anatomical features and structures:
 
@@ -131,10 +141,17 @@ These are stated differently in the literature and have a high number of synonym
 For these reasons, it is necessary to develop uniform, textual, visual and detailed descriptive definitions for the individual landmarks, as well as to represent them in a new and clear way in an ontology.
 The ontology should be easy to understand for the user.
 
+% TODO: add rdfbones
+
 %\url{https://bioportal.bioontology.org/ontologies/FMA}
 
-\section{Ontology creation}
+\section{Developing ANNO}
+The development of ANNO and its integration into \aw{} follows the \emph{three ontology method}~\citep{threeontologymethod} for ontology-based software engineering:
+First, \emph{task ontology} is created as a conceptual model of \aw{}.
+Second, the General Formal Ontology (GFO)~\citep{gfo} is chosen as \emph{top-level ontology} to provide a theoretical foundation.
+Third, the \emph{domain ontology} is created that describes the domain of skeletal anatomy.
 
+% todo: do we have an ontology engineering methodology?
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
 % TODO: ontology language, expressivity
 % TODO: reuse of ontological entities
@@ -194,9 +211,16 @@ In addition, for the discriminant functions, the thresholds of sex assignment, c
 While there are many textual sources of anthropological systematization, they do not agree in all aspects and there is not a single, formally described, standard.
 ANNO links to concepts of the FMA when they exist, but structures them in a different way.
 
+\section{Description of ANNO}
+
 \begin{figure}[h]
 \includegraphics[width=0.3\textwidth]{img/modules.pdf}
 \caption{The six modules of ANNO.}\label{fig:modules}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{img/axisplane.pdf}
+\caption{Anatomical axes and planes.}\label{fig:axisplane}
 \end{figure}
 
 The ontology consists of the following core modules, see \cref{fig:modules}:
@@ -284,12 +308,19 @@ Advantages over the previous approach are:
 \section{Conclusion and Future Work}
 % Basiert auf dem Fazit aus dem Projektbericht
 ANNO introduces uniform definitions for the anatomical landmarks of the human skeletal system as well as osteometric landmarks, measurement distances and functions.
+basis for anthropological work
 The ontology is interlinked with ... and includes sources for all external definitions.
 The ontology is used in \aw{} in place of an old, hard-coded format, which saves development time, separates annotation file compatibility from software versions, eases annotation through hierarchical browsing and increases interoperability.
 % following two sentences are machine translated, improve and rewrite
 It provides a basis for future training of ontologists, knowledge managers, further research activities and specialization opportunities in this field.
 Furthermore, there is interest of the results in forensic, historical and prehistoric anthropology, pathology and medicine as well as in the field of computer science and especially medical informatics.
 %Moreover, the ontology can be extended.
+
+can be extended with osteological terms of description
+Arten von Erhebungen, Öffnungen, ...
+anthropologische ebene draufmodellieren zb form
+an anthropological landmark can have different anthropological properties
+
 
 %\begin{figure}[t]
 %\includegraphics{}
