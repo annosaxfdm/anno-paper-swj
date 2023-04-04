@@ -5,6 +5,7 @@
 \documentclass[sw]{iosart2x}
 \usepackage{todonotes}
 \usepackage{cleveref}
+\usepackage{csquotes}
 %\usepackage{dcolumn}
 
 %%%%%%%%%%% Put your definitions here
@@ -146,10 +147,32 @@ The ontology should be easy to understand for the user.
 %\url{https://bioportal.bioontology.org/ontologies/FMA}
 
 \section{Developing ANNO}
-The development of ANNO and its integration into \aw{} follows the \emph{three ontology method}~\citep{threeontologymethod} for ontology-based software engineering:
-First, \emph{task ontology} is created as a conceptual model of \aw{}.
-Second, the General Formal Ontology (GFO)~\citep{gfo} is chosen as \emph{top-level ontology} to provide a theoretical foundation.
-Third, the \emph{domain ontology} is created that describes the domain of skeletal anatomy.
+%The development of ANNO and its integration into \aw{} follows the \emph{three ontology method}~\citep{threeontologymethod} for ontology-based software engineering:
+%First, \emph{task ontology} is created as a conceptual model of \aw{}.
+%Second, the General Formal Ontology (GFO)~\citep{gfo} is chosen as \emph{top-level ontology} to provide a theoretical foundation.
+%Third, the \emph{domain ontology} is created that describes the domain of skeletal anatomy.
+\todo{figure out how to best separate ontology and software}
+The \aw{} software is designed according to the three-ontology method~\citep{threeontologymethod}.
+This method is based on the interaction of three different types of ontologies: a task ontology (TO), a domain ontology (DO) and a top-level ontology (TLO).
+The TO serves as the conceptual model for the software, the DO provides the domain-specific knowledge, while the TLO integrates the TO and the DO and is used as foundation for them. 
+
+In our case, the ANNO-core (\cref{fig:core}) functions as a TO.
+It contains the general anatomical entities (\enquote{Anatomical structure} and \enquote{Landmark}),
+\enquote{Spatial relator} (for describing measurements between landmarks, e.g., distances or angles),
+\enquote{Phenotype} (to model properties that can be derived from the measurements) and \enquote{Anatomical spatial entity} (to describe anatomical directions, axes and planes).
+
+The subclasses of the ANNO-Core classes build a DO, the ANNO-domain.
+These include concepts representing concrete bones (e.g., mandible) and teeth (e.g., left mandibular central secondary incisor tooth),
+specific landmarks on them (e.g., mentale dexter and mentale sinister),
+concrete measurements/relators (e.g., the distance between mentale dexter and mentale sinister),
+individual phenotypes (e.g., sex or height) and defined anatomical directions (e.g., cranial or basal),
+axes (e.g., longitudinal or sagittal axis) and planes (e.g., frontal or sagittal plane).
+
+For the foundation of the TO we used the \emph{General Formal Ontology} (GFO)~\citep{gfo} as TLO.
+In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Property} as well as the spatial entities of GFO (Fig. …).
+One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) of the TO (ANNO-core),
+whereas the entities of the corresponding DO (ANNO-domain) are processed dynamically.
+\aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class).
 
 % todo: do we have an ontology engineering methodology?
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
@@ -164,6 +187,7 @@ Third, the \emph{domain ontology} is created that describes the domain of skelet
 \end{figure}
 The domain experts are provided a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}.
 The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
+\todo{können wir es auf OWL 2 DL eingrenzen?}
 % ist das richtig übersetzt?
 Sources are categorized into core, root, and occurrence sources.\todo{explain}
 
@@ -214,13 +238,18 @@ ANNO links to concepts of the FMA when they exist, but structures them in a diff
 \section{Description of ANNO}
 
 \begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{img/core.pdf}
+\caption{ANNO-core ontology}\label{fig:core}
+\end{figure}
+
+\begin{figure}[h]
 \includegraphics[width=0.3\textwidth]{img/modules.pdf}
-\caption{The six modules of ANNO.}\label{fig:modules}
+\caption{The six modules of ANNO}\label{fig:modules}
 \end{figure}
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/axisplane.pdf}
-\caption{Anatomical axes and planes.}\label{fig:axisplane}
+\caption{Anatomical axes and planes}\label{fig:axisplane}
 \end{figure}
 
 The ontology consists of the following core modules, see \cref{fig:modules}:
@@ -255,6 +284,7 @@ TODO: Modellierung der Anthropologie-Domäne (u.a. Motivation, related work, was
 TODO: Dann könnte man Design-Entscheidungen beschreiben (wie und warum wurden bestimmte Sachverhalte so in der Ontologie modelliert).
 \section{Publication}
 ANNO is published on \url{https://ols.imise.uni-leipzig.de} as well as \url{https://annosaxfdm.de/ontology/}.
+Note: Currently on \url{https://annosaxfdm.imise.uni-leipzig.de/ontology/}.
 TODO: Bereitstellung der Ontologie für die Community (OLS etc.). 
 
 \section{Use Case: Integration into \aw{}}
