@@ -175,6 +175,21 @@ axes (e.g., longitudinal or sagittal axis) and planes (e.g., frontal or sagittal
 
 For the foundation of the TO we used the \emph{General Formal Ontology} (GFO)~\citep{gfo} as TLO.
 In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Property} as well as the spatial entities of GFO, see \cref{fig:gfo}.
+Anatomical structures and landmarks (as parts of anatomical structures) are material objects in the sense of the GFO because they consist of matter, have a mass and occupy space~\citep{gfospace}.
+The landmark properties (such as shape) are interpreted as attributives (or qualities) in GFO~\citep{gfoarchitecture}.
+These are dependent individuals that characterise other individuals (in our case, the landmarks).
+The phenotype notion has already been analysed in detail within the framework of the Core Ontology of Phenotypes and defined as an individual property of an organism (such as sex or body height)~\citep{ontologicalrepresentation}.
+The phenotypes are therefore also attributives in the GFO sense.
+The relative position (location) of a landmark with respect to another entity is represented by GFO relators.
+Relators are instances of relations, are composed of roles and link other entities together~\citep{gfocategory}.
+The landmark location relator consists of three roles: subject (the landmark whose position should be described), the reference object (anatomical structure, landmark, axis or plane) and the direction (e.g., cranial or lateral).
+In this way, the relative position of landmark A to landmark B (A lies lateral from B) can be described \todo{hier ein echtes Beispiel}.
+We call the lines connecting landmarks in space (e.g., an edge between two landmarks or an angle between three landmarks) as well as spatial boundaries of
+landmarks---landmark line regions---and associate them with line regions (one-dimensional space entities) in GFO~\citep{gfospace}.
+The landmark line regions can be measured (i.e., the length of the edge or boundary and the angle degree).
+Such measurements as well as the landmark properties (e.g., shape) can be used to derive/determine individual phenotypes.
+The anatomical axes are also lines (line regions), while anatomical planes are surfaces (surface regions) in GFO (two-dimensional space entities).
+
 
 One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) of the TO (ANNO-core),
 whereas the entities of the corresponding DO (ANNO-domain) are processed dynamically.
@@ -243,7 +258,7 @@ ANNO links to concepts of the FMA when they exist, but structures them in a diff
 
 \section{Description of ANNO}
 \begin{figure}[h]
-\includegraphics[width=0.6\textwidth]{img/core.pdf}
+\includegraphics[width=\textwidth]{img/core.pdf}
 \caption{ANNO-core ontology}\label{fig:core}
 \end{figure}
 
