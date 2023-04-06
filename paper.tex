@@ -254,11 +254,16 @@ ANNO links to concepts of the FMA when they exist, but structures them in a diff
 
 The ontology consists of the following core modules, see \cref{fig:modules}:
 %For the categories, there were the following spreadsheets: bones, anatomical landmarks, osteometric landmarks, measured distances, function (separately for discriminant and regress functions), anatomical position descriptions, sources used, and osteological terminology.
-\subsection{Bones}
+\subsection{Bones}\label{sec:bone}
 
-\subsection{Anatomical Landmarks}
+\subsection{Landmarks}\label{sec:landmark}
+All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
+
+\paragraph{Anatomical Landmarks}
 Anatomical landmarks are defined either on a bone or an anatomical compound structure.
-\subsection{Osteometric Landmarks}
+Landmarks have properties such as shape and phenotypes are derived from those properties.
+
+\paragraph{Osteometric Landmarks}
 
 \subsection{Teeth}
 \subsection{Measurements}
@@ -274,11 +279,12 @@ The sex of a specific individual within a population may be estimated using a fu
 Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
 
 \paragraph{Regress functions}
-Regress functions for body height and body weight estimation. The goal here was to cover functions for at least one European, African, American, and Asian ethnic group or population. Names were assigned by the number included in each study, the authors, and the year of publication. In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted. In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
+Regress functions for body height and body weight estimation.
+The goal here was to cover functions for at least one European, African, American, and Asian ethnic group or population.
+Names were assigned by the number included in each study, the authors, and the year of publication.
+In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
+In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
 
-\subsection{Height Functions}
-\subsection{Landmarks}
-All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
 
 TODO: Modellierung der Anthropologie-Domäne (u.a. Motivation, related work, was ist neu).
 TODO: Dann könnte man Design-Entscheidungen beschreiben (wie und warum wurden bestimmte Sachverhalte so in der Ontologie modelliert).
@@ -351,6 +357,16 @@ Arten von Erhebungen, Öffnungen, ...
 anthropologische ebene draufmodellieren zb form
 an anthropological landmark can have different anthropological properties
 
+04-06 notizen
+anschlussprojekte erweiterung
+selbst wenn man nur einen einzelnen knöchel beschreibt wird dieser zuerst in das gesamte skelett
+in der ebene zb lateral positioniert
+könnte relation bestehen zwischen knochen
+4 referenzpunkttypen
+eine landmarke kann auf einer ebene liegen aber nicht auf einer achse, da sie keine ausdehnung hat
+zb median sagital achse
+Richtung vom reference point aus
+location is eigenschaft der landmarke
 
 %\begin{figure}[t]
 %\includegraphics{}
