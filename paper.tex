@@ -168,8 +168,14 @@ concrete measurements/relators (e.g., the distance between mentale dexter and me
 individual phenotypes (e.g., sex or height) and defined anatomical directions (e.g., cranial or basal),
 axes (e.g., longitudinal or sagittal axis) and planes (e.g., frontal or sagittal plane).
 
+\begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{img/gfo.pdf}
+\caption{Integration of ANNO with the top-level GFO ontology.}\label{fig:gfo}
+\end{figure}
+
 For the foundation of the TO we used the \emph{General Formal Ontology} (GFO)~\citep{gfo} as TLO.
-In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Property} as well as the spatial entities of GFO (Fig. …).
+In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Property} as well as the spatial entities of GFO, see \cref{fig:gfo}.
+
 One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) of the TO (ANNO-core),
 whereas the entities of the corresponding DO (ANNO-domain) are processed dynamically.
 \aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class).
@@ -236,7 +242,6 @@ While there are many textual sources of anthropological systematization, they do
 ANNO links to concepts of the FMA when they exist, but structures them in a different way.
 
 \section{Description of ANNO}
-
 \begin{figure}[h]
 \includegraphics[width=0.6\textwidth]{img/core.pdf}
 \caption{ANNO-core ontology}\label{fig:core}
