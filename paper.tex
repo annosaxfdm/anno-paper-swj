@@ -37,16 +37,16 @@
 % TODO: overleaf
 % Two or more authors:
 \begin{aug}
-\author[B]{\inits{M.}\fnms{Marie} \snm{Heuschkel}\ead[label=e3]{x@somewhere.com}}
+\author[B]{\inits{M.}\fnms{Marie} \snm{Heuschkel}\ead[label=e3]{marie.heuschkel@hs-mittweida.de}}
 \author[A]{\inits{K.}\fnms{Konrad} \snm{Höffner}\ead[label=e1]{konrad.hoeffner@uni-leipzig.de}%
 \thanks{Corresponding author. \printead{e1}.}}
 \author[B]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e5]{a@somewhere.com}}
 \author[B]{\inits{L.}\fnms{Laura} \snm{Penne}\ead[label=e8]{a@somewhere.com}}
-\author[B]{\inits{H. T.}\fnms{Hamjo Tim} \snm{Fritzsch}\ead[label=e9]{c@somewhere.com}}
-\author[B]{\inits{A.}\fnms{Andy} \snm{Ludwig}\ead[label=e2]{y@somewhere.com}}
-\author[B]{\inits{M.}\fnms{Marleen} \snm{Mohaupt}\ead[label=e4]{z@somewhere.com}}
-\author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e6]{b@somewhere.com}}
-\author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e7]{c@somewhere.com}}
+\author[B]{\inits{H. T.}\fnms{Hanjo Tim} \snm{Fritzsch}\ead[label=e9]{c@somewhere.com}}
+\author[B]{\inits{A.}\fnms{Andy} \snm{Ludwig}\ead[label=e2]{y@somewhere.com}}% Fraunhofer AISEC ?
+\author[B]{\inits{M.}\fnms{Marleen} \snm{Mohaupt}\ead[label=e4]{kreuzer@hs-mittweida.de}}
+\author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e6]{dirk.labudde@hs-mittweida.de }}
+\author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e7]{alexander.uciteli@imise.uni-leipzig.de}}
 \address[A]{Institute for Medical Informatics, Statistics and Epidemiology (IMISE), \orgname{Leipzig University},
 Saxony, \cny{Germany}\printead[presep={\\}]{e1,e7}}
 \address[B]{\orgname{Hochschule Mittweida},
@@ -87,36 +87,25 @@ Finally, we describe the integration of the ontology into \aw{}.
 % 3 Teile Kernmodule mit Use Cases, weitere Komponenten durch Community
 
 
-
-
-
-
 \section{Introduction}\label{sec:introduction}
 
-Data from historical, prehistoric  anthropology (QUELLE 1), as well as modern forensic science allow for a comprehensive understanding of deceased individuals from different time periods - ranging from their identity and health status to aspects of behaviour, lifestyle, culture and even concerning the circumstances of their death (QUELLE 2).
-For instance, anthropological methods can be used to determine an individual’s biological profile thus providing key information about their sex, age, height and ancestry and any further individualising traits (QUELLE 3).
+Data from historical, prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, allow for a comprehensive understanding of deceased individuals from different time periods---
+ranging from their identity and health status to aspects of their behaviour, lifestyle, culture and even concerning the circumstances of their death~\citep{spurensuche}.
+For example, anthropological methods can be used to determine an individual's biological profile thus providing key information about their sex, age, height and ancestry and any further individualising traits~\citep{bioprofile}.
 
-The science of anthropology can benefit from digitalisation  in various way as digitisation processes facilitate location-independent and parallel work without the effects of wear and tear on the physical skeletal specimens, the material for investigation.
-Currently prevalent issues of access could be solved as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied.
+The science of anthropology can benefit from digitalisation in various way as digitisation processes facilitate location-independent and parallel work without the effects of wear and tear on the physical skeletal specimens, the material for investigation.
+Currently problems of access could be resolved, as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied.
 The allocation of researchers and research material would greatly enhance the quality and extent of interdisciplinary collaborative research.
 Moreover it allows for linking data of different study samples across geographical boundaries.
-Data sets consolidated this way and adequately formalised would enable the application of efficient data analysing methods such as data mining and textmining techniques that could promote more in-depth insights.
-Representing the anthropological domain through an ontology, such as the Anthropological Notation Ontology (ANNO) proposed here,  is an suitable form of formalisation (QUELLE 4).
+Data sets consolidated this way and adequately formalised would enable the application of efficient data analysing methods such as data mining and textmining techniques that could promote deeper insights.
+Representing the anthropological domain through an ontology, such as the Anthropological Notation Ontology (ANNO) proposed here, is an appropriate formalisation~\citep{aw3dunpublished}.
 Apart from contextual information, most informative clues can be found directly on the bone.
-As a result, anthropological work relies on human anatomy, particularly the skeletal system and further tissues of the musculoskeletal system to classify and describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion (Quelle 5).
+As a result, anthropological work relies on human anatomy, particularly the skeletal system and further tissues of the musculoskeletal system to classify and describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion (Quelle 5).\todo{Heuschkel unveröffentlichte Forschung}
 
-By transferring the principle of Earth topography, it is possible to create a precise map of the human skeletal and musculoskeletal system’s „terrain“ (QUELLE 6).
-This map would contain visible anatomical surface structures as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries  These would be unequivocally located by accurate and exhaustive definitions that in turn would allow for their easy retrieval and moreover would serve as  a basis for the objective examination, for instance in the form of measurements(QUELLE 7).
+By transferring the principle of Earth topography, it is possible to create a precise map of the human skeletal and musculoskeletal system's \enquote{terrain} (QUELLE 6).\todo{z.B. Beleg zur Topographie. KH: könnte man hier als Quelle die TA nehmen?}
+This map would contain visible anatomical surface structures as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries.
+These would be unequivocally located by accurate and exhaustive definitions that in turn would allow for their easy retrieval and moreover would serve as a basis for the objective examination, for instance in the form of measurements(QUELLE 7).\todo{Heuschkel unveröffentlichte Forschung}
 Therefore the focus of the first research stage in the development of ANNO was therefore on the creation and usage of such a map.
-
-%TODO Quellen einfügen / finden: (1) Hermann et al- 1990 = SO_066 in ANNO; (2) Heuschkel Spurensuche; (3)https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6474556/; (4) Heuschkel, M-L, Fritzsch, HT, Schmiedel, F, Meier, S, van der Burgt, P, Grosskopf, B, Flux, AL, Mohaupt, M, Labudde, D, Kirsten, T: AnthroWorks3D - A Digital Tool for Anthropological Analyses in Cultural Heritage Institutions and Beyond. CIDOC Conference 2020 "Digital Transformation in Cultural Heritage Institutions", Geneva.; Heuschkel unpublished research; (5)Heuschkel unveröffentl. Forschung; (6) bspw. Beleg zur Topographie; (7) Heuschkel unveröffentlichte Forschung
-%Previous version
-%Historic and forensic anthropology gives insights into the behaviour, culture and way of life of humans of different epochs in the past.
-%Osteometry describes quantitative measurement on the human skeletton.
-%Anthropology relies on osteometric measurements, which has several problems:
-%Bones can only be investigated in place, which requires transport over far distances.
-%This causes wear in the bones, and can lead to different measurements.
-%This can be alleviated with a digital twin, which can be measured at any location.
 
 \section{Background}
 There are various nomenclatures for the description of anatomical landmarks.
@@ -334,7 +323,7 @@ TODO: Bereitstellung der Ontologie für die Community (OLS etc.).
 
 \section{Use Case: Integration into \aw{}}
 % this is based on project report but has to be rewritten: less about AW3d and more about the usage of ANNO by it
-ANNO is used by \aw{}~\citep{anthroworks3d}.
+ANNO is used by \aw{}~\citep{aw3d}.
 By combining user-friendly techniques of photogrammetry, insights from user experience research and knowledge from game development, a digital twin is created, which can subsequently be examined virtually.
 This enables location-independent and parallel work without wear and tear on the bone.
 The examination can be performed as often as desired, even if the skeletal individuals or collections are not available at the institute or have already been reburied.
