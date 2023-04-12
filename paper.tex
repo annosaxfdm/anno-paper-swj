@@ -162,21 +162,32 @@ The ontology should be easy to understand for the user.
 %Second, the General Formal Ontology (GFO)~\citep{gfo} is chosen as \emph{top-level ontology} to provide a theoretical foundation.
 %Third, the \emph{domain ontology} is created that describes the domain of skeletal anatomy.
 \todo{figure out how to best separate ontology and software}
-The \aw{} software is designed according to the three-ontology method~\citep{threeontologymethod}.
-This method is based on the interaction of three different types of ontologies: a task ontology (TO), a domain ontology (DO) and a top-level ontology (TLO).
-The TO serves as the conceptual model for the software, the DO provides the domain-specific knowledge, while the TLO integrates the TO and the DO and is used as foundation for them.
+The ontological architecture of ANNO consists of three interrelated layers.
 
-In our case, the ANNO-core, shown in \cref{fig:core}, functions as a TO, see \cref{sec:core}.
-It contains the general anatomical entities (\enquote{Anatomical structure} and \enquote{Landmark}),
-\enquote{Spatial relator} (for describing measurements between landmarks, e.g., distances or angles),
-\enquote{Phenotype} (to model properties that can be derived from the measurements) and \enquote{Anatomical spatial entity} (to describe anatomical directions, axes and planes).
+\begin{enumerate}
+  
+  \item ANNO-domain (\cref{sec:domain}) is a domain ontology for describing domain-specific entities to be used for annotating 
+the parts of human skeleton (bones, teeth and landmarks, such as, mandible, left mandibular central secondary incisor tooth 
+or mentale dexter) as well as to model their properties and relations (e.g., the distance between mentale dexter and mentale sinister) 
+required to derive human phenotypes (e.g., sex or height). The ANNO-domain is embedded in ANNO-core 
+(i.e., the ANNO-domain classes are subclasses of the ANNO-core classes).
+  
+  \item ANNO-core (\cref{sec:core}, \cref{fig:core}) is a core ontology to provide the core entities of a domain, such as, inter alia, 
+the general anatomical categories (\enquote{Anatomical structure} and \enquote{Landmark}), categories for describing different characteristics of 
+landmarks (\enquote{Landmark location}, \enquote{Landmark property} and \enquote{Landmark line region}) as well as 
+the category \enquote{Phenotype} to model the rules for determining human phenotypes. The ANNO-core is founded by General Formal Ontology (GFO)~\citep{gfo}.
+  
+  \item GFO is a top-level ontology for integrating and founding the ANNO. In the current paper, we refer especially to the categories 
+\enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO (\cref{sec:core}, \cref{fig:gfo}).
+\end{enumerate}
 
-The subclasses of the ANNO-Core classes build a DO, the ANNO-domain, see \cref{sec:domain}.
-These include concepts representing concrete bones (e.g., mandible) and teeth (e.g., left mandibular central secondary incisor tooth),
-specific landmarks on them (e.g., mentale dexter and mentale sinister),
-concrete measurements/relators (e.g., the distance between mentale dexter and mentale sinister),
-individual phenotypes (e.g., sex or height) and defined anatomical directions (e.g., cranial or basal),
-axes (e.g., longitudinal or sagittal axis) and planes (e.g., frontal or sagittal plane).
+The \aw{} software (\cref{sec:aw}) is designed according to the three-ontology method~\citep{threeontologymethod}. 
+This method is based on the interaction of a task ontology, a domain ontology and a top-level ontology. 
+In our case, the ANNO-core plays the role of a task ontology and serves as the conceptual model of the software. 
+One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) 
+of the task ontology (ANNO-core), whereas the entities of the corresponding domain ontology (ANNO-domain) are processed dynamically. 
+The \aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class 
+such as ‘Bone’).
 
 \begin{figure}[h]
 \includegraphics[width=0.6\textwidth]{img/gfo.pdf}
