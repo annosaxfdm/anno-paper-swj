@@ -154,7 +154,7 @@ The ontology should be easy to understand for the user.
 
 %\url{https://bioportal.bioontology.org/ontologies/FMA}
 
-\section{Developing ANNO}
+\section{Ontological Framework}
 %The development of ANNO and its integration into \aw{} follows the \emph{three ontology method}~\citep{threeontologymethod} for ontology-based software engineering:
 %First, \emph{task ontology} is created as a conceptual model of \aw{}.
 %Second, the General Formal Ontology (GFO)~\citep{gfo} is chosen as \emph{top-level ontology} to provide a theoretical foundation.
@@ -203,20 +203,70 @@ One of the advantages of the three-ontology method is that the software only nee
 whereas the entities of the corresponding DO (ANNO-domain) are processed dynamically.
 \aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class).
 
-% todo: do we have an ontology engineering methodology?
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
 % TODO: ontology language, expressivity
 % TODO: reuse of ontological entities
 % TODO: clear validation mechanism
 % TODO: top-level ontology?
-% @Alex ist das CSV->OWL Script irgendwo publiziert, kann man das zitieren?
+
+
+\section{Description of ANNO-core}
 \begin{figure}[h]
+\includegraphics[width=\textwidth]{img/core.pdf}
+\caption{ANNO-core ontology}\label{fig:core}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.3\textwidth]{img/modules.pdf}
+\caption{The six modules of ANNO}\label{fig:modules}
+\end{figure}
+\todo{Brauchen wir \cref{fig:modules} noch oder ist sie durch \cref{fig:core} nicht mehr nötig?}
+
+The ontology consists of the following core modules, see \cref{fig:modules}:
+%For the categories, there were the following spreadsheets: bones, anatomical landmarks, osteometric landmarks, measured distances, function (separately for discriminant and regress functions), anatomical position descriptions, sources used, and osteological terminology.
+\subsection{Bones}\label{sec:bone}
+
+\subsection{Landmarks}\label{sec:landmark}
+All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
+
+\paragraph{Anatomical Landmarks}
+Anatomical landmarks are defined either on a bone or an anatomical compound structure.
+Landmarks have properties such as shape and phenotypes are derived from those properties.
+
+\paragraph{Osteometric Landmarks}
+
+\subsection{Teeth}
+\subsection{Measurements}
+Measurements consist of references to sections, the start point, midpoint, end point, and short definitions.
+
+\todo{Umschreiben von Modulen auf ANNO-core}
+\subsection{Functions}
+Functions are categorized into sex determination and regress functions for body height estimation.
+RDF is not optimized for mathematical formulas so we model those as literals.
+
+\paragraph{Sex determination}
+% auto translated from the project report, use as basis:
+The sex of a specific individual within a population may be estimated using a function on skelettal measurements that is specific to this population.
+Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
+
+\paragraph{Regress functions}
+Regress functions for body height and body weight estimation.
+The goal here was to cover functions for at least one European, African, American, and Asian ethnic group or population.
+Names were assigned by the number included in each study, the authors, and the year of publication.
+In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
+In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
+
+\section{Development of ANNO-domain}
+
+\begin{figure}[h!t]
 \includegraphics[width=\textwidth]{img/smog.png}
 \caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
 \end{figure}
+
 The domain experts are provided a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}.
 The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
 \todo{können wir es auf OWL 2 DL eingrenzen?}
+
 % ist das richtig übersetzt?
 Sources are categorized into core, root, and occurrence sources.\todo{explain}
 
@@ -253,7 +303,6 @@ Requirements for this were an included position description (e.g. Punctum superi
 For this, the examination of the Latin grammar was relevant.
 For the measurement sections, the type of measurement (e.g., distance measurement) and the measurement instrument were taken in addition to the name of the measurement section.
 The subsequently created visual definitions were made in the different anatomical views and represented area markings for the anatomical landmarks and point markings for the osteometric ones.
-
 \subsection{Functions}
 The functions were divided into discriminant functions for sex determination and regress functions for body height and body weight estimation.
 The goal here was to cover functions for at least one European, African, American, and Asian ethnicity or population.
@@ -263,63 +312,6 @@ In addition, for the discriminant functions, the thresholds of sex assignment, c
 
 While there are many textual sources of anthropological systematization, they do not agree in all aspects and there is not a single, formally described, standard.
 ANNO links to concepts of the FMA when they exist, but structures them in a different way.
-
-\section{Description of ANNO}
-\begin{figure}[h]
-\includegraphics[width=\textwidth]{img/core.pdf}
-\caption{ANNO-core ontology}\label{fig:core}
-\end{figure}
-
-\begin{figure}[h]
-\includegraphics[width=0.3\textwidth]{img/modules.pdf}
-\caption{The six modules of ANNO}\label{fig:modules}
-\end{figure}
-
-\begin{figure}[h]
-\includegraphics[width=\textwidth]{img/axisplane.pdf}
-\caption{Anatomical axes and planes}\label{fig:axisplane}
-\end{figure}
-
-The ontology consists of the following core modules, see \cref{fig:modules}:
-%For the categories, there were the following spreadsheets: bones, anatomical landmarks, osteometric landmarks, measured distances, function (separately for discriminant and regress functions), anatomical position descriptions, sources used, and osteological terminology.
-\subsection{Bones}\label{sec:bone}
-
-\subsection{Landmarks}\label{sec:landmark}
-All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
-
-\paragraph{Anatomical Landmarks}
-Anatomical landmarks are defined either on a bone or an anatomical compound structure.
-Landmarks have properties such as shape and phenotypes are derived from those properties.
-
-\paragraph{Osteometric Landmarks}
-
-\subsection{Teeth}
-\subsection{Measurements}
-For measurements consist of references to sections, the start point, midpoint, end point, and short definitions.
-
-\subsection{Functions}
-Functions are categorized into sex determination and regress functions for body height estimation.
-RDF is not optimized for mathematical formulas so we model those as literals.
-
-\paragraph{Sex determination}
-% auto translated from the project report, use as basis:
-The sex of a specific individual within a population may be estimated using a function on skelettal measurements that is specific to this population.
-Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
-
-\paragraph{Regress functions}
-Regress functions for body height and body weight estimation.
-The goal here was to cover functions for at least one European, African, American, and Asian ethnic group or population.
-Names were assigned by the number included in each study, the authors, and the year of publication.
-In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
-In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
-
-
-TODO: Modellierung der Anthropologie-Domäne (u.a. Motivation, related work, was ist neu).
-TODO: Dann könnte man Design-Entscheidungen beschreiben (wie und warum wurden bestimmte Sachverhalte so in der Ontologie modelliert).
-\section{Publication}
-ANNO is published on \url{https://ols.imise.uni-leipzig.de} as well as \url{https://annosaxfdm.de/ontology/}.
-Note: Currently on \url{https://annosaxfdm.imise.uni-leipzig.de/ontology/}.
-TODO: Bereitstellung der Ontologie für die Community (OLS etc.).
 
 \section{Use Case: Integration into \aw{}}
 % this is based on project report but has to be rewritten: less about AW3d and more about the usage of ANNO by it
@@ -370,6 +362,8 @@ Advantages over the previous approach are:
 %\subsection{}\label{s1.1}
 
 \section{Conclusion and Future Work}
+% Conclusion
+
 % Basiert auf dem Fazit aus dem Projektbericht
 ANNO introduces uniform definitions for the anatomical landmarks of the human skeletal system as well as osteometric landmarks, measurement distances and functions.
 basis for anthropological work
@@ -380,6 +374,11 @@ It provides a basis for future training of ontologists, knowledge managers, furt
 Furthermore, there is interest of the results in forensic, historical and prehistoric anthropology, pathology and medicine as well as in the field of computer science and especially medical informatics.
 %Moreover, the ontology can be extended.
 
+ANNO is published on \url{https://ols.imise.uni-leipzig.de} as well as \url{https://annosaxfdm.de/ontology/}.
+Note: Currently on \url{https://annosaxfdm.imise.uni-leipzig.de/ontology/}.
+TODO: Bereitstellung der Ontologie für die Community (OLS etc.).
+
+% Future Work
 can be extended with osteological terms of description
 Arten von Erhebungen, Öffnungen, ...
 anthropologische ebene draufmodellieren zb form
@@ -410,6 +409,11 @@ location is eigenschaft der landmarke
 %\hline
 %\end{tabular}
 %\end{table*}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{img/axisplane.pdf}
+\caption{Anatomical axes and planes}\label{fig:axisplane}
+\end{figure}
 
 \begin{ack}
 \noindent\begin{minipage}{0.90\textwidth}
