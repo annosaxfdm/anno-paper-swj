@@ -154,7 +154,9 @@ The ontology should be easy to understand for the user.
 
 %\url{https://bioportal.bioontology.org/ontologies/FMA}
 
-\section{Ontological Framework}
+\section{Ontological Architecture}\label{sec:architecture}
+%Gesamtarchitektur, Zusammenhang zwischen GFO, ANNO-core, ANNO-domain, 3-Ontologien-Methode, alles mit Verweisen auf die nächsten Kapitel, vielleicht ein kleines Bild
+
 %The development of ANNO and its integration into \aw{} follows the \emph{three ontology method}~\citep{threeontologymethod} for ontology-based software engineering:
 %First, \emph{task ontology} is created as a conceptual model of \aw{}.
 %Second, the General Formal Ontology (GFO)~\citep{gfo} is chosen as \emph{top-level ontology} to provide a theoretical foundation.
@@ -164,12 +166,12 @@ The \aw{} software is designed according to the three-ontology method~\citep{thr
 This method is based on the interaction of three different types of ontologies: a task ontology (TO), a domain ontology (DO) and a top-level ontology (TLO).
 The TO serves as the conceptual model for the software, the DO provides the domain-specific knowledge, while the TLO integrates the TO and the DO and is used as foundation for them.
 
-In our case, the ANNO-core (\cref{fig:core}) functions as a TO.
+In our case, the ANNO-core, shown in \cref{fig:core}, functions as a TO, see \cref{sec:core}.
 It contains the general anatomical entities (\enquote{Anatomical structure} and \enquote{Landmark}),
 \enquote{Spatial relator} (for describing measurements between landmarks, e.g., distances or angles),
 \enquote{Phenotype} (to model properties that can be derived from the measurements) and \enquote{Anatomical spatial entity} (to describe anatomical directions, axes and planes).
 
-The subclasses of the ANNO-Core classes build a DO, the ANNO-domain.
+The subclasses of the ANNO-Core classes build a DO, the ANNO-domain, see \cref{sec:domain}.
 These include concepts representing concrete bones (e.g., mandible) and teeth (e.g., left mandibular central secondary incisor tooth),
 specific landmarks on them (e.g., mentale dexter and mentale sinister),
 concrete measurements/relators (e.g., the distance between mentale dexter and mentale sinister),
@@ -201,7 +203,7 @@ The anatomical axes are also lines (line regions), while anatomical planes are s
 
 One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) of the TO (ANNO-core),
 whereas the entities of the corresponding DO (ANNO-domain) are processed dynamically.
-\aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class).
+\aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class), as described in \cref{sec:aw}.
 
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
 % TODO: ontology language, expressivity
@@ -210,7 +212,8 @@ whereas the entities of the corresponding DO (ANNO-domain) are processed dynamic
 % TODO: top-level ontology?
 
 
-\section{Description of ANNO-core}
+\section{Description of ANNO-core}\label{sec:core}
+% Definition/Beschreibung der Kern-Konzepte/Module und -Relationen mit Beispielen, GFO-Einbettung
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/core.pdf}
 \caption{ANNO-core ontology}\label{fig:core}
@@ -256,8 +259,8 @@ Names were assigned by the number included in each study, the authors, and the y
 In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
 In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
 
-\section{Development of ANNO-domain}
-
+\section{Development of ANNO-domain}\label{sec:domain}
+% Arbeit der Domänenexperten, Tabelle, OWL-Generator
 \begin{figure}[h!t]
 \includegraphics[width=\textwidth]{img/smog.png}
 \caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
@@ -313,7 +316,7 @@ In addition, for the discriminant functions, the thresholds of sex assignment, c
 While there are many textual sources of anthropological systematization, they do not agree in all aspects and there is not a single, formally described, standard.
 ANNO links to concepts of the FMA when they exist, but structures them in a different way.
 
-\section{Use Case: Integration into \aw{}}
+\section{Use Case: Integration into \aw{}}\label{sec:aw}
 % this is based on project report but has to be rewritten: less about AW3d and more about the usage of ANNO by it
 ANNO is used by \aw{}~\citep{aw3d}.
 By combining user-friendly techniques of photogrammetry, insights from user experience research and knowledge from game development, a digital twin is created, which can subsequently be examined virtually.
