@@ -6,11 +6,12 @@
 \usepackage{todonotes}
 \usepackage{cleveref}
 \usepackage{csquotes}
+\usepackage{aurl}
 %\usepackage{dcolumn}
 
 %%%%%%%%%%% Put your definitions here
 \newcommand{\aw}{AnthroWorks3D}
-
+\daurl{anno}{https://annosaxfdm.de/ontology/}
 
 %%%%%%%%%%% End of definitions
 
@@ -186,8 +187,7 @@ This method is based on the interaction of a task ontology, a domain ontology an
 In our case, the ANNO-core plays the role of a task ontology and serves as the conceptual model of the software. 
 One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) 
 of the task ontology (ANNO-core), whereas the entities of the corresponding domain ontology (ANNO-domain) are processed dynamically. 
-The \aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class 
-such as \enquote{Bone}), as described in \cref{sec:aw}.
+The \aw{} uses the ANNO-core as an interface to access the ANNO-domain entities, e.g. by listing all subclasses of a specific ANNO-core class, such as \aurl{anno}{Bone}, as described in \cref{sec:aw}.
 
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
 % TODO: ontology language, expressivity
