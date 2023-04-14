@@ -213,7 +213,7 @@ such as \aurl{anno}{Bone}, as described in \cref{sec:aw}.
 
 The ontology consists of the following core modules, see \cref{fig:modules}:
 %For the categories, there were the following spreadsheets: bones, anatomical landmarks, osteometric landmarks, measured distances, function (separately for discriminant and regress functions), anatomical position descriptions, sources used, and osteological terminology.
-\subsection{Bones}\label{sec:bone}
+\subsection{Anatomical Structures}\label{sec:bone}
 
 \subsection{Landmarks}\label{sec:landmark}
 All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
@@ -224,12 +224,15 @@ Landmarks have properties such as shape and phenotypes are derived from those pr
 
 \paragraph{Osteometric Landmarks}
 
-\subsection{Teeth}
-\subsection{Measurements}
+\subsection{Landmark Properties}
+
+\subsection{Relative Landmark Positions}
+
+\subsection{Landmark Line Regions and Measurements}
 Measurements consist of references to sections, the start point, midpoint, end point, and short definitions.
 
 \todo{Umschreiben von Modulen auf ANNOdc}
-\subsection{Functions}
+\subsection{Phenotypes and Functions}
 Functions are categorized into sex determination and regress functions for body height estimation.
 RDF is not optimized for mathematical formulas so we model those as literals.
 
@@ -244,6 +247,8 @@ The goal here was to cover functions for at least one European, African, America
 Names were assigned by the number included in each study, the authors, and the year of publication.
 In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
 In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
+
+
 
 For the foundation of the TO we used the \emph{General Formal Ontology} (GFO)~\citep{gfo} as TLO.
 In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Property} as well as the spatial entities of GFO, see \cref{fig:gfo}.
