@@ -217,11 +217,11 @@ The ontology consists of the following core modules, see \cref{fig:modules}:
 
 In ANNO, we consider bone structures and teeth as anatomical structures relevant to the anthropology domain. 
 Bone structures are divided into single bones and bone compounds consisting of further bones (has_part). 
-Teeth are located on bone structures (on_bone). Anatomical structures are material objects in the sense of the GFO 
-because they consist of matter, have a mass and occupy space~\citep{gfospace}.
+Teeth are located on bone structures (on_bone). 
 
 \subsection{Landmarks}\label{sec:landmark}
 All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
+
 
 \paragraph{Anatomical Landmarks}
 Anatomical landmarks are defined either on a bone or an anatomical compound structure.
@@ -254,9 +254,8 @@ In addition, the function, reference population, aspect (e.g., discriminant func
 In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
 
 
+\subsection{Foundation of ANNO with GFO}
 
-For the foundation of the TO we used the \emph{General Formal Ontology} (GFO)~\citep{gfo} as TLO.
-In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Property} as well as the spatial entities of GFO, see \cref{fig:gfo}.
 Anatomical structures and landmarks (as parts of anatomical structures) are material objects in the sense of the GFO because they consist of matter, have a mass and occupy space~\citep{gfospace}.
 The landmark properties (such as shape) are interpreted as attributives (or qualities) in GFO~\citep{gfoarchitecture}.
 These are dependent individuals that characterise other individuals (in our case, the landmarks).
