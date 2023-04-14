@@ -156,7 +156,7 @@ The ontology should be easy to understand for the user.
 %\url{https://bioportal.bioontology.org/ontologies/FMA}
 
 \section{Ontological Architecture}\label{sec:architecture}
-%Gesamtarchitektur, Zusammenhang zwischen GFO, ANNO-core, ANNO-domain, 3-Ontologien-Methode, alles mit Verweisen auf die nächsten Kapitel, vielleicht ein kleines Bild
+%Gesamtarchitektur, Zusammenhang zwischen GFO, ANNOdc, ANNOds, 3-Ontologien-Methode, alles mit Verweisen auf die nächsten Kapitel, vielleicht ein kleines Bild
 
 %The development of ANNO and its integration into \aw{} follows the \emph{three ontology method}~\citep{threeontologymethod} for ontology-based software engineering:
 %First, \emph{task ontology} is created as a conceptual model of \aw{}.
@@ -167,16 +167,16 @@ The ontological architecture of ANNO consists of three interrelated layers.
 
 \begin{enumerate}
   
-  \item ANNO-domain (\cref{sec:domain}) is a domain ontology for describing domain-specific entities to be used for annotating 
+  \item ANNOds (\cref{sec:domain}) is a domain ontology for describing domain-specific entities to be used for annotating 
 the parts of human skeleton (bones, teeth and landmarks, such as, mandible, left mandibular central secondary incisor tooth 
 or mentale dexter) as well as to model their properties and relations (e.g., the distance between mentale dexter and mentale sinister) 
-required to derive human phenotypes (e.g., sex or height). The ANNO-domain is embedded in ANNO-core 
-(i.e., the ANNO-domain classes are subclasses of the ANNO-core classes).
+required to derive human phenotypes (e.g., sex or height). The ANNOds is embedded in ANNOdc 
+(i.e., the ANNOds classes are subclasses of the ANNOdc classes).
   
-  \item ANNO-core (\cref{sec:core}, \cref{fig:core}) is a core ontology to provide the core entities of a domain, such as, inter alia, 
+  \item ANNOdc (\cref{sec:core}, \cref{fig:core}) is a core ontology to provide the core entities of a domain, such as, inter alia, 
 the general anatomical categories (\enquote{Anatomical structure} and \enquote{Landmark}), categories for describing different characteristics of 
 landmarks (\enquote{Landmark location}, \enquote{Landmark property} and \enquote{Landmark line region}) as well as 
-the category \enquote{Phenotype} to model the rules for determining human phenotypes. The ANNO-core is founded by \emph{General Formal Ontology} (GFO)~\citep{gfo}.
+the category \enquote{Phenotype} to model the rules for determining human phenotypes. The ANNOdc is founded by \emph{General Formal Ontology} (GFO)~\citep{gfo}.
   
   \item GFO is a top-level ontology for integrating and founding the ANNO. In the current paper, we refer especially to the categories 
 \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO (\cref{sec:core}, \cref{fig:gfo}).
@@ -184,10 +184,10 @@ the category \enquote{Phenotype} to model the rules for determining human phenot
 
 The \aw{} software (\cref{sec:aw}) is designed according to the three-ontology method~\citep{threeontologymethod}. 
 This method is based on the interaction of a task ontology, a domain ontology and a top-level ontology. 
-In our case, the ANNO-core plays the role of a task ontology and serves as the conceptual model of the software. 
+In our case, the ANNOdc plays the role of a task ontology and serves as the conceptual model of the software. 
 One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) 
-of the task ontology (ANNO-core), whereas the entities of the corresponding domain ontology (ANNO-domain) are processed dynamically. 
-The \aw{} uses the ANNO-core as an interface to access the ANNO-domain entities, e.g. by listing all subclasses of a specific ANNO-core class, such as \aurl{anno}{Bone}, as described in \cref{sec:aw}.
+of the task ontology (ANNOdc), whereas the entities of the corresponding domain ontology (ANNOds) are processed dynamically. 
+The \aw{} uses the ANNOdc as an interface to access the ANNOds entities, e.g. by listing all subclasses of a specific ANNOdc class, such as \aurl{anno}{Bone}, as described in \cref{sec:aw}.
 
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
 % TODO: ontology language, expressivity
@@ -196,11 +196,11 @@ The \aw{} uses the ANNO-core as an interface to access the ANNO-domain entities,
 % TODO: top-level ontology?
 
 
-\section{Description of ANNO-core}\label{sec:core}
+\section{Description of ANNOdc}\label{sec:core}
 % Definition/Beschreibung der Kern-Konzepte/Module und -Relationen mit Beispielen, GFO-Einbettung
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/core.pdf}
-\caption{ANNO-core ontology}\label{fig:core}
+\caption{ANNOdc ontology}\label{fig:core}
 \end{figure}
 
 \begin{figure}[h]
@@ -226,7 +226,7 @@ Landmarks have properties such as shape and phenotypes are derived from those pr
 \subsection{Measurements}
 Measurements consist of references to sections, the start point, midpoint, end point, and short definitions.
 
-\todo{Umschreiben von Modulen auf ANNO-core}
+\todo{Umschreiben von Modulen auf ANNOdc}
 \subsection{Functions}
 Functions are categorized into sex determination and regress functions for body height estimation.
 RDF is not optimized for mathematical formulas so we model those as literals.
@@ -265,7 +265,7 @@ The anatomical axes are also lines (line regions), while anatomical planes are s
 \caption{Integration of ANNO with the top-level GFO ontology.}\label{fig:gfo}
 \end{figure}
 
-\section{Development of ANNO-domain}\label{sec:domain}
+\section{Development of ANNOds}\label{sec:domain}
 % Arbeit der Domänenexperten, Tabelle, OWL-Generator
 \begin{figure}[h!t]
 \includegraphics[width=\textwidth]{img/smog.png}
