@@ -182,12 +182,14 @@ the category \enquote{Phenotype} to model the rules for determining human phenot
 \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO (\cref{sec:core}, \cref{fig:gfo}).
 \end{enumerate}
 
-The \aw{} software (\cref{sec:aw}) is designed according to the three-ontology method~\citep{threeontologymethod}. 
-This method is based on the interaction of a task ontology, a domain ontology and a top-level ontology. 
-In our case, the ANNOdc plays the role of a task ontology and serves as the conceptual model of the software. 
+This architecture fits very well with the three-ontology method~\citep{threeontologymethod} on the basis of which we designed 
+the \aw{} software (\cref{sec:aw}) for annotating human skeletons and determining phenotypes.
+This method for developing consistent and modular software is based on the interaction of a task ontology, a domain ontology 
+and a top-level ontology. In our case, the ANNOdc plays the role of a task ontology, while the ANNOds acts as a domain ontology. 
 One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) 
-of the task ontology (ANNOdc), whereas the entities of the corresponding domain ontology (ANNOds) are processed dynamically. 
-The \aw{} uses the ANNOdc as an interface to access the ANNOds entities, e.g. by listing all subclasses of a specific ANNOdc class, such as \aurl{anno}{Bone}, as described in \cref{sec:aw}.
+of the task ontology, whereas the entities of the corresponding domain ontology are processed dynamically. 
+The \aw{} uses the ANNOdc as an interface to access the ANNOds entities, e.g. by listing all subclasses of a specific ANNOdc class, 
+such as \aurl{anno}{Bone}, as described in \cref{sec:aw}.
 
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
 % TODO: ontology language, expressivity
