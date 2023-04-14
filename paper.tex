@@ -175,7 +175,7 @@ required to derive human phenotypes (e.g., sex or height). The ANNO-domain is em
   \item ANNO-core (\cref{sec:core}, \cref{fig:core}) is a core ontology to provide the core entities of a domain, such as, inter alia, 
 the general anatomical categories (\enquote{Anatomical structure} and \enquote{Landmark}), categories for describing different characteristics of 
 landmarks (\enquote{Landmark location}, \enquote{Landmark property} and \enquote{Landmark line region}) as well as 
-the category \enquote{Phenotype} to model the rules for determining human phenotypes. The ANNO-core is founded by General Formal Ontology (GFO)~\citep{gfo}.
+the category \enquote{Phenotype} to model the rules for determining human phenotypes. The ANNO-core is founded by \emph{General Formal Ontology} (GFO)~\citep{gfo}.
   
   \item GFO is a top-level ontology for integrating and founding the ANNO. In the current paper, we refer especially to the categories 
 \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO (\cref{sec:core}, \cref{fig:gfo}).
@@ -187,34 +187,7 @@ In our case, the ANNO-core plays the role of a task ontology and serves as the c
 One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) 
 of the task ontology (ANNO-core), whereas the entities of the corresponding domain ontology (ANNO-domain) are processed dynamically. 
 The \aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class 
-such as \enquote{Bone}).
-
-\begin{figure}[h]
-\includegraphics[width=0.6\textwidth]{img/gfo.pdf}
-\caption{Integration of ANNO with the top-level GFO ontology.}\label{fig:gfo}
-\end{figure}
-
-For the foundation of the TO we used the \emph{General Formal Ontology} (GFO)~\citep{gfo} as TLO.
-In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Property} as well as the spatial entities of GFO, see \cref{fig:gfo}.
-Anatomical structures and landmarks (as parts of anatomical structures) are material objects in the sense of the GFO because they consist of matter, have a mass and occupy space~\citep{gfospace}.
-The landmark properties (such as shape) are interpreted as attributives (or qualities) in GFO~\citep{gfoarchitecture}.
-These are dependent individuals that characterise other individuals (in our case, the landmarks).
-The phenotype notion has already been analysed in detail within the framework of the Core Ontology of Phenotypes and defined as an individual property of an organism (such as sex or body height)~\citep{ontologicalrepresentation}.
-The phenotypes are therefore also attributives in the GFO sense.
-The relative position (location) of a landmark with respect to another entity is represented by GFO relators.
-Relators are instances of relations, are composed of roles and link other entities together~\citep{gfocategory}.
-The landmark location relator consists of three roles: subject (the landmark whose position should be described), the reference object (anatomical structure, landmark, axis or plane) and the direction (e.g., cranial or lateral).
-In this way, the relative position of landmark A to landmark B (A lies lateral from B) can be described \todo{hier ein echtes Beispiel}.
-We call the lines connecting landmarks in space (e.g., an edge between two landmarks or an angle between three landmarks) as well as spatial boundaries of
-landmarks---landmark line regions---and associate them with line regions (one-dimensional space entities) in GFO~\citep{gfospace}.
-The landmark line regions can be measured (i.e., the length of the edge or boundary and the angle degree).
-Such measurements as well as the landmark properties (e.g., shape) can be used to derive/determine individual phenotypes.
-The anatomical axes are also lines (line regions), while anatomical planes are surfaces (surface regions) in GFO (two-dimensional space entities).
-
-
-One of the advantages of the three-ontology method is that the software only needs to implement the access to entities (classes, properties) of the TO (ANNO-core),
-whereas the entities of the corresponding DO (ANNO-domain) are processed dynamically.
-\aw{} uses the ANNO-core as an interface to access the ANNO-domain entities (e.g., by listing all subclasses of a specific ANNO-core class), as described in \cref{sec:aw}.
+such as \enquote{Bone}), as described in \cref{sec:aw}.
 
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
 % TODO: ontology language, expressivity
@@ -269,6 +242,28 @@ The goal here was to cover functions for at least one European, African, America
 Names were assigned by the number included in each study, the authors, and the year of publication.
 In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
 In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
+
+For the foundation of the TO we used the \emph{General Formal Ontology} (GFO)~\citep{gfo} as TLO.
+In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Property} as well as the spatial entities of GFO, see \cref{fig:gfo}.
+Anatomical structures and landmarks (as parts of anatomical structures) are material objects in the sense of the GFO because they consist of matter, have a mass and occupy space~\citep{gfospace}.
+The landmark properties (such as shape) are interpreted as attributives (or qualities) in GFO~\citep{gfoarchitecture}.
+These are dependent individuals that characterise other individuals (in our case, the landmarks).
+The phenotype notion has already been analysed in detail within the framework of the Core Ontology of Phenotypes and defined as an individual property of an organism (such as sex or body height)~\citep{ontologicalrepresentation}.
+The phenotypes are therefore also attributives in the GFO sense.
+The relative position (location) of a landmark with respect to another entity is represented by GFO relators.
+Relators are instances of relations, are composed of roles and link other entities together~\citep{gfocategory}.
+The landmark location relator consists of three roles: subject (the landmark whose position should be described), the reference object (anatomical structure, landmark, axis or plane) and the direction (e.g., cranial or lateral).
+In this way, the relative position of landmark A to landmark B (A lies lateral from B) can be described \todo{hier ein echtes Beispiel}.
+We call the lines connecting landmarks in space (e.g., an edge between two landmarks or an angle between three landmarks) as well as spatial boundaries of
+landmarks---landmark line regions---and associate them with line regions (one-dimensional space entities) in GFO~\citep{gfospace}.
+The landmark line regions can be measured (i.e., the length of the edge or boundary and the angle degree).
+Such measurements as well as the landmark properties (e.g., shape) can be used to derive/determine individual phenotypes.
+The anatomical axes are also lines (line regions), while anatomical planes are surfaces (surface regions) in GFO (two-dimensional space entities).
+
+\begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{img/gfo.pdf}
+\caption{Integration of ANNO with the top-level GFO ontology.}\label{fig:gfo}
+\end{figure}
 
 \section{Development of ANNO-domain}\label{sec:domain}
 % Arbeit der Domänenexperten, Tabelle, OWL-Generator
