@@ -38,20 +38,23 @@
 % TODO: overleaf
 % Two or more authors:
 \begin{aug}
-\author[B]{\inits{M.}\fnms{Marie} \snm{Heuschkel}\ead[label=e3]{marie.heuschkel@hs-mittweida.de}}
+\author[B]{\inits{M.}\fnms{Marie} \snm{Heuschkel}\ead[label=e2]{marie.heuschkel@hs-mittweida.de}}
 \author[A]{\inits{K.}\fnms{Konrad} \snm{Höffner}\ead[label=e1]{konrad.hoeffner@uni-leipzig.de}%
 \thanks{Corresponding author. \printead{e1}.}}
-\author[B]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e5]{a@somewhere.com}}
-\author[B]{\inits{L.}\fnms{Laura} \snm{Penne}\ead[label=e8]{a@somewhere.com}}
-\author[B]{\inits{H. T.}\fnms{Hanjo Tim} \snm{Fritzsch}\ead[label=e9]{c@somewhere.com}}
-\author[B]{\inits{A.}\fnms{Andy} \snm{Ludwig}\ead[label=e2]{y@somewhere.com}}% Fraunhofer AISEC ?
-\author[B]{\inits{M.}\fnms{Marleen} \snm{Mohaupt}\ead[label=e4]{kreuzer@hs-mittweida.de}}
-\author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e6]{dirk.labudde@hs-mittweida.de }}
-\author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e7]{alexander.uciteli@imise.uni-leipzig.de}}
+\author[B]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e3]{fabian.schmiedel@hs-mittweida.de}}
+\author[B]{\inits{L.}\fnms{Laura} \snm{Penne}\ead[label=e4]{laura.penne@hs-mittweida.de}}
+\author[B]{\inits{H. T.}\fnms{Hanjo Tim} \snm{Fritzsch}\ead[label=e5]{fritzsc2@hs-mittweida.de}}
+\author[B]{\inits{N.}\fnms{Niklas} \snm{de Sousa Norte}\ead[label=e6]{niklas.desousanorte@hs-mittweida.de}}
+\author[B]{\inits{A.}\fnms{Andrea} \snm{Ferencová}\ead[label=e7]{andrea.ferencova@hs-mittweida.de}}
+\author[B]{\inits{A.}\fnms{Andy} \snm{Ludwig}\ead[label=e8]{andy.ludwig@hs-mittweida.de}}% ist jetzt beim Fraunhofer, möchte aber weiter so gelistet werden
+\author[B]{\inits{M.}\fnms{Marleen} \snm{Mohaupt}\ead[label=e9]{kreuzer@hs-mittweida.de}}
+\author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e10]{dirk.labudde@hs-mittweida.de }}
+\author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e11]{alexander.uciteli@imise.uni-leipzig.de}}
+%\author[B]{\inits{}\fnms{} \snm{}\ead[label=e9]{}}
 \address[A]{Institute for Medical Informatics, Statistics and Epidemiology (IMISE), \orgname{Leipzig University},
-Saxony, \cny{Germany}\printead[presep={\\}]{e1,e7}}
+Saxony, \cny{Germany}\printead[presep={\\}]{e1,e11}}
 \address[B]{\orgname{Hochschule Mittweida},
-Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e4,e5,e6}}
+Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e4,e5,e6,e7,e8,e9,e10}}
 \end{aug}
 
 %\begin{review}{editor}
@@ -68,11 +71,13 @@ Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e4,e5,e6}}
 %\end{review}
 
 \begin{abstract}
-Anthropology relies on osteometric measurements of human bones, but ...
-In this paper, first, we describe the anthropology domain.
-Then, we discuss design decisions of modelling ANNO.
-Next, we show how ANNO is published for the community.
-Finally, we describe the integration of the ontology into \aw{}.
+The Anthropological Notation Ontology (ANNO) allows the systematic, standardised classification of recovered bone finds into the skeletal system, the description of the skeletal pieces, and the definition of functions for the derivation of different phenotypes of humans in forensic and historical anthropology.
+ANNO consists of two components:
+ANNOdc, a domain-core ontology providing core entities such as basic anatomical categories, and ANNOds, a domain-specific ontology used for annotating structures of the human skeleton.
+ANNO is integrated into AnthroWorks3D (AW3D), an application for the creation and analysis of 3D-models of human skeletal remains.
+The integration is based on the three-ontology method with the General Formal Ontology as the top level ontology, ANNOdc as the task ontology and ANNOds as the domain ontology.
+Thus, AnthroWorks3D only needs to implement access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are processed dynamically.
+ANNO supports the analysis of skeletal and bone finds in forensic and historical anthropology, facilitating the standardisation of data annotation and ensuring accurate preservation of information for posterity.
 \end{abstract}
 
 \begin{keyword}
@@ -90,23 +95,23 @@ Finally, we describe the integration of the ontology into \aw{}.
 
 \section{Introduction}\label{sec:introduction}
 
-Data from historical, prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, allow for a comprehensive understanding of deceased individuals from different time periods---
-ranging from their identity and health status to aspects of their behaviour, lifestyle, culture and even concerning the circumstances of their death~\citep{spurensuche}.
-For example, anthropological methods can be used to determine an individual's biological profile thus providing key information about their sex, age, height and ancestry and any further individualising traits~\citep{bioprofile}.
+Data from historical and prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, allows for a comprehensive understanding of deceased individuals from different time periods, ranging from their identity and health status to aspects of their behaviour, lifestyle, culture and even concerning the circumstances of their death~\citep{spurensuche}.
+For example, anthropological methods can be used to determine individual properties (phenotypes) such as their sex, age, height and ancestry and further individualising traits.
 
-The science of anthropology benefits from digitalisation in various way as digitisation processes facilitate location-independent and parallel work without the effects of wear and tear on the physical skeletal specimens, the material for investigation.
-Current problems of access can be resolved, as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied.
-The allocation of researchers and research material greatly enhances the quality and extent of interdisciplinary collaborative research.
+Digitalisation offers several advantages to anthropology, including remote work, without the effects of wear and tear on the physical skeletal specimens.
+Current problems of access can be resolved, as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied, which facilitates interdisciplinary collaborative research.
 Moreover it allows for linking data of different study samples across geographical boundaries.
-Data sets consolidated this way and adequately formalised enable the application of efficient data analysing methods such as data mining and textmining techniques that promote deeper insights.
-Representing the anthropological domain through an ontology, such as the Anthropological Notation Ontology (ANNO) presented here, is an appropriate formalisation~\citep{aw3dunpublished}.
+Data sets consolidated this way and formalised through the Anthropological Notation Ontology (ANNO) presented here allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
 
 Apart from contextual information, most informative clues can be found directly on the bone.
-As a result, anthropological work relies on human anatomy, particularly the skeletal system and further tissues of the musculoskeletal system to classify and describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion (Quelle 5).\todo{Heuschkel unveröffentlichte Forschung}
-By transferring the principle of Earth topography, it is possible to create a precise map of the human skeletal and musculoskeletal system's \enquote{terrain} (QUELLE 6).\citep{topo}
-Such a map contains visible anatomical surface structures as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries.
-These are unequivocally located by accurate and exhaustive definitions that in turn allow for their easy retrieval and moreover serve as a basis for the objective examination, for instance in the form of measurements(QUELLE 7).\todo{Heuschkel unveröffentlichte Forschung}
-Therefore the focus of the first research stage in the development of ANNO was therefore on the creation and usage of such a map.
+Anthropologists use human anatomy, specifically the skeletal system and further tissues of the musculoskeletal system, to classify and describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion.
+
+Applying the same principles used for mapping the Earth’s surface \enquote{terrain}, it is possible to create a detailed map of the human body containing visible anatomical surface structures as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}. ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, ensure their easy retrieval and furthermore serve as a basis for the objective examination, for instance in the form of measurements.
+
+
+ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures. In its current version, the ontology  refers to standardised normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors. ANNO is integrated into AnthroWorks3D (AW3D), an application for generating and analysing 3D-models of human skeletal remains. 
+
+
 
 \section{Background}
 There are various nomenclatures for the description of anatomical landmarks.
