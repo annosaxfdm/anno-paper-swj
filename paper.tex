@@ -231,29 +231,30 @@ ANNOds is embedded in ANNOdc.
   \caption{Table Title}
   \begin{tabular}{llll}
     \toprule
-    ANNOdc class                    & Examples                & FMA equivalent / ID                         & GFO superclass    \\
-    \midrule
-    Anatomical entity               & -                       & -                                          & -                 \\
-    Physical anatomical entity      & fma:fma61775            & -                                          & Anatomical structure \\
-    material anatomical entity      & fma:fma67165            & Material object                            & Spatial anatomical entity \\
-    immaterial anatomical entity    & fma:fma67112            & Space entity                               & Anatomical space  \\
-    Space region                    & Anatomical surface      & Median Plane                               & -                 \\
-    Anatomical surface              & Surface region          & Anatomical line                             & Mandibular Angle (ppam dexter-go dexter-piam dexter), Sagittal Axis \\
-    Anatomical line                 & Line region             & Anatomical point                            & Gonion            \\
-    Anatomical point                & Point region            & Anatomical plane                            & Median Plane      \\
-    Anatomical plane                & Anatomical axis         & Sagittal Axis                              & -                 \\
-    Skeleton                        & -                       & Skeleton fma:fma23875                      & Bone structure    \\
-    Bone                            & Mandibula               & Bone organ fma:fma5018                      & -                 \\
-    Bone part                       & -                       & Protuberantia mentalis                     & Related to Segment of bone organ fma:fma281808, Zone of bone organ fma:fma10483 \\
-    Bone compound                   & Cranium                 & Comparable to union of Skeletal system fma:fma23881 and subdivision of skeletal system fma:fma85544 & - \\
-    Tooth structure                 & Dentes Permanentes      & Permanent teeth (fma:fma75152; TA2ID:913)   & Tooth             \\
-    Tooth                           & Dens caninus            & Tooth fma:fma12516                          & -                 \\
-    Tooth part                      & Cuspis dentis           & fma:fma56481; TA2ID:925                     & -                 \\
-    Phenotype                       & Height, Sex             & -                                          & Anatomical Property \\
-    Attributive                     & Anatomical relation, e.g., Has\_shape relation & -                              & Attributive       \\
-    Anatomical qualitative coordinate & Superior, lateral, medial, posterior & Anatomical Property    & Relator           \\
-    \bottomrule
-  \end{tabular}
+	ANNOdc class					&Examples				&FMA equivalent / ID						&GFO superclass	\\
+	\midrule
+	Anatomical entity				&						&Physical anatomical entity fma61775\\
+	Anatomical structure			&						&Material anatomical entity	fma67165		&Material object\\							
+	Spatial anatomical entity		&						&immaterial anatomical entity fma:fma67112	&Space entity\\
+	Anatomical space				&						&											&Space region\\
+	Anatomical surface				&Median Plane			&Anatomical surface fma24137				&Surface region\\
+	Anatomical line					&Mandibular Angle (ppam dexter-go dexter-piam dexter), Sagittal Axis	&Anatomical line fma9657	&Line region\\
+	Anatomical point				&Gonion					&Anatomical point							&Point region\\
+	Anatomical plane				&Median Plane			&Anatomical plane fma242982\\
+	Anatomical axis		 			&Sagittal Axis\\
+	Skeleton						&						&Skeleton fma:fma23875\\
+	Bone structure\\
+	Bone							&Mandibula			&Bone organ fma:fma5018					&-				\\
+	Bone part					&-					&Protuberantia mentalis					&Related to Segment of bone organ fma:fma281808, Zone of bone organ fma:fma10483\\
+	Bone compound				&Cranium				&Comparable to union of Skeletal system fma:fma23881 and subdivision of skeletal system fma:fma85544&-\\
+	Tooth structure				&Dentes Permanentes	&Permanent teeth (fma:fma75152; TA2ID:913)&Tooth			\\
+	Tooth						&Dens caninus			&Tooth fma:fma12516						&-				\\
+	Tooth part					&Cuspis dentis		&fma:fma56481; TA2ID:925					&-				\\
+	Phenotype					&Height, Sex			&-										&Anatomical Property\\
+	Attributive					&Anatomical relation, e.g., Has\_shape relation&-							&Attributive	\\
+	Anatomical qualitative coordinate&Superior, lateral, medial, posterior&Anatomical Property	&Relator		\\
+\bottomrule
+\end{tabular}
 \end{table}
 
 
