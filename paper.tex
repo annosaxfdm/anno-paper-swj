@@ -7,6 +7,7 @@
 \usepackage{cleveref}
 \usepackage{csquotes}
 \usepackage{aurl}
+\usepackage{booktabs}
 %\usepackage{dcolumn}
 
 %%%%%%%%%%% Put your definitions here
@@ -218,12 +219,43 @@ ANNOds is embedded in ANNOdc.
 % TODO: clear validation mechanism
 % TODO: top-level ontology?
 
-\section{Description of ANNOdc}\label{sec:core}
+\section{Description and Foundation of ANNOdc}\label{sec:core}
 % Definition/Beschreibung der Kern-Konzepte/Module und -Relationen mit Beispielen, GFO-Einbettung
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/core.pdf}
 \caption{ANNOdc ontology}\label{fig:core}
 \end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Table Title}
+  \begin{tabular}{llll}
+    \toprule
+    ANNOdc class                    & Examples                & FMA equivalent / ID                         & GFO superclass    \\
+    \midrule
+    Anatomical entity               & -                       & -                                          & -                 \\
+    Physical anatomical entity      & fma:fma61775            & -                                          & Anatomical structure \\
+    material anatomical entity      & fma:fma67165            & Material object                            & Spatial anatomical entity \\
+    immaterial anatomical entity    & fma:fma67112            & Space entity                               & Anatomical space  \\
+    Space region                    & Anatomical surface      & Median Plane                               & -                 \\
+    Anatomical surface              & Surface region          & Anatomical line                             & Mandibular Angle (ppam dexter-go dexter-piam dexter), Sagittal Axis \\
+    Anatomical line                 & Line region             & Anatomical point                            & Gonion            \\
+    Anatomical point                & Point region            & Anatomical plane                            & Median Plane      \\
+    Anatomical plane                & Anatomical axis         & Sagittal Axis                              & -                 \\
+    Skeleton                        & -                       & Skeleton fma:fma23875                      & Bone structure    \\
+    Bone                            & Mandibula               & Bone organ fma:fma5018                      & -                 \\
+    Bone part                       & -                       & Protuberantia mentalis                     & Related to Segment of bone organ fma:fma281808, Zone of bone organ fma:fma10483 \\
+    Bone compound                   & Cranium                 & Comparable to union of Skeletal system fma:fma23881 and subdivision of skeletal system fma:fma85544 & - \\
+    Tooth structure                 & Dentes Permanentes      & Permanent teeth (fma:fma75152; TA2ID:913)   & Tooth             \\
+    Tooth                           & Dens caninus            & Tooth fma:fma12516                          & -                 \\
+    Tooth part                      & Cuspis dentis           & fma:fma56481; TA2ID:925                     & -                 \\
+    Phenotype                       & Height, Sex             & -                                          & Anatomical Property \\
+    Attributive                     & Anatomical relation, e.g., Has\_shape relation & -                              & Attributive       \\
+    Anatomical qualitative coordinate & Superior, lateral, medial, posterior & Anatomical Property    & Relator           \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 
 \begin{figure}[h]
 \includegraphics[width=0.3\textwidth]{img/modules.pdf}
@@ -304,7 +336,7 @@ The anatomical axes are also lines (line regions), while anatomical planes are s
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
-\caption{AnthroWorks3D}\label{fig:aw3d}
+\caption{3D model of a Cranium (skull) inserted into a placeholder skeleton in \aw{} depicting examples of various ANNOdc classes.}\label{fig:aw3d}
 \end{figure}
 
 \begin{figure}[h]
