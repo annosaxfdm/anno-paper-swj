@@ -144,7 +144,7 @@ Wikidata provides unofficial links between the FMA and TA2 which we use to link 
 
 \subsection{Problems and Research Gaps}
 
-There are several issues and research gaps when it comes to naming and defining anatomical concepts and instances that neither current ontologies nor reference literature---general or subject-specific---can address adequately so far.
+There are several issues and research gaps when it comes to naming and defining anatomical concepts and instances that neither current ontologies nor reference literature---general or subject-specific---can address adequately.
 
 The primary issue lies in the absence of standardisation.
 While both the TA and FMA have been proposed as a means of standardising terminology, they haven't garnered sufficient acceptance to facilitate the adoption of a unified and consistent body of work to establish standardisation in actual practice~\citep{frequencyta,doestamatter,athighlights}.
@@ -157,15 +157,15 @@ Moreover, in textual descriptions latin and the native language are commonly use
 For instance, \cite{anatomylexicon} uses the German terms of the bones in the explanation of sutures.
 Meanwhile, the existing terminology is not flexible enough for language-like usage as, for example, there is an inconsistent use of singular and plural forms or gaps in lateralized landmarks.
 
-If not historically evolved, anatomical terms usually correspond to a description of the location, affiliation or function of the respective concept or structure~\citep{reforminganatomical}.
-However, this kind of naming variable, non-intuitive and therefore inconsistent.
+Anatomical terms, unless historically evolved, typically describe the location, affiliation or function of a concept or structure~\citep{reforminganatomical}.
+However, this naming convention is often inconsistent and non-intuitive.
 An example, showing the variability in illustrative descriptions are the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \emph{sella}, the Latin name for saddle.
 It is moreover worth pointing out that not every anatomical structures contributing to an articulation in some way, automatically carry the term articular with them, such as the Caput mandibulae, which connects the Mandibula to the rest of the Cranium.
 The Tuber frontale, which serves as an indicator for sex in anthropology, is listed as an eminentia in the TA~\citep{ta2}.
 Likewise, he Protuberantia mentale is referred to as Eminentia mentale in a widely-used anthropological method that is also used for sex determination.
 As can be seen, the incentive for synonyms is high.
 However, the current resources fail to provide comprehensive lists of synonyms in use.
- This in turn may lead to misattribution, as is the case for example, in the FMA the entry with the \emph{preferred name} \enquote{External acoustic aperture} and \emph{non-English equivalent} \enquote{Porus acusticus externus} (FMA ID: 61301) lists external acoustic meatus (Meatus acusticus externus in Latin) as a synonym.
+This in turn may lead to misattribution, as is the case for example, in the FMA the entry with the \emph{preferred name} \enquote{External acoustic aperture} and \emph{non-English equivalent} \enquote{Porus acusticus externus} (FMA ID: 61301) lists external acoustic meatus (Meatus acusticus externus in Latin) as a synonym.
 However, it is not the same, rather the Porus is---as its English name indicates---the opening to the meatus~\citep{anatomylexicon}.
 %Furthermore, terms oftentimes lack clear affiliation to the bone to which they belong.
 %When considering the whole skeleton, these terms consequently occur multiple times, causing ambiguity.
@@ -173,7 +173,7 @@ Occasionally, there are discrepancies and inconsistencies found in the definitio
 For instance, the position of the Corpus ossis pubis varies across different sources~\citep{anatomylexicon,prometheus,allgemeineanatomie,dualereiheanatomie,anatomiedesmenschen}.
 
 %In addition, the ontologies are only inadequately (TA for the last time in 2013, FMA in 2020) updated and do not undergo continuous synchronisation.%add source for that? 11 and 12 in table but no paper.
-Another main issue is that neither FMA nor TA are tailored to fit the requirements of anthropology or any other specialised field~\citep{fma}.
+Another issue is that neither FMA nor TA are tailored to fit the requirements of anthropology or any other specialised field~\citep{fma}.
 For example, articular surfaces of the individual bones are relevant anthropologically, yet not all articular surfaces (e.g. on the Ossa carpi or Ossa metatarsi) are defined in the TA or FMA, resulting in further gaps.
 A similar situation exists with respect to osteometric measurements.
 Established and to some extent standardised osteometric measurement points are only found on the cranium and mandible~\citep{wesenanthropologie}.
@@ -183,16 +183,16 @@ Moreover, different disciplines require a different level of detail, which is wh
 which to the greater part are not found in the FMA or the TA that primarily aim for the standardisation of general (clinical) anatomy~\citep{fma}.
 A work of dental anthropology even split the aforementioned Tuberculum articulare (Articular tubercle) in two structures, naming the other \enquote{articular eminence}~\citep{dentalanthropology}.
 %Often exchange between these specific fields and general anatomy hardly takes place.
-It stands to reason that interdisciplinary coordination between the individual disciplines and general anatomy hardly takes place.
+However, there is limited interdisciplinary coordination between the individual disciplines and general anatomy.
 
-Furthermore, visual representation of anatomical structures is frequently missing or insufficient in anatomical resources.
-The labelling is often selective, varies by source and is mostly limited to arrows as a means for local designation.
+Furthermore, anatomical resources often lack adequate visual representation of anatomical structures.
+The labelling is often selective, varies by source and mostly relies on arrows for local designation.
 However, since they are multi-dimensional structures, it is essential to provide a marker over the entire landmark and delineate it accurately.
 The latter also requires a clear textual definition.
- However, there are currently no equivalent standardised definitions for skeletal anatomy, meanwhile anatomical resources only provide sparse information on the topic.
+Unfortunately, there are currently no equivalent standardised definitions for skeletal anatomy, meanwhile anatomical resources only provide sparse information on this topic.
 
-For these reasons, it is necessary to develop unified, textual, visual, and detailed descriptive definitions for anatomical concepts and instances.
-Additionally, these should be presented in a clear way within an ontology that is easy to understand by the user.
+To adress these issues, it is necessary to develop unified, textual, visual, and detailed descriptive definitions for anatomical concepts and instances.
+These definitions should be presented within an easily understandable ontology.
 
 %\url{https://bioportal.bioontology.org/ontologies/FMA}
 
@@ -221,6 +221,10 @@ ANNOds is embedded in ANNOdc.
 % TODO: top-level ontology?
 
 \section{Description and Foundation of ANNOdc}\label{sec:core}
+The core ontology development occurs in close collaboration between ontologists and anthropologists.
+The objective is twofold: to adequately represent the most basic anatomical and anthropological entities and to keep the ontology relatively simple and compact.
+This approach ensures that domain experts can easily handle the ontology and efficiently integrate it into the \aw{} software.
+
 % Definition/Beschreibung der Kern-Konzepte/Module und -Relationen mit Beispielen, GFO-Einbettung
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/core.pdf}
@@ -259,87 +263,23 @@ ANNOds is embedded in ANNOdc.
 \end{tabulary}
 \end{table}
 
-
-\begin{figure}[h]
-\includegraphics[width=0.3\textwidth]{img/modules.pdf}
-\caption{The six modules of ANNO}\label{fig:modules}
-\end{figure}
-\todo{Brauchen wir \cref{fig:modules} noch oder ist sie durch \cref{fig:core} nicht mehr nötig?}
-
-The ontology consists of the following core modules, see \cref{fig:modules}:
-%For the categories, there were the following spreadsheets: bones, anatomical landmarks, osteometric landmarks, measured distances, function (separately for discriminant and regress functions), anatomical position descriptions, sources used, and osteological terminology.
-\subsection{Anatomical Structures}\label{sec:bone}
-
-In ANNO, we consider bone structures and teeth as anatomical structures relevant to the anthropology domain.
-Bone structures are divided into single bones and bone compounds consisting of further bones (has\_part).
-Teeth are located on bone structures (on\_bone).
-
-\subsection{Landmarks}\label{sec:landmark}
-All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
-
-
-\paragraph{Anatomical Landmarks}
-Anatomical landmarks are defined either on a bone or an anatomical compound structure.
-Landmarks have properties such as shape and phenotypes are derived from those properties.
-
-\paragraph{Osteometric Landmarks}
-
-\subsection{Landmark Properties}
-
-\subsection{Relative Landmark Positions}
-
-A relative position of a landmark regarding a reference object can be described using the ANNO.
-For this, the corresponding landmark (the subject), a reference object
-(anatomical structure, anatomical axis, anatomical plane or another landmark) and, if required, an anatomical direction
-(in relation to the reference object) must be specified. If the direction was not specified, the landmark is located on the reference object.
-
-\subsection{Landmark Line Regions and Measurements}
-Landmark line regions are lines connecting or outlining landmarks (e.g., an edge between two landmarks, an angle between three landmarks
-or an outline of one or more landmarks). A landmark line region can start on one landmark and end on another,
-passing through or bordering multiple landmarks.
-The landmark line regions can be measured (e.g., the length of the edge or outline and the angle degree).
-Such measurements can be used to derive/determine individual phenotypes.
-
-Measurements consist of references to sections, the start point, midpoint, end point, and short definitions.
-
-\todo{Umschreiben von Modulen auf ANNOdc}
-\subsection{Phenotypes and Functions}
-Functions are categorized into sex determination and regress functions for body height estimation.
-RDF is not optimized for mathematical formulas so we model those as literals.
-
-\paragraph{Sex determination}
-% auto translated from the project report, use as basis:
-The sex of a specific individual within a population may be estimated using a function on skelettal measurements that is specific to this population.
-Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
-
-\paragraph{Regress functions}
-Regress functions for body height and body weight estimation.
-The goal here was to cover functions for at least one European, African, American, and Asian ethnic group or population.
-Names were assigned by the number included in each study, the authors, and the year of publication.
-In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
-In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
-
-
-\subsection{Foundation of ANNO with GFO}
-
-Anatomical structures and landmarks (as parts of anatomical structures) are material objects in the sense of the GFO because they consist of matter, have a mass and occupy space~\citep{gfospace}.
-The landmark properties (such as shape) are interpreted as attributives (or qualities) in GFO~\citep{gfoarchitecture}.
-These are dependent individuals that characterise other individuals (in our case, the landmarks).
-The phenotype notion has already been analysed in detail within the framework of the Core Ontology of Phenotypes and defined as an individual property of an organism (such as sex or body height)~\citep{ontologicalrepresentation}.
-The phenotypes are therefore also attributives in the GFO sense.
-The relative position (location) of a landmark with respect to another entity is represented by GFO relators.
-Relators are instances of relations, are composed of roles and link other entities together~\citep{gfocategory}.
-The landmark location relator consists of three roles: subject (the landmark whose position should be described), the reference object (anatomical structure, landmark, axis or plane) and the direction (e.g., cranial or lateral).
-In this way, the relative position of landmark A to landmark B (A lies lateral from B) can be described \todo{hier ein echtes Beispiel}.
-We call the lines connecting landmarks in space (e.g., an edge between two landmarks or an angle between three landmarks) as well as spatial boundaries of
-landmarks---landmark line regions---and associate them with line regions (one-dimensional space entities) in GFO~\citep{gfospace}.
-The landmark line regions can be measured (i.e., the length of the edge or boundary and the angle degree).
-Such measurements as well as the landmark properties (e.g., shape) can be used to derive/determine individual phenotypes.
-The anatomical axes are also lines (line regions), while anatomical planes are surfaces (surface regions) in GFO (two-dimensional space entities).
-
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
-\caption{3D model of a Cranium (skull) inserted into a placeholder skeleton in \aw{} depicting examples of various ANNOdc classes.}\label{fig:aw3d}
+%\caption{3D model of a Cranium (skull) inserted into a placeholder skeleton in \aw{} depicting examples of various ANNOdc classes.}
+\caption{
+Collage of different views in \aw{} of a 3D model of a \emph{cranium} (skull) inserted into a placeholder skeleton (source:~\cite{aw3dcidoc}).
+The cranium is a bone compound consisting of 29 bone elements.
+One of them, the \emph{mandibula} (mandible), is flexibly connected to the rest of the skull by the mandibular joint.
+In the top right, various bone parts on the Mandibula are visually emphasised, with part 14 representing the angulus mandibulae (mandibular angle).
+In the top left, the \emph{dens caninus maxillaris dexter} (right maxillary secondary canine tooth), a tooth structure, is highlighted within a circle.
+The tooth cusp is a part of the tooth.
+It refers to the projection that divides the occlusal surface of most of the teeth, with the exception of the incisors.
+At the bottom right, anatomical points (osteometric landmarks) of the right lateral side of the \emph{mandibula} are depicted.
+The \emph{gonion dextrum} (right gonion; \emph{gonion dextrum}, abbreviated as \emph{go dextrum}, depicted alternative spelling of dextrum: dexterum) forms part of an anatomical line measuring the \emph{angulus mandibulae},
+as shown in the bottom left.
+Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Anthropology and Human Ecology, University of Göttingen.
+}
+\label{fig:aw3d}
 \end{figure}
 
 \begin{figure}[h]
@@ -354,136 +294,12 @@ The anatomical axes are also lines (line regions), while anatomical planes are s
 \caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
 \end{figure}
 
-The domain experts are provided a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}.
-The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
-\todo{können wir es auf OWL 2 DL eingrenzen?}
-
-% ist das richtig übersetzt?
-Sources are categorized into core, root, and occurrence sources.\todo{explain}
-
-% Aus dem Projektbericht übersetzt
-\subsection{Selection criteria}
-Initially, selection criteria were made for the development of the ontology.
-All bones were to be integrated.
-For the individual anatomical landmarks, it was necessary to take all those that occur in the TA with the exception of anatomical variants.
-However, for the cranium, the selection was reduced because the number of all ossa cranii is too high.
-Overall, however, it should include those that are of anthropological relevance, i.e., contribute to navigation, localization, and identification on the bone.
-Those landmarks included in the definitions of others were also to be defined.
-For bones that lie on the median (e.g., mandible or sternum), bilateral landmarks were defined with side reference in each case.
-For osteometric landmarks, all those already established in the core literature were to be taken.
-Furthermore, those were to be taken that are relevant for meaningful measurement distances and can be annotated in \aw{}.
-For measurement distances, those that are established in the bulk of the literature and core literature as well as necessary for discriminant functions and functions for body height and body weight estimation should be selected.
-In addition, it also had to be integrable into \aw{}.
-For the functions, those with diagnostic value were taken.
-These were discriminant functions for sex determination and regression functions for body height and body weight estimation.
-
-\subsection{Process for creating definitions and measurements}
-For the definitions and measurement, a minimum amount of English-language and mostly German-language literature was compared in order to develop the definitions from their information.
-Notably, Latin or ancient Greek terms were missing from the English-language literature.
-The FMA also contains only English terms.
-For this reason, these were also searched out with their synonyms.
-Overall, the name of the landmark or survey route had to be noted in English, German, and Latin in singular and plural form, its synonyms in the three languages, the FMA and TA ID, and any information on function and delineation.
-Where there were contradictions in the literature, the information was highlighted, reconciled, and logically checked.
-For the osteometric landmarks, the abbreviations and their synonyms of the three languages were also provided.
-Furthermore, for these as well as for the measured sections, the sources were divided into parent source, core source and occurrence source.
-The parent source designates the original source of the landmark.
-Under the core source, those were listed where the landmarks are listed and sampled by default.
-Occurrence source represents the sources where the landmark occurs for measurements.
-For redefinitions of landmarks, a meaningful Latin name had to be selected.
-Requirements for this were an included position description (e.g. Punctum superioris capitis femoris as superior located point of the Caput femoris) necessary.
-For this, the examination of the Latin grammar was relevant.
-For the measurement sections, the type of measurement (e.g., distance measurement) and the measurement instrument were taken in addition to the name of the measurement section.
-The subsequently created visual definitions were made in the different anatomical views and represented area markings for the anatomical landmarks and point markings for the osteometric ones.
-\subsection{Functions}
-The functions were divided into discriminant functions for sex determination and regress functions for body height and body weight estimation.
-The goal here was to cover functions for at least one European, African, American, and Asian ethnicity or population.
-Names were assigned by the number included in each study, the authors, and the year of publication.
-In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
-In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
-
-While there are many textual sources of anthropological systematization, they do not agree in all aspects and there is not a single, formally described, standard.
-ANNO links to concepts of the FMA when they exist, but structures them in a different way.
 
 \section{Use Case: Integration into \aw{}}\label{sec:aw}
-% this is based on project report but has to be rewritten: less about AW3d and more about the usage of ANNO by it
-ANNO is used by \aw{}~\citep{aw3d}.
-By combining user-friendly techniques of photogrammetry, insights from user experience research and knowledge from game development, a digital twin is created, which can subsequently be examined virtually.
-This enables location-independent and parallel work without wear and tear on the bone.
-The examination can be performed as often as desired, even if the skeletal individuals or collections are not available at the institute or have already been reburied.
-It also draws its advantage when space is limited.
-Thus, it requires only three SLR cameras, sufficient exposure and a computer.
-The examination proceeds as follows: After photogrammetry is done and the 3D model is created, the objects are imported into the software and calibrated.
-For calibration, there is an individual placeholder for each bone, which must first be selected.
-Then the calibrated digital twin is placed in a placeholder skeleton.
-Annotations can be made in the detailed view of each bone.
-Point, line and area markings are available for selection.
-Furthermore, it is possible to make measurements.
-You can choose between distance, angle and circumference measurements.
-After marking or measurement, an identification number is assigned to each one.
-There is also a documentation about the time of the annotation as well as the name of the editor.
-The marking or measurement can be classified according to certain categories (e.g. anatomical variation).
-In addition, annotations are possible in a text field.
-The annotations can be edited at any time afterwards, and the date of editing is recorded together with the author.
-The annotations are subsequently displayed in different colors, so that overlaps can be kept apart.
-A special feature of the software is the automation of measurements.
-The program automatically sets pins for osteometric landmarks in a template view.
-The person using the program can move these as desired.
-The pins displayed have different color shades.
-These differ depending on the relevance.
-If the osteometric landmark is present in many measurement sections, its relevance increases and the pin appears darker.
-After the pins have been roughly set, they can be refined using various views.
-In the views, the individual osteometric landmarks are visible from different views, so that a fine adjustment can be made.
-This is followed by the automatic measurement.
-The individual values for each measurement section can be downloaded as a CSV file.
-In addition, it is now possible to perform sex determinations using discriminant functions.
-For this purpose, the required measurement sections can be selected.
-The results are only visible in one display.
-The automation allows a time saving, whereby more bones or skeletons can be examined in a shorter time.
-Advantages over the previous approach are:
-
-\begin{itemize}
-\item ontology-oriented generation of placeholders/containers for objects to be imported
-\item variable properties for different bone elements and bone types
-\item hierarchy for orientation within an examination project according to the ontology tree
-\item categorization of measurements and markers according to specifications from the ontology
-\item generation of input forms based on the specified properties and bone types
-\item automatic generation of measurements
-\end{itemize}
 
 %\subsection{}\label{s1.1}
 ~\citep{rickview}
 \section{Conclusion and Future Work}
-% Conclusion
-
-% Basiert auf dem Fazit aus dem Projektbericht
-ANNO introduces uniform definitions for the anatomical landmarks of the human skeletal system as well as osteometric landmarks, measurement distances and functions.
-basis for anthropological work
-The ontology is interlinked with ... and includes sources for all external definitions.
-The ontology is used in \aw{} in place of an old, hard-coded format, which saves development time, separates annotation file compatibility from software versions, eases annotation through hierarchical browsing and increases interoperability.
-% following two sentences are machine translated, improve and rewrite
-It provides a basis for future training of ontologists, knowledge managers, further research activities and specialization opportunities in this field.
-Furthermore, there is interest of the results in forensic, historical and prehistoric anthropology, pathology and medicine as well as in the field of computer science and especially medical informatics.
-%Moreover, the ontology can be extended.
-
-ANNO is published on \url{https://ols.imise.uni-leipzig.de} as well as \url{https://annosaxfdm.de/ontology/}.
-TODO: Bereitstellung der Ontologie für die Community (OLS etc.).
-
-% Future Work
-can be extended with osteological terms of description
-Arten von Erhebungen, Öffnungen, ...
-anthropologische ebene draufmodellieren zb form
-an anthropological landmark can have different anthropological properties
-
-04-06 notizen
-anschlussprojekte erweiterung
-selbst wenn man nur einen einzelnen knöchel beschreibt wird dieser zuerst in das gesamte skelett
-in der ebene zb lateral positioniert
-könnte relation bestehen zwischen knochen
-4 referenzpunkttypen
-eine landmarke kann auf einer ebene liegen aber nicht auf einer achse, da sie keine ausdehnung hat
-zb median sagital achse
-Richtung vom reference point aus
-location is eigenschaft der landmarke
 
 %\begin{figure}[t]
 %\includegraphics{}
