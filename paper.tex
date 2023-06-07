@@ -14,6 +14,7 @@
 %%%%%%%%%%% Put your definitions here
 \newcommand{\aw}{AnthroWorks3D}
 \daurl{anno}{https://annosaxfdm.de/ontology/}
+\daurl{gfo}{https://inserthere.com/ontology/}
 
 %%%%%%%%%%% End of definitions
 
@@ -63,7 +64,7 @@ Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e4,e5,e6,e7,e8,e9,e10}}
 %\begin{review}{editor}
 %\reviewer{\fnms{First} \snm{Editor}\address{\orgname{University or Company name}, \cny{Country}}}
 %\reviewer{\fnms{Second} \snm{Editor}\address{\orgname{First University or Company name}, \cny{Country}
-%  and \orgname{Second University or Company name}, \cny{Country}}}
+% and \orgname{Second University or Company name}, \cny{Country}}}
 %\end{review}
 %\begin{review}{solicited}
 %\reviewer{\fnms{First} \snm{Solicited reviewer}\address{\orgname{University or Company name}, \cny{Country}}}
@@ -77,7 +78,7 @@ Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e4,e5,e6,e7,e8,e9,e10}}
 The Anthropological Notation Ontology (ANNO) allows the systematic, standardised classification of recovered bone finds into the skeletal system, the description of the skeletal pieces, and the definition of functions for the derivation of different phenotypes of humans in forensic and historical anthropology.
 ANNO consists of two components:
 ANNOdc, a domain-core ontology providing core entities such as basic anatomical categories, and ANNOds, a domain-specific ontology used for annotating structures of the human skeleton.
-ANNO is integrated into AnthroWorks3D (AW3D), an application for the creation and analysis of 3D-models of human skeletal remains.
+ANNO is integrated into AnthroWorks3D, an application for the creation and analysis of 3D-models of human skeletal remains.
 The integration is based on the three-ontology method with the General Formal Ontology as the top level ontology, ANNOdc as the task ontology and ANNOds as the domain ontology.
 Thus, AnthroWorks3D only needs to implement access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are processed dynamically.
 ANNO supports the analysis of skeletal and bone finds in forensic and historical anthropology, facilitating the standardisation of data annotation and ensuring accurate preservation of information for posterity.
@@ -98,8 +99,9 @@ ANNO supports the analysis of skeletal and bone finds in forensic and historical
 
 \section{Introduction}\label{sec:introduction}
 
-Data from historical and prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, allows for a comprehensive understanding of deceased individuals from different time periods, ranging from their identity and health status to aspects of their behaviour, lifestyle, culture and even concerning the circumstances of their death~\citep{spurensuche}.
-For example, anthropological methods can be used to determine individual properties (phenotypes) such as their sex, age, height and ancestry and further individualising traits.
+Data from historical and prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, provides a comprehensive understanding of deceased individuals from different time periods.
+This understanding encompasses their identity, health status, aspects of their behaviour, lifestyle, culture and even the circumstances of their death~\citep{spurensuche}.
+For example, anthropological methods can be used to determine individual properties (phenotypes) such as their sex, age, height and ancestry and other individualising traits.
 
 Digitalisation offers several advantages to anthropology, including remote work, without the effects of wear and tear on the physical skeletal specimens.
 Current problems of access can be resolved, as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied, which facilitates interdisciplinary collaborative research.
@@ -109,10 +111,11 @@ Data sets consolidated this way and formalised through the Anthropological Notat
 Apart from contextual information, most informative clues can be found directly on the bone.
 Anthropologists use human anatomy, specifically the skeletal system and further tissues of the musculoskeletal system, to classify and describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion.
 
-Applying the same principles used for mapping the Earth’s surface \enquote{terrain}, it is possible to create a detailed map of the human body containing visible anatomical surface structures as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}. ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, ensure their easy retrieval and furthermore serve as a basis for the objective examination, for instance in the form of measurements.
+By applying the same principles used for mapping the Earth’s surface \enquote{terrain}, a detailed map of the human body can be created.
+This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
+ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
 
-
-ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures. In its current version, the ontology  refers to standardised normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors. ANNO is integrated into AnthroWorks3D (AW3D), an application for generating and analysing 3D-models of human skeletal remains. 
+ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures. In its current version, the ontology refers to standardised normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors. ANNO is integrated into AnthroWorks3D (AW3D), an application for generating and analysing 3D-models of human skeletal remains.
 
 
 \section{Related Work}
@@ -137,10 +140,9 @@ The \emph{Foundational Model of Anatomy} (FMA)~\citep{fma} ontology represents t
 It allows the knowledge it contains to be represented in a way that is humanly comprehensible and machine-interpretable.
 The FMA uses the Basic Formal Ontology (BFO) as its top level ontology.
 Corresponding to its relational nature, new higher level concepts are introduced and used for reorganising the actual anatomical structures diverging from the TA’s hierarchical structure.
-Thus, in 90\,\% of the cases this lead to new creations of anatomical concepts~\citep{anatomicalterms} whereas only 1\,\% contain textual definitions~\citep{uberon}.
+Thus, in 90\,\% of the cases this leads to new creations of anatomical concepts~\citep{anatomicalterms} whereas only 1\,\% contain textual definitions~\citep{uberon}.
 
-We manually created links to FMA.
-Wikidata provides unofficial links between the FMA and TA2 which we use to link to TA2.
+We create manual links between ANNO and the FMA, which we use to connect ANNO with the TA2 by using unofficial links between FMA and TA2 provided by Wikidata.
 
 \subsection{Problems and Research Gaps}
 
@@ -262,6 +264,68 @@ This approach ensures that domain experts can easily handle the ontology and eff
 \bottomrule
 \end{tabulary}
 \end{table}
+
+\subsection{Anatomical entity}
+\newcommand{\anno}[1]{#1}%until merge
+An anatomical entity is either an anatomical (material) structure or a spatial anatomical entity, such as \anno{Cranium} or \anno{FrontalPlane}.
+
+\subsection{Anatomical structure}
+An anatomical structure refers to any anatomical division or material anatomical entity.
+ANNO describes three kinds of anatomical structures: tooth structures (teeth and teeth parts), bone structures (single bones, bone parts and bone compounds), as well as the complete skeleton.
+The GFO defines a material object \aurl{gfo}{MaterialObject} as a solid concrete entity that belongs to the material region of the world, has mass, consists of matter and occupies space~\citep{gfospace}.
+Accordingly, we define anno:AnatomicalStructure as a gfo:MaterialObject in the anthropological context.
+The closest equivalent in the FMA is the \emph{Material anatomical entity} http://purl.org/sig/ont/fma/fma67165, the subclass of \emph{Physical anatomical entity} fma:fma61775 that has mass.
+
+\subsection{Skeleton}
+The largest or most comprehensive skeletal anatomical structure, the human skeleton, is the framework composed of all the bones and teeth of a human being.
+The TA~\citep{ta2} equates the skeleton with the \enquote{Systema skeletale (skeletal system)}, which refers to the passive part of the musculoskeletal system, including the articulated bony skeleton with teeth, as well as cartilage, ligaments, and other joints.
+ANNO does not adopt this equivalence, and \enquote{Skeleton } here refers to the entirety of a human’s bones and teeth.
+However, since teeth constitute their own tissue, they are treated separately, allowing all other components of the skeletal system, such as cartilage or ligaments (as tissues) or joints (e.g. as specific aspects), to be integrated and referenced separately in ANNO.
+The anthropologically meaningful distinction between \enquote{Skeleton} and \enquote{Systema skeletale} can be maintained, while still referencing both within the TA concept.
+
+\subsection{Tooth structure}
+Tooth structures comprise teeth and their parts.
+A human tooth is an individual unit of the human dentition (synonymous for the teeth as a whole).
+Teeth are part of the skeleton, yet they are characterised by their own distinctive tissue and thus treated separately from bones.
+Teeth, such as the Dens caninus (canine tooth) are located on bone structures.
+The FMA has the equivalent class \enquote{Tooth} fma:fma12516.
+A tooth part is any portion of a tooth.
+They are not included in the initial scope of the ontology, but they are one of the aspects by which it can be expanded.
+
+\subsection{Bone structure}
+Bone structures comprise all possible parts of the human skeleton, which are individual bones, bone parts, bone compounds as well as the complete skeleton excluding the teeth.
+The FMA does not have a common superclass for those parts but instead mounts them in different parts of its hierarchy.
+
+A bone or bone element is a single self-contained bony skeletal entity.
+Bones, such as Mandibula (Mandible) and Os occipitale (Occipital Bone) are individual bone organs.
+FMA does have a \enquote{Bone} class (fma:30317) but that only has a single subclass \enquote{Skull bone} (fma:30317).
+Instead, \enquote{Bone organ} (fma:5018) is the equivalent class.
+
+A bone compound is a section of the skeleton combining multiple bones or bone parts together, depending on the classification system chosen.
+This allows for the representation of any partonomy that need not necessarily be compatible with one another.
+Bone compounds, such as the Cranium (skull bone) consist of further bone compounds, individual bones (which in turn consist of bone parts) and bone parts.
+The FMA does not have a single equivalent class, but it is similar to the union of \enquote{Skeletal system} (fma:fma23881) and \enquote{Subdivision of skeletal system} (fma:fma85544).
+On the skeletal level, bone parts comprise any piece or portion of a bone.
+An anatomical landmark is any distinct structure on a bone.
+In ANNO, it is also referred to as a bone part.
+
+
+\subsection{Spatial anatomical entity}
+An anatomical entity without mass is classified as a spatial anatomical entity, which is either an anatomical space (three-dimensional), an anatomical surface (two-dimensional), an anatomical line (one-dimensional) or an anatomical point (zero-dimensional).
+It is equivalent to the FMA \enquote{Immaterial anatomical entity} (fma:fma67112).
+
+An anatomical space is a space region (three-dimensional) occupied by an anatomical structure.
+An anatomical surface is a boundary (two-dimensional) of an anatomical space.
+
+An anatomical point (or osteometric landmark) is any immaterial, conceptual point that marks a location on a bone, either to create measurements (anatomical lines) or locate other anatomical points, e.g. by aligning the bone in specific planes for a measurement.
+The former serve as measurement points, the latter - relevant to the measurement procedure as orientation points.
+An anatomical point is thus a boundary (zero-dimensional) of an anatomical line.
+
+An anatomical line is a conceptual, immaterial line on a bone passing between at least two measurement points that, in the form of distances, circumferences or angles is used to collect measurements representing aspects of abone’s dimensions.
+An anatomical line is a boundary (one-dimensional) of an anatomical surface.
+Anatomical lines can connect or pass through anatomical entities (e.g., an edge between two or an angle between three anatomical entities).
+The length of the line or the angle degree can be measured and used in functions to infer individual phenotypes [Verweis zu Phenotype section].
+
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
