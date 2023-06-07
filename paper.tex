@@ -11,12 +11,13 @@
 \usepackage{tabulary}
 %\usepackage{dcolumn}
 
-%%%%%%%%%%% Put your definitions here
 \newcommand{\aw}{AnthroWorks3D}
+\newcommand{\anno}[1]{\href{https://annosaxfdm.de/ontology/#1}{\texttt{#1}}}
+\newcommand{\gfo}[1]{\href{https://annosaxfdm.de/ontology/#1}{\texttt{#1}}}
+\newcommand{\fma}[1]{\href{http://purl.org/sig/ont/fma/fma#1}{\texttt{#1}}}
 \daurl{anno}{https://annosaxfdm.de/ontology/}
-\daurl{gfo}{https://inserthere.com/ontology/}
-
-%%%%%%%%%%% End of definitions
+\daurl{gfo}{https://annosaxfdm.de/ontology/}%todo: insert gfo prefix
+\daurl{fma}{http://purl.org/sig/ont/fma/fma}
 
 \pubyear{2023}
 \volume{0}
@@ -240,33 +241,32 @@ This approach ensures that domain experts can easily handle the ontology and eff
     \toprule
 	ANNOdc class					&Examples				&FMA equivalent / ID						&GFO superclass	\\
 	\midrule
-	Anatomical entity			&						&Physical anatomical entity fma61775\\
-	Anatomical structure		&						&Material anatomical entity	fma67165		&Material object\\							
-	Spatial anatomical entity	&						&immaterial anatomical entity fma:fma67112	&Space entity\\
-	Anatomical space			&						&											&Space region\\
-	Anatomical surface			&Median Plane			&Anatomical surface fma24137				&Surface region\\
-	Anatomical line				&Mandibular Angle (ppam dexter-go dexter-piam dexter), Sagittal Axis&Anatomical line fma9657	&Line region\\
-	Anatomical point			&Gonion					&Anatomical point							&Point region\\
-	Anatomical plane			&Median Plane			&Anatomical plane fma242982\\
-	Anatomical axis		 		&Sagittal Axis\\
-	Skeleton					&						&Skeleton fma:fma23875\\
-	Bone structure\\
-	Bone						&Mandibula				&Bone organ fma:fma5018\\
+	\anno{AnatomicalEntity}			&						&Physical anatomical entity \fma{61775}\\
+	\anno{AnatomicalStructure}		&						&Material anatomical entity	\fma{67165}		&\gfo{MaterialObject}\\							
+	\anno{SpatialAnatomical entity}	&						&immaterial anatomical entity fma:\fma{67112}	&\gfo{SpaceEntity}\\
+	\anno{AnatomicalSpace}			&						&											&\gfo{SpaceRegion}\\
+	\anno{AnatomicalSurface}			&Median Plane			&Anatomical surface \fma{24137}			&\gfo{SurfaceRegion}\\
+	\anno{AnatomicalLine}				&Mandibular Angle (ppam dexter-go dexter-piam dexter), Sagittal Axis&Anatomical line \fma{9657}	&\gfo{LineRegion}\\
+	\anno{AnatomicalPoint}			&Gonion					&Anatomical point \fma{9658}							&\gfo{PointRegion}\\
+	\anno{AnatomicalPlane}			&Median Plane			&Anatomical plane \fma{242982}\\
+	\anno{AnatomicalAxis}		 		&Sagittal Axis\\
+	\anno{Skeleton}					&						&Osseous skeleton \fma{23875}\\
+	\anno{BoneStructure}\\
+	\anno{Bone}						&Mandibula				&Bone organ \fma{5018}\\
 	
-	Bone part					&Protuberantia mentalis	&Related to Segment of bone organ fma:fma281808, Zone of bone organ fma:fma10483\\
-	Bone compound				&Cranium				&Comparable to union of Skeletal system fma:fma23881 and subdivision of skeletal system fma:fma85544\\
-	Tooth structure				&Dentes Permanentes		&Permanent teeth (fma:fma75152; TA2ID:913)\\
-	Tooth						&Dens caninus			&Tooth fma:fma12516\\
-	Tooth part					&Cuspis dentis			&fma:fma56481; TA2ID:925\\
-	Phenotype					&Height, Sex			&											&Attributive\\							
-	Anatomical Property			&Shape (Degree of morphological expression)	&Anatomical relation, e.g., Has\_shape relation	&Attributive\\
-	Relative anatomical location&superior, lateral, medial, posterior	&Anatomical qualitative coordinate	&Relator\\
+	\anno{BonePart}					&Protuberantia mentalis	&Related to Segment of bone organ \fma{281808}, Zone of bone organ \fma{10483}\\
+	\anno{BoneCompound}				&Cranium				&Comparable to union of Skeletal system \fma{23881} and subdivision of skeletal system \fma{85544}\\
+	\anno{ToothStructure}				&Dentes Permanentes		&Permanent teeth (\fma{75152}\\%; TA2ID:913)\\
+	\anno{Tooth}						&Dens caninus			&Tooth \fma{12516}\\
+	\anno{ToothPart}					&Cuspis dentis			\\%\fma{56481}; TA2ID:925\\
+	\anno{Phenotype}					&Height, Sex			&											&\gfo{Attributive}\\							
+	\anno{AnatomicalProperty}			&Shape (Degree of morphological expression)	&Anatomical relation, e.g., Has\_shape relation	&\gfo{Attributive}\\
+	\anno{RelativeAnatomicalLocation}&superior, lateral, medial, posterior	&Anatomical qualitative coordinate	&\gfo{Relator}\\
 \bottomrule
 \end{tabulary}
 \end{table}
 
 \subsection{Anatomical entity}
-\newcommand{\anno}[1]{#1}%until merge
 An anatomical entity is either an anatomical (material) structure or a spatial anatomical entity, such as \anno{Cranium} or \anno{FrontalPlane}.
 
 \subsection{Anatomical structure}
