@@ -18,6 +18,7 @@
 \daurl{anno}{https://annosaxfdm.de/ontology/}
 \daurl{gfo}{https://annosaxfdm.de/ontology/}%todo: insert gfo prefix
 \daurl{fma}{http://purl.org/sig/ont/fma/fma}
+\daurl{ta2}{https://ta2viewer.openanatomy.org/?id=}
 
 \pubyear{2023}
 \volume{0}
@@ -116,7 +117,8 @@ By applying the same principles used for mapping the Earth’s surface \enquote{
 This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
 ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
 
-ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures. In its current version, the ontology refers to standardised normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors. ANNO is integrated into AnthroWorks3D (AW3D), an application for generating and analysing 3D-models of human skeletal remains.
+ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures. In its current version, the ontology refers to standardised normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors.
+ANNO is integrated into AnthroWorks3D (AW3D), an application for generating and analysing 3D-models of human skeletal remains.
 
 
 \section{Related Work}
@@ -163,12 +165,12 @@ Meanwhile, the existing terminology is not flexible enough for language-like usa
 Anatomical terms, unless historically evolved, typically describe the location, affiliation or function of a concept or structure~\citep{reforminganatomical}.
 However, this naming convention is often inconsistent and non-intuitive.
 An example, showing the variability in illustrative descriptions are the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \emph{sella}, the Latin name for saddle.
-It is moreover worth pointing out that not every anatomical structures contributing to an articulation in some way, automatically carry the term articular with them, such as the Caput mandibulae, which connects the Mandibula to the rest of the Cranium.
+It is moreover worth pointing out that not every anatomical structure that contributes to an articulation in some way automatically carries the term articular with it, such as the \emph{caput mandibulae}, which connects the Mandibula to the rest of the Cranium.
 The Tuber frontale, which serves as an indicator for sex in anthropology, is listed as an eminentia in the TA~\citep{ta2}.
 Likewise, he Protuberantia mentale is referred to as Eminentia mentale in a widely-used anthropological method that is also used for sex determination.
 As can be seen, the incentive for synonyms is high.
 However, the current resources fail to provide comprehensive lists of synonyms in use.
-This in turn may lead to misattribution, as is the case for example, in the FMA the entry with the \emph{preferred name} \enquote{External acoustic aperture} and \emph{non-English equivalent} \enquote{Porus acusticus externus} (FMA ID: 61301) lists external acoustic meatus (Meatus acusticus externus in Latin) as a synonym.
+This in turn may lead to misattribution, as is the case for example, in the FMA the entry with the \emph{preferred name} \enquote{External acoustic aperture} and \emph{non-English equivalent} \enquote{Porus acusticus externus} (\aurl{fma}{61301}) lists external acoustic meatus (Meatus acusticus externus in Latin) as a synonym.
 However, it is not the same, rather the Porus is---as its English name indicates---the opening to the meatus~\citep{anatomylexicon}.
 %Furthermore, terms oftentimes lack clear affiliation to the bone to which they belong.
 %When considering the whole skeleton, these terms consequently occur multiple times, causing ambiguity.
@@ -234,7 +236,7 @@ This approach ensures that domain experts can easily handle the ontology and eff
 \caption{ANNOdc ontology}\label{fig:core}
 \end{figure}
 
-\begin{table}[htbp]
+\begin{table}
   \centering
   \caption{Table Title}
   \begin{tabulary}{\textwidth}{lLLl}
@@ -243,7 +245,7 @@ This approach ensures that domain experts can easily handle the ontology and eff
 	\midrule
 	\anno{AnatomicalEntity}			&						&Physical anatomical entity \fma{61775}\\
 	\anno{AnatomicalStructure}		&						&Material anatomical entity	\fma{67165}		&\gfo{MaterialObject}\\							
-	\anno{SpatialAnatomical entity}	&						&immaterial anatomical entity fma:\fma{67112}	&\gfo{SpaceEntity}\\
+	\anno{SpatialAnatomical entity}	&						&immaterial anatomical entity \fma{67112}	&\gfo{SpaceEntity}\\
 	\anno{AnatomicalSpace}			&						&											&\gfo{SpaceRegion}\\
 	\anno{AnatomicalSurface}			&Median Plane			&Anatomical surface \fma{24137}			&\gfo{SurfaceRegion}\\
 	\anno{AnatomicalLine}				&Mandibular Angle (ppam dexter-go dexter-piam dexter), Sagittal Axis&Anatomical line \fma{9657}	&\gfo{LineRegion}\\
@@ -253,7 +255,6 @@ This approach ensures that domain experts can easily handle the ontology and eff
 	\anno{Skeleton}					&						&Osseous skeleton \fma{23875}\\
 	\anno{BoneStructure}\\
 	\anno{Bone}						&Mandibula				&Bone organ \fma{5018}\\
-	
 	\anno{BonePart}					&Protuberantia mentalis	&Related to Segment of bone organ \fma{281808}, Zone of bone organ \fma{10483}\\
 	\anno{BoneCompound}				&Cranium				&Comparable to union of Skeletal system \fma{23881} and subdivision of skeletal system \fma{85544}\\
 	\anno{ToothStructure}				&Dentes Permanentes		&Permanent teeth (\fma{75152}\\%; TA2ID:913)\\
@@ -266,6 +267,63 @@ This approach ensures that domain experts can easily handle the ontology and eff
 \end{tabulary}
 \end{table}
 
+\subsection{Terminology for descriptive anatomy}
+
+\begin{figure}
+\includegraphics[width=\textwidth]{img/axisplane.png}
+\caption{
+Anatomical Planes and Axes:
+a: Planum sagittale (sagittal plane), includes sagittal and longitudinal axes; the midsagittal plane passes through the midline of the body,
+b: Planum transversale (Transversal plane), includes transverse and sagittal axes,
+c: Planum frontale (frontal plane): includes longitudinal and transverse axes.
+Image source: \citep{allgemeineanatomieen}.
+}
+\label{fig:axisplane}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.4\textwidth]{img/relativelocation.png}
+\caption{
+Anatomical relative location: directional terms used in anatomy and anthropology.
+Image source: \cite{schemamann}.
+}
+\label{fig:relativelocation}
+\end{figure}
+
+The position of all anatomical entities is described in a standardised fashion using conceptual axes (a kind of anatomical line), planes (a kind of anatomical surface) as well as directions (relative anatomical locations).
+Directions are relative to the body based on the standard anatomical position (\emph{positio anatomica} \aurl{ta2}{72}, \aurl{fma}{23132}).
+It refers to standing upright, facing forward, palms and toes pointing forward, thumbs to the side, and observed from the perspective of the respective individual. %Quelle kommt noch
+
+Although an infinite number of axes and planes can be defined within the human body, generally three principal axes and planes are used~\citep{prometheus}.
+They are mutually perpendicular and provide the three spatial coordinates.
+The three principle axes, shown in \cref{fig:axisplane} are:
+\begin{itemize}
+\item The longitudinal or vertical axis: It runs in the superior-inferior direction in an upright position, perpendicular to the ground.
+It intersects with the frontal and sagittal planes.
+\item The sagittal axis: It runs in the ventral-dorsal direction, from the front to the back surface of the body and vice versa.
+It intersects with the sagittal and transverse planes.
+\item The transverse or horizontal axis: It extends from left to right and vice versa, intersecting with the frontal and transverse planes.
+\end{itemize}
+
+The three principal planes, depicted in \cref{fig:axisplane}, are:
+\begin{itemize}
+\item The sagittal plane,i.e all vertical planes parallel to the sagittal suture of the skull and running from anterior to posterior in the upright position.
+The median sagittal plane (= median plane) divides the body into two symmetrical halves.
+\item The frontal plane (= coronal plane) comprising all planes parallel to the forehead (frons) or the coronal suture of the skull, running vertically from one side of the body to the other in the upright position.
+\item The transverse plane including all horizontal cross-sectional planes, relative to the upright position, dividing the body into cranial and caudal sections.
+They run perpendicular to the longitudinal axis of the body.
+\end{itemize}
+
+Each one has two anatomical axes as boundaries in the sense of GFO, which allows boundaries to occur inside a structure and not necessarily at the extremities.
+For example, the coronal (frontal) plane has the transversal (horizontal) and longitudinal (vertical) axes as boundaries.
+
+An anatomical direction or relative anatomical location, as shown in \cref{fig:relativelocation}, is the position of an anatomical entity (e.g., a bone structure) in relation to another anatomical entity (e.g., another bone, an axis, a plane or a point such as the centre of the body).
+Relative anatomical locations are classified according to the anatomical terms of location (e.g., cranial or superior = 'towards the end of the skull', dexter = 'right' or distal = 'in direction towards the end of a limb').
+For example, the Glabella is located laterally to both Arcus superciliaris (Arcus superciliaris sinister und Arcus superciliaris dexter).
+A relative anatomical location can be considered as an individual relation between two anatomical entities (target entity and reference entity) and can therefore be modelled using a GFO relator.
+Relators are composed of roles (in our case target and reference) and have the power to relate arbitrary entities (in our case, anatomical entities)~\citep{gfocategory}.
+
+
 \subsection{Anatomical entity}
 An anatomical entity is either an anatomical (material) structure or a spatial anatomical entity, such as \anno{Cranium} or \anno{FrontalPlane}.
 
@@ -274,7 +332,7 @@ An anatomical structure refers to any anatomical division or material anatomical
 ANNO describes three kinds of anatomical structures: tooth structures (teeth and teeth parts), bone structures (single bones, bone parts and bone compounds), as well as the complete skeleton.
 The GFO defines a material object \aurl{gfo}{MaterialObject} as a solid concrete entity that belongs to the material region of the world, has mass, consists of matter and occupies space~\citep{gfospace}.
 Accordingly, we define anno:AnatomicalStructure as a gfo:MaterialObject in the anthropological context.
-The closest equivalent in the FMA is the \emph{Material anatomical entity} http://purl.org/sig/ont/fma/fma67165, the subclass of \emph{Physical anatomical entity} fma:fma61775 that has mass.
+The closest equivalent in the FMA is the \emph{Material anatomical entity} \aurl{fma}{67165}, the subclass of \emph{Physical anatomical entity} \aurl{fma}{61775} that has mass.
 
 \subsection{Skeleton}
 The largest or most comprehensive skeletal anatomical structure, the human skeleton, is the framework composed of all the bones and teeth of a human being.
@@ -288,7 +346,7 @@ Tooth structures comprise teeth and their parts.
 A human tooth is an individual unit of the human dentition (synonymous for the teeth as a whole).
 Teeth are part of the skeleton, yet they are characterised by their own distinctive tissue and thus treated separately from bones.
 Teeth, such as the Dens caninus (canine tooth) are located on bone structures.
-The FMA has the equivalent class \enquote{Tooth} fma:fma12516.
+The FMA has the equivalent class \enquote{Tooth} \aurl{fma}{12516}.
 A tooth part is any portion of a tooth.
 They are not included in the initial scope of the ontology, but they are one of the aspects by which it can be expanded.
 
@@ -298,13 +356,13 @@ The FMA does not have a common superclass for those parts but instead mounts the
 
 A bone or bone element is a single self-contained bony skeletal entity.
 Bones, such as Mandibula (Mandible) and Os occipitale (Occipital Bone) are individual bone organs.
-FMA does have a \enquote{Bone} class (fma:30317) but that only has a single subclass \enquote{Skull bone} (fma:30317).
-Instead, \enquote{Bone organ} (fma:5018) is the equivalent class.
+FMA does have a \enquote{Bone} class (\aurl{fma}{30317}) but that only has a single subclass \enquote{Skull bone} (\aurl{fma}{30317}).
+Instead, \enquote{Bone organ} (\aurl{fma}{5018}) is the equivalent class.
 
 A bone compound is a section of the skeleton combining multiple bones or bone parts together, depending on the classification system chosen.
 This allows for the representation of any partonomy that need not necessarily be compatible with one another.
 Bone compounds, such as the Cranium (skull bone) consist of further bone compounds, individual bones (which in turn consist of bone parts) and bone parts.
-The FMA does not have a single equivalent class, but it is similar to the union of \enquote{Skeletal system} (fma:fma23881) and \enquote{Subdivision of skeletal system} (fma:fma85544).
+The FMA does not have a single equivalent class, but it is similar to the union of \enquote{Skeletal system} (\aurl{fma}{23881}) and \enquote{Subdivision of skeletal system} (\aurl{fma}{85544}).
 On the skeletal level, bone parts comprise any piece or portion of a bone.
 An anatomical landmark is any distinct structure on a bone.
 In ANNO, it is also referred to as a bone part.
@@ -312,7 +370,7 @@ In ANNO, it is also referred to as a bone part.
 
 \subsection{Spatial anatomical entity}
 An anatomical entity without mass is classified as a spatial anatomical entity, which is either an anatomical space (three-dimensional), an anatomical surface (two-dimensional), an anatomical line (one-dimensional) or an anatomical point (zero-dimensional).
-It is equivalent to the FMA \enquote{Immaterial anatomical entity} (fma:fma67112).
+It is equivalent to the FMA \enquote{Immaterial anatomical entity} (\aurl{fma}{67112}).
 
 An anatomical space is a space region (three-dimensional) occupied by an anatomical structure.
 An anatomical surface is a boundary (two-dimensional) of an anatomical space.
@@ -326,6 +384,44 @@ An anatomical line is a boundary (one-dimensional) of an anatomical surface.
 Anatomical lines can connect or pass through anatomical entities (e.g., an edge between two or an angle between three anatomical entities).
 The length of the line or the angle degree can be measured and used in functions to infer individual phenotypes [Verweis zu Phenotype section].
 
+\subsection{Phenotype}
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{img/phenotype.png}
+\caption{
+Exemplary assessment of anatomical properties for the derivation of the phenotype sex, where five cranial bone parts are evaluated for their level of morphological expression.
+Method after Walker~\cite{datacollection}.
+Image based on TODO%\cite{}.
+}\label{fig:gfo}
+\end{figure}
+
+
+Usually, a phenotype is considered as a (combination of) bodily feature(s) or observable characteristic(s) of an organism, such as sex, body height or body weight~\citep{ontologicaltreatment,phenomes,interoperability}.
+Since phenotypes are individual properties, they can be considered as attributives in the GFO sense.
+The phenotype notion has also been analysed in detail within the framework of the Core Ontology of Phenotypes~\citep{ontologicalrepresentation}.
+
+In the case of ANNO, the phenotype can be derived using functions comprising obtained measurements.
+Discriminant functions, e.g based on the Cranium, allow for the assignment to sex while estimation of stature is attained by using linear regressions, e.g. based on Femur or Tibia length measurements.
+RDF is not optimised for mathematical formulas so we model those as literals.
+
+As an example, the discriminant function no. 6 developed by Vodanović uses the measurement of the angus mandibulae to assign sex, thus deriving a phenotype.
+For the left side it is given as:
+\[
+0.17 \cdot [\text{ppam sinistrum-go sinistrum-paim sinistrum}] - 20.43
+\]
+The right side is calculated analogously using (ppam dexterum-go dexterum-paim dexterum).
+%\[
+%\text{For the right side: } ([\text{ppam dexterum-go dexterum-paim dexterum}] \times 0.17) - 20.43
+%\]
+The threshold or sectioning point is given at 0.2, meaning that if the result is greater than this value, then sex is assigned to male if it is lower it’s assigned to female.  
+
+\subsection{Anatomical property}
+An anatomical property is a characteristic (e.g., shape) of an anatomical structure.
+Anatomical properties are considered as attributes or qualities in GFO~\citep{gfoarchitecture}.
+These are dependent individuals that characterise other individuals (in our case, anatomical structures).
+
+Other than by means of osteometry using measurements and functions, an anatomical landmark’s morphology can be used to examine anthropological aspects or phenotypes such as age or sex. 
+For instance, assessment of the degree of an anatomical landmark’s morphological expression (the anatomical property in this case) offers information about the sex of the remains of the individual being examined.
+While the morphological examination was not within the scope of the project, it was nonetheless ensured that future extension in this respect is possible.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
