@@ -412,14 +412,14 @@ The right side is calculated analogously using (ppam dexterum-go dexterum-paim d
 %\[
 %\text{For the right side: } ([\text{ppam dexterum-go dexterum-paim dexterum}] \times 0.17) - 20.43
 %\]
-The threshold or sectioning point is given at 0.2, meaning that if the result is greater than this value, then sex is assigned to male if it is lower it’s assigned to female.  
+The threshold or sectioning point is given at 0.2, meaning that if the result is greater than this value, then sex is assigned to male if it is lower it’s assigned to female.
 
 \subsection{Anatomical property}
 An anatomical property is a characteristic (e.g., shape) of an anatomical structure.
 Anatomical properties are considered as attributes or qualities in GFO~\citep{gfoarchitecture}.
 These are dependent individuals that characterise other individuals (in our case, anatomical structures).
 
-Other than by means of osteometry using measurements and functions, an anatomical landmark’s morphology can be used to examine anthropological aspects or phenotypes such as age or sex. 
+Other than by means of osteometry using measurements and functions, an anatomical landmark’s morphology can be used to examine anthropological aspects or phenotypes such as age or sex.
 For instance, assessment of the degree of an anatomical landmark’s morphological expression (the anatomical property in this case) offers information about the sex of the remains of the individual being examined.
 While the morphological examination was not within the scope of the project, it was nonetheless ensured that future extension in this respect is possible.
 
@@ -448,7 +448,14 @@ Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Ant
 \end{figure}
 
 \section{Development of ANNOds}\label{sec:domain}
-% Arbeit der Domänenexperten, Tabelle, OWL-Generator
+While ANNOdc is created by the ontologists in consultation with the domain experts, ANNOds is developed by the domain experts themselves.
+For this purpose they were provided with a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}, eliminating the requirement of having a background in RDF and ontologies.
+The template is based on the structure of ANNOdc, so that the entered data is compliant with it (i.e., the ANNOds classes are subclasses of the ANNOdc classes and properties from ANNOdc are used).
+The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
+This approach ensures intuitive and unimpeded data input and a valid end result.
+The primary focus is on the design of ANNO’s ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida’s in-house software AnthroWorks3D.
+In addition, the objective is to initiate the process of data entry, encompassing selected bones of the skeleton.
+
 \begin{figure}[h!t]
 \includegraphics[width=\textwidth]{img/smog.png}
 \caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
@@ -460,11 +467,35 @@ Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Ant
 %\subsection{}\label{s1.1}
 ~\citep{rickview}
 \section{Conclusion and Future Work}
+% "desirablility" add source e.g. https://fipat.library.dal.ca/wp-content/uploads/2021/08/FIPAT-TA2-Part-2.pdf
 
-%\begin{figure}[t]
-%\includegraphics{}
-%\caption{Figure caption.}\label{f1}
-%\end{figure}
+By contributing systematic, standardised and clear definitions for (material and spatial) anatomical entities regarding the human skeleton as well as anthropological aspects such as the derivation of phenotypes, ANNO provides formalised knowledge of the anatomical and anthropology domain.
+Its content encompasses all the necessary aspects for the routine use of anatomical terms in daily anthropological practice.
+The ontology’s integration into AW3D allows for its immediate application in anthropological analysis.
+
+The ontology is interlinked with the TA and FMA and provides transparency by including all sources used to generate its content.
+Furthermore, it offers a procedure for conceptualising the ontology and generating its content.
+The ontology replaces an old, hard-coded format in \aw{}, which saves development time, separates annotation file compatibility from software versions, eases annotation through hierarchical browsing and improves interoperability and customisation.
+Also, ANNO comes with extensive documentation of the process and available resources.
+Hence, foundations have been laid for the usage as well as further development and management of ANNO.
+
+Navigating through plenty of options for designing an ontology makes consistency challenging to achieve.
+As documented within the TA, the choices frequently reflect “desirability” of a party having something included or named or structured in a certain way because it is considered relevant by a particular party.
+ANNO represents a specialised ontology that builds upon existing ontologies such as FMA and TA.
+However, meeting the diverse needs of the field and interdisciplinary requirements can only be accomplished through an ongoing, gradual process over time.
+
+While ANNO provides a core for describing anatomical terms, further work is needed to cover the domain comprehensively.
+For instance, it only covers standardised normal adult anatomy.
+Moreover, in order to remain permanently suitable for practical usage, the ontology must be able to withstand in practice by being continuously reviewed, updated, enriched or adapted to further needs.
+Moreover, ANNO presents all necessary prerequisites to being extended to the other aspects of anthropological work with human skeletal remains.
+
+In addition to continuing data entry, future work may involve the inclusion of other anthropologically relevant properties such as those that capture the morphology of the human skeleton and contribute to deriving phenotypes such as sex, age and developmental aspects, pathologies or ancestry.
+In addition, tooth parts, deciduous teeth as well as anatomical variants could be added in the future.
+
+Regarding skeletal anatomy, the representation of preservation status through the ontology would be of great use for anthropological work.
+Furthermore, anatomical terms describing aspects of bone morphology or function, such as the Latin word “processus” which appear numerous times as part of anatomical designations indicating a projection, could be reviewed and flexibly systematised through ANNO, making them analysable as well.
+
+ANNO’s potential applications include forensic, historical and prehistoric anthropology, as well as pathology and medicine, and the field of computer science, especially medical informatics.
 
 %\begin{table*}
 %\caption{} \label{t1}
