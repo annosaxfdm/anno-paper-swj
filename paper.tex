@@ -13,10 +13,10 @@
 
 \newcommand{\aw}{AnthroWorks3D}
 \newcommand{\anno}[1]{\href{https://annosaxfdm.de/ontology/#1}{\texttt{#1}}}
-\newcommand{\gfo}[1]{\href{https://annosaxfdm.de/ontology/#1}{\texttt{#1}}}
+\newcommand{\gfo}[1]{\href{https://www.onto-med.de/ontologies/gfo/#1}{\texttt{#1}}}
 \newcommand{\fma}[1]{\href{http://purl.org/sig/ont/fma/fma#1}{\texttt{#1}}}
 \daurl{anno}{https://annosaxfdm.de/ontology/}
-\daurl{gfo}{https://annosaxfdm.de/ontology/}%todo: insert gfo prefix
+\daurl{gfo}{https://www.onto-med.de/ontologies/gfo\#}
 \daurl{fma}{http://purl.org/sig/ont/fma/fma}
 \daurl{ta2}{https://ta2viewer.openanatomy.org/?id=}
 
@@ -77,7 +77,7 @@ Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e4,e5,e6,e7,e8,e9,e10}}
 %\end{review}
 
 \begin{abstract}
-The Anthropological Notation Ontology (ANNO) allows the systematic, standardised classification of recovered bone finds into the skeletal system, the description of the skeletal pieces, and the definition of functions for the derivation of different phenotypes of humans in forensic and historical anthropology.
+The Anthropological Notation Ontology (ANNO) allows the systematic and standardised classification of recovered bone finds into the skeletal system, the description of the skeletal pieces, and the definition of functions for the derivation of different phenotypes of humans in forensic and historical anthropology.
 ANNO consists of two components:
 ANNOdc, a domain-core ontology providing core entities such as basic anatomical categories, and ANNOds, a domain-specific ontology used for annotating structures of the human skeleton.
 ANNO is integrated into AnthroWorks3D, an application for the creation and analysis of 3D-models of human skeletal remains.
@@ -461,8 +461,123 @@ In addition, the objective is to initiate the process of data entry, encompassin
 \caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
 \end{figure}
 
+\textbf{UNFINISHED DRAFT SECTION, TO BE HEAVILY REWORKED AND CUT}
+
+General considerations 
+All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
+
+Anatomical Landmarks (Bone Parts)  (Selection Criteria, scope and process,  properties) 
+Osteometric Landmarks (Anatomical Points) 
+Measurements (Anatomical line)  
+
+
+Relevant spatial anatomical objects (e.g., lines) used for phenotype determination functions Measurements were defined in terms of anatomical points/objects that bound them: consist of references to sections, the start point, midpoint, and end, and short definitions.
+
+
+Phenotypes 
+Development of the ontology is based on the following selection criteria:
+
+For the cranium,the selection is reduced because the number of all ossa cranii is too high.
+Overall, however, the aim is to include those that are of anthropological relevance, i.e. that contribute to navigation, localization, and identification on the bone.
+Those landmarks included in the definitions of others were also to be defined.
+For bones that lie on the median (e.g., mandible or sternum), bilateral landmarks are defined, each with a side reference.
+For osteometric landmarks, all those already established in the core literature are to be used.
+Furthermore, those that are relevant for meaningful measurement distances and can be annotated in \aw{} should be used.
+For the measurement distances, those should be selected that are established in the majority of the core literature as well as necessary for discriminant functions and functions for estimating height and weight.
+In addition, it also had to be integrable into \aw{}.
+The functions chosen were those with diagnostic value.
+These were discriminant functions for sex determination and regression functions for body height and body weight estimation.
+
+Process for creating definitions and measurements (Headline to be deleted) 
+For the definitions and measurements, a minimum amount of English-language and mostly German-language literature was compared in order to develop the definitions from their information.
+Notably, Latin or ancient Greek terms were missing from the English-language literature.
+The FMA also contains only English terms.
+For this reason, these were also searched out with their synonyms.
+Overall, the name of the landmark or survey route had to be noted in English, German, and Latin in singular and plural form, its synonyms in the three languages, the FMA and TA ID, and any information on function and delineation.
+This required a positional description (e.g. Punctum superioris capitis femoris as the superior located point of the Caput femoris) necessary.
+The examination of the Latin grammar was relevant for this.
+For the measurement sections, in addition to the name of the measurement section, the type of measurement (e.g., distance measurement) and the measurement instrument were also recorded.
+The subsequent visual definitions were made in the different anatomical views and represented area markings for the anatomical landmarks and point markings for the osteometric landmarks.
+
+%\subsection{Functions} Headline to be deleted
+The functions were divided into discriminant functions for sex determination and regress functions for body height and body weight estimation.
+The goal here was to cover functions for at least one European, African, American, and Asian ethnicity or population.
+Names were assigned by the number included in each study, the authors, and the year of publication.
+In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
+In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
+
+While there are many textual sources of anthropological systematisation, they do not agree in all aspects and there is not a single, formally described, standard.
+ANNO links to concepts of the FMA when they exist, but structures them in a different way.
+
+%Sex determination Headline to be deleted 
+% auto translated from the project report, use as basis:
+The sex of a specific individual within a population may be estimated using a function on skeletal measurements that is specific to this population.
+Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
+
+Regress functions Headline to be deleted 
+Regress functions for body height and body weight estimation.
+The goal here was to cover functions for at least one European, African, American, and Asian ethnic group or population.
+Names were assigned by the number included in each study, the authors, and the year of publication.
+In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
+In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
+
+
+Standardised description of position 
+In addition to the conception and development of the ontology as well as of definition, data input was initiated as content of Cranium including the Mandibula as well as the teeth of the was entered. Entries can be added directly to the OWL-File using Protégé or they can continue to be entered directly into the spreadsheet. In the latter case, the OWL file can be generated with a custom OWL generator.
+
+
 
 \section{Use Case: Integration into \aw{}}\label{sec:aw}
+\textbf{UNFINISHED DRAFT SECTION}
+
+We use our ontological architecture (top level ontology, domain core ontology, domain specific ontology) to develop \aw{}~based on the three-ontology method.
+This method, as outlined in~\citet{threeontologymethod}, aided us in designing a tool for annotating human skeletons and identifying phenotypes. 
+We use ANNOdc as the Task Ontology and ANNOds as the Domain Ontology.
+One of the advantages of the three-ontology method is that the software only needs to implement the access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are processed dynamically.
+\aw{} leverages ANNOdc as an interface to dynamically access the entities of the ANNOds, such as listing all subclasses of a specific class like \aurl{anno}{Bone}, as explained in \cref{sec:aw}.
+
+
+ANNO is used by \aw{}~\citep{aw3d}.
+AW3D is a tool that  combines user-friendly techniques of photogrammetry with insights from user experience research and knowledge from game development and offers a procedure to create 3D skeletal models serving as  digital twins  which can subsequently be examined virtually.
+This facilitates anthropological work to be location-independent and parallel without exercising wear and tear on the skeletal material.
+The examination can be performed as often as desired, even if the skeletal individuals or collections are not available at the institute or have already been reburied.
+It also draws its advantage when space is limited.
+Thus, it requires only three SLR cameras, sufficient exposure and a computer.
+The examination proceeds as follows: After photogrammetry is done and the 3D model is created, the objects are imported into the software and calibrated.
+For calibration, there is an individual placeholder for each bone, which must first be selected.
+Then the calibrated digital twin is placed in a placeholder skeleton.
+Annotations can be made in the detailed view of each bone.
+Point, line and area markings are available for selection.
+Furthermore, it is possible to make measurements.
+You can choose between distance, angle and circumference measurements.
+After marking or measurement, an identification number is assigned to each one.
+There is also a documentation about the time of the annotation as well as the name of the editor.
+The marking or measurement can be classified according to certain categories (e.g. anatomical variation).
+In addition, annotations are possible in a text field.
+The annotations can be edited at any time afterwards, and the date of editing is recorded together with the author.
+The annotations are subsequently displayed in different colors, so that overlaps can be kept apart.
+A special feature of the software is the automation of measurements.
+The program automatically sets pins for osteometric landmarks in a template view.
+The person using the program can move these as desired.
+The pins displayed have different color shades.
+These differ depending on the relevance.
+If the osteometric landmark is present in many measurement sections, its relevance increases and the pin appears darker.
+After the pins have been roughly set, they can be refined using various views.
+In the views, the individual osteometric landmarks are visible from different views, so that a fine adjustment can be made.
+This is followed by the automatic measurement.
+The individual values for each measurement section can be downloaded as a CSV file.
+In addition, it is now possible to perform sex determinations using discriminant functions.
+For this purpose, the required measurement sections can be selected.
+The results are only visible in one display.
+The automation allows a time saving, whereby more bones or skeletons can be examined in a shorter time.
+Advantages over the previous approach are:
+
+ontology-oriented generation of placeholders/containers for objects to be imported
+variable properties for different bone elements and bone types
+hierarchy for orientation within an examination project according to the ontology tree
+categorization of measurements and markers according to specifications from the ontology
+generation of input forms based on the specified properties and bone types
+automatic generation of measurements
 
 %\subsection{}\label{s1.1}
 ~\citep{rickview}
