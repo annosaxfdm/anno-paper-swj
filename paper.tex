@@ -3,6 +3,7 @@
 
 % add. options: [seceqn,secthm,crcready]
 \documentclass[sw]{iosart2x}
+%\usepackage[T1]{fontenc}
 \usepackage{todonotes}
 \usepackage{cleveref}
 \usepackage{csquotes}
@@ -107,7 +108,7 @@ Data sets consolidated this way and formalised through the Anthropological Notat
 Apart from contextual information, most informative clues can be found directly on the bone.
 Anthropologists use human anatomy, specifically the skeletal system and further tissues of the musculoskeletal system, to classify and describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion.
 
-By applying the same principles used for mapping the Earth’s surface \enquote{terrain}, a detailed map of the human body can be created.
+By applying the same principles used for mapping the Earth's surface \enquote{terrain}, a detailed map of the human body can be created.
 This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
 ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
 
@@ -136,7 +137,7 @@ This book contains textual and visual descriptions, whereby anatomical structure
 The \emph{Foundational Model of Anatomy} (FMA)~\citep{fma} ontology represents the physical organisation of human anatomy by mapping relations to one another.
 It allows the knowledge it contains to be represented in a way that is humanly comprehensible and machine-interpretable.
 The FMA uses the Basic Formal Ontology (BFO) as its top level ontology.
-Corresponding to its relational nature, new higher level concepts are introduced and used for reorganising the actual anatomical structures diverging from the TA’s hierarchical structure.
+Corresponding to its relational nature, new higher level concepts are introduced and used for reorganising the actual anatomical structures diverging from the TA's hierarchical structure.
 Thus, in 90\,\% of the cases this leads to new creations of anatomical concepts~\citep{anatomicalterms} whereas only 1\,\% contain textual definitions~\citep{uberon}.
 
 We create manual links between ANNO and the FMA, which we use to connect ANNO with the TA2 by using unofficial links between FMA and TA2 provided by Wikidata.
@@ -331,7 +332,7 @@ The closest equivalent in the FMA is the \emph{Material anatomical entity} \aurl
 \subsection{Skeleton}
 The largest or most comprehensive skeletal anatomical structure, the human skeleton, is the framework composed of all the bones and teeth of a human being.
 The TA~\citep{ta2} equates the skeleton with the \enquote{Systema skeletale (skeletal system)}, which refers to the passive part of the musculoskeletal system, including the articulated bony skeleton with teeth, as well as cartilage, ligaments, and other joints.
-ANNO does not adopt this equivalence, and \enquote{Skeleton } here refers to the entirety of a human’s bones and teeth.
+ANNO does not adopt this equivalence, and \enquote{Skeleton } here refers to the entirety of a human's bones and teeth.
 However, since teeth constitute their own tissue, they are treated separately, allowing all other components of the skeletal system, such as cartilage or ligaments (as tissues) or joints (e.g. as specific aspects), to be integrated and referenced separately in ANNO.
 The anthropologically meaningful distinction between \enquote{Skeleton} and \enquote{Systema skeletale} can be maintained, while still referencing both within the TA concept.
 
@@ -373,7 +374,7 @@ An anatomical point (or osteometric landmark) is any immaterial, conceptual poin
 The former serve as measurement points, the latter - relevant to the measurement procedure as orientation points.
 An anatomical point is thus a boundary (zero-dimensional) of an anatomical line.
 
-An anatomical line is a conceptual, immaterial line on a bone passing between at least two measurement points that, in the form of distances, circumferences or angles is used to collect measurements representing aspects of abone’s dimensions.
+An anatomical line is a conceptual, immaterial line on a bone passing between at least two measurement points that, in the form of distances, circumferences or angles is used to collect measurements representing aspects of abone's dimensions.
 An anatomical line is a boundary (one-dimensional) of an anatomical surface.
 Anatomical lines can connect or pass through anatomical entities (e.g., an edge between two or an angle between three anatomical entities).
 The length of the line or the angle degree can be measured and used in functions to infer individual phenotypes [Verweis zu Phenotype section].
@@ -397,7 +398,8 @@ In the case of ANNO, the phenotype can be derived using functions comprising obt
 Discriminant functions, e.g based on the Cranium, allow for the assignment to sex while estimation of stature is attained by using linear regressions, e.g. based on Femur or Tibia length measurements.
 RDF is not optimised for mathematical formulas so we model those as literals.
 
-As an example, the discriminant function no. 6 developed by Vodanović uses the measurement of the angus mandibulae to assign sex, thus deriving a phenotype.
+% ć in Vodanović cannot be displayed without font package and I don't know if the journal allows a different font
+As an example, the discriminant function no. 6 developed by Vodanovic uses the measurement of the angus mandibulae to assign sex, thus deriving a phenotype.
 For the left side it is given as:
 \[
 0.17 \cdot [\text{ppam sinistrum-go sinistrum-paim sinistrum}] - 20.43
@@ -406,15 +408,15 @@ The right side is calculated analogously using (ppam dexterum-go dexterum-paim d
 %\[
 %\text{For the right side: } ([\text{ppam dexterum-go dexterum-paim dexterum}] \times 0.17) - 20.43
 %\]
-The threshold or sectioning point is given at 0.2, meaning that if the result is greater than this value, then sex is assigned to male if it is lower it’s assigned to female.
+The threshold or sectioning point is given at 0.2, meaning that if the result is greater than this value, then sex is assigned to male if it is lower it's assigned to female.
 
 \subsection{Anatomical property}
 An anatomical property is a characteristic (e.g., shape) of an anatomical structure.
 Anatomical properties are considered as attributes or qualities in GFO~\citep{gfoarchitecture}.
 These are dependent individuals that characterise other individuals (in our case, anatomical structures).
 
-Other than by means of osteometry using measurements and functions, an anatomical landmark’s morphology can be used to examine anthropological aspects or phenotypes such as age or sex.
-For instance, assessment of the degree of an anatomical landmark’s morphological expression (the anatomical property in this case) offers information about the sex of the remains of the individual being examined.
+Other than by means of osteometry using measurements and functions, an anatomical landmark's morphology can be used to examine anthropological aspects or phenotypes such as age or sex.
+For instance, assessment of the degree of an anatomical landmark's morphological expression (the anatomical property in this case) offers information about the sex of the remains of the individual being examined.
 While the morphological examination was not within the scope of the project, it was nonetheless ensured that future extension in this respect is possible.
 
 \begin{figure}[h]
@@ -447,7 +449,7 @@ For this purpose they were provided with a spreadsheet-based SMOG~\citep{smog} t
 The template is based on the structure of ANNOdc, so that the entered data is compliant with it (i.e., the ANNOds classes are subclasses of the ANNOdc classes and properties from ANNOdc are used).
 The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
 This approach ensures intuitive and unimpeded data input and a valid end result.
-The primary focus is on the design of ANNO’s ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida’s in-house software AnthroWorks3D.
+The primary focus is on the design of ANNO's ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida's in-house software AnthroWorks3D.
 In addition, the objective is to initiate the process of data entry, encompassing selected bones of the skeleton.
 
 \begin{figure}[h!t]
@@ -580,7 +582,7 @@ automatic generation of measurements
 
 By contributing systematic, standardised and clear definitions for (material and spatial) anatomical entities regarding the human skeleton as well as anthropological aspects such as the derivation of phenotypes, ANNO provides formalised knowledge of the anatomical and anthropology domain.
 Its content encompasses all the necessary aspects for the routine use of anatomical terms in daily anthropological practice.
-The ontology’s integration into AW3D allows for its immediate application in anthropological analysis.
+The ontology's integration into AW3D allows for its immediate application in anthropological analysis.
 
 The ontology is interlinked with the TA and FMA and provides transparency by including all sources used to generate its content.
 Furthermore, it offers a procedure for conceptualising the ontology and generating its content.
@@ -589,7 +591,7 @@ Also, ANNO comes with extensive documentation of the process and available resou
 Hence, foundations have been laid for the usage as well as further development and management of ANNO.
 
 Navigating through plenty of options for designing an ontology makes consistency challenging to achieve.
-As documented within the TA, the choices frequently reflect “desirability” of a party having something included or named or structured in a certain way because it is considered relevant by a particular party.
+As documented within the TA, the choices frequently reflect \enquote{desirability} of a party having something included or named or structured in a certain way because it is considered relevant by a particular party.
 ANNO represents a specialised ontology that builds upon existing ontologies such as FMA and TA.
 However, meeting the diverse needs of the field and interdisciplinary requirements can only be accomplished through an ongoing, gradual process over time.
 
@@ -602,9 +604,9 @@ In addition to continuing data entry, future work may involve the inclusion of o
 In addition, tooth parts, deciduous teeth as well as anatomical variants could be added in the future.
 
 Regarding skeletal anatomy, the representation of preservation status through the ontology would be of great use for anthropological work.
-Furthermore, anatomical terms describing aspects of bone morphology or function, such as the Latin word “processus” which appear numerous times as part of anatomical designations indicating a projection, could be reviewed and flexibly systematised through ANNO, making them analysable as well.
+Furthermore, anatomical terms describing aspects of bone morphology or function, such as the Latin word \enquote{processus} which appear numerous times as part of anatomical designations indicating a projection, could be reviewed and flexibly systematised through ANNO, making them analysable as well.
 
-ANNO’s potential applications include forensic, historical and prehistoric anthropology, as well as pathology and medicine, and the field of computer science, especially medical informatics.
+ANNO's potential applications include forensic, historical and prehistoric anthropology, as well as pathology and medicine, and the field of computer science, especially medical informatics.
 
 %\begin{table*}
 %\caption{} \label{t1}
