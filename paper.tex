@@ -232,7 +232,8 @@ This approach ensures that domain experts can easily handle the ontology and eff
 
 \begin{table}
   \centering
-  \caption{Table Title}
+  \caption{Classes of ANNOdc along with interlinks to the FMA and the GFO top-level ontology.}
+  \label{tab:core}
   \begin{tabulary}{\textwidth}{lLLl}
     \toprule
 	ANNOdc class					&Examples				&FMA equivalent / ID						&GFO superclass	\\
@@ -255,7 +256,7 @@ This approach ensures that domain experts can easily handle the ontology and eff
 	\anno{Tooth}						&Dens caninus			&Tooth \fma{12516}\\
 	\anno{ToothPart}					&Cuspis dentis			\\%\fma{56481}; TA2ID:925\\
 	\anno{Phenotype}					&Height, Sex			&											&\gfo{Attributive}\\							
-	\anno{AnatomicalProperty}			&Shape (Degree of morphological expression)	&Anatomical relation, e.g., Has\_shape relation	&\gfo{Attributive}\\
+	\anno{AnatomicalProperty}			&Shape (Degree of morphological expression)	&Anatomical relation, e.g., Has\_shape &\gfo{Attributive}\\
 	\anno{RelativeAnatomicalLocation}&superior, lateral, medial, posterior	&Anatomical qualitative coordinate	&\gfo{Relator}\\
 \bottomrule
 \end{tabulary}
@@ -312,7 +313,7 @@ Each one has two anatomical axes as boundaries in the sense of GFO, which allows
 For example, the coronal (frontal) plane has the transversal (horizontal) and longitudinal (vertical) axes as boundaries.
 
 An anatomical direction or relative anatomical location, as shown in \cref{fig:relativelocation}, is the position of an anatomical entity (e.g., a bone structure) in relation to another anatomical entity (e.g., another bone, an axis, a plane or a point such as the centre of the body).
-Relative anatomical locations are classified according to the anatomical terms of location (e.g., cranial or superior = 'towards the end of the skull', dexter = 'right' or distal = 'in direction towards the end of a limb').
+Relative anatomical locations are classified according to the anatomical terms of location (e.g., cranial or superior = \enquote{towards the end of the skull}, dexter = \enquote{right} or distal = \enquote{in direction towards the end of a limb}).
 For example, the Glabella is located laterally to both Arcus superciliaris (Arcus superciliaris sinister und Arcus superciliaris dexter).
 A relative anatomical location can be considered as an individual relation between two anatomical entities (target entity and reference entity) and can therefore be modelled using a GFO relator.
 Relators are composed of roles (in our case target and reference) and have the power to relate arbitrary entities (in our case, anatomical entities)~\citep{gfocategory}.
@@ -383,8 +384,9 @@ The length of the line or the angle degree can be measured and used in functions
 \includegraphics[width=\textwidth]{img/phenotype.png}
 \caption{
 Exemplary assessment of anatomical properties for the derivation of the phenotype sex, where five cranial bone parts are evaluated for their level of morphological expression.
+% yes, walker method is published in buikstra
 Method after Walker~\cite{datacollection}.
-Image based on TODO%\cite{}.
+Image based on \cite{datacollection}.
 }\label{fig:gfo}
 \end{figure}
 
@@ -407,7 +409,7 @@ The right side is calculated analogously using (ppam dexterum-go dexterum-paim d
 %\[
 %\text{For the right side: } ([\text{ppam dexterum-go dexterum-paim dexterum}] \times 0.17) - 20.43
 %\]
-The threshold or sectioning point is given at 0.2, meaning that if the result is greater than this value, then sex is assigned to male if it is lower it's assigned to female.
+The threshold or sectioning point is given at 0.2, meaning that if the result is greater than this value, then sex is assigned to male, if it is lower it is assigned to female.
 
 \subsection{Anatomical property}
 An anatomical property is a characteristic (e.g., shape) of an anatomical structure.
@@ -445,7 +447,7 @@ Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Ant
 \section{Development of ANNOds}\label{sec:domain}
 While ANNOdc is created by the ontologists in consultation with the domain experts, ANNOds is developed by the domain experts themselves.
 For this purpose they were provided with a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}, eliminating the requirement of having a background in RDF and ontologies.
-The template is based on the structure of ANNOdc, so that the entered data is compliant with it (i.e., the ANNOds classes are subclasses of the ANNOdc classes and properties from ANNOdc are used).
+The template is based on the structure of ANNOdc, so that the entered data is compliant with it: The ANNOds classes are subclasses of the ANNOdc classes (see \cref{tab:core}) and properties (see \cref{fig:core}) from ANNOdc are used.
 The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
 This approach ensures intuitive and unimpeded data input and a valid end result.
 The primary focus is on the design of ANNO's ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida's in-house software AnthroWorks3D.
