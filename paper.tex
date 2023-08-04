@@ -232,32 +232,37 @@ This approach ensures that domain experts can easily handle the ontology and eff
 
 \begin{table}
   \centering
-  \caption{Classes of ANNOdc along with interlinks to the FMA and the GFO top-level ontology.}
+  \caption{Classes of ANNOdc along with interlinks to the FMA and the GFO top-level ontology.
+  \textsuperscript{i}\anno{LO} is the line between \anno{Lambda} and \anno{Opisthion}, the \emph{occipital saggittal arc}.}
   \label{tab:core}
-  \begin{tabulary}{\textwidth}{lLLl}
+  \begin{tabulary}{\textwidth}{llLl}
     \toprule
-	ANNOdc class					&Examples				&FMA equivalent / ID						&GFO superclass	\\
+	ANNOdc class					&ANNOds Examples				&FMA equivalent / ID						&GFO superclass	\\
 	\midrule
 	\anno{AnatomicalEntity}			&						&Physical anatomical entity \fma{61775}\\
-	\anno{AnatomicalStructure}		&						&Material anatomical entity	\fma{67165}		&\gfo{MaterialObject}\\							
-	\anno{SpatialAnatomical entity}	&						&immaterial anatomical entity \fma{67112}	&\gfo{SpaceEntity}\\
+	\anno{AnatomicalStructure}		&\anno{Skeleton}		&Material anatomical entity	\fma{67165}		&\gfo{MaterialObject}\\							
+	\anno{SpatialAnatomicalEntity}	&						&immaterial anatomical entity \fma{67112}	&\gfo{SpaceEntity}\\
 	\anno{AnatomicalSpace}			&						&											&\gfo{SpaceRegion}\\
-	\anno{AnatomicalSurface}			&Median Plane			&Anatomical surface \fma{24137}			&\gfo{SurfaceRegion}\\
-	\anno{AnatomicalLine}				&Mandibular Angle (ppam dexter-go dexter-piam dexter), Sagittal Axis&Anatomical line \fma{9657}	&\gfo{LineRegion}\\
-	\anno{AnatomicalPoint}			&Gonion					&Anatomical point \fma{9658}							&\gfo{PointRegion}\\
-	\anno{AnatomicalPlane}			&Median Plane			&Anatomical plane \fma{242982}\\
-	\anno{AnatomicalAxis}		 		&Sagittal Axis\\
-	\anno{Skeleton}					&						&Osseous skeleton \fma{23875}\\
+	\anno{AnatomicalSurface}		&						&Anatomical surface \fma{24137}			&\gfo{SurfaceRegion}\\
+	\anno{AnatomicalLine}			&\anno{LO}\textsuperscript{i}	&Anatomical line \fma{9657}	&\gfo{LineRegion}\\
+	\anno{AnatomicalPoint}			&						&Anatomical point \fma{9658}							&\gfo{PointRegion}\\
+	\anno{MeasurementPoint}			&\anno{Lambda}\\%, \anno{Ophistion}\\
+	\anno{OrientationPoint}			&\anno{Orbitale}\\
+	\anno{AnatomicalPlane}			&\anno{FrontalPlane}	&Anatomical plane \fma{242982}\\
+	\anno{AnatomicalAxis}		 	&\anno{SagittalAxis}\\
+	%\anno{Skeleton}					&						&Osseous skeleton \fma{23875}\\
 	\anno{BoneStructure}\\
-	\anno{Bone}						&Mandibula				&Bone organ \fma{5018}\\
-	\anno{BonePart}					&Protuberantia mentalis	&Related to Segment of bone organ \fma{281808}, Zone of bone organ \fma{10483}\\
-	\anno{BoneCompound}				&Cranium				&Comparable to union of Skeletal system \fma{23881} and subdivision of skeletal system \fma{85544}\\
-	\anno{ToothStructure}				&Dentes Permanentes		&Permanent teeth (\fma{75152}\\%; TA2ID:913)\\
-	\anno{Tooth}						&Dens caninus			&Tooth \fma{12516}\\
-	\anno{ToothPart}					&Cuspis dentis			\\%\fma{56481}; TA2ID:925\\
-	\anno{Phenotype}					&Height, Sex			&											&\gfo{Attributive}\\							
-	\anno{AnatomicalProperty}			&Shape (Degree of morphological expression)	&Anatomical relation, e.g., Has\_shape &\gfo{Attributive}\\
-	\anno{RelativeAnatomicalLocation}&superior, lateral, medial, posterior	&Anatomical qualitative coordinate	&\gfo{Relator}\\
+	\anno{Bone}						&\anno{Mandibula}				&Bone organ \fma{5018}\\
+	\anno{BonePart}					&\anno{ArcusAlveolaris}	&Related to Segment of bone organ \fma{281808}, Zone of bone organ \fma{10483}\\
+	\anno{BoneCompound}				&\anno{Cranium}				&Comparable to union of Skeletal system \fma{23881} and subdivision of skeletal system \fma{85544}\\
+	\anno{ToothStructure}\\%			&\anno{DentesPermanentes}\\%		&Permanent teeth (\fma{75152}\\%; TA2ID:913)\\
+	\anno{Tooth}					&\anno{DensCaninus}			&Tooth \fma{12516}\\
+	\anno{ToothPart}\\%\fma{56481}; TA2ID:925\\
+	\anno{Phenotype}				&\anno{SexGiles19671}			&											&\gfo{Attributive}\\
+	\anno{AnatomicalProperty}		&						&													&\gfo{Attributive}\\
+	%\anno{AnatomicalProperty}		&Shape (Degree of morphological expression)	&Anatomical relation, e.g., Has\_shape &\gfo{Attributive}\\
+	\anno{RelativeAnatomicalLocation}&\anno{Sinister}	&Anatomical qualitative coordinate \fma{30346}	&\gfo{Relator}\\
+	%\anno{RelativeAnatomicalLocation}&superior, lateral, medial, posterior	&Anatomical qualitative coordinate	&\gfo{Relator}\\
 \bottomrule
 \end{tabulary}
 \end{table}
@@ -277,7 +282,7 @@ Image source: \citep{allgemeineanatomieen}.
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=0.4\textwidth]{img/relativelocation.png}
+\includegraphics[width=0.3\textwidth]{img/relativelocation.png}
 \caption{
 Anatomical relative location: directional terms used in anatomy and anthropology.
 Image source: \cite{schemamann}.
@@ -528,7 +533,7 @@ In addition to the conception and development of the ontology as well as of defi
 \textbf{UNFINISHED DRAFT SECTION}
 
 We use our ontological architecture (top level ontology, domain core ontology, domain specific ontology) to develop \aw{}~based on the three-ontology method.
-This method, as outlined in~\citet{threeontologymethod}, aided us in designing a tool for annotating human skeletons and identifying phenotypes. 
+This method, as outlined in~\cite{threeontologymethod}, aided us in designing a tool for annotating human skeletons and identifying phenotypes. 
 We use ANNOdc as the Task Ontology and ANNOds as the Domain Ontology.
 One of the advantages of the three-ontology method is that the software only needs to implement the access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are processed dynamically.
 \aw{} leverages ANNOdc as an interface to dynamically access the entities of the ANNOds, such as listing all subclasses of a specific class like \aurl{anno}{Bone}, as explained in \cref{sec:aw}.
