@@ -121,7 +121,8 @@ There are various reference materials for the description of anatomical structur
 The latter aim for an established standardised naming and systematisation.
 There are currently two prominent ontologies in the field of general anatomy:
 
-The Terminologia anatomica~\citep{ta2} (TA) is a hierarchy of anatomical structure concepts for the entire human body.
+\subsection{Terminologia anatomica (TA)}
+The TA~\citep{ta2} is a hierarchy of anatomical structure concepts for the entire human body.
 For historical reasons, it uses a terminology consisting of Latin and originally Greek, which was later latinised.
 For each anatomical structure, the TA provides the \enquote{preferred}, i.e. standard, Latin term and its English equivalent as well as an individual identification number.
 In some cases, Latin and English synonyms are also included, e.g. \emph{malar bone} is an English synonym of the Latin preferred term \emph{Os zygomaticum} and its English equivalent \emph{zygomatic bone}.
@@ -133,7 +134,8 @@ In addition to the outdated print edition~\citep{ta1998}, an extended second edi
 Furthermore, there is a commercially available independent companion print publication with German~\citep{anatomylexicon}, English~\citep{pocketatlas} and Spanish~\citep{taspanish} editions of which at least the German edition is regularly updated.
 This book contains textual and visual descriptions, whereby anatomical structures are indicated through lines on the illustrations.
 
-The \emph{Foundational Model of Anatomy} (FMA)~\citep{fma} ontology represents the physical organisation of human anatomy by mapping relations to one another.
+\subsection{Foundational Model of Anatomy (FMA)}
+The FMA~\citep{fma} ontology represents the physical organisation of human anatomy by mapping relations to one another.
 It allows the knowledge it contains to be represented in a way that is humanly comprehensible and machine-interpretable.
 The FMA uses the Basic Formal Ontology (BFO) as its top level ontology.
 Corresponding to its relational nature, new higher level concepts are introduced and used for reorganising the actual anatomical structures diverging from the TA's hierarchical structure.
@@ -201,7 +203,7 @@ The ontological architecture of ANNO consists of three interrelated layers repre
 
 \begin{enumerate}
 \item We use the General Formal Ontology (GFO)~\citep{gfo} as top-level ontology of ANNO.
-In the current paper, we refer especially to the categories \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO (\cref{sec:core}, \cref{fig:gfo})
+We refer specifically to the categories \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO, see \cref{fig:gfo}. %\cref{sec:core}, 
 
 \item ANNOdc (\cref{sec:core}, \cref{fig:core}) is a domain-core (dc) ontology to provide the core entities of a domain.
 This includes general anatomical categories (Bone and Tooth), a category for describing their characteristics (Anatomical property), anatomical spatial entities (Anatomical space, surface, line and point) as well as the category \emph{Phenotype} to model the rules for determining human phenotypes.
@@ -212,6 +214,11 @@ These are bones, teeth, their parts and compounds, such as \emph{mandible}, \emp
 It is also used for modelling their properties and relations, such as the distance between Mentale dexterum and Mentale sinistrum, needed to derive human phenotypes like sex or height.
 ANNOds is embedded in ANNOdc.
 \end{enumerate}
+
+\begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{img/gfo.pdf}
+\caption{Integration of ANNO with the top-level GFO ontology.}\label{fig:gfo}
+\end{figure}
 
 % take care to prevent the problems noted by reviewer 1 in https://semantic-web-journal.net/content/modelling-digital-health-data-examode-ontology-histopathology
 % TODO: ontology language, expressivity
@@ -227,12 +234,12 @@ This approach ensures that domain experts can easily handle the ontology and eff
 % Definition/Beschreibung der Kern-Konzepte/Module und -Relationen mit Beispielen, GFO-Einbettung
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/core.pdf}
-\caption{ANNOdc ontology}\label{fig:core}
+\caption{The ANNOdc domain-core ontology.}\label{fig:core}
 \end{figure}
 
 \begin{table}
   \centering
-  \caption{Classes of ANNOdc along with interlinks to the FMA and the GFO top-level ontology.
+  \caption{Classes of ANNOdc along with exemplary ANNOds subclasses as well as interlinks to the FMA and the GFO top-level ontology.
   \textsuperscript{i}\anno{LO} is the line between \anno{Lambda} and \anno{Opisthion}, the \emph{occipital saggittal arc}.}
   \label{tab:core}
   \begin{tabulary}{\textwidth}{llLl}
@@ -392,7 +399,7 @@ Exemplary assessment of anatomical properties for the derivation of the phenotyp
 % yes, walker method is published in buikstra
 Method after Walker~\cite{datacollection}.
 Image based on \cite{datacollection}.
-}\label{fig:gfo}
+}\label{fig:phenotype}
 \end{figure}
 
 
@@ -444,12 +451,13 @@ Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Ant
 \label{fig:aw3d}
 \end{figure}
 
-\begin{figure}[h]
-\includegraphics[width=0.6\textwidth]{img/gfo.pdf}
-\caption{Integration of ANNO with the top-level GFO ontology.}\label{fig:gfo}
+\section{Development of ANNOds}\label{sec:domain}
+
+\begin{figure}[h!t]
+\includegraphics[width=\textwidth]{img/smog.png}
+\caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
 \end{figure}
 
-\section{Development of ANNOds}\label{sec:domain}
 While ANNOdc is created by the ontologists in consultation with the domain experts, ANNOds is developed by the domain experts themselves.
 For this purpose they were provided with a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}, eliminating the requirement of having a background in RDF and ontologies.
 The template is based on the structure of ANNOdc, so that the entered data is compliant with it: The ANNOds classes are subclasses of the ANNOdc classes (see \cref{tab:core}) and properties (see \cref{fig:core}) from ANNOdc are used.
@@ -458,14 +466,9 @@ This approach ensures intuitive and unimpeded data input and a valid end result.
 The primary focus is on the design of ANNO's ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida's in-house software AnthroWorks3D.
 In addition, the objective is to initiate the process of data entry, encompassing selected bones of the skeleton.
 
-\begin{figure}[h!t]
-\includegraphics[width=\textwidth]{img/smog.png}
-\caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
-\end{figure}
-
 \textbf{UNFINISHED DRAFT SECTION, TO BE HEAVILY REWORKED AND CUT}
 
-General considerations 
+%\subsections{General considerations}
 All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
 
 Anatomical Landmarks (Bone Parts)  (Selection Criteria, scope and process,  properties) 
@@ -490,7 +493,7 @@ In addition, it also had to be integrable into \aw{}.
 The functions chosen were those with diagnostic value.
 These were discriminant functions for sex determination and regression functions for body height and body weight estimation.
 
-Process for creating definitions and measurements (Headline to be deleted) 
+\subsection{Process for creating definitions and measurements}
 For the definitions and measurements, a minimum amount of English-language and mostly German-language literature was compared in order to develop the definitions from their information.
 Notably, Latin or ancient Greek terms were missing from the English-language literature.
 The FMA also contains only English terms.
@@ -501,7 +504,7 @@ The examination of the Latin grammar was relevant for this.
 For the measurement sections, in addition to the name of the measurement section, the type of measurement (e.g., distance measurement) and the measurement instrument were also recorded.
 The subsequent visual definitions were made in the different anatomical views and represented area markings for the anatomical landmarks and point markings for the osteometric landmarks.
 
-%\subsection{Functions} Headline to be deleted
+\subsection{Functions}
 The functions were divided into discriminant functions for sex determination and regress functions for body height and body weight estimation.
 The goal here was to cover functions for at least one European, African, American, and Asian ethnicity or population.
 Names were assigned by the number included in each study, the authors, and the year of publication.
@@ -511,12 +514,12 @@ In addition, for the discriminant functions, the thresholds of sex assignment, c
 While there are many textual sources of anthropological systematisation, they do not agree in all aspects and there is not a single, formally described, standard.
 ANNO links to concepts of the FMA when they exist, but structures them in a different way.
 
-%Sex determination Headline to be deleted 
+\subsection{Sex determination}
 % auto translated from the project report, use as basis:
 The sex of a specific individual within a population may be estimated using a function on skeletal measurements that is specific to this population.
 Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
 
-Regress functions Headline to be deleted 
+\subsection{Regress functions}
 Regress functions for body height and body weight estimation.
 The goal here was to cover functions for at least one European, African, American, and Asian ethnic group or population.
 Names were assigned by the number included in each study, the authors, and the year of publication.
