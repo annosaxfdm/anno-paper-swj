@@ -8,6 +8,7 @@
 \usepackage{booktabs}
 \usepackage{tabulary}
 %\usepackage{dcolumn}
+%\usepackage{placeins} %provides \FloatBarrier
 
 \newcommand{\aw}{AnthroWorks3D}
 \newcommand{\anno}[1]{\href{https://annosaxfdm.de/ontology/#1}{\texttt{#1}}}
@@ -160,7 +161,7 @@ However, this naming convention is often inconsistent and non-intuitive.
 An example, showing the variability in illustrative descriptions are the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \emph{sella}, the Latin name for saddle.
 It is moreover worth pointing out that not every anatomical structure that contributes to an articulation in some way automatically carries the term articular with it, such as the \emph{caput mandibulae}, which connects the Mandibula to the rest of the Cranium.
 The Tuber frontale, which serves as an indicator for sex in anthropology, is listed as an eminentia in the TA~\citep{ta2}.
-Likewise, he Protuberantia mentale is referred to as Eminentia mentale in a widely-used anthropological method that is also used for sex determination.
+Likewise, the Protuberantia mentale is referred to as Eminentia mentale in a widely-used anthropological method that is also used for sex determination.
 As can be seen, the incentive for synonyms is high.
 However, the current resources fail to provide comprehensive lists of synonyms in use.
 This in turn may lead to misattribution: For example, the FMA entry with the preferred name \emph{External acoustic aperture} and non-English equivalent \emph{Porus acusticus externus} (\aurl{fma}{61301}) lists \emph{external acoustic meatus} (\emph{Meatus acusticus externus} in Latin) as a synonym.
@@ -234,7 +235,7 @@ This approach ensures that domain experts can easily handle the ontology and eff
 \caption{The ANNOdc domain-core ontology.}\label{fig:core}
 \end{figure}
 
-\begin{table}
+\begin{table}[b]
   \centering
   \caption{Classes of ANNOdc along with exemplary ANNOds subclasses as well as interlinks to the FMA and the GFO top-level ontology.
   \textsuperscript{i}\anno{LO} is the line between \anno{Lambda} and \anno{Opisthion}, the \emph{occipital saggittal arc}.}
@@ -274,45 +275,42 @@ This approach ensures that domain experts can easily handle the ontology and eff
 \subsection{Terminology for descriptive anatomy}
 
 \begin{figure}
-\includegraphics[width=\textwidth]{img/axisplane.png}
-\caption{
-Anatomical Planes and Axes:
+\includegraphics[width=\textwidth]{img/axisplanelocation.png}
+\caption{Left: Anatomical Planes and Axes:
+1 saggital plane,
+2 midsaggital plane,
+3 frontal plane,
+4 transverse or horizontal plane,
+5 saggital axis,
+6 transverse axis,
+7 longitudinal or vertical axis.
 a: Planum sagittale (sagittal plane), includes sagittal and longitudinal axes; the midsagittal plane passes through the midline of the body,
 b: Planum transversale (Transversal plane), includes transverse and sagittal axes,
 c: Planum frontale (frontal plane): includes longitudinal and transverse axes.
-Image source: \citep{allgemeineanatomieen}.
-}
+Right: Anatomical relative location: directional terms used in anatomy and anthropology.
+Modified figure based on \cite{allgemeineanatomieen,schemamann}.}
 \label{fig:axisplane}
 \end{figure}
-
-\begin{figure}
-\includegraphics[width=0.3\textwidth]{img/relativelocation.png}
-\caption{
-Anatomical relative location: directional terms used in anatomy and anthropology.
-Image source: \cite{schemamann}.
-}
-\label{fig:relativelocation}
-\end{figure}
-
+%\FloatBarrier
 The position of all anatomical entities is described in a standardized fashion using conceptual axes (a kind of anatomical line), planes (a kind of anatomical surface) as well as directions (relative anatomical locations).
 Directions are relative to the body based on the standard anatomical position (\emph{positio anatomica} \aurl{ta2}{72}, \aurl{fma}{23132}).
 It refers to standing upright, facing forward, palms and toes pointing forward, thumbs to the side, and observed from the perspective of the respective individual. %Quelle kommt noch
-
+%
 Although an infinite number of axes and planes can be defined within the human body, generally three principal axes and planes are used~\citep{prometheus}.
 They are mutually perpendicular and provide the three spatial coordinates.
 The three principle axes, shown in \cref{fig:axisplane} are:
 \begin{itemize}
-\item The longitudinal or vertical axis: It runs in the superior-inferior direction in an upright position, perpendicular to the ground.
+\item The longitudinal or vertical axis runs in the superior-inferior direction in an upright position, perpendicular to the ground.
 It intersects with the frontal and sagittal planes.
-\item The sagittal axis: It runs in the ventral-dorsal direction, from the front to the back surface of the body and vice versa.
+\item The sagittal axis runs in the ventral-dorsal direction, from the front to the back surface of the body and vice versa.
 It intersects with the sagittal and transverse planes.
-\item The transverse or horizontal axis: It extends from left to right and vice versa, intersecting with the frontal and transverse planes.
+\item The transverse or horizontal axis extends from left to right, intersecting with the frontal and transverse planes.
 \end{itemize}
 
 The three principal planes, depicted in \cref{fig:axisplane}, are:
 \begin{itemize}
 \item The sagittal plane, i.e all vertical planes parallel to the sagittal suture of the skull and running from anterior to posterior in the upright position.
-The median sagittal plane (= median plane) divides the body into two symmetrical halves.
+The median (sagittal) plane divides the body into two symmetrical halves.
 \item The frontal plane (= coronal plane) comprising all planes parallel to the forehead (frons) or the coronal suture of the skull, running vertically from one side of the body to the other in the upright position.
 \item The transverse plane including all horizontal cross-sectional planes, relative to the upright position, dividing the body into cranial and caudal sections.
 They run perpendicular to the longitudinal axis of the body.
@@ -321,7 +319,7 @@ They run perpendicular to the longitudinal axis of the body.
 Each one has two anatomical axes as boundaries in the sense of GFO, which allows boundaries to occur inside a structure and not necessarily at the extremities.
 For example, the coronal (frontal) plane has the transversal (horizontal) and longitudinal (vertical) axes as boundaries.
 
-An anatomical direction or relative anatomical location, as shown in \cref{fig:relativelocation}, is the position of an anatomical entity (e.g., a bone structure) in relation to another anatomical entity (e.g., another bone, an axis, a plane or a point such as the center of the body).
+An anatomical direction or relative anatomical location, as shown in \cref{fig:axisplane}, is the position of an anatomical entity (e.g., a bone structure) in relation to another anatomical entity (e.g., another bone, an axis, a plane or a point such as the center of the body).
 Relative anatomical locations are classified according to the anatomical terms of location (e.g., cranial or superior = \enquote{towards the end of the skull}, dexter = \enquote{right} or distal = \enquote{in direction towards the end of a limb}).
 For example, the Glabella is located laterally to both Arcus superciliaris (Arcus superciliaris sinister und Arcus superciliaris dexter).
 A relative anatomical location can be considered as an individual relation between two anatomical entities (target entity and reference entity) and can therefore be modeled using a GFO relator.
@@ -436,6 +434,12 @@ While the morphological examination was not within the scope of the project, it 
 \caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{img/corpus_ossis_pubis.png}
+\caption{}\label{fig:corpus_ossis_pubis}
+\end{figure}
+
 While ANNOdc is created by the ontologists in consultation with the domain experts, ANNOds is developed by the domain experts themselves.
 For this purpose they were provided with a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}, eliminating the requirement of having a background in RDF and ontologies.
 The template is based on the structure of ANNOdc, so that the entered data is compliant with it: The ANNOds classes are subclasses of the ANNOdc classes (see \cref{tab:core}) and properties (see \cref{fig:core}) from ANNOdc are used.
@@ -481,7 +485,8 @@ The subsequent visual definitions were made in the different anatomical views ma
 %\subsection{Functions}
 The functions are divided into discriminant functions for sex determination and regress functions for body height.
 The sex of a specific individual within a population may be estimated using a function on skeletal measurements that is specific or similar to this population.
-Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female. The exact number of categories may vary depending on the particular method used.
+Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
+The exact number of categories may vary depending on the particular method used.
 ANNOds covers functions for at least one European, African, American, and Asian ethnicity or population.
 %Names are assigned by the number included in each study, the authors, and the year of publication.
 %In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender are noted.
@@ -590,7 +595,7 @@ Also, ANNO comes with extensive documentation of the process and available resou
 Hence, foundations have been laid for its use and further development and management.
 
 Navigating through plenty of options for designing an ontology makes consistency challenging to achieve.
-As documented in the TA, the choices frequently reflect the preference of a party having something included or named or structured in a certain way because it is considered relevant by a particular party.
+As documented in the TA~\citep[part II]{ta2}, the choices frequently reflect the preference of a party having something included or named or structured in a certain way because it is considered relevant by a particular party.
 ANNO represents a specialized ontology that builds upon existing ontologies such as FMA and TA.
 However, meeting the diverse needs of the field and interdisciplinary requirements can only be accomplished through an ongoing, gradual process over time.
 
