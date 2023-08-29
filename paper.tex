@@ -28,7 +28,7 @@
 \begin{frontmatter}
 
 %\pretitle{}
-\title{The Anthropological Notation Ontology (ANNO): A core ontology for annotating human bones and deriving phenotypes}
+\title{The ANthropological Notation Ontology (ANNO): A core ontology for annotating human bones and deriving phenotypes}
 \runtitle{Anthropological Notation Ontology}
 %\subtitle{}
 
@@ -44,7 +44,7 @@
 \author[A,C]{\inits{K.}\fnms{Konrad} \snm{Höffner}\ead[label=e1]{konrad.hoeffner@uni-leipzig.de}%
 \thanks{Corresponding author. \printead{e1}.}
 }
-\author[B,C]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e3]{fabian.schmiedel@hs-mittweida.de}}
+\author[B]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e3]{fabian.schmiedel@hs-mittweida.de}}
 \author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e10]{dirk.labudde@hs-mittweida.de }}
 \author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e11]{alexander.uciteli@imise.uni-leipzig.de}}
 \address[A]{Institute for Medical Informatics, Statistics and Epidemiology (IMISE), \orgname{Leipzig University},
@@ -71,7 +71,7 @@ Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e10}}
 The Anthropological Notation Ontology (ANNO) allows the systematic and standardized classification of recovered bone finds into the skeletal system, the description of the skeletal pieces, and the definition of functions for the derivation of different phenotypes of humans in forensic and historical anthropology.
 ANNO consists of two components:
 ANNOdc, a domain-core ontology providing core entities such as basic anatomical categories, and ANNOds, a domain-specific ontology used for annotating structures of the human skeleton.
-ANNO is integrated into AnthroWorks3D, an application for the creation and analysis of 3D-models of human skeletal remains.
+ANNO is integrated into AnthroWorks3D, a photogrammetry pipeline and application for the creation and analysis of 3D-models of human skeletal remains.
 The integration is based on the three-ontology method with the General Formal Ontology as the top level ontology, ANNOdc as the task ontology and ANNOds as the domain ontology.
 Thus, AnthroWorks3D only needs to implement access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are processed dynamically.
 ANNO supports the analysis of skeletal and bone finds in forensic and historical anthropology, facilitating the standardization of data annotation and ensuring accurate preservation of information for posterity.
@@ -96,7 +96,7 @@ Data from historical and prehistoric anthropology~\citep{prehistoricanthropology
 This understanding encompasses their identity, health status, aspects of their behavior, lifestyle, culture and even the circumstances of their death~\citep{spurensuche}.
 For example, anthropological methods can be used to determine individual properties (phenotypes) such as their sex, age, height and ancestry and other individualizing traits.
 
-Digitization offers several advantages to anthropology, including remote work, without the effects of wear and tear on the physical skeletal specimens.
+Digitization and digitalization offer several advantages to anthropology, including remote work, without the effects of wear and tear on the physical skeletal specimens.
 Current problems of access can be resolved, as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied, which facilitates interdisciplinary collaborative research.
 Moreover it allows for linking data of different study samples across geographical boundaries.
 Data sets consolidated this way and formalized through the Anthropological Notation Ontology (ANNO) presented here allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
@@ -109,7 +109,7 @@ This map contains visible anatomical surface structures, as well as artificial o
 ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
 
 ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures. In its current version, the ontology refers to standardized normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors.
-ANNO is integrated into AnthroWorks3D (AW3D), an application for generating and analyzing 3D-models of human skeletal remains.
+ANNO is integrated into AnthroWorks3D (AW3D), a photogrammetry pipeline and application for generating and analyzing 3D-models of human skeletal remains.
 ANNO is developed at \url{https://github.com/annosaxfdm} and published at \url{https://annosaxfdm.de/ontology/} using the RickView~\citep{rickview} browser.
 
 \section{Related Work}
@@ -140,7 +140,7 @@ Thus, in 90\,\% of the cases this leads to new creations of anatomical concepts~
 
 We create manual links between ANNO and the FMA, which we use to connect ANNO with the TA2 by using unofficial links between FMA and TA2 provided by Wikidata.
 
-\subsection{Problems and Research Gaps}
+\subsection{Current Research Gaps}
 
 There are several issues and research gaps when it comes to naming and defining anatomical concepts and instances that neither current ontologies nor reference literature---general or subject-specific---can address adequately.
 
@@ -190,7 +190,7 @@ The latter also requires a clear textual definition.
 Unfortunately, there are currently no equivalent standardized definitions for skeletal anatomy, meanwhile anatomical resources only provide sparse information on this topic.
 
 To address these issues, it is necessary to develop unified, textual, visual, and detailed descriptive definitions for anatomical concepts and instances.
-These definitions should be presented within an easily understandable ontology.
+These definitions should be presented within an easily understandable ontology, with ANNO contributing to filling this specific niche.
 
 %\url{https://bioportal.bioontology.org/ontologies/FMA}
 
@@ -199,7 +199,7 @@ These definitions should be presented within an easily understandable ontology.
 The ontological architecture of ANNO consists of three interrelated layers representing by a top-level ontology, a domain-core ontology and a domain-specific ontology:
 
 \begin{enumerate}
-\item We use the General Formal Ontology (GO)~\citep{gfo} as top-level ontology of ANNO.
+\item We use the General Formal Ontology (GFO)~\citep{gfo} as top-level ontology of ANNO.
 We refer specifically to the categories \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO, see \cref{fig:gfo}. %\cref{sec:core}, 
 
 \item ANNOdc (\cref{sec:core}, \cref{fig:core}) is a domain-core (dc) ontology that defines the core entities of the domain.
@@ -395,7 +395,7 @@ The length of the line or the angle degree can be measured and used in functions
 Exemplary assessment of anatomical properties for the derivation of the phenotype sex, where five cranial bone parts are evaluated for their level of morphological expression.
 % yes, walker method is published in buikstra
 Method after Walker~\cite{datacollection}.
-Image based on \cite{datacollection}.
+Image taken unmodified from \cite{datacollection}.
 }\label{fig:phenotype}
 \end{figure}
 
@@ -405,7 +405,7 @@ Since phenotypes are individual properties, they can be considered as attributiv
 The phenotype notion has also been analyzed in detail within the framework of the Core Ontology of Phenotypes~\citep{ontologicalrepresentation}.
 
 In the case of ANNO, the phenotype can be derived using functions comprising obtained measurements.
-Discriminant functions, e.g based on the Cranium, allow for the assignment to sex while estimation of stature is attained by using linear regressions, e.g. based on Femur or Tibia length measurements.
+Discriminant functions, e.g. based on the Cranium, allow for the assignment to sex while estimation of stature is attained by using linear regressions, e.g. based on Femur or Tibia length measurements.
 RDF is not optimized for mathematical formulas so we model those as literals.
 
 % ć in Vodanović cannot be displayed without font package and I don't know if the journal allows a different font
@@ -456,10 +456,10 @@ In addition, the objective is to initiate the process of data entry, encompassin
 %Phenotypes 
 %Development of the ontology is based on the following selection criteria:
 %The selection criteria are as follows:
-For the cranium, the selection is reduced because the number of all ossa cranii is too high.
+Given the overwhelming number of bone parts present in the cranium, the initial selection was narrowed down to a selection of representative and relevant parts.
 Overall, however, the aim is to include those that are of anthropological relevance, i.e. that contribute to navigation, localization, and identification on the bone.
-Those landmarks included in the definitions of others were also to be defined.
-For bones that lie on the median (e.g., mandible or sternum), bilateral landmarks are defined, each with a side reference.
+Those structures included in the definitions of others were also to be defined.
+For bones that lie on the median sagittal plane (e.g., mandible or sternum), bilateral landmarks are defined, each with a side reference.
 For osteometric landmarks, all those already established in the core literature are to be used.
 Furthermore, those that are relevant for meaningful measurement distances and can be annotated in \aw{} should be used.
 For the measurement distances, those should be selected that are established in the majority of the core literature as well as necessary for discriminant functions and functions for estimating height and weight.
@@ -468,20 +468,20 @@ The functions chosen were those with diagnostic value.
 These were discriminant functions for sex determination and regression functions for body height and body weight estimation.
 
 %\subsection{Process for creating definitions and measurements}
-For the definitions and measurements, a minimum amount of English- and mostly German-language literature was compared in order to develop the definitions from their information.
-Notably, Latin or ancient Greek terms were missing from the English literature and the FMA.
+For the definitions and measurements, a representative minimum amount of anthropological and anatomical English- and mostly German-language literature was compared in order to develop the definitions from their information.
+Notably, Latin or latinized ancient Greek terms often missing in the English literature and the FMA were included.
 %The FMA also contains only English terms.
 %For this reason, these were also searched with their synonyms.
-Overall, the name of the landmark or survey route is noted in English, German, and Latin in singular and plural form, its synonyms in the three languages, the FMA and TA ID, and any information on function and delineation.
+Overall, the name of the structure, measurement or point is noted in Latin in singular and plural forms, English, German, synonyms in all three languages, the FMA and TA ID, and any information on function and delineation.
 This requires a positional description, such as the Punctum superioris capitis femoris as the superior located point of the Caput femoris.
 %The examination of the Latin grammar was relevant for this.
-For the measurement sections, in addition to the name of the measurement section, the type of measurement (e.g., distance measurement) and the measurement instrument were also recorded.
-The subsequent visual definitions were made in the different anatomical views and represented area markings for the anatomical landmarks and point markings for the osteometric landmarks.
+For the measurements, in addition to the name of the measurement, the type (e.g., distance measurement) and the measurement instrument were also recorded.
+The subsequent visual definitions were made in the different anatomical views marking the area of the anatomical structures and the position of the anatomical points.
 
 %\subsection{Functions}
-The functions are divided into discriminant functions for sex determination and regress functions for body height and body weight estimation.
-The sex of a specific individual within a population may be estimated using a function on skeletal measurements that is specific to this population.
-Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
+The functions are divided into discriminant functions for sex determination and regress functions for body height.
+The sex of a specific individual within a population may be estimated using a function on skeletal measurements that is specific or similar to this population.
+Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female. The exact number of categories may vary depending on the particular method used.
 ANNOds covers functions for at least one European, African, American, and Asian ethnicity or population.
 %Names are assigned by the number included in each study, the authors, and the year of publication.
 %In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender are noted.
@@ -587,14 +587,14 @@ The ontology is interlinked with the TA and FMA and provides transparency by inc
 Moreover, it provides a method for conceptualizing the ontology and generating its content.
 The ontology replaces an old, hard-coded format in \aw{}, which saves development time, separates annotation file compatibility from software versions, eases annotation through hierarchical browsing and improves interoperability and customization.
 Also, ANNO comes with extensive documentation of the process and available resources.
-Hence, foundations have been laid for its use and further development and management of ANNO.
+Hence, foundations have been laid for its use and further development and management.
 
 Navigating through plenty of options for designing an ontology makes consistency challenging to achieve.
 As documented in the TA, the choices frequently reflect the preference of a party having something included or named or structured in a certain way because it is considered relevant by a particular party.
 ANNO represents a specialized ontology that builds upon existing ontologies such as FMA and TA.
 However, meeting the diverse needs of the field and interdisciplinary requirements can only be accomplished through an ongoing, gradual process over time.
 
-While ANNO serves as a foundation for describing anatomical terms, additional work is required to comprehensively cover the domain.
+While ANNO serves as a foundation for describing anatomical terms, additional work is required to comprehensively cover the anthropological domain.
 For instance, it only covers standardized normal adult anatomy.
 Moreover, in order to remain permanently suitable for practical usage, the ontology must be continuously reviewed, updated, enriched or adapted to further needs.
 Moreover, ANNO presents all necessary prerequisites to being extended to the other aspects of anthropological work with human skeletal remains.
