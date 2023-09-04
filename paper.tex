@@ -113,6 +113,24 @@ ANNO consists of two components: ANNOdc, a domain-core ontology providing core e
 ANNO is integrated into AnthroWorks3D (AW3D), a photogrammetry pipeline and application for generating and analyzing 3D-models of human skeletal remains.
 ANNO is developed at \url{https://github.com/annosaxfdm} and published at \url{https://annosaxfdm.de/ontology/} using the RickView~\citep{rickview} browser.
 
+\begin{table}[b]
+\centering
+\caption{Overview of ANNO.}
+\label{tab:publication}
+\begin{tabulary}{\textwidth}{ll}
+\toprule
+%Property			&Value\\
+%\midrule
+Modules				&ANNOdc (domain-core) , ANNOds (domain-specific)\\
+Top-Level Ontology	&General Formal Ontology~\citep{gfo}\\
+Namespace			&\url{https://annosaxfdm.de/ontology/}\\
+Terminology Server	&\url{https://ols.imise.uni-leipzig.de/ontologies/anno}\\
+License				&\href{https://creativecommons.org/publicdomain/zero/1.0/}{Creative Commons Zero v1.0 Universal}\\
+DOI (all versions)		&\href{https://doi.org/10.5281/zenodo.8301559}{10.5281/zenodo.8301559}\\
+\bottomrule
+\end{tabulary}
+\end{table}
+
 \section{Related Work}
 
 There are various reference materials for the description of anatomical structures, ranging from anatomical atlases to nomenclatures.
@@ -222,7 +240,6 @@ ANNOds is embedded in ANNOdc.
 % TODO: ontology language, expressivity
 % TODO: reuse of ontological entities
 % TODO: clear validation mechanism
-% TODO: top-level ontology?
 
 \section{Description and Foundation of ANNOdc}\label{sec:core}
 The core ontology development occurs in close collaboration between ontologists and anthropologists.
@@ -471,7 +488,7 @@ For the measurement distances, those should be selected that are established in 
 The functions chosen were those with diagnostic value.
 These were discriminant functions for sex determination and regression functions for body height and body weight estimation.
 
-%\subsection{Process for creating definitions and measurements}
+\subsection{Process for creating definitions and measurements}
 For the definitions and measurements, a representative minimum amount of anthropological and anatomical English- and mostly German-language literature was compared in order to develop the definitions from their information.
 Notably, Latin or latinized ancient Greek terms often missing in the English literature and the FMA were included.
 %The FMA also contains only English terms.
@@ -482,7 +499,7 @@ This requires a positional description, such as the Punctum superioris capitis f
 For the measurements, in addition to the name of the measurement, the type (e.g., distance measurement) and the measurement instrument were also recorded.
 The subsequent visual definitions were made in the different anatomical views marking the area of the anatomical structures and the position of the anatomical points.
 
-%\subsection{Functions}
+\subsection{Functions}
 The functions are divided into discriminant functions for sex determination and regress functions for body height.
 The sex of a specific individual within a population may be estimated using a function on skeletal measurements that is specific or similar to this population.
 Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
@@ -506,6 +523,10 @@ ANNOds covers functions for at least one European, African, American, and Asian 
 %
 %Standardised description of position 
 %In addition to the conception and development of the ontology as well as of definition, data input was initiated as content of Cranium including the Mandibula as well as the teeth of the was entered. Entries can be added directly to the OWL-File using Protégé or they can continue to be entered directly into the spreadsheet. In the latter case, the OWL file can be generated with a custom OWL generator.
+
+\subsection{Validation}
+When transforming the input sheet to ANNOds, SMOG~\citep{smog} executes some basic validation heuristics, such as warning on undefined references.
+\todo{pyshacl}
 
 \section{Use Case: Integration into \aw{}}\label{sec:aw}
 
