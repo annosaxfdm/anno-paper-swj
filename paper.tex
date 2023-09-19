@@ -33,13 +33,6 @@
 \runtitle{Anthropological Notation Ontology}
 %\subtitle{}
 
-% For one author:
-%\author{\inits{N.}\fnms{Name1} \snm{Surname1}\ead[label=e1]{first@somewhere.com}}
-%\address{Department first, \orgname{University or Company name},
-%Abbreviate US states, \cny{Country}\printead[presep={\\}]{e1}}
-% Höffner, Heuschkel, Schmiedel, Penne, Fritzsch, Ludwig, Mohaupt, Labudde, Uciteli
-% TODO: overleaf
-% Two or more authors:
 \begin{aug}
 \author[B,C]{\inits{M.}\fnms{Marie} \snm{Heuschkel}\ead[label=e2]{marie.heuschkel@hs-mittweida.de}}
 \author[A,C]{\inits{K.}\fnms{Konrad} \snm{Höffner}\ead[label=e1]{konrad.hoeffner@uni-leipzig.de}%
@@ -74,7 +67,7 @@ ANNO consists of two components:
 ANNOdc, a domain-core ontology providing core entities such as basic anatomical categories, and ANNOds, a domain-specific ontology used for annotating structures of the human skeleton.
 ANNO is integrated into AnthroWorks3D, a photogrammetry pipeline and application for the creation and analysis of 3D-models of human skeletal remains.
 The integration is based on the three-ontology method with the General Formal Ontology as the top level ontology, ANNOdc as the task ontology and ANNOds as the domain ontology.
-Thus, AnthroWorks3D only needs to implement access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are processed dynamically.
+Thus, AnthroWorks3D only needs to implement access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are imported dynamically, .
 ANNO supports the analysis of skeletal and bone finds in forensic and historical anthropology, facilitating the standardization of data annotation and ensuring accurate preservation of information for posterity.
 \end{abstract}
 
@@ -85,11 +78,6 @@ ANNO supports the analysis of skeletal and bone finds in forensic and historical
 \end{keyword}
 
 \end{frontmatter}
-
-%%%%%%%%%%% The article body starts:
-% TODO notes from meeting, einarbeiten:
-% 3 Teile Kernmodule mit Use Cases, weitere Komponenten durch Community
-
 
 \section{Introduction}\label{sec:introduction}
 
@@ -219,7 +207,7 @@ The ontological architecture of ANNO consists of three interrelated layers repre
 
 \begin{enumerate}
 \item We use the General Formal Ontology (GFO)~\citep{gfo} as top-level ontology of ANNO.
-We refer specifically to the categories \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO, see \cref{fig:gfo}. %\cref{sec:core}, 
+We refer specifically to the categories \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO, see \cref{fig:gfo}. %\cref{sec:core},
 
 \item ANNOdc (\cref{sec:core}, \cref{fig:core}) is a domain-core (dc) ontology that defines the core entities of the domain.
 This includes general anatomical categories (Bone and Tooth), a category for describing their characteristics (Anatomical property), anatomical spatial entities (Anatomical space, surface, line and point) as well as the category \emph{Phenotype} to model the rules for determining human phenotypes.
@@ -254,8 +242,8 @@ This approach ensures that domain experts can easily handle the ontology and eff
 
 \begin{table}[b]
   \centering
-  \caption{Classes of ANNOdc along with exemplary ANNOds subclasses as well as interlinks to the FMA and the GFO top-level ontology.
-  \textsuperscript{i}\anno{LO} is the line between \anno{Lambda} and \anno{Opisthion}, the \emph{occipital saggittal arc}.}
+  \caption{Classes of ANNOdc along with exemplary ANNOds subclasses as well as interlinks to the FMA and the GFO top-level ontology.\\
+  \textsuperscript{*} \anno{LO} is the line between \anno{Lambda} and \anno{Opisthion}, the \emph{occipital saggittal arc}.}
   \label{tab:core}
   \begin{tabulary}{\textwidth}{llLl}
     \toprule
@@ -266,7 +254,7 @@ This approach ensures that domain experts can easily handle the ontology and eff
 	\anno{SpatialAnatomicalEntity}	&						&immaterial anatomical entity \fma{67112}	&\gfo{SpaceEntity}\\
 	\anno{AnatomicalSpace}			&						&											&\gfo{SpaceRegion}\\
 	\anno{AnatomicalSurface}		&						&Anatomical surface \fma{24137}			&\gfo{SurfaceRegion}\\
-	\anno{AnatomicalLine}			&\anno{LO}\textsuperscript{i}	&Anatomical line \fma{9657}	&\gfo{LineRegion}\\
+	\anno{AnatomicalLine}			&\anno{LO}\textsuperscript{*}	&Anatomical line \fma{9657}	&\gfo{LineRegion}\\
 	\anno{AnatomicalPoint}			&						&Anatomical point \fma{9658}							&\gfo{PointRegion}\\
 	\anno{MeasurementPoint}			&\anno{Lambda}\\%, \anno{Ophistion}\\
 	\anno{OrientationPoint}			&\anno{Orbitale}\\
@@ -464,11 +452,11 @@ In addition, the objective is to initiate the process of data entry, encompassin
 %\subsections{General considerations}
 %All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
 %
-%Anatomical Landmarks (Bone Parts)  (Selection Criteria, scope and process,  properties) 
-%Osteometric Landmarks (Anatomical Points) 
-%Measurements (Anatomical line)  
+%Anatomical Landmarks (Bone Parts) (Selection Criteria, scope and process, properties)
+%Osteometric Landmarks (Anatomical Points)
+%Measurements (Anatomical line)
 %Relevant spatial anatomical objects (e.g., lines) used for phenotype determination functions Measurements were defined in terms of anatomical points/objects that bound them: consist of references to sections, the start point, midpoint, and end, and short definitions.
-%Phenotypes 
+%Phenotypes
 %Development of the ontology is based on the following selection criteria:
 %The selection criteria are as follows:
 Given the overwhelming number of bone parts present in the cranium, the initial selection was narrowed down to a selection of representative and relevant parts.
@@ -515,39 +503,43 @@ ANNOds covers functions for at least one European, African, American, and Asian 
 %In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
 %In addition, for the discriminant functions, the thresholds of sex assignment, classification accuracy, and misclassification were important; for the regression functions, the error interval was important.
 %
-%Standardised description of position 
+%Standardised description of position
 %In addition to the conception and development of the ontology as well as of definition, data input was initiated as content of Cranium including the Mandibula as well as the teeth of the was entered. Entries can be added directly to the OWL-File using Protégé or they can continue to be entered directly into the spreadsheet. In the latter case, the OWL file can be generated with a custom OWL generator.
 
 %\subsection{Validation}
 %When transforming the input sheet to ANNOds, SMOG~\citep{smog} executes some basic validation heuristics, such as warning on undefined references.
-%\todo{pyshacl}
+% pyshacl mit metaklassen wäre möglich
 
 \subsection{Resolving incongruities}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{img/corpus_ossis_pubis.png}
-\caption{The \emph{Corpus ossis pubis} (pubic body, see \cref{fig:corpusossispubis}) forms the proximal part of the \emph{Os pubis} and includes the anterior part of the \emph{Acetabulum} as well as the \emph{Eminentia iliopubica}, which is a small elevation on the \emph{Corpus ossis pubis}.
+\caption{The \emph{Corpus ossis pubis} (pubic body) forms the proximal part of the \emph{Os pubis} and includes the anterior part of the \emph{Acetabulum} as well as the \emph{Eminentia iliopubica}, which is a small elevation on the \emph{Corpus ossis pubis}.
 According to the \emph{TA} and others~\citep{ta2,schemamann,anatomylexicon2007,drake2019gray,anatomylexicon,prometheus2,anatomie}, this landmark is located in the region of the \emph{Facies symphysialis}, which is defined here as the \emph{Pars symphysialis}.
 }\label{fig:corpusossispubis}
 \end{figure}
 
 
-The domain experts reconciled conflicting literature to arrive at a consistent and logical result, for example for the \emph{Corpus ossis pubis}, see \cref{fig:corpusossispubis}.
+The domain experts reconciled conflicting literature to arrive at a consistent and logical result, for example for the \emph{Corpus ossis pubis}, see \cref{fig:corpusossispubis}:
 Since the Corpi of the \emph{Os ischii} and \emph{Os ilii} are located in the area of the \emph{Acetabulum},
 it is logical to place the \emph{Corpus ossis pubis} in this region as well~\citep{graysanatomy,waldeyer,allgemeineanatomie,datacollection,romanianmandible}, thereby forming the \emph{Acetabulum} from all Corpi (\emph{Corpus ossis ilii}, \emph{Corpus ossis ischii}, and \emph{Corpus ossis pubis}).
 The \emph{Pars symphysialis ossis pubis} has ventral-medially the \emph{Facies symphysialis}, which connects the paired \emph{Ossa pubes} of the pelvic bones.
 In the \emph{Pars symphysialis}, the \emph{Ramus inferior ossis pubis} and \emph{Ramus superior ossis pubis} merge into each other.
-This redefinition closes the resulting gap in the definition of the area between the \emph{Ramus inferior ossis pubis} and the \emph{Ramus superior ossis pubis}.
+This redefinition closes the resulting gap in the definition of the area between the Ramus \emph{inferior / superior} ossis pubis.
+%
+ANNO also corrects the commonly missing differentiation between \emph{Cranium} and \emph{Mandibula} in English literature, with no Latin equivalent for the overall term \enquote{skull}.
+Instead, \anno{Cranium} is established as a synonym for the skull~\citep{allgemeineanatomieen,prometheus2}.
+\paragraph{}
+Further contributions of ANNOds include:
+\begin{itemize}
+\item Consistent Latin declension (including in plural).
+\item Transparency through detailed source references; for measurement distances, origin works and reference works are indicated by dividing into primary and core sources.
+\item Dissected group structures.
+\item Redefinitions such as joint surfaces, which are often not named in anatomy literature but are anthropologically relevant, and osteometric measurement points outside the skull, which are not established in the literature.
+\end{itemize}
 
 \section{Use Case: Integration into \aw{}}\label{sec:aw}
-
-\todo{
-Import der Ontologiedaten in Anwendung in Form von JSON
-Anpassung der bisherigen Anwendungsstruktur an Attribute der Ontologie
-Zuordnung von Objekten (Markierungen, Messungen) in Anwendung zu Objekten der Ontologie
-Import und (teil-)automatisierte Berechnung der Diskriminanzfunktionen (bspw. Geschlechterbestimmung)
-}
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
@@ -570,16 +562,32 @@ Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Ant
 
 %\textbf{UNFINISHED DRAFT SECTION}
 
-\aw{}, see \cref{fig:aw}, is a tool that combines user-friendly techniques of photogrammetry with insights from user experience research and knowledge from game development and offers a procedure to create 3D skeletal models serving as  digital twins  which can subsequently be examined virtually.
+\aw{}, see \cref{fig:aw}, is a German tool that combines user-friendly techniques of photogrammetry with insights from user experience research and knowledge from game development and offers a procedure to create 3D skeletal models serving as digital twins which can subsequently be examined virtually.
 This facilitates anthropological work to be location-independent and parallel without exercising wear and tear on the skeletal material.
 The examination can be performed as often as desired, even if the skeletal individuals or collections are not available at the institute or have already been reburied.
 %
 We use our ontological architecture (top level ontology, domain core ontology, domain specific ontology) to integrate ANNO into \aw{} based on the three-ontology method~\cite{threeontologymethod}.
-%This method, as outlined in~\cite{threeontologymethod}, aided us in designing a tool for annotating human skeletons and identifying phenotypes. 
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{img/json.png}
+\caption{Left: ANNO converted to the \aw{} JSON input format. Right: Bone selection in the imported hierarchy.}
+\label{fig:json}
+\end{figure}
+
+%This method, as outlined in~\cite{threeontologymethod}, aided us in designing a tool for annotating human skeletons and identifying phenotypes.
 %We use ANNOdc as the Task Ontology and ANNOds as the Domain Ontology.
-One of the advantages of the three-ontology method is that the software only needs to implement access to the entities (classes and properties) of ANNOdc ontology, whereas the classes of ANNOds are processed dynamically.
+One of the advantages of the three-ontology method is that the software only needs to implement access to the entities (classes and properties) of ANNOdc ontology, whereas the classes of ANNOds are processed dynamically, as shown in \cref{fig:json}.
 %\aw{} leverages ANNOdc as an interface to dynamically access the entities of the ANNOds, such as listing all subclasses of a specific class like \aurl{anno}{Bone}, as explained in \cref{sec:aw}.
 %
+In addition, it is now possible to perform sex determinations using discriminant functions, as shown in \cref{fig:function}.
+
+\begin{figure}[h]
+\includegraphics[width=0.4\textwidth]{img/function.png}
+\caption{Sex determination in \aw{} using the imported ANNO discriminant functions.}
+\label{fig:function}
+\end{figure}
+
+
 \iffalse
 It also draws its advantage when space is limited.
 Thus, it requires only three SLR cameras, sufficient exposure and a computer.
