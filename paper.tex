@@ -39,8 +39,8 @@
 \thanks{Corresponding author. \printead{e1}.}
 }
 \author[B]{\inits{F.}\fnms{Fabian} \snm{Schmiedel}\ead[label=e3]{fabian.schmiedel@hs-mittweida.de}}
-\author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e10]{dirk.labudde@hs-mittweida.de }}
-\author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e11]{alexander.uciteli@imise.uni-leipzig.de}}
+\author[B]{\inits{D.}\fnms{Dirk} \snm{Labudde}\ead[label=e10]{dirk.labudde@hs-mittweida.de}}
+\author[A]{\inits{A.}\fnms{Alexandr} \snm{Uciteli}\ead[label=e11]{alexandr.uciteli@imise.uni-leipzig.de}}
 \address[A]{Institute for Medical Informatics, Statistics and Epidemiology (IMISE), \orgname{Leipzig University},
 Saxony, \cny{Germany}\printead[presep={\\}]{e1,e11}}
 \address[B]{\orgname{Hochschule Mittweida},
@@ -48,26 +48,13 @@ Saxony, \cny{Germany}\printead[presep={\\}]{e2,e3,e10}}
 \address[C]{equal contribution}
 \end{aug}
 
-%\begin{review}{editor}
-%\reviewer{\fnms{First} \snm{Editor}\address{\orgname{University or Company name}, \cny{Country}}}
-%\reviewer{\fnms{Second} \snm{Editor}\address{\orgname{First University or Company name}, \cny{Country}
-% and \orgname{Second University or Company name}, \cny{Country}}}
-%\end{review}
-%\begin{review}{solicited}
-%\reviewer{\fnms{First} \snm{Solicited reviewer}\address{\orgname{University or Company name}, \cny{Country}}}
-%\reviewer{\snm{anonymous reviewer}}
-%\end{review}
-%\begin{review}{open}
-%\reviewer{\fnms{First} \snm{Open Reviewer}\address{\orgname{University or Company name}, \cny{Country}}}
-%\end{review}
-
 \begin{abstract}
 The Anthropological Notation Ontology (ANNO) allows the systematic and standardized classification of recovered bone finds into the skeletal system, the description of the skeletal pieces, and the definition of functions for the derivation of different phenotypes of humans in forensic and historical anthropology.
 ANNO consists of two components:
 ANNOdc, a domain-core ontology providing core entities such as basic anatomical categories, and ANNOds, a domain-specific ontology used for annotating structures of the human skeleton.
 ANNO is integrated into AnthroWorks3D, a photogrammetry pipeline and application for the creation and analysis of 3D-models of human skeletal remains.
 The integration is based on the three-ontology method with the General Formal Ontology as the top-level ontology, ANNOdc as the task ontology and ANNOds as the domain ontology.
-Thus, AnthroWorks3D only needs to implement access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are imported dynamically, .
+Thus, AnthroWorks3D only needs to implement access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are imported dynamically.
 ANNO supports the analysis of skeletal and bone finds in forensic and historical anthropology, facilitating the standardization of data annotation and ensuring accurate preservation of information for posterity.
 \end{abstract}
 
@@ -97,13 +84,14 @@ By applying the same principles used for mapping the Earth's surface \enquote{te
 This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
 ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
 
-ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures. In its current version, the ontology refers to standardized normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors.
-ANNO is integrated into AnthroWorks3D (AW3D), a photogrammetry pipeline and application for generating and analyzing 3D-models of human skeletal remains.
-ANNO is developed at \url{https://github.com/annosaxfdm} and published at \url{https://annosaxfdm.de/ontology/} using the RickView~\citep{rickview} browser.
+ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures.
+In its current version, the ontology refers to standardized normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors.
+ANNO is integrated into AnthroWorks3D (AW3D), a photogrammetry pipeline and application for generating and analyzing 3D-models of human skeletal remains, and published over multiple channels, see~\cref{tab:publication}.
+%ANNO is developed at \url{https://github.com/annosaxfdm} and published at \url{https://annosaxfdm.de/ontology/} using the RickView~\citep{rickview} browser.
 
 \begin{table}[b]
 \centering
-\caption{Overview of ANNO.}
+\caption{Structure, properties and publication of ANNO.}
 \label{tab:publication}
 \begin{tabulary}{\textwidth}{ll}
 \toprule
@@ -112,8 +100,10 @@ ANNO is developed at \url{https://github.com/annosaxfdm} and published at \url{h
 Modules				&ANNOdc (domain-core) , ANNOds (domain-specific)\\
 Top-Level Ontology	&General Formal Ontology~\citep{gfo}\\
 Namespace			&\url{https://annosaxfdm.de/ontology/}\\
+Browser			&RickView~\citep{rickview} at \url{https://annosaxfdm.de/ontology/}\\
+Repository		&\url{https://github.com/annosaxfdm/ontology}\\
 Terminology Server	&\url{https://ols.imise.uni-leipzig.de/ontologies/anno}\\
-License				&\href{https://creativecommons.org/publicdomain/zero/1.0/}{Creative Commons Zero v1.0 Universal}\\
+License				&\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International}\\
 DOI (all versions)		&\href{https://doi.org/10.5281/zenodo.8301559}{10.5281/zenodo.8301559}\\
 \bottomrule
 \end{tabulary}
@@ -390,6 +380,7 @@ An anatomical line is a conceptual, immaterial line on a bone passing between at
 An anatomical line is a boundary (one-dimensional) of an anatomical surface.
 Anatomical lines can connect or pass through anatomical entities (e.g., an edge between two or an angle between three anatomical entities).
 The length of the line or the angle degree can be measured and used in functions to infer individual phenotypes.% [Verweis zu Phenotype section].
+For example, the anatomical line \anno{ZyDexterumZySinistrum} between the \emph{Zygion Dexterum} and the \emph{Zygion Sinistrum} is used in the sex determination function for the phenotype \anno{SexGilesElliot196319}~\citep{sexgileselliot1963}.
 
 \subsection{Phenotype}
 \begin{figure}[h]
@@ -440,12 +431,13 @@ While the morphological examination was not within the scope of the project, it 
 \end{figure}
 
 While ANNOdc is created by the ontologists in consultation with the domain experts, ANNOds is developed by the domain experts themselves.
+%The primary focus is on the design of ANNO's ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida's in-house software AnthroWorks3D.
 For this purpose they were provided with a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}, eliminating the requirement of having a background in RDF and ontologies.
 The template is based on the structure of ANNOdc, so that the entered data is compliant with it: The ANNOds classes are subclasses of the ANNOdc classes (see \cref{tab:core}) and properties (see \cref{fig:core}) from ANNOdc are used.
 The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
 This approach ensures intuitive and unimpeded data input and a valid end result.
-The primary focus is on the design of ANNO's ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida's in-house software AnthroWorks3D.
-
+Additionally, ANNOds is validated using SHACL shapes\footnote{Contained in \texttt{dist/shacl.ttl} in \url{https://zenodo.org/record/8380382}.}, which requires metaclasses.
+For example, all directly specified and transitive subclasses of \anno{Bone} are also explicitly individuals of the metaclass \anno{BoneClass} because of the limitations of SHACL.
 In addition, the objective is to initiate the process of data entry, encompassing selected bones of the skeleton.
 %
 %\textbf{UNFINISHED DRAFT SECTION, TO BE HEAVILY REWORKED AND CUT}
@@ -628,7 +620,6 @@ generation of input forms based on the specified properties and bone types
 automatic generation of measurements
 \fi
 
-%\subsection{}\label{s1.1}
 \section{Conclusion and Future Work}
 % "desirablility" add source e.g. https://fipat.library.dal.ca/wp-content/uploads/2021/08/FIPAT-TA2-Part-2.pdf
 
@@ -660,16 +651,6 @@ Furthermore, anatomical terms describing aspects of bone morphology or function,
 
 ANNO's potential applications include forensic, historical and prehistoric anthropology, as well as pathology and medicine, and the field of computer science, especially medical informatics.
 
-%\begin{table*}
-%\caption{} \label{t1}
-%\begin{tabular}{lll}
-%\hline
-%&&\\
-%&&\\
-%\hline
-%\end{tabular}
-%\end{table*}
-
 \begin{ack}
 \noindent\begin{minipage}{0.90\textwidth}
 We gratefully acknowledge Laura Penne for her valuable support in data acquisition and the conception and design of the content and input format.
@@ -677,12 +658,6 @@ We would also like to express our sincere thanks to Hanjo Tim Fritzsch, Niklas d
 Additionally, we extend our gratitude to Marleen Mohaupt and Andy Ludwig for their contributions to the project's execution.
 The ANNO project is co-financed from tax funds based on the budget passed by the Parliament of the Free State of Saxony.
 
-%\author[B]{\inits{L.}\fnms{Laura} \snm{Penne}\ead[label=e4]{laura.penne@hs-mittweida.de}}
-%\author[B]{\inits{A.}\fnms{Andrea} \snm{Ferencová}\ead[label=e7]{andrea.ferencova@hs-mittweida.de}}
-%\author[B]{\inits{N.}\fnms{Niklas} \snm{de Sousa Norte}\ead[label=e6]{niklas.desousanorte@hs-mittweida.de}}
-%\author[B]{\inits{H. T.}\fnms{Hanjo Tim} \snm{Fritzsch}\ead[label=e5]{fritzsc2@hs-mittweida.de}}
-%\author[B]{\inits{A.}\fnms{Andy} \snm{Ludwig}\ead[label=e8]{andy.ludwig@hs-mittweida.de}}% ist jetzt beim Fraunhofer, möchte aber weiter so gelistet werden
-%\author[B]{\inits{M.}\fnms{Marleen} \snm{Mohaupt}\ead[label=e9]{kreuzer@hs-mittweida.de}}
 \end{minipage}%
 \hfill%
 \begin{minipage}{0.04\textwidth}\raggedleft
