@@ -66,7 +66,7 @@ The Anthropological Notation Ontology (ANNO) allows the systematic and standardi
 ANNO consists of two components:
 ANNOdc, a domain-core ontology providing core entities such as basic anatomical categories, and ANNOds, a domain-specific ontology used for annotating structures of the human skeleton.
 ANNO is integrated into AnthroWorks3D, a photogrammetry pipeline and application for the creation and analysis of 3D-models of human skeletal remains.
-The integration is based on the three-ontology method with the General Formal Ontology as the top level ontology, ANNOdc as the task ontology and ANNOds as the domain ontology.
+The integration is based on the three-ontology method with the General Formal Ontology as the top-level ontology, ANNOdc as the task ontology and ANNOds as the domain ontology.
 Thus, AnthroWorks3D only needs to implement access to the entities (classes and properties) of the task ontology, whereas the entities of the corresponding domain ontology are imported dynamically, .
 ANNO supports the analysis of skeletal and bone finds in forensic and historical anthropology, facilitating the standardization of data annotation and ensuring accurate preservation of information for posterity.
 \end{abstract}
@@ -141,7 +141,7 @@ This book contains textual and visual descriptions, whereby anatomical structure
 \subsection{Foundational Model of Anatomy (FMA)}
 The FMA~\citep{fma} ontology represents the physical organization of human anatomy by mapping relations to one another.
 It allows the knowledge it contains to be represented in a way that is humanly comprehensible and machine-interpretable.
-The FMA uses the Basic Formal Ontology (BFO) as its top level ontology.
+The FMA uses the Basic Formal Ontology (BFO) as its top-level ontology.
 Corresponding to its relational nature, new higher level concepts are introduced and used for reorganizing the actual anatomical structures diverging from the TA's hierarchical structure.
 Thus, in 90\,\% of the cases this leads to new creations of anatomical concepts~\citep{anatomicalterms} whereas only 1\,\% contain textual definitions~\citep{uberon}.
 
@@ -566,7 +566,7 @@ Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Ant
 This facilitates anthropological work to be location-independent and parallel without exercising wear and tear on the skeletal material.
 The examination can be performed as often as desired, even if the skeletal individuals or collections are not available at the institute or have already been reburied.
 %
-We use our ontological architecture (top level ontology, domain core ontology, domain specific ontology) to integrate ANNO into \aw{} based on the three-ontology method~\cite{threeontologymethod}.
+We use our ontological architecture (top-level ontology, domain core ontology, domain specific ontology) to integrate ANNO into \aw{} based on the three-ontology method~\cite{threeontologymethod}.
 
 \begin{figure}[h]
 \includegraphics[width=0.7\textwidth]{img/json.png}
