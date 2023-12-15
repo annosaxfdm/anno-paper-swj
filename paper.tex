@@ -270,11 +270,11 @@ Relevant domain objects were identified on the basis of the defined use cases.
 These include bones, teeth, phenotypes, as well as spatial anatomical entities.
 The objects are classified according to their type and part-whole relationship.
 The main requirement for the ANNO core ontology to cover the intended use cases is that it adequately represents the basic anatomical and anthropological entities, the spatial relations between them and the phenotyping functions, while remaining relatively simple and compact.
-This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., AW3D) according to the three-ontology method [...].
+This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., AW3D) according to the three-ontology method~\citep{threeontologymethod}. 
 Following this method, the software only needs to implement access to the core categories (of the core or task ontology), while their subcategories (from the domain-specific ontology) are processed dynamically.
 This means, among other things, that all relevant anatomical entities (bones, teeth, their parts and composite structures) must each be located in one subtree (i.e., must have a common superclass) rather than spread across the entire ontology.
 Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.
-We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see section $\ldots$).
+We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see \cref{sec:relatedwork}). 
 
 \subsection{Conceptualisation}
 
