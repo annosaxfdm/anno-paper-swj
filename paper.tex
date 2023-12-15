@@ -219,26 +219,24 @@ ANNOds is embedded in ANNOdc.
 % TODO: reuse of ontological entities
 % TODO: clear validation mechanism
 
-\todo{kh: finish transforming methodology into latex}
 \section{Methodology for developing ANNO}
-For the development of the ANNO ontology, we applied the onto-axiomatic method, a combination of the axiomatic method with a top-level ontology [Baumann2014, Herre2010].
-
-The axiomatic method comprises principles for developing theories or formal knowledge bases, which aim at the foundation, systematisation and formalisation of a knowledge domain [Baumann2014, Herre2010].
-When knowledge is systematised, a set of categories is considered primitive or basic.
-Such categories are not explicitly defined, but implicitly described by axioms [Hilbert1918].
-An example of a primitive category is “part”.
-New notions can be introduced by explicit definitions based on the primitive or already defined categories [Herre2010].
+For the development of ANNO, we applied the onto-axiomatic method, a combination of the axiomatic method with a top-level ontology \citep{baumann2014, herre2010}.
+The axiomatic method comprises principles for developing theories or formal knowledge bases, which aim at the foundation, systematisation and formalisation of a knowledge domain \citep{baumann2014, herre2010}.
+When knowledge is systematised, a set of categories is considered \emph{primitive} or \emph{basic}.
+Such categories are not explicitly defined, but implicitly described by axioms \citep{Hilbert1918}.
+An example of a primitive category is \enquote{part}.
+New notions can be introduced by explicit definitions based on the primitive or already defined categories \citep{herre2010}.
 
 The considered axioms differ in their degree of abstraction.
 At the most general level of abstraction, they are provided by top-level ontologies, whose axioms and categories can be applied to most domains of the world.
-The onto-axiomatic method combines the axiomatic method with a top-level ontology, which is used to create more specialised core and domain-specific ontologies [Baumann2014].
-Possible ways of discovering axioms in empirical domains are generalisation based on single cases and idealisation [Baumann2011].
+The onto-axiomatic method combines the axiomatic method with a top-level ontology, which is used to create more specialised core and domain-specific ontologies \citep{baumann2014}.
+Possible ways of discovering axioms in empirical domains are generalisation based on single cases and idealisation \citep{baumann2011}.
 
-We built ANNO on the basis of an ontology development schema that includes three main steps: 1. Domain Specification, 2. Conceptualisation and 3. Axiomatisation [Herre2010], and used the General Formal Ontology (GFO) [Loebe2022, Burek2020, Herre2010] as a top-level ontology in the sense of the onto-axiomatic method.
+We built ANNO on the basis of an ontology development schema that includes three main steps: 1. Domain Specification, 2. Conceptualisation and 3. Axiomatisation \citep{herre2010}, and used the General Formal Ontology (GFO) \citep{Loebe2022, Burek2020, herre2010} as a top-level ontology in the sense of the onto-axiomatic method.
 
 \subsection{Domain specification}
 As part of the domain specification, the anthropology experts conducted an extensive review of existing literature and ontologies, analysing and classifying the relevant information.
-Together with ontologists, relevant use cases and competence questions\footnotemark{} [XD2016, MOMo2023], as well as views and classification principles of the objects in the anthropology domain [Herre2010] were discussed.
+Together with ontologists, relevant use cases and competence questions\footnotemark{} \citep{XD2016, MOMo2023}, as well as views and classification principles of the objects in the anthropology domain \citep{herre2010} were discussed.
 \footnotetext{queries that the ontology must be able to answer}
 %
 The following main use cases and competence questions (subitems, selected examples) were defined:
@@ -256,8 +254,8 @@ The following main use cases and competence questions (subitems, selected exampl
 \begin{enumerate}
 \item Query all defined spatial relations
 \item What is the relative anatomical location of an anatomical entity in relation to another anatomical entity?
-\item On which anatomical structure lies a defined measurement point?
-\item Between which measurement points lies a defined anatomical line?
+\item On which anatomical structure does a defined measurement point lie?
+\item Between which measurement points does a defined anatomical line lie?
 \item $\ldots$
 \end{enumerate}
 \item Specification of phenotyping functions
@@ -280,27 +278,27 @@ We decided to develop a new ontology because none of the existing ontologies cou
 
 \subsection{Conceptualisation}
 
-During the conceptualisation phase [Here2010], the core concepts (categories, classes) and relations were introduced that form ANNOdc (domain-core ontology) (fig. 2).
+During the conceptualisation phase \citep{herre2010}, the core concepts (categories, classes) and relations were introduced that form ANNOdc (domain-core ontology) (fig. 2).
 The concepts were created by generalising and classifying the domain objects.
 To answer the competence questions of the first use case, for example, a distinction must be made between whole bones, bone parts and composite bone structures.
-Therefore, the corresponding concepts "Bone", "Bone part" and "Bone compound" were introduced.
+Therefore, the corresponding concepts \enquote{Bone}, \enquote{Bone part} and \enquote{Bone compound} were introduced.
 Further concepts were defined to represent spatial relations and phenotypes.
-Furthermore, we identified relations (e.g., partOf, boundaryOf or locationOf) relevant to capture axioms covering the defined use cases (fig 2).
+Furthermore, we identified relations (e.g., partOf, boundaryOf or locationOf) relevant to capture axioms covering the defined use cases, see \cref{fig:core}.
 
 \subsection{Axiomatisation}
 
-For the axiomatisation and formal foundation of ANNO we utilised GFO as a top-level ontology and reused its categories, relations, axioms and modules (as a kind of Ontology Design Patterns [ODP2005, XD2016, MOMo2023]).
-We instantiated specifically the GFO modules “Material objects”, “Attributives” and “Space” [Burek2020, Loebe2021, Loebe2018] and adapted them according to the requirements of the use cases.
+For the axiomatisation and formal foundation of ANNO we utilised GFO as a top-level ontology and reused its categories, relations, axioms and modules (as a kind of Ontology Design Patterns \citep{ODP2005, XD2016, MOMo2023}).
+We instantiated specifically the GFO modules \enquote{Material objects}, \enquote{Attributives} and \enquote{Space} \citep{Burek2020, Loebe2021, Loebe2018} and adapted them according to the requirements of the use cases.
 Domain concepts introduced in the conceptualisation phase were embedded in GFO, i.e., defined as subcategories (subclasses) of certain GFO categories (fig. 1).
 The required relations between the concepts were then either adopted from GFO or derived (specialised) from the corresponding GFO relation.
-For example, GFO specifies that material objects occupy space regions [Loebe2021].
+For example, GFO specifies that material objects occupy space regions \citep{Loebe2021}.
 We integrated this pattern in ANNOdc by deriving the class anno:AnatomicalStructure from gfo:MaterialObject and anno:AnatomicalSpace from gfo:SpaceRegion.
-In this way, we were able to adopt the whole axiom including the "occupies" relation between the two ANNO classes.
-In a similar way, we applied the GFO pattern "point region is boundary of line region is boundary of surface region is boundary of space region" [Baumann2016] to the ANNO categories anatomical point, line, surface and space.
-According to the GFO relator [Loebe2018] pattern, we defined the ANNO class “Relative anatomical location” including the two roles: target (locationOf) and reference (relativeTo) anatomical entity (chapter $\ldots$).
+In this way, we were able to adopt the whole axiom including the \enquote{occupies} relation between the two ANNO classes.
+In a similar way, we applied the GFO pattern \enquote{point region is boundary of line region is boundary of surface region is boundary of space region} \citep{baumann2016} to the ANNO categories anatomical point, line, surface and space.
+According to the GFO relator \citep{Loebe2018} pattern, we defined the ANNO class \enquote{Relative anatomical location} including the two roles: target (locationOf) and reference (relativeTo) anatomical entity (chapter $\ldots$).
 
 Further axioms were introduced to precisely define certain categories.
-In addition to an explicit textual definition of the category "Bone compound", for example, we introduced the following axiom:
+In addition to an explicit textual definition of the category \enquote{Bone compound}, for example, we introduced the following axiom:
 
 Bone compound: subClass of (hasPart some (Bone or 'Bone compound' or 'Bone part'))
 
@@ -315,7 +313,7 @@ This means that the domain experts had to insert more specific categories (singl
 The resulting OWL 2 ontology was generated using SMOG [...] and validated by the HermiT reasoner [...] and SHACL shapes (chapter $\ldots$).
 In both cases, the consistency of the ontology was proven.
 As a proof of concept, we integrated the ontology into the AW3D software [...] and were able to successfully realise all three intended use cases.
-Thereby, most of the core categories (such as “Bone”, “Bone part”, “Bone compound”, “Tooth”, “Tooth part”, “Phenotype”, “Relative anatomical location”, “Anatomical line” and “Anatomical point”) and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
+Thereby, most of the core categories (such as \enquote{Bone}, \enquote{Bone part}, \enquote{Bone compound}, \enquote{Tooth}, \enquote{Tooth part}, \enquote{Phenotype}, \enquote{Relative anatomical location}, \enquote{Anatomical line} and \enquote{Anatomical point}) and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
 
 The statistical information on the ANNO ontology is shown in Table 1.
 
@@ -332,23 +330,6 @@ ANNOds\\
 \bottomrule
 \end{tabulary}
 \end{table}
-
-\todo{kh: finish statistical table}
-
-\todo{kh: add literature refs}
-[Herre2010] \url{https://doi.org/10.1007/978-90-481-8847-5\_14}
-[Baumann2014] \url{https://doi.org/10.3233/AO-140136}
-[Baumann2011] \url{https://arxiv.org/abs/1110.5832v1}
-[Baumann2016] \url{https://doi.org/10.3233/978-1-61499-660-6-53}
-[Hilbert1918] Hilbert, D.(1918). Axiomatisches Denken. Mathematische Annalen, 78, 405–415. (in German)
-[ODP2005] A. Gangemi: Ontology design patterns for semantic web content. Lecture Notes in Computer Science (2005)
-[Burek2020] \url{https://doi.org/10.3233/FAIA200658}
-[Loebe2021] \url{https://ceur-ws.org/Vol-2969/paper69-FOUST.pdf}
-[Loebe2018] \url{https://ceur-ws.org/Vol-2205/paper29\_ontocom3.pdf}
-[MOMo2023] \url{https://doi.org/10.3233/SW-222886}
-[XD2016] \url{https://doi.org/10.3233/978-1-61499-676-7-23}
-[Loebe2022] \url{https://doi.org/10.3233/AO-220264}
-
 
 \section{Description and Foundation of ANNOdc}\label{sec:core}
 The core ontology development occurs in close collaboration between ontologists and anthropologists.
