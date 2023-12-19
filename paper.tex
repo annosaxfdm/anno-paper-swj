@@ -7,6 +7,7 @@
 \usepackage{aurl}
 \usepackage{booktabs}
 \usepackage{tabulary}
+\usepackage{siunitx}
 %\usepackage{dcolumn}
 %\usepackage{placeins} %provides \FloatBarrier
 
@@ -310,7 +311,7 @@ Phenotype: subClass of (derivedFrom some ('Anatomical entity' or 'Anatomical pro
 Finally, a spreadsheet template was developed for domain experts to specify domain-specific entities (ANNOds), strictly compliant with ANNOdc (chapter $\ldots$).
 This means that the domain experts had to insert more specific categories (single categories or category trees) under defined ANNOdc core categories and to describe them by suitable annotations and relations introduced in ANNOdc.
 
-The resulting OWL 2 ontology was generated using SMOG [...] and validated by the HermiT reasoner [...] and SHACL shapes (chapter $\ldots$).
+The resulting OWL 2 ontology was generated using SMOG [...] and validated by the HermiT and Pellet reasoners [...] and SHACL shapes (see \cref{sec:domain}).
 In both cases, the consistency of the ontology was proven.
 As a proof of concept, we integrated the ontology into the AW3D software [...] and were able to successfully realise all three intended use cases.
 Thereby, most of the core categories (such as \enquote{Bone}, \enquote{Bone part}, \enquote{Bone compound}, \enquote{Tooth}, \enquote{Tooth part}, \enquote{Phenotype}, \enquote{Relative anatomical location}, \enquote{Anatomical line} and \enquote{Anatomical point}) and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
@@ -319,14 +320,16 @@ The statistical information on the ANNO ontology is shown in Table 1.
 
 \begin{table}[b]
 \centering
-\caption{Statistical information.}
+\caption{Statistical information. Column values do not add up because some entities are defined in both subontologies.}
 \label{tab:stats}
-\begin{tabulary}{\textwidth}{lllll}
+\begin{tabulary}{\textwidth}{lSSSSS}
 \toprule
-Ontology	&Classes	&Object properties	&Annotation properties\\
+Ontology	&\textnormal{Classes}	&\textnormal{Object properties}	&\textnormal{Individuals}	&\textnormal{Annotation properties}	&\textnormal{Axioms}\\
 \midrule
-ANNOdc\\
-ANNOds\\
+ANNOdc		&41			&18					&0				&19						&178\\
+ANNOds		&1166		&11					&803			&43						&18231\\
+\midrule
+combined	&1195		&21					&803			&53						&18382\\
 \bottomrule
 \end{tabulary}
 \end{table}
