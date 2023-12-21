@@ -233,14 +233,14 @@ At the most general level of abstraction, they are provided by top-level ontolog
 The onto-axiomatic method combines the axiomatic method with a top-level ontology, which is used to create more specialised core and domain-specific ontologies \citep{baumann2014}.
 Possible ways of discovering axioms in empirical domains are generalisation based on single cases and idealisation \citep{baumann2011}.
 
-We built ANNO on the basis of an ontology development schema that includes three main steps: 1. Domain Specification, 2. Conceptualisation and 3. Axiomatisation \citep{herre2010}, and used the General Formal Ontology (GFO) \citep{Loebe2022, Burek2020, herre2010} as a top-level ontology in the sense of the onto-axiomatic method.
+We built ANNO on the basis of an ontology development schema that includes three main steps: 1. Domain Specification, 2. Conceptualisation and 3. Axiomatization \citep{herre2010}, and used the General Formal Ontology (GFO) \citep{Loebe2022, Burek2020, herre2010} as a top-level ontology in the sense of the onto-axiomatic method.
 
 \subsection{Domain specification}
 As part of the domain specification, the anthropology experts conducted an extensive review of existing literature and ontologies, analysing and classifying the relevant information.
 Together with ontologists, relevant use cases and competence questions\footnotemark{} \citep{XD2016, MOMo2023}, as well as views and classification principles of the objects in the anthropology domain \citep{herre2010} were discussed.
 \footnotetext{queries that the ontology must be able to answer}
 %
-The following main use cases and competence questions (subitems, selected examples) were defined:
+The following main use cases and competence questions (sub-items, selected examples) were defined:
 \begin{enumerate}
 \item Annotation of anthropological models (representations of anatomical entities) using a controlled vocabulary
 \begin{enumerate}
@@ -286,9 +286,9 @@ Therefore, the corresponding concepts \enquote{Bone}, \enquote{Bone part} and \e
 Further concepts were defined to represent spatial relations and phenotypes.
 Furthermore, we identified relations (e.g., partOf, boundaryOf or locationOf) relevant to capture axioms covering the defined use cases, see \cref{fig:core}.
 
-\subsection{Axiomatisation}
+\subsection{Axiomatization}
 
-For the axiomatisation and formal foundation of ANNO we utilised GFO as a top-level ontology and reused its categories, relations, axioms and modules (as a kind of Ontology Design Patterns \citep{ODP2005, XD2016, MOMo2023}).
+For the axiomatization and formal foundation of ANNO we utilised GFO as a top-level ontology and reused its categories, relations, axioms and modules (as a kind of Ontology Design Patterns \citep{ODP2005, XD2016, MOMo2023}).
 We instantiated specifically the GFO modules \enquote{Material objects}, \enquote{Attributives} and \enquote{Space} \citep{Burek2020, Loebe2021, Loebe2018} and adapted them according to the requirements of the use cases.
 Domain concepts introduced in the conceptualisation phase were embedded in GFO, i.e., defined as subcategories (subclasses) of certain GFO categories (fig. 1).
 The required relations between the concepts were then either adopted from GFO or derived (specialised) from the corresponding GFO relation.
@@ -431,7 +431,7 @@ For example, the coronal (frontal) plane has the transversal (horizontal) and lo
 
 An anatomical direction or relative anatomical location, as shown in \cref{fig:axisplane}, is the position of an anatomical entity (e.g., a bone structure) in relation to another anatomical entity (e.g., another bone, an axis, a plane or a point such as the center of the body).
 Relative anatomical locations are classified according to the anatomical terms of location (e.g., cranial or superior = \enquote{towards the end of the skull}, dexter = \enquote{right} or distal = \enquote{in direction towards the end of a limb}).
-For example, the Glabella is located laterally to both Arcus superciliaris (Arcus superciliaris sinister und Arcus superciliaris dexter).
+For example, the Glabella is located laterally to both Arcus superciliaris (Arcus superciliaris sinister and Arcus superciliaris dexter).
 A relative anatomical location can be considered as an individual relation between two anatomical entities (target entity and reference entity) and can therefore be modeled using a GFO relator.
 Relators are composed of roles (in our case target and reference) and have the power to relate arbitrary entities (in our case, anatomical entities)~\citep{gfocategory}.
 
