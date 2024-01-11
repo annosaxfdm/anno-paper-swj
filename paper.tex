@@ -68,50 +68,51 @@ ANNO supports the analysis of skeletal and bone finds in forensic and historical
 \end{frontmatter}
 
 \section{Introduction}\label{sec:introduction}
-\paragraph{Motivation}
+%\paragraph{Motivation}
 Data from historical and prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, provides a comprehensive understanding of deceased individuals from different time periods.
 This understanding encompasses their identity, health status, aspects of their behavior, lifestyle, culture and even the circumstances of their death~\citep{spurensuche}.
 For example, anthropological methods can be used to determine individual properties (phenotypes) such as their sex, age, height and ancestry and other individualizing traits.
-
+%
 Digitization and digitalization offer several advantages to anthropology, including remote work, without the effects of wear and tear on the physical skeletal specimens.
 Current problems of access can be resolved, as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied, which facilitates interdisciplinary collaborative research.
 Moreover it allows for linking data of different study samples across geographical boundaries.
 Data sets consolidated this way and formalized through the Anthropological Notation Ontology (ANNO) presented here allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
-
+%
 Apart from contextual information, most informative clues can be found directly on the bone.
 Anthropologists use human anatomy, specifically the skeletal system and further tissues of the musculoskeletal system, to classify and describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion.
-
+%
 By applying the same principles used for mapping the Earth's surface \enquote{terrain}, a detailed map of the human body can be created.
 This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
 ANNO represents such a map for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
 
-\paragraph{Theoretical Background}
+%\paragraph{Theoretical Background}
 Ontologies are theories about the kinds of objects, the properties of objects, and the relations between objects in a knowledge domain.
 On the one hand, these are controlled vocabularies, but on the other hand, ontologies are also conceptualizations that the vocabulary terms are intended to capture~\citep{whatareontologies}.
 Researchers in many areas recognized the need for ontologies to clearly define specialized vocabularies for these domains~\citep{evaluatingdomain}.
 The success of using ontologies to annotate biological data can also be confirmed by multiple examples~\citep{biomedicalontologies}.
 It was therefore an easy decision for us to use an ontology for modeling the anthropological domain.
 
-\paragraph{Tasks}
+%\paragraph{Tasks}
 The main tasks to be supported by the intended ontology are the annotation of anthropological models, the specification of spatial relations between anatomical entities and the definition of phenotyping functions, see \cref{sec:methodology}.
 However, the ontology must remain relatively simple and compact to allow easy handling by domain experts and efficient integration into software.
 Existing anatomical ontologies often lack standardization in the naming and definition of concepts.
 Furthermore, the hierarchical structure is often too complex/general to be efficiently integrated into software for realizing specific anthropological use cases, see \cref{sec:limitations}.
 Since we could not find any ontologies that fully met our requirements and the integration/adaptation of selected ontology parts would be much more complex, we decided to develop a new ontology and then map it to the most prominent one.
 
-\paragraph{Main contributions}
+%\paragraph{Main contributions}
 % rest of old text
 %ANNO consists of two components: ANNOdc, a domain-core ontology providing core entities such as basic anatomical concepts and classifications, and ANNOds, a domain-specific ontology employed for annotating human skeletal structures.
 %
 %new text:
+Our main contributions are the following:
 ANNOdc (\cref{sec:annodc}, \cref{fig:annodc}) is a domain-core (dc) ontology that defines the core entities of the domain.
 This includes general anatomical categories (Bone and Tooth), a category for describing their characteristics (Anatomical property), anatomical spatial entities (Anatomical space, surface, line and point) as well as the category Phenotype to model the rules for determining human phenotypes. ANNOdc was embedded in the General Formal Ontology (GFO), i.e. the ANNOdc classes are subclasses of GFO classes.
-
+%
 ANNOds (\cref{sec:annods}) is a domain-specific (ds) ontology for describing domain-specific entities to be used for annotating the parts of the human skeleton.
 These are bones, teeth, their parts and compounds, such as mandible, Mental protuberance or the facial skeleton.
 It is also used for modeling their properties and relations, such as the distance between Mentale dexterum and Mentale sinistrum, needed to derive human phenotypes like sex or height.
 ANNOds is embedded in ANNOdc.
-
+%
 In its current version, the ontology refers to standardized normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors.
 ANNO is integrated into AnthroWorks3D (AW3D), a photogrammetry pipeline and application for generating and analyzing 3D-models of human skeletal remains, and published over multiple channels, see~\cref{tab:publication}.
 
@@ -166,8 +167,11 @@ We create manual links between ANNO and the FMA, which we use to connect ANNO wi
 \subsection{Other ontologies}\label{sec:researchgaps}
 
 Uberon, the Uber Anatomy Ontology~\citep{uberon}...
-BSPO...
-NCIT...
+BSPO~\citep{bspo}...
+NCIT~\citep{ncit}...
+The Anatomical Entity Ontology (AEO)~\citep{aeo}... (for animals)
+
+
 \subsection{Limitations of the existing ontologies}\label{sec:limitations}
 
 %\subsection{Current Research Gaps}
