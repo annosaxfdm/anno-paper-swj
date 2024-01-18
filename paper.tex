@@ -229,7 +229,7 @@ The main requirement for the intended ontology to cover the defined tasks is tha
 This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., AW3D) according to the three-ontology method~\citep{threeontologymethod}.
 Following this method, the software only needs to implement access to the core categories (of the core or task ontology), while their subcategories (from the domain-specific ontology) are processed dynamically.
 This means, among other things, that all relevant anatomical entities (bones, teeth, their parts and composite structures) must each be located in one subtree (i.e., must have a common superclass) rather than spread across the entire ontology.
-The FMA, for example, does not have single equivalent concepts to represent bone compounds or bone parts, see \cref{sec:annodc}.
+The FMA, for example, does not have single equivalent concepts to represent bone compounds or bone parts, see \cref{sec:annodc}.\todo{Absatz doppelt}
 %(see section 3.2.2).
 Several partial subtrees would have to be combined for this purpose.
 Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.
@@ -328,7 +328,7 @@ The main requirement for the ANNO core ontology to cover the intended use cases 
 This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., AW3D) according to the three-ontology method~\citep{threeontologymethod}. 
 Following this method, the software only needs to implement access to the core categories (of the core or task ontology), while their subcategories (from the domain-specific ontology) are processed dynamically.
 This means, among other things, that all relevant anatomical entities (bones, teeth, their parts and composite structures) must each be located in one subtree (i.e., must have a common superclass) rather than spread across the entire ontology.
-Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.
+Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.\todo{Absatz doppelt (Ende \cref{sec:limitations})}
 We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see \cref{sec:relatedwork}). 
 
 \subsection{Conceptualisation}
@@ -365,9 +365,9 @@ Phenotype: subClass of (derivedFrom some ('Anatomical entity' or 'Anatomical pro
 Finally, a spreadsheet template was developed for domain experts to specify domain-specific entities (ANNOds), strictly compliant with ANNOdc (chapter $\ldots$).
 This means that the domain experts had to insert more specific categories (single categories or category trees) under defined ANNOdc core categories and to describe them by suitable annotations and relations introduced in ANNOdc.
 
-The resulting OWL 2 ontology was generated using SMOG [...] and validated by the HermiT and Pellet reasoners [...] and SHACL shapes (see \cref{sec:domain}).
+The resulting OWL 2 ontology was generated using SMOG~\citep{smog} and validated by the HermiT and Pellet reasoners~\citep{hermit,pellet} and SHACL shapes (see \cref{sec:domain}).
 In both cases, the consistency of the ontology was proven.
-As a proof of concept, we integrated the ontology into the AW3D software [...] and were able to successfully realise all three intended use cases.
+As a proof of concept, we integrated the ontology into the AW3D software~\citep{aw3d} and were able to successfully realise all three intended use cases.
 Thereby, most of the core categories (such as \enquote{Bone}, \enquote{Bone part}, \enquote{Bone compound}, \enquote{Tooth}, \enquote{Tooth part}, \enquote{Phenotype}, \enquote{Relative anatomical location}, \enquote{Anatomical line} and \enquote{Anatomical point}) and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
 
 The statistical information on the ANNO ontology is shown in Table 1.
