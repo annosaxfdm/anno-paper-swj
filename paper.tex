@@ -8,6 +8,7 @@
 \usepackage{booktabs}
 \usepackage{tabulary}
 \usepackage{siunitx}
+\usepackage{tablefootnote}
 %\usepackage{dcolumn}
 %\usepackage{placeins} %provides \FloatBarrier
 
@@ -86,6 +87,7 @@ This map contains visible anatomical surface structures, as well as artificial o
 ANNO represents such a map for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
 
 %\paragraph{Theoretical Background}
+\todo{der Absatzübergang ist etwas holprig}
 Ontologies are theories about the kinds of objects, the properties of objects, and the relations between objects in a knowledge domain.
 On the one hand, these are controlled vocabularies, but on the other hand, ontologies are also conceptualizations that the vocabulary terms are intended to capture~\citep{whatareontologies}.
 Researchers in many areas recognized the need for ontologies to clearly define specialized vocabularies for these domains~\citep{evaluatingdomain}.
@@ -96,8 +98,29 @@ It was therefore an easy decision for us to use an ontology for modeling the ant
 The main tasks to be supported by the intended ontology are the annotation of anthropological models, the specification of spatial relations between anatomical entities and the definition of phenotyping functions, see \cref{sec:methodology}.
 However, the ontology must remain relatively simple and compact to allow easy handling by domain experts and efficient integration into software.
 Existing anatomical ontologies often lack standardization in the naming and definition of concepts.
-Furthermore, the hierarchical structure is often too complex/general to be efficiently integrated into software for realizing specific anthropological use cases, see \cref{sec:limitations}.
-Since we could not find any ontologies that fully met our requirements and the integration/adaptation of selected ontology parts would be much more complex, we decided to develop a new ontology and then map it to the most prominent one.
+Furthermore, the hierarchical structure is often too complex or general to be efficiently integrated into software for realizing specific anthropological use cases, see \cref{sec:limitations}.
+Since we could not find any ontologies that fully met our requirements and the integration or adaptation of selected ontology parts would be much more complex, we decided to develop a new ontology and then map it to the most prominent one.
+
+\begin{table}[h]
+\centering
+\caption{Structure, properties and publication of ANNO.}
+\label{tab:publication}
+\begin{tabular}{ll}
+\toprule
+%Property			&Value\\
+%\midrule
+Modules				&ANNOdc (domain-core) , ANNOds (domain-specific)\\
+Top-Level Ontology	&General Formal Ontology~\citep{gfo}\\
+Namespace			&\url{https://annosaxfdm.de/ontology/}\\
+%Browser			&RickView~\citep{rickview} at \url{https://annosaxfdm.de/ontology/}\\
+Browser				&RickView\tablefootnote{\url{https://github.com/KonradHoeffner/rickview}} at \url{https://annosaxfdm.de/ontology/}\\
+Repository			&\url{https://github.com/annosaxfdm/ontology}\\
+Terminology Server	&\url{https://ols.imise.uni-leipzig.de/ontologies/anno}\\
+License				&\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International}\\
+DOI (all versions)	&\href{https://doi.org/10.5281/zenodo.8301559}{10.5281/zenodo.8301559}\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 %\paragraph{Main contributions}
 % rest of old text
@@ -110,31 +133,11 @@ This includes general anatomical categories (Bone and Tooth), a category for des
 %
 ANNOds (\cref{sec:annods}) is a domain-specific (ds) ontology for describing domain-specific entities to be used for annotating the parts of the human skeleton.
 These are bones, teeth, their parts and compounds, such as mandible, Mental protuberance or the facial skeleton.
-It is also used for modeling their properties and relations, such as the distance between Mentale dexterum and Mentale sinistrum, needed to derive human phenotypes like sex or height.
+It is also used for modeling their properties and relations, such as the distance between \emph{Mentale dexterum} and \emph{Mentale sinistrum}, needed to derive human phenotypes like sex or height.
 ANNOds is embedded in ANNOdc.
 %
 In its current version, the ontology refers to standardized normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors.
 ANNO is integrated into AnthroWorks3D (AW3D), a photogrammetry pipeline and application for generating and analyzing 3D-models of human skeletal remains, and published over multiple channels, see~\cref{tab:publication}.
-
-\begin{table}[h]
-\centering
-\caption{Structure, properties and publication of ANNO.}
-\label{tab:publication}
-\begin{tabulary}{\textwidth}{ll}
-\toprule
-%Property			&Value\\
-%\midrule
-Modules				&ANNOdc (domain-core) , ANNOds (domain-specific)\\
-Top-Level Ontology	&General Formal Ontology~\citep{gfo}\\
-Namespace			&\url{https://annosaxfdm.de/ontology/}\\
-Browser			&RickView~\citep{rickview} at \url{https://annosaxfdm.de/ontology/}\\
-Repository		&\url{https://github.com/annosaxfdm/ontology}\\
-Terminology Server	&\url{https://ols.imise.uni-leipzig.de/ontologies/anno}\\
-License				&\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International}\\
-DOI (all versions)		&\href{https://doi.org/10.5281/zenodo.8301559}{10.5281/zenodo.8301559}\\
-\bottomrule
-\end{tabulary}
-\end{table}
 
 \section{Related Work}\label{sec:relatedwork}
 
@@ -155,7 +158,7 @@ In addition to the outdated print edition~\citep{ta1998}, an extended second edi
 Furthermore, there is a commercially available independent companion print publication with German~\citep{anatomylexicon}, English~\citep{pocketatlas} and Spanish~\citep{taspanish} editions of which at least the German edition is regularly updated.
 This book contains textual and visual descriptions, whereby anatomical structures are indicated through lines on the illustrations.
 
-\subsection{Foundational Model of Anatomy (FMA)}\label{sec:fma}
+\subsection{Foundational Model of Anatomy (FMA)}\label{sec:fma}\todo{an anderer Stelle haben wir für viel größere Textmengen keine subsection und hier für ganz wenig Text eine}
 The FMA~\citep{fma} ontology represents the physical organization of human anatomy by mapping relations to one another.
 It allows the knowledge it contains to be represented in a way that is humanly comprehensible and machine-interpretable.
 The FMA uses the Basic Formal Ontology (BFO) as its top-level ontology.
@@ -166,6 +169,7 @@ We create manual links between ANNO and the FMA, which we use to connect ANNO wi
 
 \subsection{Other ontologies}\label{sec:researchgaps}
 
+\todo{Mittweida, bitte sobald wie möglich hier eintragen, es ist nicht mehr viel Zeit}
 Uberon, the Uber Anatomy Ontology~\citep{uberon}...
 BSPO~\citep{bspo}...
 NCIT~\citep{ncit}...
@@ -176,7 +180,7 @@ Read Codes Version 3 (RCD)~\citep{rcd}...
 
 %\subsection{Current Research Gaps}
 There are several issues and research gaps when it comes to naming and defining anatomical concepts and instances that neither current ontologies nor reference literature---general or subject-specific---can address adequately.
-
+%
 The primary issue lies in the absence of standardization.
 While both the TA and FMA have been proposed as a means of standardizing terminology, they haven't garnered sufficient acceptance to facilitate the adoption of a unified and consistent body of work to establish standardization in actual practice~\citep{frequencyta,doestamatter,athighlights}.
 Instead, the usage of terminology is as fluent as any other language, depending on its socio-cultural environment, such as schools or language areas~\citep{doestamatter,atthennow,atinfo,frequencyta,atcompare}.
@@ -237,28 +241,19 @@ None of the evaluated ontologies could cover all defined requirements and adequa
 We decided to develop a new ontology because the integration (extension and adaptation) of all necessary parts from different ontologies would have been much more complex.
 
 \section{ANthropological Notation Ontology (ANNO)}\label{sec:anno}
+
 \subsection{Methodology}\label{sec:methodology}
-\subsection{Description and foundation of ANNOdc}\label{sec:annodc}
-%Terminology for descriptive anatomy
-%Anatomical entities
-%Phenotypes and anatomical Properties
-
-\subsection{Development of ANNOds}\label{sec:annods}
-
-\section{Ontological Architecture}\label{sec:architecture}
-\section{Proof of concept: Integration into \aw{}}\label{sec:integration}
-
 The ontological architecture of ANNO consists of three interrelated layers representing by a top-level ontology, a domain-core ontology and a domain-specific ontology:
 
 \begin{enumerate}
 \item We use the General Formal Ontology (GFO)~\citep{gfo} as top-level ontology of ANNO.
-We refer specifically to the categories \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO, see \cref{fig:gfo}. %\cref{sec:core},
+We refer specifically to the categories \enquote{Material object}, \enquote{Attributive}, \enquote{Relator} as well as the spatial entities of GFO, see \cref{fig:gfo}. %\cref{sec:annodc},
 
-\item ANNOdc (\cref{sec:core}, \cref{fig:annodc}) is a domain-core (dc) ontology that defines the core entities of the domain.
+\item ANNOdc (\cref{sec:annodc}, \cref{fig:annodc}) is a domain-core (dc) ontology that defines the core entities of the domain.
 This includes general anatomical categories (Bone and Tooth), a category for describing their characteristics (Anatomical property), anatomical spatial entities (Anatomical space, surface, line and point) as well as the category \emph{Phenotype} to model the rules for determining human phenotypes.
 ANNOdc is embedded in the GFO, i.e. the ANNOdc classes are subclasses of GFO classes.
 
-\item ANNOds (\cref{sec:domain}) is a domain-specific (ds) ontology for describing domain-specific entities to be used for annotating the parts of the human skeleton.
+\item ANNOds (\cref{sec:annods}) is a domain-specific (ds) ontology for describing domain-specific entities to be used for annotating the parts of the human skeleton.
 These are bones, teeth, their parts and compounds, such as \emph{mandible}, \emph{Mental protuberance} or the facial skeleton.
 It is also used for modeling their properties and relations, such as the distance between \emph{Mentale dexterum} and \emph{Mentale sinistrum}, needed to derive human phenotypes like sex or height.
 ANNOds is embedded in ANNOdc.
@@ -274,7 +269,7 @@ ANNOds is embedded in ANNOdc.
 % TODO: reuse of ontological entities
 % TODO: clear validation mechanism
 
-\section{Methodology for developing ANNO}
+%\section{Methodology for developing ANNO}
 For the development of ANNO, we applied the onto-axiomatic method, a combination of the axiomatic method with a top-level ontology \citep{baumann2014, herre2010}.
 The axiomatic method comprises principles for developing theories or formal knowledge bases, which aim at the foundation, systematisation and formalisation of a knowledge domain \citep{baumann2014, herre2010}.
 When knowledge is systematised, a set of categories is considered \emph{primitive} or \emph{basic}.
@@ -289,7 +284,7 @@ Possible ways of discovering axioms in empirical domains are generalisation base
 
 We built ANNO on the basis of an ontology development schema that includes three main steps: 1. Domain Specification, 2. Conceptualisation and 3. Axiomatization \citep{herre2010}, and used the General Formal Ontology (GFO) \citep{Loebe2022, Burek2020, herre2010} as a top-level ontology in the sense of the onto-axiomatic method.
 
-\subsection{Domain specification}
+\paragraph{Domain specification}
 As part of the domain specification, the anthropology experts conducted an extensive review of existing literature and ontologies, analysing and classifying the relevant information.
 Together with ontologists, relevant use cases and competence questions\footnotemark{} \citep{XD2016, MOMo2023}, as well as views and classification principles of the objects in the anthropology domain \citep{herre2010} were discussed.
 \footnotetext{queries that the ontology must be able to answer}
@@ -331,8 +326,7 @@ This means, among other things, that all relevant anatomical entities (bones, te
 Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.\todo{Absatz doppelt (Ende \cref{sec:limitations})}
 We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see \cref{sec:relatedwork}). 
 
-\subsection{Conceptualisation}
-
+\paragraph{Conceptualisation}
 During the conceptualisation phase \citep{herre2010}, the core concepts (categories, classes) and relations were introduced that form ANNOdc (domain-core ontology) (\cref{fig:annodc}).
 The concepts were created by generalising and classifying the domain objects.
 To answer the competence questions of the first use case, for example, a distinction must be made between whole bones, bone parts and composite bone structures.
@@ -340,8 +334,7 @@ Therefore, the corresponding concepts \enquote{Bone}, \enquote{Bone part} and \e
 Further concepts were defined to represent spatial relations and phenotypes.
 Furthermore, we identified relations (e.g., partOf, boundaryOf or locationOf) relevant to capture axioms covering the defined use cases, see \cref{fig:annodc}.
 
-\subsection{Axiomatization}
-
+\paragraph{Axiomatization}
 For the axiomatization and formal foundation of ANNO we utilised GFO as a top-level ontology and reused its categories, relations, axioms and modules (as a kind of Ontology Design Patterns \citep{ODP2005, XD2016, MOMo2023}).
 We instantiated specifically the GFO modules \enquote{Material objects}, \enquote{Attributives} and \enquote{Space} \citep{Burek2020, Loebe2021, Loebe2018} and adapted them according to the requirements of the use cases.
 Domain concepts introduced in the conceptualisation phase were embedded in GFO, i.e., defined as subcategories (subclasses) of certain GFO categories (fig. 1).
@@ -365,10 +358,12 @@ Phenotype: subClass of (derivedFrom some ('Anatomical entity' or 'Anatomical pro
 Finally, a spreadsheet template was developed for domain experts to specify domain-specific entities (ANNOds), strictly compliant with ANNOdc (chapter $\ldots$).
 This means that the domain experts had to insert more specific categories (single categories or category trees) under defined ANNOdc core categories and to describe them by suitable annotations and relations introduced in ANNOdc.
 
-The resulting OWL 2 ontology was generated using SMOG~\citep{smog} and validated by the HermiT and Pellet reasoners~\citep{hermit,pellet} and SHACL shapes (see \cref{sec:domain}).
+The resulting OWL 2 ontology was generated using SMOG~\citep{smog} and validated by the HermiT~\citep{hermit} and Pellet~\citep{pellet} reasoners and SHACL shapes, see \cref{sec:annods}.
 In both cases, the consistency of the ontology was proven.
 As a proof of concept, we integrated the ontology into the AW3D software~\citep{aw3d} and were able to successfully realise all three intended use cases.
-Thereby, most of the core categories (such as \enquote{Bone}, \enquote{Bone part}, \enquote{Bone compound}, \enquote{Tooth}, \enquote{Tooth part}, \enquote{Phenotype}, \enquote{Relative anatomical location}, \enquote{Anatomical line} and \enquote{Anatomical point}) and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
+Thereby, most of the core categories,
+such as \enquote{Bone}, \enquote{Bone part}, \enquote{Bone compound}, \enquote{Tooth}, \enquote{Tooth part}, \enquote{Phenotype}, \enquote{Relative anatomical location}, \enquote{Anatomical line} and \enquote{Anatomical point}),
+and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
 
 The statistical information on the ANNO ontology is shown in Table 1.
 
@@ -388,7 +383,8 @@ combined	&1195					&21								&1								&803						&53									&18382					&514			
 \end{tabulary}
 \end{table}
 
-\section{Description and Foundation of ANNOdc}\label{sec:core}
+
+\subsection{Description and foundation of ANNOdc}\label{sec:annodc}
 The core ontology development occurs in close collaboration between ontologists and anthropologists.
 The objective is twofold: to adequately represent the most basic anatomical and anthropological entities and to keep the ontology relatively simple and compact.
 This approach ensures that domain experts can easily handle the ontology and efficiently integrate it into the \aw{} software, see \cref{sec:aw}.
@@ -436,7 +432,7 @@ This approach ensures that domain experts can easily handle the ontology and eff
 \end{tabulary}
 \end{table}
 
-\subsection{Terminology for descriptive anatomy}
+%\paragraph{Terminology for descriptive anatomy}
 
 \begin{figure}
 \includegraphics[width=\textwidth]{img/axisplanelocation.png}
@@ -489,24 +485,22 @@ For example, the Glabella is located laterally to both Arcus superciliaris (Arcu
 A relative anatomical location can be considered as an individual relation between two anatomical entities (target entity and reference entity) and can therefore be modeled using a GFO relator.
 Relators are composed of roles (in our case target and reference) and have the power to relate arbitrary entities (in our case, anatomical entities)~\citep{gfocategory}.
 
-
-\subsection{Anatomical entity and structure}
+%\paragraph{Anatomical entities}
 An anatomical entity is either an anatomical (material) structure or a spatial anatomical entity, such as \anno{Cranium} or \anno{FrontalPlane}.
-
 An anatomical structure refers to any anatomical division or material anatomical entity.
 ANNO describes three kinds of anatomical structures: tooth structures (teeth and teeth parts), bone structures (single bones, bone parts and bone compounds), as well as the complete skeleton.
 The GFO defines a material object \aurl{gfo}{MaterialObject} as a solid concrete entity that belongs to the material region of the world, has mass, consists of matter and occupies space~\citep{gfospace}.
 Accordingly, we define anno:AnatomicalStructure as a gfo:MaterialObject in the anthropological context.
 The closest equivalent in the FMA is the \emph{Material anatomical entity} \aurl{fma}{67165}, the subclass of \emph{Physical anatomical entity} \aurl{fma}{61775} that has mass.
 
-\subsection{Skeleton}
+%\paragraph{Skeleton}
 The largest or most comprehensive skeletal anatomical structure, the human skeleton, is the framework composed of all the bones and teeth of a human being.
 The TA~\citep{ta2} equates the skeleton with the \enquote{Systema skeletale (skeletal system)}, which refers to the passive part of the musculoskeletal system, including the articulated bony skeleton with teeth, as well as cartilage, ligaments, and other joints.
 ANNO does not adopt this equivalence, and \enquote{Skeleton } here refers to the entirety of a human's bones and teeth.
 However, since teeth constitute their own tissue, they are treated separately, allowing all other components of the skeletal system, such as cartilage or ligaments (as tissues) or joints (e.g. as specific aspects), to be integrated and referenced separately in ANNO.
 The anthropologically meaningful distinction between \enquote{Skeleton} and \enquote{Systema skeletale} can be maintained, while still referencing both within the TA concept.
 
-\subsection{Tooth structure}
+%\paragraph{Tooth structure}
 Tooth structures comprise teeth and their parts.
 A human tooth is an individual unit of the human dentition (synonymous for the teeth as a whole).
 Teeth are part of the skeleton, yet they are characterized by their own distinctive tissue and thus treated separately from bones.
@@ -515,7 +509,7 @@ The FMA has the equivalent class \enquote{Tooth} \aurl{fma}{12516}.
 A tooth part is any portion of a tooth.
 They are not included in the initial scope of the ontology, but they are one of the aspects by which it can be expanded.
 
-\subsection{Bone structure}
+%\paragraph{Bone structure}
 Bone structures comprise all possible parts of the human skeleton, which are individual bones, bone parts, bone compounds as well as the complete skeleton excluding the teeth.
 The FMA does not have a common superclass for those parts but instead mounts them in different parts of its hierarchy.
 
@@ -532,8 +526,7 @@ On the skeletal level, bone parts comprise any piece or portion of a bone.
 An anatomical landmark is any distinct structure on a bone.
 In ANNO, it is also referred to as a bone part.
 
-
-\subsection{Spatial anatomical entity}
+%\paragraph{Spatial anatomical entity}
 An anatomical entity without mass is classified as a spatial anatomical entity, which is either an anatomical space (three-dimensional), an anatomical surface (two-dimensional), an anatomical line (one-dimensional) or an anatomical point (zero-dimensional).
 It is equivalent to the FMA \enquote{Immaterial anatomical entity} (\aurl{fma}{67112}).
 
@@ -550,7 +543,7 @@ Anatomical lines can connect or pass through anatomical entities (e.g., an edge 
 The length of the line or the angle degree can be measured and used in functions to infer individual phenotypes.% [Verweis zu Phenotype section].
 For example, the anatomical line \anno{ZyDexterumZySinistrum} between the \emph{Zygion Dexterum} and the \emph{Zygion Sinistrum} is used in the sex determination function for the phenotype \anno{SexGilesElliot196319}~\citep{sexgileselliot1963}.
 
-\subsection{Phenotype}
+%\paragraph{Phenotypes and anatomical properties}
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/phenotype.png}
 \caption{
@@ -560,7 +553,6 @@ Method after Walker~\cite{datacollection}.
 Image taken unmodified from \cite{datacollection}.
 }\label{fig:phenotype}
 \end{figure}
-
 
 Usually, a phenotype is considered as a (combination of) bodily feature(s) or observable characteristic(s) of an organism, such as sex, body height or body weight~\citep{ontologicaltreatment,phenomes,interoperability}.
 Since phenotypes are individual properties, they can be considered as attributives in the GFO sense.
@@ -582,7 +574,7 @@ The right side is calculated analogously using (ppam dexterum-go dexterum-paim d
 %\]
 The threshold or sectioning point is given at 0.2, meaning that if the result is greater than this value, then sex is assigned to male, if it is lower it is assigned to female.
 
-\subsection{Anatomical property}
+%\paragraph{Anatomical property}
 An anatomical property is a characteristic (e.g., shape) of an anatomical structure.
 Anatomical properties are considered as attributes or qualities in GFO~\citep{gfoarchitecture}.
 These are dependent individuals that characterise other individuals (in our case, anatomical structures).
@@ -591,13 +583,7 @@ Other than by means of osteometry using measurements and functions, an anatomica
 For instance, assessment of the degree of an anatomical landmark's morphological expression (the anatomical property in this case) offers information about the sex of the remains of the individual being examined.
 While the morphological examination was not within the scope of the project, it was nonetheless ensured that future extension in this respect is possible.
 
-\section{Development of ANNOds}\label{sec:domain}
-
-\begin{figure}[h!t]
-\includegraphics[width=\textwidth]{img/smog.png}
-\caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
-\end{figure}
-
+\subsection{Development of ANNOds}\label{sec:annods}
 While ANNOdc is created by the ontologists in consultation with the domain experts, ANNOds is developed by the domain experts themselves.
 %The primary focus is on the design of ANNO's ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida's in-house software AnthroWorks3D.
 For this purpose they were provided with a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}, eliminating the requirement of having a background in RDF and ontologies.
@@ -607,6 +593,12 @@ This approach ensures intuitive and unimpeded data input and a valid end result.
 Additionally, ANNOds is validated using SHACL shapes\footnote{Contained in \texttt{dist/shacl.ttl} in \url{https://zenodo.org/record/8380382}.}, which requires metaclasses.
 For example, all directly specified and transitive subclasses of \anno{Bone} are also explicitly individuals of the metaclass \anno{BoneClass} because of the limitations of SHACL.
 In addition, the objective is to initiate the process of data entry, encompassing selected bones of the skeleton.
+
+\begin{figure}[ht]
+\includegraphics[width=\textwidth]{img/smog.png}
+\caption{Excerpt of the spreadsheet-based input template used by the anthropologists.}\label{fig:smog}
+\end{figure}
+
 %
 %\textbf{UNFINISHED DRAFT SECTION, TO BE HEAVILY REWORKED AND CUT}
 %\subsections{General considerations}
@@ -630,7 +622,7 @@ For the measurement distances, those should be selected that are established in 
 The functions chosen were those with diagnostic value.
 These were discriminant functions for sex determination and regression functions for body height and body weight estimation.
 
-\subsection{Process for creating definitions and measurements}
+%\paragraph{Process for creating definitions and measurements}
 For the definitions and measurements, a representative minimum amount of anthropological and anatomical English- and mostly German-language literature was compared in order to develop the definitions from their information.
 Notably, Latin or latinized ancient Greek terms often missing in the English literature and the FMA were included.
 %The FMA also contains only English terms.
@@ -641,7 +633,7 @@ This requires a positional description, such as the Punctum superioris capitis f
 For the measurements, in addition to the name of the measurement, the type (e.g., distance measurement) and the measurement instrument were also recorded.
 The subsequent visual definitions were made in the different anatomical views marking the area of the anatomical structures and the position of the anatomical points.
 
-\subsection{Functions}
+%\paragraph{Functions}
 The functions are divided into discriminant functions for sex determination and regress functions for body height.
 The sex of a specific individual within a population may be estimated using a function on skeletal measurements that is specific or similar to this population.
 Based on a threshold value, skeletons are classified into male, probably male, indifferent, probably female, and female.
@@ -654,10 +646,10 @@ ANNOds covers functions for at least one European, African, American, and Asian 
 %While there are many textual sources of anthropological systematisation, they do not agree in all aspects and there is not a single, formally described, standard.
 %ANNO links to concepts of the FMA when they exist, but structures them in a different way.
 %
-%\subsection{Sex determination}
+%\paragraph{Sex determination}
 % auto translated from the project report, use as basis:
 %
-%\subsection{Regress functions}
+%\paragraph{Regress functions}
 %Regress functions for body height and body weight estimation.
 %Names were assigned by the number included in each study, the authors, and the year of publication.
 %In addition, the function, reference population, aspect (e.g., discriminant function), and sample size with division by gender were noted.
@@ -666,12 +658,11 @@ ANNOds covers functions for at least one European, African, American, and Asian 
 %Standardised description of position
 %In addition to the conception and development of the ontology as well as of definition, data input was initiated as content of Cranium including the Mandibula as well as the teeth of the was entered. Entries can be added directly to the OWL-File using Protégé or they can continue to be entered directly into the spreadsheet. In the latter case, the OWL file can be generated with a custom OWL generator.
 
-%\subsection{Validation}
+%\paragraph{Validation}
 %When transforming the input sheet to ANNOds, SMOG~\citep{smog} executes some basic validation heuristics, such as warning on undefined references.
 % pyshacl mit metaklassen wäre möglich
 
-\subsection{Resolving incongruities}
-
+\paragraph{Resolving incongruities}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{img/corpus_ossis_pubis.png}
@@ -679,7 +670,6 @@ ANNOds covers functions for at least one European, African, American, and Asian 
 According to the \emph{TA} and others~\citep{ta2,schemamann,anatomylexicon2007,drake2019gray,anatomylexicon,prometheus2,anatomie}, this landmark is located in the region of the \emph{Facies symphysialis}, which is defined here as the \emph{Pars symphysialis}.
 }\label{fig:corpusossispubis}
 \end{figure}
-
 
 The domain experts reconciled conflicting literature to arrive at a consistent and logical result, for example for the \emph{Corpus ossis pubis}, see \cref{fig:corpusossispubis}:
 Since the Corpi of the \emph{Os ischii} and \emph{Os ilii} are located in the area of the \emph{Acetabulum},
@@ -699,7 +689,11 @@ Further contributions of ANNOds include:
 \item Redefinitions such as joint surfaces, which are often not named in anatomy literature but are anthropologically relevant, and osteometric measurement points outside the skull, which are not established in the literature.
 \end{itemize}
 
-\section{Use Case: Integration into \aw{}}\label{sec:aw}
+
+
+
+\section{Proof of concept: Integration into \aw{}}\label{sec:integration}
+%\section{Use Case: Integration into \aw{}}\label{sec:aw}
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
