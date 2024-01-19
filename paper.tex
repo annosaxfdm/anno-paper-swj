@@ -77,17 +77,18 @@ For example, anthropological methods can be used to determine individual propert
 Digitization and digitalization offer several advantages to anthropology, including remote work, without the effects of wear and tear on the physical skeletal specimens.
 Current problems of access can be resolved, as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied, which facilitates interdisciplinary collaborative research.
 Moreover it allows for linking data of different study samples across geographical boundaries.
-Data sets consolidated this way and formalized through the Anthropological Notation Ontology (ANNO) presented here allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
+%Datasets consolidated this way and formalized through the Anthropological Notation Ontology (ANNO) presented here allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
+Datasets consolidated this way allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
 %
 Apart from contextual information, most informative clues can be found directly on the bone.
-Anthropologists use human anatomy, specifically the skeletal system and further tissues of the musculoskeletal system, to classify and describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion.
+Anthropologists use human anatomy, specifically the skeletal system and further tissues of the musculoskeletal system, to classify, describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion.
 %
 By applying the same principles used for mapping the Earth's surface \enquote{terrain}, a detailed map of the human body can be created.
-This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
-ANNO represents such a map for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
+This map contains visible anatomical surface structures and artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
+%The Anthropological Notation Ontology (ANNO) represents such a map for accurate and exhaustive definitions that allow to unequivocally locate these structures and objects, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
+The Anthropological Notation Ontology (ANNO) represents such a map for accurate and exhaustive definitions that allow to unequivocally locate these structures and objects, facilitate their retrieval and serve as a basis for their objective examination, including measurements.
 
 %\paragraph{Theoretical Background}
-\todo{der Absatzübergang ist etwas holprig}
 Ontologies are theories about the kinds of objects, the properties of objects, and the relations between objects in a knowledge domain.
 On the one hand, these are controlled vocabularies, but on the other hand, ontologies are also conceptualizations that the vocabulary terms are intended to capture~\citep{whatareontologies}.
 Researchers in many areas recognized the need for ontologies to clearly define specialized vocabularies for these domains~\citep{evaluatingdomain}.
@@ -149,11 +150,12 @@ There are currently two prominent ontologies in the field of general anatomy:
 The TA~\citep{ta2} is a hierarchy of anatomical structure concepts for the entire human body.
 For historical reasons, it uses a terminology consisting of Latin and originally Greek, which was later latinized.
 For each anatomical structure, the TA provides the \enquote{preferred}, i.e. standard, Latin term and its English equivalent as well as an individual identification number.
+\todo{Marie: bitte mal alle lateinischen Begriffe konsistent groß oder kleinschreiben, momentan ist das total unterschiedlich. Ich traue mich das nicht selbst zu da ich kein Latein kann und nicht weiß, ob da ein Grund dahintersteckt.}
 In some cases, Latin and English synonyms are also included, e.g. \emph{malar bone} is an English synonym of the Latin preferred term \emph{Os zygomaticum} and its English equivalent \emph{zygomatic bone}.
 The identification number is crucial, as certain landmarks are mostly listed without bone affiliation, resulting in multiple occurrences. %(s. Bone Part)
 For instance, the \emph{processus zygomaticus} can be found both at the \emph{os frontale} and the \emph{os temporale}.
 Eponyms are terms derived from proper nouns such as the name of a person, place or thing, and they are considered a type of synonyms since they stand for the same anatomical structure.
-For example, \emph{ossa digitorum manus / pedis} (engl. \emph{phalanges of the hand / foot}) are the small bones of the fingers and toes and are also denoted as \emph{phalanges manus / pedis} which are named after the Greek word \emph{phalanx} for a dense rectangular infantry formation.
+For example, \emph{ossa digitorum manus / pedis} (engl. \emph{phalanges of the hand}, respectively \emph{foot}) are the small bones of the fingers and toes and are also denoted as \emph{phalanges manus / pedis} which are named after the Greek word \emph{phalanx} for a dense rectangular infantry formation.
 In addition to the outdated print edition~\citep{ta1998}, an extended second edition (TA2) is available online~\citep{ta2}.
 Furthermore, there is a commercially available independent companion print publication with German~\citep{anatomylexicon}, English~\citep{pocketatlas} and Spanish~\citep{taspanish} editions of which at least the German edition is regularly updated.
 This book contains textual and visual descriptions, whereby anatomical structures are indicated through lines on the illustrations.
@@ -233,12 +235,13 @@ The main requirement for the intended ontology to cover the defined tasks is tha
 This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., AW3D) according to the three-ontology method~\citep{threeontologymethod}.
 Following this method, the software only needs to implement access to the core categories (of the core or task ontology), while their subcategories (from the domain-specific ontology) are processed dynamically.
 This means, among other things, that all relevant anatomical entities (bones, teeth, their parts and composite structures) must each be located in one subtree (i.e., must have a common superclass) rather than spread across the entire ontology.
-The FMA, for example, does not have single equivalent concepts to represent bone compounds or bone parts, see \cref{sec:annodc}.\todo{Absatz doppelt}
+The FMA, for example, does not have single equivalent concepts to represent bone compounds or bone parts, see \cref{sec:annodc}.
 %(see section 3.2.2).
 Several partial subtrees would have to be combined for this purpose.
 Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.
 None of the evaluated ontologies could cover all defined requirements and adequately support the specific anthropological use cases.
 We decided to develop a new ontology because the integration (extension and adaptation) of all necessary parts from different ontologies would have been much more complex.
+%We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see \cref{sec:relatedwork}). 
 
 \section{ANthropological Notation Ontology (ANNO)}\label{sec:anno}
 
@@ -298,7 +301,7 @@ The following main use cases and competence questions (sub-items, selected examp
 \item Query all parts (types) of a specific bone compound (type)
 \item Query all tooth types
 \item Query all parts (types) of a specific tooth (type)
-\item $\ldots$
+\item $\ldots$\todo{wofür steht das ... hier, soll das so sein oder kommt da noch etwas hin?}
 \end{enumerate}
 \item Specification of spatial relations between anatomical entities
 \begin{enumerate}
@@ -319,12 +322,6 @@ The following main use cases and competence questions (sub-items, selected examp
 Relevant domain objects were identified on the basis of the defined use cases.
 These include bones, teeth, phenotypes, as well as spatial anatomical entities.
 The objects are classified according to their type and part-whole relationship.
-The main requirement for the ANNO core ontology to cover the intended use cases is that it adequately represents the basic anatomical and anthropological entities, the spatial relations between them and the phenotyping functions, while remaining relatively simple and compact.
-This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., AW3D) according to the three-ontology method~\citep{threeontologymethod}. 
-Following this method, the software only needs to implement access to the core categories (of the core or task ontology), while their subcategories (from the domain-specific ontology) are processed dynamically.
-This means, among other things, that all relevant anatomical entities (bones, teeth, their parts and composite structures) must each be located in one subtree (i.e., must have a common superclass) rather than spread across the entire ontology.
-Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.\todo{Absatz doppelt (Ende \cref{sec:limitations})}
-We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see \cref{sec:relatedwork}). 
 
 \paragraph{Conceptualisation}
 During the conceptualisation phase \citep{herre2010}, the core concepts (categories, classes) and relations were introduced that form ANNOdc (domain-core ontology) (\cref{fig:annodc}).
@@ -340,22 +337,24 @@ We instantiated specifically the GFO modules \enquote{Material objects}, \enquot
 Domain concepts introduced in the conceptualisation phase were embedded in GFO, i.e., defined as subcategories (subclasses) of certain GFO categories (fig. 1).
 The required relations between the concepts were then either adopted from GFO or derived (specialised) from the corresponding GFO relation.
 For example, GFO specifies that material objects occupy space regions \citep{Loebe2021}.
-We integrated this pattern in ANNOdc by deriving the class anno:AnatomicalStructure from gfo:MaterialObject and anno:AnatomicalSpace from gfo:SpaceRegion.
+We integrated this pattern in ANNOdc by deriving the class \anno{AnatomicalStructure} from \aurl{gfo}{MaterialObject} and \anno{AnatomicalSpace} from \aurl{gfo}{SpaceRegion.}
 In this way, we were able to adopt the whole axiom including the \enquote{occupies} relation between the two ANNO classes.
 In a similar way, we applied the GFO pattern \enquote{point region is boundary of line region is boundary of surface region is boundary of space region} \citep{baumann2016} to the ANNO categories anatomical point, line, surface and space.
-According to the GFO relator \citep{Loebe2018} pattern, we defined the ANNO class \enquote{Relative anatomical location} including the two roles: target (locationOf) and reference (relativeTo) anatomical entity (chapter $\ldots$).
+According to the GFO relator \citep{Loebe2018} pattern, we defined the class \anno{RelativeAnatomicalLocation} including the two roles: target (\anno{locationOf}) and reference (\anno{relativeTo}) anatomical entity. % (chapter $\ldots$).
 
 Further axioms were introduced to precisely define certain categories.
 In addition to an explicit textual definition of the category \enquote{Bone compound}, for example, we introduced the following axiom:
 
-Bone compound: subClass of (hasPart some (Bone or 'Bone compound' or 'Bone part'))
+%\anno{BoneCompound}: \aurl{rdfs}{subClassOf} (\aurl{gfo}{hasPart} some (\anno{Bone} or \anno{BoneCompound} or \anno{BonePart}))
+\anno{BoneCompound}: subclass of (\aurl{gfo}{hasPart} some (\anno{Bone} or \anno{BoneCompound} or \anno{BonePart}))
 
 This axiom states that a bone compound consists of further bone compounds, individual bones or bone parts.
 Another example axiom postulates that phenotypes can be derived from anatomical entities or anatomical properties:
 
-Phenotype: subClass of (derivedFrom some ('Anatomical entity' or 'Anatomical property'))
+%\anno{Phenotype}: \aurl{rdfs}{subClassOf} (\aurl{gfo}{derivedFrom} some (\anno{AnatomicalEntity} or \anno{AnatomicalProperty}))
+\anno{Phenotype}: subclass of (\aurl{gfo}{derivedFrom} some (\anno{AnatomicalEntity} or \anno{AnatomicalProperty}))
 
-Finally, a spreadsheet template was developed for domain experts to specify domain-specific entities (ANNOds), strictly compliant with ANNOdc (chapter $\ldots$).
+Finally, a spreadsheet template was developed for domain experts to specify domain-specific entities (ANNOds), strictly compliant with ANNOdc, see \cref{sec:annodc}.
 This means that the domain experts had to insert more specific categories (single categories or category trees) under defined ANNOdc core categories and to describe them by suitable annotations and relations introduced in ANNOdc.
 
 The resulting OWL 2 ontology was generated using SMOG~\citep{smog} and validated by the HermiT~\citep{hermit} and Pellet~\citep{pellet} reasoners and SHACL shapes, see \cref{sec:annods}.
@@ -490,7 +489,7 @@ An anatomical entity is either an anatomical (material) structure or a spatial a
 An anatomical structure refers to any anatomical division or material anatomical entity.
 ANNO describes three kinds of anatomical structures: tooth structures (teeth and teeth parts), bone structures (single bones, bone parts and bone compounds), as well as the complete skeleton.
 The GFO defines a material object \aurl{gfo}{MaterialObject} as a solid concrete entity that belongs to the material region of the world, has mass, consists of matter and occupies space~\citep{gfospace}.
-Accordingly, we define anno:AnatomicalStructure as a gfo:MaterialObject in the anthropological context.
+Accordingly, we define \aurl{anno}{AnatomicalStructure} as a \aurl{gfo}{MaterialObject} in the anthropological context.
 The closest equivalent in the FMA is the \emph{Material anatomical entity} \aurl{fma}{67165}, the subclass of \emph{Physical anatomical entity} \aurl{fma}{61775} that has mass.
 
 %\paragraph{Skeleton}
