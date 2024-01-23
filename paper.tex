@@ -69,24 +69,43 @@ ANNO supports the analysis of skeletal and bone finds in forensic and historical
 \end{frontmatter}
 
 \section{Introduction}\label{sec:introduction}
-%\paragraph{Motivation}
-Data from historical and prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, provides a comprehensive understanding of deceased individuals from different time periods.
-This understanding encompasses their identity, health status, aspects of their behavior, lifestyle, culture and even the circumstances of their death~\citep{spurensuche}.
-For example, anthropological methods can be used to determine individual properties (phenotypes) such as their sex, age, height and ancestry and other individualizing traits.
-%
-Digitization and digitalization offer several advantages to anthropology, including remote work, without the effects of wear and tear on the physical skeletal specimens.
-Current problems of access can be resolved, as examinations can be conducted even if the skeletal material from individuals or collectives are not present at the institution or may have already been reburied, which facilitates interdisciplinary collaborative research.
-Moreover it allows for linking data of different study samples across geographical boundaries.
-%Datasets consolidated this way and formalized through the Anthropological Notation Ontology (ANNO) presented here allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
-Datasets consolidated this way allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
-%
-Apart from contextual information, most informative clues can be found directly on the bone.
-Anthropologists use human anatomy, specifically the skeletal system and further tissues of the musculoskeletal system, to classify, describe and thus document bones, anatomical structures and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion.
-%
+Anthropology, as a discipline, explores the full range of human diversity and similarity across cultures, social structures, habitats, and environments.
+Anthropological skeletal analysis, a subset of this field, is particularly focused on understanding the human skeletal system.
+This study encompasses a multidisciplinary approach, integrating insights from natural, social, ­and cultural sciences.
+It's about reading the stories that human remains tell – from sex, age, and health to broader aspects like cultural practices and environmental impacts.
+Hence, data from historical and prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, provides a comprehensive understanding of deceased individuals and past populations from different time periods.
+This process entails investigating individuals’ identity, health status, aspects of their behaviour, lifestyle, culture and even the circumstances of death~\citep{spurensuche} by determining features (phenotypes) such as sex, age, height and ancestry and other individualizing traits, through the use of anthropological methods.
+
+In anthropological skeletal analyses, methods employed include morphological and osteometric examinations.
+Apart from contextual information, anthropological focus on identifying and analysing traces found directly on the bones, indicating bone reactions or functional aspects.
+
+For this purpose, anthropologists use human anatomy, specifically the skeletal system and further tissues of the musculoskeletal system, to classify and describe and thus document bones, anatomical structures, and diagnostic features within the overall framework of the skeleton in a comprehensive and transparent fashion.
+Precisely locating the traces on the skeleton is crucial.
+Accurate identification and mapping of these features allow for a detailed understanding of their implications and connections to broader anthropological inquiries.
+This precision is vital for meaningful and reliable interpretations in anthropological research.
 By applying the same principles used for mapping the Earth's surface \enquote{terrain}, a detailed map of the human body can be created.
-This map contains visible anatomical surface structures and artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
-%The Anthropological Notation Ontology (ANNO) represents such a map for accurate and exhaustive definitions that allow to unequivocally locate these structures and objects, facilitate their retrieval and furthermore serve as a basis for the objective examination, including measurements.
-The Anthropological Notation Ontology (ANNO) represents such a map for accurate and exhaustive definitions that allow to unequivocally locate these structures and objects, facilitate their retrieval and serve as a basis for their objective examination, including measurements.
+This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
+ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for an objective examination, including measurements.
+Osteometric examinations involve precise measurements that numerically capture features important in anthropology.
+These measurements are crucial for discriminant function analysis, a key method for determining the biological sex of deceased individuals.
+Discriminant function analysis identifies differences between predefined groups, such as males and females, by analyzing known group distinctions.
+Its goal is to pinpoint characteristics that significantly differentiate these groups.
+The result is a discriminant function, which includes variables and their weights representing these characteristics.
+This function, once determined, classifies skeletal remains into one of the groups~\citep{prehistoricanthropology}.
+The digitization and digitalization of anthropological skeletal materials offer significant advantages.
+This process extends beyond visualizing remains to creating and analyzing annotated 3D models, incorporating traditional anthropological methods into digital formats.
+Such technological advancements facilitate preservation, documentation, and global collaboration, allowing remote access and minimizing physical specimen wear.
+These developments address access challenges and enable the linking of diverse study samples, thus enhancing research and data integration.
+The digital 3D models can serve as digital twins, as they present virtual, detailed replicas of skeletal remains, created using 3D imaging technologies.
+ANNO complements this digital twin by providing an ontological framework that enriches the model with detailed, accurate anthropological data.
+This synergy enhances the digital twin's utility, enabling precise annotation, analysis, and sharing of anthropological findings.
+The benefits include improved research efficiency, enhanced data sharing and collaboration opportunities, and a deeper, more nuanced understanding of anthropological subjects.
+The Anthropological Notation Ontology (ANNO) plays a pivotal role in this digital transformation.
+It provides a consistent yet flexible framework for representing anthropologically relevant anatomical and anthropological knowledge.
+By mapping information directly onto 3D models, ANNO ensures that data is not only comprehensible and reproducible but also sustainably documented.
+This approach improves data interoperability, a crucial prerequisite for successful digitization.
+Furthermore, Data sets consolidated this way and formalized through the Anthropological Notation Ontology (ANNO) presented here allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
+Therefore, the contribution of ANNO lies in its ability to encapsulate and connect anthropological methods, aspects, and skeletal features within an ontological structure that aids in the digitization process, promoting more in-depth anthropological research and broader interdisciplinary studies.
 
 %\paragraph{Theoretical Background}
 Ontologies are theories about the kinds of objects, the properties of objects, and the relations between objects in a knowledge domain.
@@ -241,7 +260,7 @@ Several partial subtrees would have to be combined for this purpose.
 Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.
 None of the evaluated ontologies could cover all defined requirements and adequately support the specific anthropological use cases.
 We decided to develop a new ontology because the integration (extension and adaptation) of all necessary parts from different ontologies would have been much more complex.
-%We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see \cref{sec:relatedwork}). 
+%We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see \cref{sec:relatedwork}).
 
 \section{ANthropological Notation Ontology (ANNO)}\label{sec:anno}
 
