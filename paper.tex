@@ -130,7 +130,7 @@ Since we could not find any ontologies that fully met our requirements and the i
 \toprule
 %Property			&Value\\
 %\midrule
-Modules				&ANNOdc (domain-core) , ANNOds (domain-specific)\\
+Modules				&ANNOdc (domain-core), ANNOds (domain-specific)\\
 Top-Level Ontology	&General Formal Ontology~\citep{gfo}\\
 Namespace			&\url{https://annosaxfdm.de/ontology/}\\
 %Browser			&RickView~\citep{rickview} at \url{https://annosaxfdm.de/ontology/}\\
@@ -402,18 +402,18 @@ The statistical information on the ANNO ontology is shown in Table 1.
 \centering
 \caption{Statistical information. Column values do not add up because some entities are defined in both subontologies.}
 \label{tab:stats}
-\begin{tabulary}{\textwidth}{lSSSSSSSS}
+\begin{tabulary}{\textwidth}{lSSSSSSSSl}
 \toprule
-Ontology	&\textnormal{Classes}	&\textnormal{Object properties}	&\textnormal{Data prop.}	&\textnormal{Individuals}	&\textnormal{Annotation prop.}	&\textnormal{Axioms}	&\textnormal{FMA links}				&\textnormal{TA links}\\
+% Expressivity according to Protege: ANNOdc and combined: ALCHIQ(D), ANNOds: ALE
+Ontology	&\textnormal{Classes}	&\textnormal{Object prop.}	&\textnormal{Data p.}	&\textnormal{Individuals}	&\textnormal{Annotation p.}	&\textnormal{Axioms}	&\textnormal{FMA links}				&\textnormal{TA links} &Expressivity\\
 \midrule
-ANNOdc		&41						&18								&1								&0							&19									&178					&11							&0\\
-ANNOds		&1166					&11								&0								&803						&43									&18231					&503						&206\\
+ANNOdc		&41						&18								&1								&0							&19				&178					&11							&0					&OWL DL\\
+ANNOds		&1166					&11								&0								&803						&43				&18231					&503						&206				&OWL DL\\
 \midrule
-combined	&1195					&21								&1								&803						&53									&18382					&514						&206\\
+combined	&1195					&21								&1								&803						&53				&18382					&514						&206				&OWL DL\\
 \bottomrule
 \end{tabulary}
 \end{table}
-
 
 \subsection{Description and foundation of ANNOdc}\label{sec:annodc}
 The core ontology development occurs in close collaboration between ontologists and anthropologists.
@@ -464,7 +464,6 @@ This approach ensures that domain experts can easily handle the ontology and eff
 \end{table}
 
 %\paragraph{Terminology for descriptive anatomy}
-
 \begin{figure}
 \includegraphics[width=\textwidth]{img/axisplanelocation.png}
 \caption{Left: Anatomical Planes and Axes:
