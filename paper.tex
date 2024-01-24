@@ -107,6 +107,7 @@ This approach improves data interoperability, a crucial prerequisite for success
 Furthermore, Data sets consolidated this way and formalized through the Anthropological Notation Ontology (ANNO) presented here allow for efficient data analysis techniques, such as data and text mining that promote deeper insights.
 Therefore, the contribution of ANNO lies in its ability to encapsulate and connect anthropological methods, aspects, and skeletal features within an ontological structure that aids in the digitization process, promoting more in-depth anthropological research and broader interdisciplinary studies.
 
+\todo{Hier ist die Schnittstelle zwischen dem neuen Text aus Mittweida oben und dem existierenden theoretischen Hintergrund unten, eventuell muss das noch jemand glattbügeln.}
 %\paragraph{Theoretical Background}
 Ontologies are theories about the kinds of objects, the properties of objects, and the relations between objects in a knowledge domain.
 On the one hand, these are controlled vocabularies, but on the other hand, ontologies are also conceptualizations that the vocabulary terms are intended to capture~\citep{whatareontologies}.
@@ -148,16 +149,22 @@ DOI (all versions)	&\href{https://doi.org/10.5281/zenodo.8301559}{10.5281/zenodo
 %
 %new text:
 Our main contributions are the following:
-ANNOdc (\cref{sec:annodc}, \cref{fig:annodc}) is a domain-core (dc) ontology that defines the core entities of the domain.
+\begin{enumerate}
+\item ANNOdc (\cref{sec:annodc}, \cref{fig:annodc}) is a domain-core (dc) ontology that defines the core entities of the domain.
 This includes general anatomical categories (Bone and Tooth), a category for describing their characteristics (Anatomical property), anatomical spatial entities (Anatomical space, surface, line and point) as well as the category Phenotype to model the rules for determining human phenotypes. ANNOdc was embedded in the General Formal Ontology (GFO), i.e. the ANNOdc classes are subclasses of GFO classes.
 %
-ANNOds (\cref{sec:annods}) is a domain-specific (ds) ontology for describing domain-specific entities to be used for annotating the parts of the human skeleton.
+\item ANNOds (\cref{sec:annods}) is a domain-specific (ds) ontology for describing domain-specific entities to be used for annotating the parts of the human skeleton.
 These are bones, teeth, their parts and compounds, such as mandible, Mental protuberance or the facial skeleton.
 It is also used for modeling their properties and relations, such as the distance between \emph{Mentale dexterum} and \emph{Mentale sinistrum}, needed to derive human phenotypes like sex or height.
 ANNOds is embedded in ANNOdc.
-%
 In its current version, the ontology refers to standardized normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors.
-ANNO is integrated into AnthroWorks3D (AW3D), a photogrammetry pipeline and application for generating and analyzing 3D-models of human skeletal remains, and published over multiple channels, see~\cref{tab:publication}.
+%
+\item ANNO is integrated into \aw{} (\cref{sec:aw}), a photogrammetry pipeline and application for generating and analyzing 3D-models of human skeletal remains.
+%
+\item ANNO is published over multiple channels, see~\cref{tab:publication}.
+%
+\end{enumerate}
+
 
 \section{Related Work}\label{sec:relatedwork}
 
@@ -265,6 +272,7 @@ We decided to develop a new ontology because the integration (extension and adap
 \section{ANthropological Notation Ontology (ANNO)}\label{sec:anno}
 
 \subsection{Methodology}\label{sec:methodology}
+\iffalse
 The ontological architecture of ANNO consists of three interrelated layers representing by a top-level ontology, a domain-core ontology and a domain-specific ontology:
 
 \begin{enumerate}
@@ -280,7 +288,7 @@ These are bones, teeth, their parts and compounds, such as \emph{mandible}, \emp
 It is also used for modeling their properties and relations, such as the distance between \emph{Mentale dexterum} and \emph{Mentale sinistrum}, needed to derive human phenotypes like sex or height.
 ANNOds is embedded in ANNOdc.
 \end{enumerate}
-
+\fi
 \begin{figure}[h]
 \includegraphics[width=0.6\textwidth]{img/gfo.pdf}
 \caption{Integration of ANNO with the top-level GFO ontology.}\label{fig:gfo}
@@ -383,7 +391,7 @@ This means that the domain experts had to insert more specific categories (singl
 
 The resulting OWL 2 ontology was generated using SMOG~\citep{smog} and validated by the HermiT~\citep{hermit} and Pellet~\citep{pellet} reasoners and SHACL shapes, see \cref{sec:annods}.
 In both cases, the consistency of the ontology was proven.
-As a proof of concept, we integrated the ontology into the AW3D software~\citep{aw3d} and were able to successfully realise all three intended use cases.
+As a use case, we integrated the ontology into the AW3D software~\citep{aw3d} and were able to successfully realise all three intended use cases.
 Thereby, most of the core categories,
 such as \enquote{Bone}, \enquote{Bone part}, \enquote{Bone compound}, \enquote{Tooth}, \enquote{Tooth part}, \enquote{Phenotype}, \enquote{Relative anatomical location}, \enquote{Anatomical line} and \enquote{Anatomical point}),
 and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
@@ -608,7 +616,7 @@ While the morphological examination was not within the scope of the project, it 
 
 \subsection{Development of ANNOds}\label{sec:annods}
 While ANNOdc is created by the ontologists in consultation with the domain experts, ANNOds is developed by the domain experts themselves.
-%The primary focus is on the design of ANNO's ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida's in-house software AnthroWorks3D.
+%The primary focus is on the design of ANNO's ontological architecture and the conception of the process for creating the content, as well as on the integration into the Applied University of Mittweida's in-house software \aw{}.
 For this purpose they were provided with a spreadsheet-based SMOG~\citep{smog} template by the ontologists, see \cref{fig:smog}, eliminating the requirement of having a background in RDF and ontologies.
 The template is based on the structure of ANNOdc, so that the entered data is compliant with it: The ANNOds classes are subclasses of the ANNOdc classes (see \cref{tab:core}) and properties (see \cref{fig:annodc}) from ANNOdc are used.
 The spreadsheet is transformed to an OWL 2 ontology consisting of a taxonomy, annotations and some simple axioms on the basis of property restrictions.
@@ -715,8 +723,22 @@ Further contributions of ANNOds include:
 
 
 
-\section{Proof of concept: Integration into \aw{}}\label{sec:integration}
+\section{Use Case: Integration into \aw{}}\label{sec:aw}
 %\section{Use Case: Integration into \aw{}}\label{sec:aw}
+
+\todo{new content from MH:}
+The ontology was created to be used in conjunction with the anthropological 3D editor \aw{}.
+AW3D allows users to examine digitized bone material which can be created using a pipeline that was designed specifically for creating 3D models of bones for use in anthropological morphological and osteometric research and examination.
+To allow such an examination the software can import and render these 3D models at runtime and provides a wide suite of tools for the annotation and measuring of bone material.
+The ontology was integrated into the software to better meet the use cases of AW3D.
+These use cases include the annotation of bone material through markings in 3D space on the bone models, including point, line, and surface markings.
+They also involve the measuring of bones by providing line, circumference, and angle measurement tools for use in osteometrical contexts.
+To improve the quality of the annotations and measurements additional information such as alternative titles and descriptions, and others can be input by text.
+Moreover, the software offers the capability to display either the entire skeleton or specific parts, thereby enhancing the examination context.
+This feature enables users to not only focus on the specific bone they are studying but also easily access adjacent or related bones for a more comprehensive understanding.
+These use cases are already covered by AW3D itself but are improved by an integration of ANNO into the software.
+Additional use cases that are only achievable through this integration include the automatic derivation of bone and skeletal phenotypes using mathematical functions available in the ontology and the provision of anthropological, anatomical and osteometrical knowledge for users through ANNO.
+
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
@@ -739,6 +761,7 @@ Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Ant
 
 %\textbf{UNFINISHED DRAFT SECTION}
 
+\todo{existing content:}
 \aw{}, see \cref{fig:aw}, is a German-language tool that combines user-friendly techniques of photogrammetry with insights from user experience research and knowledge from game development and offers a procedure to create 3D skeletal models serving as digital twins which can subsequently be examined virtually.
 This facilitates anthropological work to be location-independent and parallel without exercising wear and tear on the skeletal material.
 The examination can be performed as often as desired, even if the skeletal individuals or collections are not available at the institute or have already been reburied.
@@ -804,6 +827,27 @@ categorization of measurements and markers according to specifications from the 
 generation of input forms based on the specified properties and bone types
 automatic generation of measurements
 \fi
+
+\todo{new content from MH:}
+The integration of ANNO into \aw{} significantly enhances its functionality.
+This integration involves four steps, the first of which was importing the ontology data in the form of JSON files.
+The application structure is then adjusted to align with the attributes defined in the ontology.
+This process includes assigning objects within the application, such as markers and measurements, to corresponding objects in the ontology.
+Furthermore, the ontology import process in \aw{} from a JSON file involves organizing the information hierarchically from this file and adding application-specific details, such as spatial positioning data in 3D space and placeholder models.
+These additional details are stored in a separate JSON file, ensuring compatibility with newer ontology versions.
+During runtime, AW3D interprets the imported information, creating containers for the bone data to be imported and corresponding entries in the forms.
+The second step involved the adaptation of the properties of the bone objects and the related user interface elements, as the ontology includes attributes for these objects not previously implemented in AW3D.
+This has led to modifications in the input forms and lists to accommodate these new attributes.
+As a third step, the application was adapted to facilitate the assignment of measurements and markings to concepts from the ontology.
+For instance, measurements taken within the application can be mapped to predefined measurement paths in the ontology.
+To achieve this the users can choose from a list of features from the ontology to be assigned to their measurements and markings.
+Lastly, the import of discriminant functions allowed for their interpretation within the application.
+This includes a form for selecting measurement paths relevant to a particular discriminant function and the computation of these functions based on measurements created and assigned by users.
+This feature notably enhances the application's capability for tasks such as sex determination.
+
+The AW3D software is not publicly accessible, as this could affect the consent and rights of the partners involved in its development.\todo{KH: was sollen wir damit machen? eins von beiden raussuchen oder beide stehen lassen oder nur als Reviewerkommentar?}
+The AW3D has not yet been published. It was developed as part of another project. Publication of the software is planned as part of the project.
+
 
 \section{Conclusion and Future Work}
 % "desirablility" add source e.g. https://fipat.library.dal.ca/wp-content/uploads/2021/08/FIPAT-TA2-Part-2.pdf
