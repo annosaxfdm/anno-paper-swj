@@ -16,6 +16,7 @@
 \newcommand{\anno}[1]{\href{https://annosaxfdm.de/ontology/#1}{\texttt{#1}}}
 \newcommand{\gfo}[1]{\href{https://www.onto-med.de/ontologies/gfo/#1}{\texttt{#1}}}
 \newcommand{\fma}[1]{\href{http://purl.org/sig/ont/fma/fma#1}{\texttt{#1}}}
+\newcommand{\latin}[1]{\emph{#1}}
 \daurl{anno}{https://annosaxfdm.de/ontology/}
 \daurl{gfo}{https://www.onto-med.de/ontologies/gfo\#}
 \daurl{fma}{http://purl.org/sig/ont/fma/fma}
@@ -72,9 +73,9 @@ ANNO supports the analysis of skeletal and bone finds in forensic and historical
 Anthropology, as a discipline, explores the full range of human diversity and similarity across cultures, social structures, habitats, and environments.
 Anthropological skeletal analysis, a subset of this field, is particularly focused on understanding the human skeletal system.
 This study encompasses a multidisciplinary approach, integrating insights from natural, social, ­and cultural sciences.
-It's about reading the stories that human remains tell – from sex, age, and health to broader aspects like cultural practices and environmental impacts.
+It's about reading the stories that human remains tell---from sex, age, and health to broader aspects like cultural practices and environmental impacts.
 Hence, data from historical and prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, provides a comprehensive understanding of deceased individuals and past populations from different time periods.
-This process entails investigating individuals’ identity, health status, aspects of their behaviour, lifestyle, culture and even the circumstances of death~\citep{spurensuche} by determining features (phenotypes) such as sex, age, height and ancestry and other individualizing traits, through the use of anthropological methods.
+This process entails investigating individuals' identity, health status, aspects of their behaviour, lifestyle, culture and even the circumstances of death~\citep{spurensuche} by determining features (phenotypes) such as sex, age, height and ancestry and other individualizing traits, through the use of anthropological methods.
 
 In anthropological skeletal analyses, methods employed include morphological and osteometric examinations.
 Apart from contextual information, anthropological focus on identifying and analysing traces found directly on the bones, indicating bone reactions or functional aspects.
@@ -156,7 +157,7 @@ This includes general anatomical categories (Bone and Tooth), a category for des
 %
 \item ANNOds (\cref{sec:annods}) is a domain-specific (ds) ontology for describing domain-specific entities to be used for annotating the parts of the human skeleton.
 These are bones, teeth, their parts and compounds, such as mandible, Mental protuberance or the facial skeleton.
-It is also used for modeling their properties and relations, such as the distance between \emph{Mentale dexterum} and \emph{Mentale sinistrum}, needed to derive human phenotypes like sex or height.
+It is also used for modeling their properties and relations, such as the distance between \latin{Mentale dexterum} and \latin{Mentale sinistrum}, needed to derive human phenotypes like sex or height.
 ANNOds is embedded in ANNOdc.
 In its current version, the ontology refers to standardized normal adult anatomy, excluding developmental aspects, variations, pathologies and other related factors.
 %
@@ -177,12 +178,11 @@ There are currently two prominent ontologies in the field of general anatomy:
 The TA~\citep{ta2} is a hierarchy of anatomical structure concepts for the entire human body.
 For historical reasons, it uses a terminology consisting of Latin and originally Greek, which was later latinized.
 For each anatomical structure, the TA provides the \enquote{preferred}, i.e. standard, Latin term and its English equivalent as well as an individual identification number.
-\todo{Marie: bitte mal alle lateinischen Begriffe konsistent groß oder kleinschreiben, momentan ist das total unterschiedlich. Ich traue mich das nicht selbst zu da ich kein Latein kann und nicht weiß, ob da ein Grund dahintersteckt.}
-In some cases, Latin and English synonyms are also included, e.g. \emph{malar bone} is an English synonym of the Latin preferred term \emph{Os zygomaticum} and its English equivalent \emph{zygomatic bone}.
+In some cases, Latin and English synonyms are also included, e.g. \emph{malar bone} is an English synonym of the Latin preferred term \latin{Os zygomaticum} and its English equivalent \emph{zygomatic bone}.
 The identification number is crucial, as certain landmarks are mostly listed without bone affiliation, resulting in multiple occurrences. %(s. Bone Part)
-For instance, the \emph{processus zygomaticus} can be found both at the \emph{os frontale} and the \emph{os temporale}.
+For instance, the \latin{Processus zygomaticus} can be found both at the \latin{Os frontale} and the \latin{Os temporale}.
 Eponyms are terms derived from proper nouns such as the name of a person, place or thing, and they are considered a type of synonyms since they stand for the same anatomical structure.
-For example, \emph{ossa digitorum manus / pedis} (engl. \emph{phalanges of the hand}, respectively \emph{foot}) are the small bones of the fingers and toes and are also denoted as \emph{phalanges manus / pedis} which are named after the Greek word \emph{phalanx} for a dense rectangular infantry formation.
+For example, \latin{Ossa digitorum manus / pedis} (engl. \emph{phalanges of the hand}, respectively \emph{foot}) are the small bones of the fingers and toes and are also denoted as \latin{Phalanges manus / pedis} which are named after the Greek word \emph{phalanx} for a dense rectangular infantry formation.
 In addition to the outdated print edition~\citep{ta1998}, an extended second edition (TA2) is available online~\citep{ta2}.
 Furthermore, there is a commercially available independent companion print publication with German~\citep{anatomylexicon}, English~\citep{pocketatlas} and Spanish~\citep{taspanish} editions of which at least the German edition is regularly updated.
 This book contains textual and visual descriptions, whereby anatomical structures are indicated through lines on the illustrations.
@@ -194,7 +194,8 @@ The FMA uses the Basic Formal Ontology (BFO) as its top-level ontology.
 Corresponding to its relational nature, new higher level concepts are introduced and used for reorganizing the actual anatomical structures diverging from the TA's hierarchical structure.
 Thus, in 90\,\% of the cases this leads to new creations of anatomical concepts~\citep{anatomicalterms} whereas only 1\,\% contain textual definitions~\citep{uberon}.
 
-We create manual links between ANNO and the FMA, which we use to connect ANNO with the TA2 by using unofficial links between FMA and TA2 provided by Wikidata.
+We added links from ANNO to the FMA manually, since it required decions from domain experts.
+Subsequently, we used those links along with unofficial FMA-TA2 links from Wikidata to automatically generate links between ANNO and the TA2.
 
 \subsection{Other ontologies}\label{sec:researchgaps}
 
@@ -223,18 +224,18 @@ Meanwhile, the existing terminology is not flexible enough for language-like usa
 
 Anatomical terms, unless historically evolved, typically describe the location, affiliation or function of a concept or structure~\citep{reforminganatomical}.
 However, this naming convention is often inconsistent and non-intuitive.
-An example, showing the variability in illustrative descriptions are the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \emph{sella}, the Latin name for saddle.
-It is moreover worth pointing out that not every anatomical structure that contributes to an articulation in some way automatically carries the term articular with it, such as the \emph{caput mandibulae}, which connects the Mandibula to the rest of the Cranium.
+An example, showing the variability in illustrative descriptions are the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \latin{Sella}, the Latin name for saddle.
+It is moreover worth pointing out that not every anatomical structure that contributes to an articulation in some way automatically carries the term articular with it, such as the \latin{Caput mandibulae}, which connects the Mandibula to the rest of the Cranium.
 The Tuber frontale, which serves as an indicator for sex in anthropology, is listed as an eminentia in the TA~\citep{ta2}.
 Likewise, the Protuberantia mentale is referred to as Eminentia mentale in a widely-used anthropological method that is also used for sex determination.
 As can be seen, the incentive for synonyms is high.
 However, the current resources fail to provide comprehensive lists of synonyms in use.
-This in turn may lead to misattribution: For example, the FMA entry with the preferred name \emph{External acoustic aperture} and non-English equivalent \emph{Porus acusticus externus} (\aurl{fma}{61301}) lists \emph{external acoustic meatus} (\emph{Meatus acusticus externus} in Latin) as a synonym.
+This in turn may lead to misattribution: For example, the FMA entry with the preferred name \emph{External acoustic aperture} and non-English equivalent \latin{Porus acusticus externus} (\aurl{fma}{61301}) lists \emph{external acoustic meatus} (\latin{Meatus acusticus externus} in Latin) as a synonym.
 However, it is not the same, rather the Porus is---as its English name indicates---the opening to the meatus~\citep{anatomylexicon}.
 %Furthermore, terms oftentimes lack clear affiliation to the bone to which they belong.
 %When considering the whole skeleton, these terms consequently occur multiple times, causing ambiguity.
 Occasionally, there are discrepancies and inconsistencies found in the definitions of individual anatomical structures.
-For instance, the position of the \emph{Corpus ossis pubis} varies across different sources~\citep{anatomylexicon,prometheus,allgemeineanatomie,dualereiheanatomie,anatomiedesmenschen}.
+For instance, the position of the \latin{Corpus ossis pubis} varies across different sources~\citep{anatomylexicon,prometheus,allgemeineanatomie,dualereiheanatomie,anatomiedesmenschen}.
 
 %In addition, the ontologies are only inadequately (TA for the last time in 2013, FMA in 2020) updated and do not undergo continuous synchronisation.%add source for that? 11 and 12 in table but no paper.
 Another issue is that neither FMA nor TA are tailored to fit the requirements of anthropology or any other specialized field~\citep{fma}.
@@ -286,7 +287,7 @@ ANNOdc is embedded in the GFO, i.e. the ANNOdc classes are subclasses of GFO cla
 
 \item ANNOds (\cref{sec:annods}) is a domain-specific (ds) ontology for describing domain-specific entities to be used for annotating the parts of the human skeleton.
 These are bones, teeth, their parts and compounds, such as \emph{mandible}, \emph{Mental protuberance} or the facial skeleton.
-It is also used for modeling their properties and relations, such as the distance between \emph{Mentale dexterum} and \emph{Mentale sinistrum}, needed to derive human phenotypes like sex or height.
+It is also used for modeling their properties and relations, such as the distance between \latin{Mentale dexterum} and \latin{Mentale sinistrum}, needed to derive human phenotypes like sex or height.
 ANNOds is embedded in ANNOdc.
 \end{enumerate}
 \fi
@@ -484,7 +485,7 @@ Modified figure based on \cite{allgemeineanatomieen,schemamann}.}
 \end{figure}
 %\FloatBarrier
 The position of all anatomical entities is described in a standardized fashion using conceptual axes (a kind of anatomical line), planes (a kind of anatomical surface) as well as directions (relative anatomical locations).
-Directions are relative to the body based on the standard anatomical position (\emph{positio anatomica} \aurl{ta2}{72}, \aurl{fma}{23132}).
+Directions are relative to the body based on the standard anatomical position (\latin{Positio anatomica} \aurl{ta2}{72}, \aurl{fma}{23132}).
 It refers to standing upright, facing forward, palms and toes pointing forward, thumbs to the side, and observed from the perspective of the respective individual. %Quelle kommt noch
 %
 Although an infinite number of axes and planes can be defined within the human body, generally three principal axes and planes are used~\citep{prometheus}.
@@ -572,7 +573,7 @@ An anatomical line is a conceptual, immaterial line on a bone passing between at
 An anatomical line is a boundary (one-dimensional) of an anatomical surface.
 Anatomical lines can connect or pass through anatomical entities (e.g., an edge between two or an angle between three anatomical entities).
 The length of the line or the angle degree can be measured and used in functions to infer individual phenotypes.% [Verweis zu Phenotype section].
-For example, the anatomical line \anno{ZyDexterumZySinistrum} between the \emph{Zygion Dexterum} and the \emph{Zygion Sinistrum} is used in the sex determination function for the phenotype \anno{SexGilesElliot196319}~\citep{sexgileselliot1963}.
+For example, the anatomical line \anno{ZyDexterumZySinistrum} between the \latin{Zygion Dexterum} and the \latin{Zygion Sinistrum} is used in the sex determination function for the phenotype \anno{SexGilesElliot196319}~\citep{sexgileselliot1963}.
 
 %\paragraph{Phenotypes and anatomical properties}
 \begin{figure}[h]
@@ -697,16 +698,16 @@ ANNOds covers functions for at least one European, African, American, and Asian 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{img/corpus_ossis_pubis.png}
-\caption{The \emph{Corpus ossis pubis} (pubic body) forms the proximal part of the \emph{Os pubis} and includes the anterior part of the \emph{Acetabulum} as well as the \emph{Eminentia iliopubica}, which is a small elevation on the \emph{Corpus ossis pubis}.
-According to the \emph{TA} and others~\citep{ta2,schemamann,anatomylexicon2007,drake2019gray,anatomylexicon,prometheus2,anatomie}, this landmark is located in the region of the \emph{Facies symphysialis}, which is defined here as the \emph{Pars symphysialis}.
+\caption{The \latin{Corpus ossis pubis} (pubic body) forms the proximal part of the \latin{Os pubis} and includes the anterior part of the \latin{Acetabulum} as well as the \latin{Eminentia iliopubica}, which is a small elevation on the \latin{Corpus ossis pubis}.
+According to the \emph{TA} and others~\citep{ta2,schemamann,anatomylexicon2007,drake2019gray,anatomylexicon,prometheus2,anatomie}, this landmark is located in the region of the \latin{Facies symphysialis}, which is defined here as the \latin{Pars symphysialis}.
 }\label{fig:corpusossispubis}
 \end{figure}
 
-The domain experts reconciled conflicting literature to arrive at a consistent and logical result, for example for the \emph{Corpus ossis pubis}, see \cref{fig:corpusossispubis}:
-Since the Corpi of the \emph{Os ischii} and \emph{Os ilii} are located in the area of the \emph{Acetabulum},
-it is logical to place the \emph{Corpus ossis pubis} in this region as well~\citep{graysanatomy,waldeyer,allgemeineanatomie,datacollection2,romanianmandible}, thereby forming the \emph{Acetabulum} from all Corpi (\emph{Corpus ossis ilii}, \emph{Corpus ossis ischii}, and \emph{Corpus ossis pubis}).
-The \emph{Pars symphysialis ossis pubis} has ventral-medially the \emph{Facies symphysialis}, which connects the paired \emph{Ossa pubes} of the pelvic bones.
-In the \emph{Pars symphysialis}, the \emph{Ramus inferior ossis pubis} and \emph{Ramus superior ossis pubis} merge into each other.
+The domain experts reconciled conflicting literature to arrive at a consistent and logical result, for example for the \latin{Corpus ossis pubis}, see \cref{fig:corpusossispubis}:
+Since the Corpi of the \latin{Os ischii} and \latin{Os ilii} are located in the area of the \latin{Acetabulum},
+it is logical to place the \latin{Corpus ossis pubis} in this region as well~\citep{graysanatomy,waldeyer,allgemeineanatomie,datacollection2,romanianmandible}, thereby forming the \latin{Acetabulum} from all Corpi (\latin{Corpus ossis ilii}, \latin{Corpus ossis ischii}, and \latin{Corpus ossis pubis}).
+The \latin{Pars symphysialis ossis pubis} has ventral-medially the \latin{Facies symphysialis}, which connects the paired \latin{Ossa pubes} of the pelvic bones.
+In the \latin{Pars symphysialis}, the \latin{Ramus inferior ossis pubis} and \latin{Ramus superior ossis pubis} merge into each other.
 This redefinition closes the resulting gap in the definition of the area between the Ramus \emph{inferior / superior} ossis pubis.
 %
 ANNO also corrects the commonly missing differentiation between \emph{Cranium} and \emph{Mandibula} in English literature, with no Latin equivalent for the overall term \enquote{skull}.
@@ -720,9 +721,6 @@ Further contributions of ANNOds include:
 \item Redefinitions such as joint surfaces, which are often not named in anatomy literature but are anthropologically relevant, and osteometric measurement points outside the skull, which are not established in the literature.
 \end{itemize}
 
-
-
-
 \section{Use Case: Integration into \aw{}}\label{sec:aw}
 %\section{Use Case: Integration into \aw{}}\label{sec:aw}
 
@@ -734,9 +732,6 @@ To improve the quality of the annotations and measurements additional informatio
 Moreover, the software offers the capability to display either the entire skeleton or specific parts, thereby enhancing the examination context .This feature enables users to not only focus on the specific bone they are studying but also easily access adjacent or related bones for a more comprehensive understanding.
 These use cases are already covered by AW3D itself but are improved by an integration of ANNO into the software. Additional use cases that are only achievable through this integration include the automatic derivation of bone and skeletal phenotypes using mathematical functions available in the ontology and the provision of anthropological, anatomical and osteometrical knowledge for users through ANNO.
  
-
-
-
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
 %\caption{3D model of a Cranium (skull) inserted into a placeholder skeleton in \aw{} depicting examples of various ANNOdc classes.}
@@ -745,11 +740,11 @@ Collage of different views in \aw{} of a 3D model of a \emph{cranium} (skull) in
 The cranium is a bone compound consisting of 29 bone elements.
 One of them, the \emph{mandibula} (mandible), is flexibly connected to the rest of the skull by the mandibular joint.
 In the top right, various bone parts on the Mandibula are visually emphasized, with part 14 representing the angulus mandibulae (mandibular angle).
-In the top left, the \emph{dens caninus maxillaris dexter} (right maxillary secondary canine tooth), a tooth structure, is highlighted within a circle.
+In the top left, the \latin{Dens caninus maxillaris dexter} (right maxillary secondary canine tooth), a tooth structure, is highlighted within a circle.
 The tooth cusp is a part of the tooth.
 It refers to the projection that divides the occlusal surface of most of the teeth, with the exception of the incisors.
 At the bottom right, anatomical points (osteometric landmarks) of the right lateral side of the \emph{mandibula} are depicted.
-The \emph{gonion dextrum} (right gonion; \emph{gonion dextrum}, abbreviated as \emph{go dextrum}, depicted alternative spelling of dextrum: dexterum) forms part of an anatomical line measuring the \emph{angulus mandibulae},
+The \latin{Gonion dextrum} (right gonion, abbreviated as \latin{Go dextrum}, depicted alternative spelling of dextrum: dexterum) forms part of an anatomical line measuring the \latin{Angulus mandibulae},
 as shown in the bottom left.
 Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Anthropology and Human Ecology, University of Göttingen.
 }
