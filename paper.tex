@@ -375,9 +375,8 @@ Further axioms were introduced to precisely define certain categories.
 In addition to an explicit textual definition of the category \enquote{Bone compound}, for example, we introduced the following axiom:
 %
 %\anno{BoneCompound}: \aurl{rdfs}{subClassOf} (\aurl{gfo}{hasPart} some (\anno{Bone} or \anno{BoneCompound} or \anno{BonePart}))
-\todo{KH: Ich bin nicht so der description logics Experte, Alex kannst du mal gucken ob ich das richtig formuliert habe?}
 \begin{equation*}
-\anno{BoneCompound} \sqsubseteq \exists \aurl{gfo}{hasPart}.(\anno{Bone} \sqcup \anno{BoneCompound} \sqcup \anno{BonePart})
+\anno{BoneCompound} \sqsubseteq \exists \gfo{hasPart}.(\anno{Bone} \sqcup \anno{BoneCompound} \sqcup \anno{BonePart})
 \end{equation*}
 %
 This axiom states that a bone compound consists of further bone compounds, individual bones or bone parts.
@@ -385,7 +384,7 @@ Another example axiom postulates that phenotypes can be derived from anatomical 
 %
 %\anno{Phenotype}: \aurl{rdfs}{subClassOf} (\aurl{gfo}{derivedFrom} some (\anno{AnatomicalEntity} or \anno{AnatomicalProperty}))
 \begin{equation*}
-\anno{Phenotype} \sqsubseteq \exists \aurl{gfo}{derivedFrom}.(\anno{AnatomicalEntity} \sqcup \anno{AnatomicalProperty})
+\anno{Phenotype} \sqsubseteq \exists \gfo{derivedFrom}.(\anno{AnatomicalEntity} \sqcup \anno{AnatomicalProperty})
 \end{equation*}
 %
 Finally, a spreadsheet template was developed for domain experts to specify domain-specific entities (ANNOds), strictly compliant with ANNOdc, see \cref{sec:annodc}.
@@ -398,7 +397,7 @@ Thereby, most of the core categories,
 such as \enquote{Bone}, \enquote{Bone part}, \enquote{Bone compound}, \enquote{Tooth}, \enquote{Tooth part}, \enquote{Phenotype}, \enquote{Relative anatomical location}, \enquote{Anatomical line} and \enquote{Anatomical point}),
 and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
 
-The statistical information on the ANNO ontology is shown in Table 1.
+The statistical information on the ANNO ontology is shown in \cref{tab:stats}.
 
 \begin{table}[b]
 \centering
@@ -409,10 +408,10 @@ The statistical information on the ANNO ontology is shown in Table 1.
 % Expressivity according to Protege: ANNOdc and combined: ALCHIQ(D), ANNOds: ALE
 Ontology	&\textnormal{Classes}	&\textnormal{Object prop.}	&\textnormal{Data p.}	&\textnormal{Individuals}	&\textnormal{Annotation p.}	&\textnormal{Axioms}	&\textnormal{FMA links}				&\textnormal{TA links} &Expressivity\\
 \midrule
-ANNOdc		&41						&18								&1								&0							&19				&178					&11							&0					&OWL DL\\
-ANNOds		&1166					&11								&0								&803						&43				&18231					&503						&206				&OWL DL\\
+ANNOdc		&41						&11								&1								&0							&19				&178					&11							&0					&OWL DL\\
+ANNOds		&1166					&0								&0								&803						&43				&18231					&503						&206				&OWL DL\\
 \midrule
-combined	&1195					&21								&1								&803						&53				&18382					&514						&206				&OWL DL\\
+combined	&1195					&11								&1								&803						&53				&18382					&514						&206				&OWL DL\\
 \bottomrule
 \end{tabulary}
 \end{table}
