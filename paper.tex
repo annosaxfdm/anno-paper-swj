@@ -186,7 +186,8 @@ In addition to the outdated print edition~\citep{ta1998}, an extended second edi
 Furthermore, there is a commercially available independent companion print publication with German~\citep{anatomylexicon}, English~\citep{pocketatlas} and Spanish~\citep{taspanish} editions of which at least the German edition is regularly updated.
 This book contains textual and visual descriptions, whereby anatomical structures are indicated through lines on the illustrations.
 
-\subsection{Foundational Model of Anatomy (FMA)}\label{sec:fma}\todo{an anderer Stelle haben wir für viel größere Textmengen keine subsection und hier für ganz wenig Text eine}
+% An anderer Stelle haben wir für viel größere Textmengen keine subsection und hier für ganz wenig Text eine, ist das OK so?
+\subsection{Foundational Model of Anatomy (FMA)}\label{sec:fma}
 The FMA~\citep{fma} ontology represents the physical organization of human anatomy by mapping relations to one another.
 It allows the knowledge it contains to be represented in a way that is humanly comprehensible and machine-interpretable.
 The FMA uses the Basic Formal Ontology (BFO) as its top-level ontology.
@@ -259,7 +260,7 @@ To address these issues, it is necessary to develop unified, textual, visual, an
 These definitions should be presented within an easily understandable ontology, with ANNO contributing to filling this specific niche.
 %
 The main requirement for the intended ontology to cover the defined tasks is that it adequately represents the basic anatomical and anthropological entities, the spatial relations between them and the phenotyping functions, while remaining relatively simple and compact.
-This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., AW3D) according to the three-ontology method~\citep{threeontologymethod}.
+This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., \aw{}) according to the three-ontology method~\citep{threeontologymethod}.
 Following this method, the software only needs to implement access to the core categories (of the core or task ontology), while their subcategories (from the domain-specific ontology) are processed dynamically.
 This means, among other things, that all relevant anatomical entities (bones, teeth, their parts and composite structures) must each be located in one subtree (i.e., must have a common superclass) rather than spread across the entire ontology.
 The FMA, for example, does not have single equivalent concepts to represent bone compounds or bone parts, see \cref{sec:annodc}.
@@ -392,7 +393,7 @@ This means that the domain experts had to insert more specific categories (singl
 
 The resulting OWL 2 ontology was generated using SMOG~\citep{smog} and validated by the HermiT~\citep{hermit} and Pellet~\citep{pellet} reasoners and SHACL shapes, see \cref{sec:annods}.
 In both cases, the consistency of the ontology was proven.
-As a use case, we integrated the ontology into the AW3D software~\citep{aw3d} and were able to successfully realise all three intended use cases.
+As a use case, we integrated the ontology into the \aw{} software~\citep{aw3d} and were able to successfully realise all three intended use cases.
 Thereby, most of the core categories,
 such as \enquote{Bone}, \enquote{Bone part}, \enquote{Bone compound}, \enquote{Tooth}, \enquote{Tooth part}, \enquote{Phenotype}, \enquote{Relative anatomical location}, \enquote{Anatomical line} and \enquote{Anatomical point}),
 and relation types (such as hasPart, boundaryOf, locationOf and derivedFrom) of ANNOdc were utilised and their subcategories and specific relations were dynamically queried (according to the three-ontology method).
@@ -724,12 +725,24 @@ Further contributions of ANNOds include:
 %\section{Use Case: Integration into \aw{}}\label{sec:aw}
 
 \aw{}, see \cref{fig:aw}, is a German-language tool that combines user-friendly techniques of photogrammetry with insights from user experience research and knowledge from game development. 
-It enables users to virtually examine digitized bone material, which can be created using a procedure designed for generating 3D models of bones. These models serve as digital twins in anthropological, morphological, and osteometric research and examination. To facilitate such examinations, the software can import and render these 3D models at runtime and provides a comprehensive suite of tools for annotating and measuring bone material.
+It enables users to virtually examine digitized bone material, which can be created using a procedure designed for generating 3D models of bones.
+These models serve as digital twins in anthropological, morphological, and osteometric research and examination.
+To facilitate such examinations, the software can import and render these 3D models at runtime and provides a comprehensive suite of tools for annotating and measuring bone material.
 This facilitates anthropological work to be location-independent and parallel without exercising wear and tear on the skeletal material. The examination can be performed as often as desired, even if the skeletal individuals or collections are not available at the institute or have already been reburied.
-The ANNO ontology was created to be used in conjunction with the anthropological 3D editor AW3D \aw{} and was integrated into the software to better meet the use cases of the program. These use cases include the annotation of bone material through markings in 3D space on the bone models, including point, line, and surface markings. They also involve the measuring of bones by providing line, circumference, and angle measurement tools for use in osteometrical contexts.
+%\todo{KH: was sollen wir damit machen? eins von beiden raussuchen oder beide stehen lassen oder nur als Reviewerkommentar?} habe jetzt einen Teil entfernt
+\aw{} is not publicly accessible, as this could affect the consent and rights of the partners involved in its development.
+%\aw{} has not yet been published.
+%It was developed as part of another project.
+%Publication of the software is planned as part of the project.
+
+The ANNO ontology was created to be used in conjunction with \aw{} and was integrated into the software to better meet the use cases of the program.
+These use cases include the annotation of bone material through markings in 3D space on the bone models, including point, line, and surface markings.
+They also involve the measuring of bones by providing line, circumference, and angle measurement tools for use in osteometrical contexts.
 To improve the quality of the annotations and measurements additional information such as alternative titles and descriptions, and others can be input by text.
-Moreover, the software offers the capability to display either the entire skeleton or specific parts, thereby enhancing the examination context .This feature enables users to not only focus on the specific bone they are studying but also easily access adjacent or related bones for a more comprehensive understanding.
-These use cases are already covered by AW3D itself but are improved by an integration of ANNO into the software. Additional use cases that are only achievable through this integration include the automatic derivation of bone and skeletal phenotypes using mathematical functions available in the ontology and the provision of anthropological, anatomical and osteometrical knowledge for users through ANNO.
+Moreover, the software offers the capability to display either the entire skeleton or specific parts, thereby enhancing the examination context.
+This feature enables users to not only focus on the specific bone they are studying but also easily access adjacent or related bones for a more comprehensive understanding.
+These use cases are already covered by \aw{} itself but are improved by an integration of ANNO into the software.
+Additional use cases that are only achievable through this integration include the automatic derivation of bone and skeletal phenotypes using mathematical functions available in the ontology and the provision of anthropological, anatomical and osteometrical knowledge for users through ANNO.
  
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
@@ -775,7 +788,7 @@ In addition, it is now possible to perform sex determinations using discriminant
 \label{fig:function}
 \end{figure}
 
-
+%%%%% the following part is removed
 \iffalse
 It also draws its advantage when space is limited.
 Thus, it requires only three SLR cameras, sufficient exposure and a computer.
@@ -816,15 +829,14 @@ generation of input forms based on the specified properties and bone types
 automatic generation of measurements
 \fi
 
-\todo{new content from MH:}
 The integration of ANNO into \aw{} significantly enhances its functionality.
 This integration involves four steps, the first of which was importing the ontology data in the form of JSON files.
 The application structure is then adjusted to align with the attributes defined in the ontology.
 This process includes assigning objects within the application, such as markers and measurements, to corresponding objects in the ontology.
 Furthermore, the ontology import process in \aw{} from a JSON file involves organizing the information hierarchically from this file and adding application-specific details, such as spatial positioning data in 3D space and placeholder models.
 These additional details are stored in a separate JSON file, ensuring compatibility with newer ontology versions.
-During runtime, AW3D interprets the imported information, creating containers for the bone data to be imported and corresponding entries in the forms.
-The second step involved the adaptation of the properties of the bone objects and the related user interface elements, as the ontology includes attributes for these objects not previously implemented in AW3D.
+During runtime, \aw{} interprets the imported information, creating containers for the bone data to be imported and corresponding entries in the forms.
+The second step involved the adaptation of the properties of the bone objects and the related user interface elements, as the ontology includes attributes for these objects not previously implemented in \aw{}.
 This has led to modifications in the input forms and lists to accommodate these new attributes.
 As a third step, the application was adapted to facilitate the assignment of measurements and markings to concepts from the ontology.
 For instance, measurements taken within the application can be mapped to predefined measurement paths in the ontology.
@@ -833,16 +845,13 @@ Lastly, the import of discriminant functions allowed for their interpretation wi
 This includes a form for selecting measurement paths relevant to a particular discriminant function and the computation of these functions based on measurements created and assigned by users.
 This feature notably enhances the application's capability for tasks such as sex determination.
 
-The AW3D software is not publicly accessible, as this could affect the consent and rights of the partners involved in its development.\todo{KH: was sollen wir damit machen? eins von beiden raussuchen oder beide stehen lassen oder nur als Reviewerkommentar?}
-The AW3D has not yet been published. It was developed as part of another project. Publication of the software is planned as part of the project.
-
 
 \section{Conclusion and Future Work}
 % "desirablility" add source e.g. https://fipat.library.dal.ca/wp-content/uploads/2021/08/FIPAT-TA2-Part-2.pdf
 
 By contributing systematic, standardized and clear definitions for (material and spatial) anatomical entities regarding the human skeleton as well as anthropological aspects such as the derivation of phenotypes, ANNO formalizes knowledge in the fields of anatomy and anthropology.
 It encompasses all the essential elements for the routine use of anatomical terms in daily anthropological practice.
-Integrating the ontology into AW3D enables its immediate application in anthropological analysis.
+Integrating the ontology into \aw{} enables its immediate application in anthropological analysis.
 
 The ontology is interlinked with the TA and FMA and provides transparency by including all sources used to generate its content.
 Moreover, it provides a method for conceptualizing the ontology and generating its content.
