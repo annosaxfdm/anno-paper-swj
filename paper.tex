@@ -166,14 +166,17 @@ In its current version, the ontology refers to standardized normal adult anatomy
 %
 \end{enumerate}
 
-
-\section{Related Work}\label{sec:relatedwork}
-
-There are various reference materials for the description of anatomical structures, ranging from anatomical atlases to nomenclatures.
-The latter aim for an established standardized naming and systematization.
-There are currently two prominent ontologies in the field of general anatomy:
-
-\subsection{Terminologia anatomica (TA)}\label{sec:ta}
+\section{State of research}\label{sec:stateofresearch}
+\subsection{Distinguishing features of ANNO}\label{sec:distinguishingAnno}
+The Anthropological Notation Ontology (ANNO) distinguishes itself by focusing specifically on anthropology rather than general anatomy. This focus underscores the importance of understanding the relationship between bones and the anatomical and osteometric features found on them. ANNO emphasizes the need for precise definitions using established anatomical and anthropological terminology, including directional terms, to facilitate clear communication within the field. This approach allows for a more nuanced understanding of human skeletal structures, essential for anthropological analysis and research.
+The Anthropological Notation Ontology (ANNO) aims to map the entirety of anthropological knowledge directly onto a digital 3D skeletal model, functioning as a comprehensive knowledge representation. It projects anthropological information as a layer onto the skeleton, incorporating and localising aspects and interrelations crucial for anthropological study, effectively serving as a navigable atlas for skeletal analysis.
+ANNO is designed to align anthropological knowledge, including measurement explanations and landmark identification, with methods and the skeletal framework itself. This modeling ensures data compatibility for extensive analysis, integrating a maximal amount of information. A pivotal advantage of ANNO is its ability to directly associate information with a digital 3D model facilitating the inherent connecting to the raw data and enhancing comprehension, reproducibility, and sustainability of documentation.
+ANNO meticulously details skeletal anatomy through an atomic design approach, breaking it down into its most basic, indivisible components, then systematically organizing these components to represent the skeletal structure with high fidelity. This granular method facilitates a deep and scalable anthropological understanding.
+ANNO is capable of referencing various (online) resources, even those that are structurally and semantically diverse, such as other terminologies, ontologies, websites ~\citep{atinfo}.or media, aiming for synonym mediation, standardisation and conceptual clarity.
+The current state of ANNO includes a foundational module that focuses on skeletal anatomy on the one hand and anthropological aspects such as osteometric landmarks (measurement points) and measurements (distances), which are either sporadically represented or absent in existing ontologies, on the other hand. ANNO is designed to evolve gradually by integrating more anthropological aspects, ultimately becoming a modular knowledge environment. This approach allows for step-by-step enhancements to the ontology's scope and utility, enabling a comprehensive integration of anthropological knowledge.
+\subsection{Existing solutions and research gaps}\label{sec:Solutions+Gaps}
+\subsubsection{Nomenclatures: Terminologia anatomica (TA)}\label{sec:ta}
+There are various reference materials for the description of anatomical structures, ranging from anatomical atlases to nomenclatures. The latter aim for an established standardized naming and systematization. 
 The TA~\citep{ta2} is a hierarchy of anatomical structure concepts for the entire human body.
 For historical reasons, it uses a terminology consisting of Latin and originally Greek, which was later latinized.
 For each anatomical structure, the TA provides the \enquote{preferred}, i.e. standard, Latin term and its English equivalent as well as an individual identification number.
@@ -185,30 +188,40 @@ For example, \latin{Ossa digitorum manus / pedis} (engl. \emph{phalanges of the 
 In addition to the outdated print edition~\citep{ta1998}, an extended second edition (TA2) is available online~\citep{ta2}.
 Furthermore, there is a commercially available independent companion print publication with German~\citep{anatomylexicon}, English~\citep{pocketatlas} and Spanish~\citep{taspanish} editions of which at least the German edition is regularly updated.
 This book contains textual and visual descriptions, whereby anatomical structures are indicated through lines on the illustrations.
-
-% An anderer Stelle haben wir für viel größere Textmengen keine subsection und hier für ganz wenig Text eine, ist das OK so?
-\subsection{Foundational Model of Anatomy (FMA)}\label{sec:fma}
+\subsubsection{Existing ontologies: FMA}\label{sec:OntologiesFMA}
+Other ontologies either lack a comprehensive approach to anthropology or exhibit inconsistency in depicting knowledge within this field, since they are not designed with this specific purpose in mind.
 The FMA~\citep{fma} ontology represents the physical organization of human anatomy by mapping relations to one another.
 It allows the knowledge it contains to be represented in a way that is humanly comprehensible and machine-interpretable.
 The FMA uses the Basic Formal Ontology (BFO) as its top-level ontology.
 Corresponding to its relational nature, new higher level concepts are introduced and used for reorganizing the actual anatomical structures diverging from the TA's hierarchical structure.
 Thus, in 90\,\% of the cases this leads to new creations of anatomical concepts~\citep{anatomicalterms} whereas only 1\,\% contain textual definitions~\citep{uberon}.
+The FMA primarily focuses on depicting the entirety of human anatomy. This broad approach results in inconsistencies in how skeletal structures are detailed, as the FMA's overarching goal to cover anatomy in general cannot sufficiently address the complexities and nuances of skeletal anatomy. Such a wide scope also means that the anatomical knowledge pertaining to the skeleton is not depicted with the depth or precision that anthropological work demands, reflecting the limitations in existing literature on the subject.
+From an anthropological perspective, the FMA ontology exhibits challenges in terms of content depth, comprehensiveness, and granularity. Specifically, the main issues encompass a lack of cross-references between concepts, taxonomic and hierarchical inconsistencies, insufficient detail levels, and conceptual ambiguity. These gaps result in a notable absence of detailed relationships, associations, and concepts that are crucial for a thorough anthropological understanding and analysis. Additionally, the distinction between normal anatomy, pathology, and anatomical variants, which is essential, is not adequately addressed by the FMA's architecture.
 
-We added links from ANNO to the FMA manually, since it required decions from domain experts.
-Subsequently, we used those links along with unofficial FMA-TA2 links from Wikidata to automatically generate links between ANNO and the TA2.
+The following examples illustrate the issues described above. 
 
-\subsection{Other ontologies}\label{sec:researchgaps}
+\begin{itemize}
+\item Specific bones can be found as a subclass of \emph{bone organ} (\aurl{fma}{224804}) but, among others, also in terms of tissue as \emph{bone tissue} (\aurl{fma}{224804}) with then varying terms such as \emph{bone tissue of hip bone} (\aurl{fma}{42854}) or \emph{bone of sacrum} (\aurl{fma}{43624}) and placed on the same level as histological structures like \emph{lamellar bone} (\aurl{fma}{224806}). 
+\item Different anatomical landmarks are classified taxonomically in various ways. Many landmarks are described as a \emph{zone of bone organ} (\aurl{fma}{10483}) with superclasses determined by bone shape), e.g. \emph{flat bone} (\aurl{fma}{7476}). However, the categorization of bone shape is not consistently defined across anatomical sources ~\citep{ anatomiedesmenschen}. 
+\todo{konrad bitte hier die neue Quelle zu Quelle 35 hinzunehmen}
+To avoid these dependencies and potential incongruities, ANNO sidesteps taxonomic categorizations. Through location-based mapping, ANNO allows for the coexistence of diverse taxonomies. 
+\item On the other hand, another landmark, the \emph{external acoustic aperture} (\aurl{fma}{61301}), is classified as a subclass of \emph{orifice of skull} (\aurl{fma}{53133}), which falls under a different subtree of \emph{anatomical spaces} (\aurl{fma}{5897}) in FMA. 
+\item Osteometric landmarks are mixed with anatomical landmarks in a hierarchy (subclasses of \emph{anatomical point} (\aurl{fma}{9658}) that lacks coherence and detail.
+\item The \emph{orbit} (\aurl{fma}{53074}), comprised of multiple landmarks, is classified without detailed segmentation into its constituent landmarks.
+\end{itemize}
 
-\todo{Mittweida, bitte sobald wie möglich hier eintragen, es ist nicht mehr viel Zeit}
-Uberon, the Uber Anatomy Ontology~\citep{uberon}...
-BSPO~\citep{bspo}...
-NCIT~\citep{ncit}...
-The Anatomical Entity Ontology (AEO)~\citep{aeo}... (for animals)
-Read Codes Version 3 (RCD)~\citep{rcd}...
+ANNO and FMA are not seen as competing ontologies; instead, they are intended to complement each other. This synergy allows for a richer, more interconnected representation of anatomical knowledge.
 
-\subsection{Limitations of the existing ontologies}\label{sec:limitations}
+\subsubsection{Other existing ontologies}\label{sec:otherOntologies}
+\begin{itemize}
+\item Uberon, the Uber Anatomy Ontology~\citep{uberon} covers different species, lacking the necessary detail in anatomical and osteometric landmarks specific to anthropology.
+\item The Biological Spatial Ontology (BSPO)~\citep{bspo} focuses on spatial concepts applicable across various taxa but does not directly address skeletal anatomy, bones, or landmarks required.
+\item The National Cancer Institute Thesaurus (NCIT) ~\citep{ncit}, despite including some relevant anatomical landmarks, primarily relates to bones through text, also lacking in osteometric landmarks.
+\item The Anatomical Entity Ontology (AEO)~\citep{aeo} offers detailed tissue classification but does not cover human anatomical and osteometric landmarks.
+\item Read Codes Version 3 (RCD)~\citep{rcd}, with a focus on anatomy and diseases, includes bones but misses out on the detailed anatomical and osteometric landmarks.
+\end{itemize}
 
-%\subsection{Current Research Gaps}
+\subsubsection{Further research gaps}\label{sec:gaps+}
 There are several issues and research gaps when it comes to naming and defining anatomical concepts and instances that neither current ontologies nor reference literature---general or subject-specific---can address adequately.
 %
 The primary issue lies in the absence of standardization.
@@ -224,13 +237,13 @@ Meanwhile, the existing terminology is not flexible enough for language-like usa
 
 Anatomical terms, unless historically evolved, typically describe the location, affiliation or function of a concept or structure~\citep{reforminganatomical}.
 However, this naming convention is often inconsistent and non-intuitive.
-An example, showing the variability in illustrative descriptions are the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \latin{Sella}, the Latin name for saddle.
+An example, showing the variability in illustrative descriptions is the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \latin{Sella}, the Latin name for saddle.
 It is moreover worth pointing out that not every anatomical structure that contributes to an articulation in some way automatically carries the term articular with it, such as the \latin{Caput mandibulae}, which connects the Mandibula to the rest of the Cranium.
 The Tuber frontale, which serves as an indicator for sex in anthropology, is listed as an eminentia in the TA~\citep{ta2}.
 Likewise, the Protuberantia mentale is referred to as Eminentia mentale in a widely-used anthropological method that is also used for sex determination.
 As can be seen, the incentive for synonyms is high.
 However, the current resources fail to provide comprehensive lists of synonyms in use.
-This in turn may lead to misattribution: For example, the FMA entry with the preferred name \emph{External acoustic aperture} and non-English equivalent \latin{Porus acusticus externus} (\aurl{fma}{61301}) lists \emph{external acoustic meatus} (\latin{Meatus acusticus externus} in Latin) as a synonym.
+This in turn may lead to misattribution: For example, the FMA entry with the preferred name \emph{external acoustic aperture} and non-English equivalent \latin{Porus acusticus externus} (\aurl{fma}{61301}) lists \emph{external acoustic meatus} (\latin{Meatus acusticus externus} in Latin) as a synonym.
 However, it is not the same, rather the Porus is---as its English name indicates---the opening to the meatus~\citep{anatomylexicon}.
 %Furthermore, terms oftentimes lack clear affiliation to the bone to which they belong.
 %When considering the whole skeleton, these terms consequently occur multiple times, causing ambiguity.
@@ -256,20 +269,13 @@ However, since they are multi-dimensional structures, it is essential to provide
 The latter also requires a clear textual definition.
 Unfortunately, there are currently no equivalent standardized definitions for skeletal anatomy, meanwhile anatomical resources only provide sparse information on this topic.
 
-To address these issues, it is necessary to develop unified, textual, visual, and detailed descriptive definitions for anatomical concepts and instances.
+To address these issues, it is necessary to develop unified, textual, visual, and detailed descriptive definitions for anthropologically relevant anatomical concepts and instances.
 These definitions should be presented within an easily understandable ontology, with ANNO contributing to filling this specific niche.
-%
-The main requirement for the intended ontology to cover the defined tasks is that it adequately represents the basic anatomical and anthropological entities, the spatial relations between them and the phenotyping functions, while remaining relatively simple and compact.
-This approach allows on the one hand an easy manageability of the ontology for domain experts and on the other hand its efficient integration into software (e.g., \aw{}) according to the three-ontology method~\citep{threeontologymethod}.
-Following this method, the software only needs to implement access to the core categories (of the core or task ontology), while their subcategories (from the domain-specific ontology) are processed dynamically.
+
 This means, among other things, that all relevant anatomical entities (bones, teeth, their parts and composite structures) must each be located in one subtree (i.e., must have a common superclass) rather than spread across the entire ontology.
-The FMA, for example, does not have single equivalent concepts to represent bone compounds or bone parts, see \cref{sec:annodc}.
-%(see section 3.2.2).
-Several partial subtrees would have to be combined for this purpose.
-Furthermore, clear relations must exist between the core entities so that the dependencies between them can be efficiently resolved by the software.
+
 None of the evaluated ontologies could cover all defined requirements and adequately support the specific anthropological use cases.
 We decided to develop a new ontology because the integration (extension and adaptation) of all necessary parts from different ontologies would have been much more complex.
-%We decided to develop a new ontology because none of the existing ontologies could cover all defined requirements and integrating (extending and adapting) all the necessary parts from the other ontologies would have been much more complex (see \cref{sec:relatedwork}).
 
 \section{ANthropological Notation Ontology (ANNO)}\label{sec:anno}
 
@@ -623,12 +629,12 @@ In addition, the objective is to initiate the process of data entry, encompassin
 \end{figure}
 
 %\subsections{General considerations}
-%All landmarks are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
+ANNO thoroughly delineates each concept with precise terminology, definitions, and clear distinctions for identifying features or taking measurements, with all information backed up by detailed source citations for transparency. All bone structures and anatomical points are annotated with their name in singular and plural form, reference bone, synonyms, textual and visual definition, FMA and TA ID, and sources.
 %
 %Anatomical Landmarks (Bone Parts) (Selection Criteria, scope and process, properties)
 %Osteometric Landmarks (Anatomical Points)
 %Measurements (Anatomical line)
-%Relevant spatial anatomical objects (e.g., lines) used for phenotype determination functions Measurements were defined in terms of anatomical points/objects that bound them: consist of references to sections, the start point, midpoint, and end, and short definitions.
+Measurements for determining phenotypes involve relevant spatial anatomical objects (e.g., lines), which are defined by the anatomical points or objects that delimit them. These include references to specific sections, the starting point, midpoint, and end point, accompanied by concise definitions.
 %Phenotypes
 %Development of the ontology is based on the following selection criteria:
 %The selection criteria are as follows:
@@ -702,13 +708,8 @@ This redefinition closes the resulting gap in the definition of the area between
 ANNO also corrects the commonly missing differentiation between \emph{Cranium} and \emph{Mandibula} in English literature, with no Latin equivalent for the overall term \enquote{skull}.
 Instead, \anno{Cranium} is established as a synonym for the skull~\citep{allgemeineanatomieen,prometheus2}.
 \paragraph{}
-Further contributions of ANNOds include:
-\begin{itemize}
-\item Consistent Latin declension (including in plural).
-\item Transparency through detailed source references; for measurement distances, origin works and reference works are indicated by dividing into primary and core sources.
-\item Dissected group structures.
-\item Redefinitions such as joint surfaces, which are often not named in anatomy literature but are anthropologically relevant, and osteometric measurement points outside the skull, which are not established in the literature.
-\end{itemize}
+
+Further contributions of ANNO include ensuring consistent Latin declension, including the plural form; enhancing transparency with detailed source references, distinguishing between original (primary) and citing (core) sources in the case of measurements. The ontology dissects group structures into atomic bone parts and more moreover introduces new terms and definitions for landmarks such as joint surfaces, which, despite their anthropological relevance, often remain unnamed in anatomy literature. It also formally establishes terms for osteometric measurement points outside the skull, addressing gaps not covered in existing literature.
 
 \section{Use Case: Integration into \aw{}}\label{sec:aw}
 %\section{Use Case: Integration into \aw{}}\label{sec:aw}
@@ -736,7 +737,7 @@ Additional use cases that are only achievable through this integration include t
 Collage of different views in \aw{} of a 3D model of a \emph{cranium} (skull) inserted into a placeholder skeleton (source:~\cite{aw3dcidoc}).
 The cranium is a bone compound consisting of 29 bone elements.
 One of them, the \emph{mandibula} (mandible), is flexibly connected to the rest of the skull by the mandibular joint.
-In the top right, various bone parts on the Mandibula are visually emphasized, with part 14 representing the angulus mandibulae (mandibular angle).
+In the top right, various bone parts on the Mandibula are visually emphasized, with part 7 representing the angulus mandibulae (mandibular angle).
 In the top left, the \latin{Dens caninus maxillaris dexter} (right maxillary secondary canine tooth), a tooth structure, is highlighted within a circle.
 The tooth cusp is a part of the tooth.
 It refers to the projection that divides the occlusal surface of most of the teeth, with the exception of the incisors.
