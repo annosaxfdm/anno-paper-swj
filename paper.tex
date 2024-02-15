@@ -1,7 +1,6 @@
 % add. options: [seceqn,secthm,crcready]
 \documentclass[sw]{iosart2x}
 %\usepackage[T1]{fontenc}
-\usepackage{todonotes}
 \usepackage{cleveref}
 \usepackage{csquotes}
 \usepackage{aurl}
@@ -11,7 +10,6 @@
 \usepackage{tablefootnote}
 %\usepackage{dcolumn}
 %\usepackage{placeins} %provides \FloatBarrier
-
 \newcommand{\aw}{AnthroWorks3D}
 \newcommand{\anno}[1]{\href{https://annosaxfdm.de/ontology/#1}{\texttt{#1}}}
 \newcommand{\gfo}[1]{\href{https://www.onto-med.de/ontologies/gfo/#1}{\texttt{#1}}}
@@ -27,6 +25,7 @@
 \firstpage{1}
 \lastpage{1}
 
+%\overfullrule=10pt % for debugging overfull hboxes
 \begin{document}
 
 \begin{frontmatter}
@@ -214,9 +213,11 @@ The following examples illustrate the issues described above.
 
 \begin{itemize}
 \item Specific bones can be found as a subclass of \emph{bone organ} (\aurl{fma}{224804}) but, among others, also in terms of tissue as \emph{bone tissue} (\aurl{fma}{224804}) with then varying terms such as \emph{bone tissue of hip bone} (\aurl{fma}{42854}) or \emph{bone of sacrum} (\aurl{fma}{43624}) and placed on the same level as histological structures like \emph{lamellar bone} (\aurl{fma}{224806}).
-\item Different anatomical landmarks are classified taxonomically in various ways. Many landmarks are described as a \emph{zone of bone organ} (\aurl{fma}{10483}) with superclasses determined by bone shape), e.g. \emph{flat bone} (\aurl{fma}{7476}). However, the categorization of bone shape is not consistently defined across anatomical sources ~\citep{ anatomiedesmenschen}.
-\todo{konrad bitte hier die neue Quelle zu Quelle 35 hinzunehmen}
-To avoid these dependencies and potential incongruities, ANNO sidesteps taxonomic categorizations. Through location-based mapping, ANNO allows for the coexistence of diverse taxonomies.
+\item Different anatomical landmarks are classified taxonomically in various ways.
+Many landmarks are described as a \emph{zone of bone organ} (\aurl{fma}{10483}) with superclasses determined by bone shape), e.g. \emph{flat bone} (\aurl{fma}{7476}).
+However, the categorization of bone shape is not consistently defined across anatomical sources ~\citep{anatomiedesmenschen,forensicmanual}.
+To avoid these dependencies and potential incongruities, ANNO sidesteps taxonomic categorizations.
+Through location-based mapping, ANNO allows for the coexistence of diverse taxonomies.
 \item On the other hand, another landmark, the \emph{external acoustic aperture} (\aurl{fma}{61301}), is classified as a subclass of \emph{orifice of skull} (\aurl{fma}{53133}), which falls under a different subtree of \emph{anatomical spaces} (\aurl{fma}{5897}) in FMA.
 \item Osteometric landmarks are mixed with anatomical landmarks in a hierarchy (subclasses of \emph{anatomical point} (\aurl{fma}{9658}) that lacks coherence and detail.
 \item The \emph{orbit} (\aurl{fma}{53074}), comprised of multiple landmarks, is classified without detailed segmentation into its constituent landmarks.
@@ -414,7 +415,7 @@ The statistical information on the ANNO ontology is shown in \cref{tab:stats}.
 \centering
 \caption{Statistical information. Column values do not add up because some entities are defined in both subontologies.}
 \label{tab:stats}
-\begin{tabulary}{\textwidth}{lSSSSSSSSl}
+\begin{tabular}{lS[table-format=4.0]SSS[table-format=3.0]SS[table-format=5.0]S[table-format=3.0]S[table-format=3.0]l}
 \toprule
 % Expressivity according to Protege: ANNOdc and combined: ALCHIQ(D), ANNOds: ALE
 Ontology	&\textnormal{Classes}	&\textnormal{Object prop.}	&\textnormal{Data p.}	&\textnormal{Individuals}	&\textnormal{Annotation p.}	&\textnormal{Axioms}	&\textnormal{FMA links}				&\textnormal{TA links} &Expressivity\\
@@ -424,7 +425,7 @@ ANNOds		&1166					&0								&0								&803						&43				&18231					&503						&206
 \midrule
 combined	&1195					&11								&1								&803						&53				&18382					&514						&206				&OWL DL\\
 \bottomrule
-\end{tabulary}
+\end{tabular}
 \end{table}
 
 \subsection{Description and foundation of ANNOdc}\label{sec:annodc}
