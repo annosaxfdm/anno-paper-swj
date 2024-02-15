@@ -168,15 +168,25 @@ In its current version, the ontology refers to standardized normal adult anatomy
 
 \section{State of research}\label{sec:stateofresearch}
 \subsection{Distinguishing features of ANNO}\label{sec:distinguishingAnno}
-The Anthropological Notation Ontology (ANNO) distinguishes itself by focusing specifically on anthropology rather than general anatomy. This focus underscores the importance of understanding the relationship between bones and the anatomical and osteometric features found on them. ANNO emphasizes the need for precise definitions using established anatomical and anthropological terminology, including directional terms, to facilitate clear communication within the field. This approach allows for a more nuanced understanding of human skeletal structures, essential for anthropological analysis and research.
-The Anthropological Notation Ontology (ANNO) aims to map the entirety of anthropological knowledge directly onto a digital 3D skeletal model, functioning as a comprehensive knowledge representation. It projects anthropological information as a layer onto the skeleton, incorporating and localising aspects and interrelations crucial for anthropological study, effectively serving as a navigable atlas for skeletal analysis.
-ANNO is designed to align anthropological knowledge, including measurement explanations and landmark identification, with methods and the skeletal framework itself. This modeling ensures data compatibility for extensive analysis, integrating a maximal amount of information. A pivotal advantage of ANNO is its ability to directly associate information with a digital 3D model facilitating the inherent connecting to the raw data and enhancing comprehension, reproducibility, and sustainability of documentation.
-ANNO meticulously details skeletal anatomy through an atomic design approach, breaking it down into its most basic, indivisible components, then systematically organizing these components to represent the skeletal structure with high fidelity. This granular method facilitates a deep and scalable anthropological understanding.
+The Anthropological Notation Ontology (ANNO) distinguishes itself by focusing specifically on anthropology rather than general anatomy.
+This focus underscores the importance of understanding the relationship between bones and the anatomical and osteometric features found on them.
+ANNO emphasizes the need for precise definitions using established anatomical and anthropological terminology, including directional terms, to facilitate clear communication within the field.
+This approach allows for a more nuanced understanding of human skeletal structures, essential for anthropological analysis and research.
+The Anthropological Notation Ontology (ANNO) aims to map the entirety of anthropological knowledge directly onto a digital 3D skeletal model, functioning as a comprehensive knowledge representation.
+It projects anthropological information as a layer onto the skeleton, incorporating and localising aspects and interrelations crucial for anthropological study, effectively serving as a navigable atlas for skeletal analysis.
+ANNO is designed to align anthropological knowledge, including measurement explanations and landmark identification, with methods and the skeletal framework itself.
+This modeling ensures data compatibility for extensive analysis, integrating a maximal amount of information.
+A pivotal advantage of ANNO is its ability to directly associate information with a digital 3D model facilitating the inherent connecting to the raw data and enhancing comprehension, reproducibility, and sustainability of documentation.
+ANNO meticulously details skeletal anatomy through an atomic design approach, breaking it down into its most basic, indivisible components, then systematically organizing these components to represent the skeletal structure with high fidelity.
+This granular method facilitates a deep and scalable anthropological understanding.
 ANNO is capable of referencing various (online) resources, even those that are structurally and semantically diverse, such as other terminologies, ontologies, websites ~\citep{atinfo}.or media, aiming for synonym mediation, standardisation and conceptual clarity.
-The current state of ANNO includes a foundational module that focuses on skeletal anatomy on the one hand and anthropological aspects such as osteometric landmarks (measurement points) and measurements (distances), which are either sporadically represented or absent in existing ontologies, on the other hand. ANNO is designed to evolve gradually by integrating more anthropological aspects, ultimately becoming a modular knowledge environment. This approach allows for step-by-step enhancements to the ontology's scope and utility, enabling a comprehensive integration of anthropological knowledge.
+The current state of ANNO includes a foundational module that focuses on skeletal anatomy on the one hand and anthropological aspects such as osteometric landmarks (measurement points) and measurements (distances), which are either sporadically represented or absent in existing ontologies, on the other hand.
+ANNO is designed to evolve gradually by integrating more anthropological aspects, ultimately becoming a modular knowledge environment.
+This approach allows for step-by-step enhancements to the ontology's scope and utility, enabling a comprehensive integration of anthropological knowledge.
 \subsection{Existing solutions and research gaps}\label{sec:Solutions+Gaps}
 \subsubsection{Nomenclatures: Terminologia anatomica (TA)}\label{sec:ta}
-There are various reference materials for the description of anatomical structures, ranging from anatomical atlases to nomenclatures. The latter aim for an established standardized naming and systematization. 
+There are various reference materials for the description of anatomical structures, ranging from anatomical atlases to nomenclatures.
+The latter aim for an established standardized naming and systematization.
 The TA~\citep{ta2} is a hierarchy of anatomical structure concepts for the entire human body.
 For historical reasons, it uses a terminology consisting of Latin and originally Greek, which was later latinized.
 For each anatomical structure, the TA provides the \enquote{preferred}, i.e. standard, Latin term and its English equivalent as well as an individual identification number.
@@ -198,14 +208,14 @@ Thus, in 90\,\% of the cases this leads to new creations of anatomical concepts~
 The FMA primarily focuses on depicting the entirety of human anatomy. This broad approach results in inconsistencies in how skeletal structures are detailed, as the FMA's overarching goal to cover anatomy in general cannot sufficiently address the complexities and nuances of skeletal anatomy. Such a wide scope also means that the anatomical knowledge pertaining to the skeleton is not depicted with the depth or precision that anthropological work demands, reflecting the limitations in existing literature on the subject.
 From an anthropological perspective, the FMA ontology exhibits challenges in terms of content depth, comprehensiveness, and granularity. Specifically, the main issues encompass a lack of cross-references between concepts, taxonomic and hierarchical inconsistencies, insufficient detail levels, and conceptual ambiguity. These gaps result in a notable absence of detailed relationships, associations, and concepts that are crucial for a thorough anthropological understanding and analysis. Additionally, the distinction between normal anatomy, pathology, and anatomical variants, which is essential, is not adequately addressed by the FMA's architecture.
 
-The following examples illustrate the issues described above. 
+The following examples illustrate the issues described above.
 
 \begin{itemize}
-\item Specific bones can be found as a subclass of \emph{bone organ} (\aurl{fma}{224804}) but, among others, also in terms of tissue as \emph{bone tissue} (\aurl{fma}{224804}) with then varying terms such as \emph{bone tissue of hip bone} (\aurl{fma}{42854}) or \emph{bone of sacrum} (\aurl{fma}{43624}) and placed on the same level as histological structures like \emph{lamellar bone} (\aurl{fma}{224806}). 
-\item Different anatomical landmarks are classified taxonomically in various ways. Many landmarks are described as a \emph{zone of bone organ} (\aurl{fma}{10483}) with superclasses determined by bone shape), e.g. \emph{flat bone} (\aurl{fma}{7476}). However, the categorization of bone shape is not consistently defined across anatomical sources ~\citep{ anatomiedesmenschen}. 
+\item Specific bones can be found as a subclass of \emph{bone organ} (\aurl{fma}{224804}) but, among others, also in terms of tissue as \emph{bone tissue} (\aurl{fma}{224804}) with then varying terms such as \emph{bone tissue of hip bone} (\aurl{fma}{42854}) or \emph{bone of sacrum} (\aurl{fma}{43624}) and placed on the same level as histological structures like \emph{lamellar bone} (\aurl{fma}{224806}).
+\item Different anatomical landmarks are classified taxonomically in various ways. Many landmarks are described as a \emph{zone of bone organ} (\aurl{fma}{10483}) with superclasses determined by bone shape), e.g. \emph{flat bone} (\aurl{fma}{7476}). However, the categorization of bone shape is not consistently defined across anatomical sources ~\citep{ anatomiedesmenschen}.
 \todo{konrad bitte hier die neue Quelle zu Quelle 35 hinzunehmen}
-To avoid these dependencies and potential incongruities, ANNO sidesteps taxonomic categorizations. Through location-based mapping, ANNO allows for the coexistence of diverse taxonomies. 
-\item On the other hand, another landmark, the \emph{external acoustic aperture} (\aurl{fma}{61301}), is classified as a subclass of \emph{orifice of skull} (\aurl{fma}{53133}), which falls under a different subtree of \emph{anatomical spaces} (\aurl{fma}{5897}) in FMA. 
+To avoid these dependencies and potential incongruities, ANNO sidesteps taxonomic categorizations. Through location-based mapping, ANNO allows for the coexistence of diverse taxonomies.
+\item On the other hand, another landmark, the \emph{external acoustic aperture} (\aurl{fma}{61301}), is classified as a subclass of \emph{orifice of skull} (\aurl{fma}{53133}), which falls under a different subtree of \emph{anatomical spaces} (\aurl{fma}{5897}) in FMA.
 \item Osteometric landmarks are mixed with anatomical landmarks in a hierarchy (subclasses of \emph{anatomical point} (\aurl{fma}{9658}) that lacks coherence and detail.
 \item The \emph{orbit} (\aurl{fma}{53074}), comprised of multiple landmarks, is classified without detailed segmentation into its constituent landmarks.
 \end{itemize}
@@ -714,7 +724,7 @@ Further contributions of ANNO include ensuring consistent Latin declension, incl
 \section{Use Case: Integration into \aw{}}\label{sec:aw}
 %\section{Use Case: Integration into \aw{}}\label{sec:aw}
 
-\aw{}, see \cref{fig:aw}, is a German-language tool that combines user-friendly techniques of photogrammetry with insights from user experience research and knowledge from game development. 
+\aw{}, see \cref{fig:aw}, is a German-language tool that combines user-friendly techniques of photogrammetry with insights from user experience research and knowledge from game development.
 It enables users to virtually examine digitized bone material, which can be created using a procedure designed for generating 3D models of bones.
 These models serve as digital twins in anthropological, morphological, and osteometric research and examination.
 To facilitate such examinations, the software can import and render these 3D models at runtime and provides a comprehensive suite of tools for annotating and measuring bone material.
@@ -729,7 +739,7 @@ Moreover, the software offers the capability to display either the entire skelet
 This feature enables users to not only focus on the specific bone they are studying but also easily access adjacent or related bones for a more comprehensive understanding.
 These use cases are already covered by \aw{} itself but are improved by an integration of ANNO into the software.
 Additional use cases that are only achievable through this integration include the automatic derivation of bone and skeletal phenotypes using mathematical functions available in the ontology and the provision of anthropological, anatomical and osteometrical knowledge for users through ANNO.
- 
+
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{img/aw3d.png}
 %\caption{3D model of a Cranium (skull) inserted into a placeholder skeleton in \aw{} depicting examples of various ANNOdc classes.}
