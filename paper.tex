@@ -120,7 +120,7 @@ It was therefore an easy decision for us to use an ontology for modeling the ant
 The main tasks to be supported by the intended ontology are the annotation of anthropological models, the specification of spatial relations between anatomical entities and the definition of phenotyping functions, see \cref{sec:methodology}.
 However, the ontology must remain relatively simple and compact to allow easy handling by domain experts and efficient integration into software.
 Existing anatomical ontologies often lack standardization in the naming and definition of concepts.
-Furthermore, the hierarchical structure is often too complex or general to be efficiently integrated into software for realizing specific anthropological use cases, see \cref{sec:limitations}.
+Furthermore, the hierarchical structure is often too complex or general to be efficiently integrated into software for realizing specific anthropological use cases, see \cref{sec:otherontologies}.
 Since we could not find any ontologies that fully met our requirements and the integration or adaptation of selected ontology parts would be much more complex, we decided to develop a new ontology and then map it to the most prominent one.
 
 \begin{table}[h]
@@ -176,15 +176,16 @@ The Anthropological Notation Ontology (ANNO) aims to map the entirety of anthrop
 It projects anthropological information as a layer onto the skeleton, incorporating and localising aspects and interrelations crucial for anthropological study, effectively serving as a navigable atlas for skeletal analysis.
 ANNO is designed to align anthropological knowledge, including measurement explanations and landmark identification, with methods and the skeletal framework itself.
 This modeling ensures data compatibility for extensive analysis, integrating a maximal amount of information.
-A pivotal advantage of ANNO is its ability to directly associate information with a digital 3D model facilitating the inherent connecting to the raw data and enhancing comprehension, reproducibility, and sustainability of documentation.
+A pivotal advantage of ANNO is its ability to directly associate information with a digital 3D model facilitating the inherent connection to the raw data and enhancing comprehension, reproducibility, and sustainability of documentation.
 ANNO meticulously details skeletal anatomy through an atomic design approach, breaking it down into its most basic, indivisible components, then systematically organizing these components to represent the skeletal structure with high fidelity.
 This granular method facilitates a deep and scalable anthropological understanding.
-ANNO is capable of referencing various (online) resources, even those that are structurally and semantically diverse, such as other terminologies, ontologies, websites ~\citep{atinfo}.or media, aiming for synonym mediation, standardisation and conceptual clarity.
+ANNO is capable of referencing various (online) resources, even those that are structurally and semantically diverse, such as other terminologies, ontologies, websites~\citep{atinfo} or media, aiming for synonym mediation, standardisation and conceptual clarity.
 The current state of ANNO includes a foundational module that focuses on skeletal anatomy on the one hand and anthropological aspects such as osteometric landmarks (measurement points) and measurements (distances), which are either sporadically represented or absent in existing ontologies, on the other hand.
 ANNO is designed to evolve gradually by integrating more anthropological aspects, ultimately becoming a modular knowledge environment.
 This approach allows for step-by-step enhancements to the ontology's scope and utility, enabling a comprehensive integration of anthropological knowledge.
+
 \subsection{Existing solutions and research gaps}\label{sec:Solutions+Gaps}
-\subsubsection{Nomenclatures: Terminologia anatomica (TA)}\label{sec:ta}
+\paragraph{Nomenclatures: Terminologia anatomica (TA)}\label{sec:ta}
 There are various reference materials for the description of anatomical structures, ranging from anatomical atlases to nomenclatures.
 The latter aim for an established standardized naming and systematization.
 The TA~\citep{ta2} is a hierarchy of anatomical structure concepts for the entire human body.
@@ -198,7 +199,8 @@ For example, \latin{Ossa digitorum manus / pedis} (engl. \emph{phalanges of the 
 In addition to the outdated print edition~\citep{ta1998}, an extended second edition (TA2) is available online~\citep{ta2}.
 Furthermore, there is a commercially available independent companion print publication with German~\citep{anatomylexicon}, English~\citep{pocketatlas} and Spanish~\citep{taspanish} editions of which at least the German edition is regularly updated.
 This book contains textual and visual descriptions, whereby anatomical structures are indicated through lines on the illustrations.
-\subsubsection{Existing ontologies: Foundational Model of Anatomy (FMA)}\label{sec:OntologiesFMA}
+
+\paragraph{Existing ontologies: Foundational Model of Anatomy (FMA)}\label{sec:OntologiesFMA}
 Other ontologies either lack a comprehensive approach to anthropology or exhibit inconsistency in depicting knowledge within this field, since they are not designed with this specific purpose in mind.
 The FMA~\citep{fma} ontology represents the physical organization of human anatomy by mapping relations to one another.
 It allows the knowledge it contains to be represented in a way that is humanly comprehensible and machine-interpretable.
@@ -220,9 +222,10 @@ To avoid these dependencies and potential incongruities, ANNO sidesteps taxonomi
 \item The \emph{orbit} (\aurl{fma}{53074}), comprised of multiple landmarks, is classified without detailed segmentation into its constituent landmarks.
 \end{itemize}
 
-ANNO and FMA are not seen as competing ontologies; instead, they are intended to complement each other. This synergy allows for a richer, more interconnected representation of anatomical knowledge.
+ANNO and FMA are not seen as competing ontologies; instead, they are intended to complement each other.
+This synergy allows for a richer, more interconnected representation of anatomical knowledge.
 
-\subsubsection{Other existing ontologies}\label{sec:otherOntologies}
+\paragraph{Other existing ontologies}\label{sec:otherontologies}
 \begin{itemize}
 \item Uberon, the Uber Anatomy Ontology~\citep{uberon} covers different species, lacking the necessary detail in anatomical and osteometric landmarks specific to anthropology.
 \item The Biological Spatial Ontology (BSPO)~\citep{bspo} focuses on spatial concepts applicable across various taxa but does not directly address skeletal anatomy, bones, or landmarks required.
@@ -231,7 +234,7 @@ ANNO and FMA are not seen as competing ontologies; instead, they are intended to
 \item Read Codes Version 3 (RCD)~\citep{rcd}, with a focus on anatomy and diseases, includes bones but misses out on the detailed anatomical and osteometric landmarks.
 \end{itemize}
 
-\subsubsection{Further research gaps}\label{sec:gaps+}
+\paragraph{Further research gaps}\label{sec:gaps+}
 There are several issues and research gaps when it comes to naming and defining anatomical concepts and instances that neither current ontologies nor reference literature---general or subject-specific---can address adequately.
 %
 The primary issue lies in the absence of standardization.
@@ -247,7 +250,7 @@ Meanwhile, the existing terminology is not flexible enough for language-like usa
 
 Anatomical terms, unless historically evolved, typically describe the location, affiliation or function of a concept or structure~\citep{reforminganatomical}.
 However, this naming convention is often inconsistent and non-intuitive.
-An example, showing the variability in illustrative descriptions is the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \latin{Sella}, the Latin name for saddle.
+An example, showing the variability in illustrative descriptions, is the Tuberculum articulare of the Processus zygomaticus, which in \cite{anatomie} is described as saddle-shaped although it is not called \latin{Sella}, the Latin name for saddle.
 It is moreover worth pointing out that not every anatomical structure that contributes to an articulation in some way automatically carries the term articular with it, such as the \latin{Caput mandibulae}, which connects the Mandibula to the rest of the Cranium.
 The Tuber frontale, which serves as an indicator for sex in anthropology, is listed as an eminentia in the TA~\citep{ta2}.
 Likewise, the Protuberantia mentale is referred to as Eminentia mentale in a widely-used anthropological method that is also used for sex determination.
