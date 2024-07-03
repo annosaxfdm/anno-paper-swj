@@ -69,12 +69,26 @@ ANNO supports the analysis of skeletal and bone finds in forensic and historical
 \end{frontmatter}
 
 \section{Introduction}\label{sec:introduction}
+
 Anthropology, as a discipline, explores the full range of human diversity and similarity across cultures, social structures, habitats, and environments.
 Anthropological skeletal analysis, a subset of this field, is particularly focused on understanding the human skeletal system.
 This study encompasses a multidisciplinary approach, integrating insights from natural, social, ­and cultural sciences.
-It's about reading the stories that human remains tell---from sex, age, and health to broader aspects like cultural practices and environmental impacts.
-Hence, data from historical and prehistoric anthropology~\citep{prehistoricanthropology}, as well as modern forensic science, provides a comprehensive understanding of deceased individuals and past populations from different time periods.
-This process entails investigating individuals' identity, health status, aspects of their behaviour, lifestyle, culture and even the circumstances of death~\citep{spurensuche} by determining features (phenotypes) such as sex, age, height and ancestry and other individualizing traits, through the use of anthropological methods.
+
+It's about reading the stories that human remains tell---from sex, age, and health to broader aspects like cultural practices and environmental impacts. Hence, data from historical and prehistoric anthropology~\cite{prehistoricanthropology}, as well as modern forensic science, provide a comprehensive understanding of deceased individuals and past populations from different time periods. This process involves investigating individuals' identity, health status, behavior, lifestyle, culture, and the circumstances of their death~\cite{spurensuche} by determining phenotypes such as sex, age, height, ancestry, and other individualizing traits using anthropological methods.
+Sex assessment is a key part of this analysis because it provides essential information about an individual’s identity and helps build a biological profile. This profile offers insights into the person’s life, health, and the population they belonged to, aiding in reconstructing past societies, understanding demographic patterns, and identifying individuals in forensic cases. \\
+\\
+The Anthropological Notation Ontology (ANNO) is motivated by the need for consistent data recording, enhanced comparability, facilitated access to, and sustainable preservation of human skeletal remains for research and cultural heritage contexts. It provides a standardized, digital framework for documenting, analyzing, and presenting data from human skeletal remains, making information accessible and usable for future research. ANNO supports the use of digital 3D models of bones in 3D editors such as AnthroWorks3D, playing a crucial role in categorizing and analyzing data in a flexible yet standardized and machine-readable manner, thus ensuring interoperability across different systems and studies.
+Anthropological analysis of human skeletal remains is inherently comparative, heavily relying on reference collections \citep{spurensuche}. Several key challenges profoundly affect anthropological research \citep{aw3dcidoc}:
+\paragraph{Preservation}\label{sec:preserve}
+From the moment of excavation, skeletal remains are subject to wear and tear, diminishing their informational value. Transferring the examination to digital models reduces physical handling, minimizes deterioration, and ensures that data is preserved and accessible for future research, even in cases of repatriation or reburial. This is crucial because "knowledge and evidence production can only yield what the original material provides."~\cite{HeuschkelSchmiedelLabudde2024}
+Exemplifying ANNO's underlying utility in this regard is the Rödelheim skeletal collection curated and researched by the Department of Historical Anthropology and Human Ecology at the University of Göttingen, consisting of over 200 skeletal remains from Napoleon's army. With these remains scheduled for reburial in 2021, digitization became essential. For instance, by creating digital 3D models via AnthroWorks3D, and annotating them based on the ANNO ontological framework, the models were converted into research data that is analyzable across studies, despite the physical remains being reburied.
+\paragraph{Access}\label{sec:access}
+Anthropological skeletal material from excavations often remains undetermined due to a shortage of specialists at the respective institutions. A digital solution would provide greater availability of human skeletal remains and allow for the efficient allocation of anthropologists and collections. For example, the Archaeological Heritage Office of Saxony faces a significant backlog of unevaluated skeletal collections due to a shortage of anthropologists. For instance, by digitizing these remains and using ANNO for annotation, the data can be made available to experts worldwide. This approach allows for the efficient allocation of resources, enabling comprehensive analysis that would otherwise be infeasible.
+\paragraph{Comparability and Transparent Documentation and Analysis}\label{sec:comp+transp} 
+Existing data recording systems in anthropology are often individualized, leading to compatibility issues that hinder comparative analysis and comprehensive intra- and interdisciplinary research~\cite{HeuschkelSchmiedelLabudde2024}. A digital solution combining ANNO, a standardized ontology for skeletal data, and AnthroWorks 3D, a 3D editor for creating and annotating digital bone models, provides unprocessed and undistorted information, making it comprehensible, reproducible, and sustainably documented. It also supports flexible and objective documentation of bone parts or fragments~\cite{aw3dcidoc}. This allows researchers to "surround themselves with every shred of information about a collection or an object,"~\cite{Palkovich.2001} with future possibilities such as integration into collection management systems and the application of AI analysis \cite{HeuschkelSchmiedelLabudde2024}. 
+For instance, Researchers comparing skeletal remains from different regions can use ANNO to standardize their annotations, ensuring that data from disparate sources are compatible. For instance, if two teams are studying bone wear patterns to infer lifestyle differences using different skeletal collections, ANNO allows them to document their findings in a uniform manner, facilitating direct comparisons and more robust conclusions.\\
+\\
+While the concept of ANNO encompasses a broad range of anthropological aspects, its first and fundamental module, which is the focus of this paper, is on skeletal anatomy. This module serves as the foundation for all subsequent developments within the ANNO framework.
 
 In anthropological skeletal analyses, methods employed include morphological and osteometric examinations.
 Apart from contextual information, anthropological focus on identifying and analysing traces found directly on the bones, indicating bone reactions or functional aspects.
@@ -86,12 +100,11 @@ This precision is vital for meaningful and reliable interpretations in anthropol
 By applying the same principles used for mapping the Earth's surface \enquote{terrain}, a detailed map of the human body can be created.
 This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
 ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for an objective examination, including measurements.
-Osteometric examinations involve precise measurements that numerically capture features important in anthropology.
-These measurements are crucial for discriminant function analysis, a key method for determining the biological sex of deceased individuals.
-Discriminant function analysis identifies differences between predefined groups, such as males and females, by analyzing known group distinctions.
-Its goal is to pinpoint characteristics that significantly differentiate these groups.
-The result is a discriminant function, which includes variables and their weights representing these characteristics.
-This function, once determined, classifies skeletal remains into one of the groups~\citep{prehistoricanthropology}.
+
+
+Osteometric examinations involve precise measurements that numerically capture features important in anthropology. These measurements are crucial for discriminant function analysis, a key method for determining the biological sex of deceased individuals. Discriminant function analysis identifies differences between predefined groups, such as males and females, by assessing specific bone measurements that typically differ between the sexes, such as the size and shape of certain features. The goal is to pinpoint characteristics that significantly differentiate these groups. The resulting discriminant function includes measurements as variables and their weights representing these characteristics. By inputting these measurements into the formula, the discriminant function calculates a score that classifies skeletal remains into one of the groups, indicating the likelihood of the remains being male or female~\citep{prehistoricanthropology} .
+
+
 The digitization and digitalization of anthropological skeletal materials offer significant advantages.
 This process extends beyond visualizing remains to creating and analyzing annotated 3D models, incorporating traditional anthropological methods into digital formats.
 Such technological advancements facilitate preservation, documentation, and global collaboration, allowing remote access and minimizing physical specimen wear.
@@ -100,7 +113,6 @@ The digital 3D models can serve as digital twins, as they present virtual, detai
 ANNO complements this digital twin by providing an ontological framework that enriches the model with detailed, accurate anthropological data.
 This synergy enhances the digital twin's utility, enabling precise annotation, analysis, and sharing of anthropological findings.
 The benefits include improved research efficiency, enhanced data sharing and collaboration opportunities, and a deeper, more nuanced understanding of anthropological subjects.
-The Anthropological Notation Ontology (ANNO) plays a pivotal role in this digital transformation.
 It provides a consistent yet flexible framework for representing anthropologically relevant anatomical and anthropological knowledge.
 By mapping information directly onto 3D models, ANNO ensures that data is not only comprehensible and reproducible but also sustainably documented.
 This approach improves data interoperability, a crucial prerequisite for successful digitization.
@@ -164,6 +176,12 @@ In its current version, the ontology refers to standardized normal adult anatomy
 \item ANNO is published over multiple channels, see~\cref{tab:publication}.
 %
 \end{enumerate}
+
+The intended readership for this paper encompasses all anthropologists and professionals working in related settings, including museums and archaeological contexts. This audience is critical as the digitization of skeletal remains and the development of comprehensive data management systems are not merely niche interests but essential advancements for the sustainability of the discipline. Over the past decade, there has been a growing recognition of the importance of digital transformation in anthropology, which is crucial for the long-term preservation, accessibility, and analysis of anthropological data.
+
+The Anthropological Notation Ontology (ANNO) plays a pivotal role in this digital transformation as it represents a significant step in this digitalization effort, serving as a bridge between various fields such as IT, semantic web technologies, ontology development, and anthropology. By creating a unified platform for the digitization, annotation, and analysis of skeletal remains, ANNO not only enhances the efficiency and accuracy of anthropological research but also fosters interdisciplinary collaboration. This collaboration is vital for addressing the complex challenges in the field and ensuring that the methodologies and findings in anthropology remain robust and relevant in the digital age.
+
+Tools such as ANNO and AnthroWorks 3D are the driving forces and bridges of digitization, enabling the much-needed digital transformation in anthropological research. They provide a comprehensive and sustainable solution, enhancing our understanding of human history and cultural heritage
 
 \section{State of research}\label{sec:stateofresearch}
 \subsection{Distinguishing features of ANNO}\label{sec:distinguishingAnno}
