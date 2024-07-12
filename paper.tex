@@ -89,24 +89,24 @@ Several key challenges profoundly affect anthropological research~\citep{aw3dcid
 \paragraph{Preservation}\label{sec:preserve}
 From the moment of excavation, skeletal remains are subject to wear and tear, diminishing their informational value.
 Transferring the examination to digital models reduces physical handling, minimizes deterioration, and ensures that data is preserved and accessible for future research, even in cases of repatriation or reburial.
-This is crucial because "knowledge and evidence production can only yield what the original material provides."~\cite[p.~132]{HeuschkelSchmiedelLabudde2024}
+This is crucial because \enquote{knowledge and evidence production can only yield what the original material provides.}~\cite[p.~132]{HeuschkelSchmiedelLabudde2024}
 Exemplifying ANNO's underlying utility in this regard is the Rödelheim skeletal collection curated and researched by the Department of Historical Anthropology and Human Ecology at the University of Göttingen, consisting of over 200 skeletal remains from Napoleon's army.
 With these remains scheduled for reburial in 2021, digitization became essential.
-For instance, by creating digital 3D models via AnthroWorks3D, and annotating them based on the ANNO ontological framework, the models were converted into research data that is analyzable across studies, despite the physical remains being reburied.
+By creating digital 3D models via AnthroWorks3D, and annotating them based on the ANNO ontological framework, the models were converted into research data that is analyzable across studies, despite the physical remains being reburied.
 
 \paragraph{Access}\label{sec:access}
 Anthropological skeletal material from excavations often remains undetermined due to a shortage of specialists at the respective institutions.
 A digital solution would provide greater availability of human skeletal remains and allow for the efficient allocation of anthropologists and collections.
 For example, the Archaeological Heritage Office of Saxony faces a significant backlog of unevaluated skeletal collections due to a shortage of anthropologists.
-For instance, by digitizing these remains and using ANNO for annotation, the data can be made available to experts worldwide.
+By digitizing these remains and using ANNO for annotation, the data can be made available to experts worldwide.
 This approach allows for the efficient allocation of resources, enabling comprehensive analysis that would otherwise be infeasible.
 
 \paragraph{Comparability and Transparent Documentation and Analysis}\label{sec:comp+transp} 
 Existing data recording systems in anthropology are often individualized, leading to compatibility issues that hinder comparative analysis and comprehensive intra- and interdisciplinary research~\cite{HeuschkelSchmiedelLabudde2024}.
 A digital solution combining ANNO, a standardized ontology for skeletal data, and AnthroWorks 3D, a 3D editor for creating and annotating digital bone models, provides unprocessed and undistorted information, making it comprehensible, reproducible, and sustainably documented.
 It also supports flexible and objective documentation of bone parts or fragments~\cite{aw3dcidoc}.
-This allows researchers to "surround themselves with every shred of information about a collection or an object,"~\cite[p.~148]{Palkovich.2001} with future possibilities such as integration into collection management systems and the application of AI analysis~\cite{HeuschkelSchmiedelLabudde2024}. 
-For instance, researchers comparing skeletal remains from different regions can use ANNO to standardize their annotations, ensuring that data from disparate sources is compatible.
+This allows researchers to \enquote{surround themselves with every shred of information about a collection or an object,}~\cite[p.~148]{Palkovich.2001} with future possibilities such as integration into collection management systems and the application of AI analysis~\cite{HeuschkelSchmiedelLabudde2024}. 
+Researchers comparing skeletal remains from different regions can use ANNO to standardize their annotations, ensuring that data from disparate sources is compatible.
 For instance, if two teams are studying bone wear patterns to infer lifestyle differences using different skeletal collections, ANNO allows them to document their findings in a uniform manner, facilitating direct comparisons and more robust conclusions.
 
 While the concept of ANNO encompasses a broad range of anthropological aspects, its first and fundamental module, which is the focus of this paper, is on skeletal anatomy.
@@ -119,7 +119,7 @@ For this purpose, anthropologists use human anatomy, specifically the skeletal s
 Precisely locating the traces on the skeleton is crucial.
 Accurate identification and mapping of these features allow for a detailed understanding of their implications and connections to broader anthropological inquiries.
 This precision is vital for meaningful and reliable interpretations in anthropological research.
-By applying the same principles used for mapping the Earth's surface \enquote{terrain}, a detailed map of the human body can be created.
+By applying the same principles used for mapping the Earth's surface terrain, a detailed map of the human body can be created.
 This map contains visible anatomical surface structures, as well as artificial objects such as measurement points or content-related or methodologically based classifications and boundaries~\citep{topo}.
 ANNO represents such a map by providing an ontology for accurate and exhaustive definitions that allow to unequivocally locate these, facilitate their retrieval and furthermore serve as a basis for an objective examination, including measurements.
 
@@ -238,7 +238,7 @@ A pivotal advantage of ANNO is its ability to directly associate information wit
 ANNO meticulously details skeletal anatomy through an atomic design approach, breaking it down into its most basic, indivisible components, then systematically organizing these components to represent the skeletal structure with high fidelity.
 
 This granular method facilitates a deep and scalable anthropological understanding.
-ANNO is capable of referencing various (online) resources, even those that are structurally and semantically diverse, such as other terminologies, ontologies, websites~\citep{atinfo} or media, aiming for synonym mediation, standardisation and conceptual clarity.
+ANNO is capable of referencing various (online) resources that are structurally and semantically diverse, such as other terminologies, ontologies, websites~\citep{atinfo} or media, aiming for synonym mediation, standardisation and conceptual clarity.
 
 The current state of ANNO includes a foundational module that focuses on skeletal anatomy on the one hand and anthropological aspects such as osteometric landmarks (measurement points) and measurements (distances),
 which are either sporadically represented or absent in existing ontologies, on the other hand.
@@ -276,21 +276,24 @@ Specifically, the main issues encompass a lack of cross-references between conce
 These gaps result in a notable absence of detailed relationships, associations, and concepts that are crucial for a thorough anthropological understanding and analysis.
 Additionally, the distinction between normal anatomy, pathology, and anatomical variants, which is essential, is not adequately addressed by the FMA's architecture.
 %
-Interlinks from ANNO to the FMA are added manually as it requires decions from the domain experts.
+Interlinks from ANNO to the FMA are added manually as it requires decisions from the domain experts.
 The ANNO-FMA links are used in combination with unofficial FMA-TA2 links from Wikidata to automatically generate links between ANNO and the TA2.
 
 The following examples illustrate the issues described above.
 
 \begin{itemize}
-\item Specific bones can be found as a subclass of \emph{bone organ} (\aurl{fma}{224804}) but, among others, also in terms of tissue as \emph{bone tissue} (\aurl{fma}{224804}) with then varying terms such as \emph{bone tissue of hip bone} (\aurl{fma}{42854}) or \emph{bone of sacrum} (\aurl{fma}{43624}) and placed on the same level as histological structures like \emph{lamellar bone} (\aurl{fma}{224806}).
+\item Specific bones can be found as a subclass of \enquote{bone organ} (\aurl{fma}{224804}) but, among others, also in terms of tissue as \enquote{bone tissue} (\aurl{fma}{224804})
+with then varying terms such as \enquote{bone tissue of hip bone} (\aurl{fma}{42854}) or \enquote{bone of sacrum} (\aurl{fma}{43624})
+and placed on the same level as histological structures like \enquote{lamellar bone} (\aurl{fma}{224806}).
 \item Different anatomical landmarks are classified taxonomically in various ways.
-Many landmarks are described as a \emph{zone of bone organ} (\aurl{fma}{10483}) with superclasses determined by bone shape), e.g. \emph{flat bone} (\aurl{fma}{7476}).
+Many landmarks are described as a \enquote{zone of bone organ} (\aurl{fma}{10483}) with superclasses determined by bone shape), e.g. \enquote{flat bone} (\aurl{fma}{7476}).
 However, the categorization of bone shape is not consistently defined across anatomical sources ~\citep{anatomiedesmenschen,forensicmanual}.
 To avoid these dependencies and potential incongruities, ANNO sidesteps taxonomic categorizations.
 Through location-based mapping, ANNO allows for the coexistence of diverse taxonomies.
-\item On the other hand, another landmark, the \emph{external acoustic aperture} (\aurl{fma}{61301}), is classified as a subclass of \emph{orifice of skull} (\aurl{fma}{53133}), which falls under a different subtree of \emph{anatomical spaces} (\aurl{fma}{5897}) in FMA.
-\item Osteometric landmarks are mixed with anatomical landmarks in a hierarchy (subclasses of \emph{anatomical point} (\aurl{fma}{9658}) that lacks coherence and detail.
-\item The \emph{orbit} (\aurl{fma}{53074}), comprised of multiple landmarks, is classified without detailed segmentation into its constituent landmarks.
+\item On the other hand, another landmark, the \enquote{external acoustic aperture} (\aurl{fma}{61301}), is classified as a subclass of \enquote{orifice of skull} (\aurl{fma}{53133}),
+which falls under a different subtree of \enquote{anatomical spaces} (\aurl{fma}{5897}) in FMA.
+\item Osteometric landmarks are mixed with anatomical landmarks in a hierarchy (subclasses of \enquote{anatomical point} (\aurl{fma}{9658})) that lacks coherence and detail.
+\item The \enquote{orbit} (\aurl{fma}{53074}), comprised of multiple landmarks, is classified without detailed segmentation into its constituent landmarks.
 \end{itemize}
 
 ANNO and FMA are not seen as competing ontologies; instead, they are intended to complement each other.
@@ -327,7 +330,8 @@ The Tuber frontale, which serves as an indicator for sex in anthropology, is lis
 Likewise, the Protuberantia mentale is referred to as Eminentia mentale in a widely-used anthropological method that is also used for sex determination.
 As can be seen, the incentive for synonyms is high.
 However, the current resources fail to provide comprehensive lists of synonyms in use.
-This in turn may lead to misattribution: For example, the FMA entry with the preferred name \emph{external acoustic aperture} and non-English equivalent \latin{Porus acusticus externus} (\aurl{fma}{61301}) lists \emph{external acoustic meatus} (\latin{Meatus acusticus externus} in Latin) as a synonym.
+This in turn may lead to misattribution: For example, the FMA entry with the preferred name \emph{external acoustic aperture} and non-English equivalent \latin{Porus acusticus externus} (\aurl{fma}{61301})
+lists \emph{external acoustic meatus} (\latin{Meatus acusticus externus} in Latin) as a synonym.
 However, it is not the same, rather the Porus is---as its English name indicates---the opening to the meatus~\citep{anatomylexicon}.
 %Furthermore, terms oftentimes lack clear affiliation to the bone to which they belong.
 %When considering the whole skeleton, these terms consequently occur multiple times, causing ambiguity.
@@ -336,14 +340,15 @@ For instance, the position of the \latin{Corpus ossis pubis} varies across diffe
 
 %In addition, the ontologies are only inadequately (TA for the last time in 2013, FMA in 2020) updated and do not undergo continuous synchronisation.%add source for that? 11 and 12 in table but no paper.
 Another issue is that neither FMA nor TA are tailored to fit the requirements of anthropology or any other specialized field~\citep{fma}.
-For example, articular surfaces of the individual bones are relevant anthropologically, yet not all articular surfaces (e.g. on the \emph{Ossa carpi} or \emph{Ossa metatarsi}) are defined in the TA or FMA, resulting in further gaps.
+For example, articular surfaces of the individual bones are relevant anthropologically, yet not all articular surfaces (e.g. on the \latin{Ossa carpi} or \latin{Ossa metatarsi}) are defined in the TA or FMA, resulting in further gaps.
 A similar situation exists with respect to osteometric measurements.
 Established and to some extent standardized osteometric measurement points are only found on the cranium and mandible~\citep{wesenanthropologie}.
 However, since there are measurement distances on all bones, the respective start and end points must also be defined.
 Last but not least, both ontologies suffer from a lack of consideration given to anatomical variants~\citep{anatomycontribution}.
 Moreover, different disciplines require a different level of detail, which is why nose surgery works with anatomical terms of very detailed anatomical structures~\citep{graysanatomy},
 which to the greater part are not found in the FMA or the TA that primarily aim for the standardization of general (clinical) anatomy~\citep{fma}.
-A work of dental anthropology even split the aforementioned Tuberculum articulare (Articular tubercle) in two structures, naming the other \enquote{articular eminence}~\citep{dentalanthropology}.
+A work of dental anthropology even split the aforementioned \latin{Tuberculum articulare} (Articular tubercle) in two structures,
+naming the other \emph{articular eminence}~\citep{dentalanthropology}.
 %Often exchange between these specific fields and general anatomy hardly takes place.
 However, there is limited interdisciplinary coordination between the individual disciplines and general anatomy.
 
@@ -392,7 +397,7 @@ Several key challenges profoundly affect anthropological research~\citep{aw3dcid
 \paragraph{Preservation}\label{sec:preserve}
 From the moment of excavation, skeletal remains are subject to wear and tear, diminishing their informational value.
 Transferring the examination to digital models reduces physical handling, minimizes deterioration, and ensures that data is preserved and accessible for future research, even in cases of repatriation or reburial.
-This is crucial because "knowledge and evidence production can only yield what the original material provides."~\cite{HeuschkelSchmiedelLabudde2024}
+This is crucial because \enquote{knowledge and evidence production can only yield what the original material provides.}~\cite{HeuschkelSchmiedelLabudde2024}
 Exemplifying ANNO's underlying utility in this regard is the Rödelheim skeletal collection curated and researched by the Department of Historical Anthropology and Human Ecology at the University of Göttingen, consisting of over 200 skeletal remains from Napoleon's army.
 With these remains scheduled for reburial in 2021, digitization became essential.
 For instance, by creating digital 3D models via AnthroWorks3D, and annotating them based on the ANNO ontological framework, the models were converted into research data that is analyzable across studies, despite the physical remains being reburied.
@@ -408,7 +413,7 @@ This approach allows for the efficient allocation of resources, enabling compreh
 Existing data recording systems in anthropology are often individualized, leading to compatibility issues that hinder comparative analysis and comprehensive intra- and interdisciplinary research~\cite{HeuschkelSchmiedelLabudde2024}.
 A digital solution combining ANNO, a standardized ontology for skeletal data, and AnthroWorks 3D, a 3D editor for creating and annotating digital bone models, provides unprocessed and undistorted information, making it comprehensible, reproducible, and sustainably documented.
 It also supports flexible and objective documentation of bone parts or fragments~\cite{aw3dcidoc}.
-This allows researchers to "surround themselves with every shred of information about a collection or an object,"~\cite{Palkovich.2001} with future possibilities such as integration into collection management systems and the application of AI analysis~\cite{HeuschkelSchmiedelLabudde2024}. 
+This allows researchers to \enquote{surround themselves with every shred of information about a collection or an object,}~\cite{Palkovich.2001} with future possibilities such as integration into collection management systems and the application of AI analysis~\cite{HeuschkelSchmiedelLabudde2024}. 
 For instance, researchers comparing skeletal remains from different regions can use ANNO to standardize their annotations, ensuring that data from disparate sources is compatible.
 For instance, if two teams are studying bone wear patterns to infer lifestyle differences using different skeletal collections, ANNO allows them to document their findings in a uniform manner, facilitating direct comparisons and more robust conclusions.
 
@@ -432,7 +437,7 @@ For the development of ANNO, we applied the onto-axiomatic method, a combination
 The axiomatic method comprises principles for developing theories or formal knowledge bases, which aim at the foundation, systematisation and formalisation of a knowledge domain~\citep{baumann2014, herre2010}.
 When knowledge is systematized, a set of categories is considered \emph{primitive} or \emph{basic}.
 Such categories are not explicitly defined, but implicitly described by axioms~\citep{Hilbert1918}.
-An example of a primitive category is \enquote{part}.
+An example of a primitive category is \emph{part}.
 New notions can be introduced by explicit definitions based on the primitive or already defined categories~\citep{herre2010}.
 
 The considered axioms differ in their degree of abstraction.
@@ -479,23 +484,23 @@ The objects are classified according to their type and part-whole relationship.
 During the conceptualisation phase~\citep{herre2010}, the core concepts (categories, classes) and relations were introduced that form ANNOdc (domain-core ontology) (\cref{fig:annodc}).
 The concepts were created by generalising and classifying the domain objects.
 To answer the competence questions of the first use case, for example, a distinction must be made between whole bones, bone parts and composite bone structures.
-Therefore, the corresponding concepts \enquote{Bone}, \enquote{Bone part} and \enquote{Bone compound} were introduced.
+Therefore, the corresponding concepts \emph{Bone}, \emph{Bone part} and \emph{Bone compound} were introduced.
 Further concepts were defined to represent spatial relations and phenotypes.
 Furthermore, we identified relations (e.g., partOf, boundaryOf or locationOf) relevant to capture axioms covering the defined use cases, see \cref{fig:annodc}.
 
 \paragraph{Axiomatization}
 For the axiomatization and formal foundation of ANNO we utilised GFO as a top-level ontology and reused its categories, relations, axioms and modules (as a kind of Ontology Design Patterns~\citep{ODP2005, XD2016, MOMo2023}).
-We instantiated specifically the GFO modules \enquote{Material objects}, \enquote{Attributives} and \enquote{Space}~\citep{Burek2020, Loebe2021, Loebe2018} and adapted them according to the requirements of the use cases.
+We instantiated specifically the GFO modules \emph{Material objects}, \emph{Attributives} and \emph{Space}~\citep{Burek2020, Loebe2021, Loebe2018} and adapted them according to the requirements of the use cases.
 Domain concepts introduced in the conceptualisation phase were embedded in GFO, i.e., defined as subcategories (subclasses) of certain GFO categories (fig. 1).
 The required relations between the concepts were then either adopted from GFO or derived (specialised) from the corresponding GFO relation.
 For example, GFO specifies that material objects occupy space regions~\citep{Loebe2021}.
 We integrated this pattern in ANNOdc by deriving the class \anno{AnatomicalStructure} from \aurl{gfo}{MaterialObject} and \anno{AnatomicalSpace} from \aurl{gfo}{SpaceRegion.}
-In this way, we were able to adopt the whole axiom including the \enquote{occupies} relation between the two ANNO classes.
-In a similar way, we applied the GFO pattern \enquote{point region is boundary of line region is boundary of surface region is boundary of space region}~\citep{baumann2016} to the ANNO categories anatomical point, line, surface and space.
+In this way, we were able to adopt the whole axiom including the \emph{occupies} relation between the two ANNO classes.
+In a similar way, we applied the GFO pattern \emph{point region is boundary of line region is boundary of surface region is boundary of space region}~\citep{baumann2016} to the ANNO categories anatomical point, line, surface and space.
 According to the GFO relator~\citep{Loebe2018} pattern, we defined the class \anno{RelativeAnatomicalLocation} including the two roles: target (\anno{locationOf}) and reference (\anno{relativeTo}) anatomical entity. % (chapter $\ldots$).
 
 Further axioms were introduced to precisely define certain categories.
-In addition to an explicit textual definition of the category \enquote{Bone compound}, for example, we introduced the following axiom:
+In addition to an explicit textual definition of the category \emph{Bone compound}, for example, we introduced the following axiom:
 %
 %\anno{BoneCompound}: \aurl{rdfs}{subClassOf} (\aurl{gfo}{hasPart} some (\anno{Bone} or \anno{BoneCompound} or \anno{BonePart}))
 \begin{equation*}
@@ -554,7 +559,7 @@ This approach ensures that domain experts can easily handle the ontology and eff
 \begin{table}[b]
   \centering
   \caption{Classes of ANNOdc along with exemplary ANNOds subclasses as well as interlinks to the FMA and the GFO top-level ontology.\\
-  \textsuperscript{*} \anno{LO} is the line between \anno{Lambda} and \anno{Opisthion}, the \emph{occipital saggittal arc}.}
+  \textsuperscript{*} \anno{LO} is the line between \anno{Lambda} and \anno{Opisthion}, the \latin{occipital saggittal arc}.}
   \label{tab:core}
   \begin{tabulary}{\textwidth}{llLl}
     \toprule
@@ -646,14 +651,14 @@ An anatomical structure refers to any anatomical division or material anatomical
 ANNO describes three kinds of anatomical structures: tooth structures (teeth and teeth parts), bone structures (single bones, bone parts and bone compounds), as well as the complete skeleton.
 The GFO defines a material object \aurl{gfo}{MaterialObject} as a solid concrete entity that belongs to the material region of the world, has mass, consists of matter and occupies space~\citep{gfospace}.
 Accordingly, we define \aurl{anno}{AnatomicalStructure} as a \aurl{gfo}{MaterialObject} in the anthropological context.
-The closest equivalent in the FMA is the \emph{Material anatomical entity} \aurl{fma}{67165}, the subclass of \emph{Physical anatomical entity} \aurl{fma}{61775} that has mass.
+The closest equivalent in the FMA is the \enquote{Material anatomical entity} \aurl{fma}{67165}, the subclass of \enquote{Physical anatomical entity} \aurl{fma}{61775} that has mass.
 
 %\paragraph{Skeleton}
 The largest or most comprehensive skeletal anatomical structure, the human skeleton, is the framework composed of all the bones and teeth of a human being.
-The TA~\citep{ta2} equates the skeleton with the \enquote{Systema skeletale (skeletal system)}, which refers to the passive part of the musculoskeletal system, including the articulated bony skeleton with teeth, as well as cartilage, ligaments, and other joints.
-ANNO does not adopt this equivalence, and \enquote{Skeleton} here refers to the entirety of a human's bones and teeth.
+The TA~\citep{ta2} equates the skeleton with the \latin{Systema skeletale} (skeletal system), which refers to the passive part of the musculoskeletal system, including the articulated bony skeleton with teeth, as well as cartilage, ligaments, and other joints.
+ANNO does not adopt this equivalence, and \emph{Skeleton} here refers to the entirety of a human's bones and teeth.
 However, since teeth constitute their own tissue, they are treated separately, allowing all other components of the skeletal system, such as cartilage or ligaments (as tissues) or joints (e.g. as specific aspects), to be integrated and referenced separately in ANNO.
-The anthropologically meaningful distinction between \enquote{Skeleton} and \enquote{Systema skeletale} can be maintained, while still referencing both within the TA concept.
+The anthropologically meaningful distinction between \emph{Skeleton} and \latin{Systema skeletale} can be maintained, while still referencing both within the TA concept.
 
 %\paragraph{Tooth structure}
 Tooth structures comprise teeth and their parts.
@@ -866,14 +871,14 @@ Additional use cases that are only achievable through this integration include t
 \includegraphics[width=\textwidth]{img/aw3d.png}
 %\caption{3D model of a Cranium (skull) inserted into a placeholder skeleton in \aw{} depicting examples of various ANNOdc classes.}
 \caption{
-Collage of different views in \aw{} of a 3D model of a \emph{cranium} (skull) inserted into a placeholder skeleton (source:~\cite{aw3dcidoc}).
+Collage of different views in \aw{} of a 3D model of a \latin{cranium} (skull) inserted into a placeholder skeleton (source:~\cite{aw3dcidoc}).
 The cranium is a bone compound consisting of 29 bone elements.
-One of them, the \emph{mandibula} (mandible), is flexibly connected to the rest of the skull by the mandibular joint.
+One of them, the \latin{mandibula} (mandible), is flexibly connected to the rest of the skull by the mandibular joint.
 In the top right, various bone parts on the Mandibula are visually emphasized, with part 7 representing the angulus mandibulae (mandibular angle).
 In the top left, the \latin{Dens caninus maxillaris dexter} (right maxillary secondary canine tooth), a tooth structure, is highlighted within a circle.
 The tooth cusp is a part of the tooth.
 It refers to the projection that divides the occlusal surface of most of the teeth, with the exception of the incisors.
-At the bottom right, anatomical points (osteometric landmarks) of the right lateral side of the \emph{mandibula} are depicted.
+At the bottom right, anatomical points (osteometric landmarks) of the right lateral side of the \latin{mandibula} are depicted.
 The \latin{Gonion dextrum} (right gonion, abbreviated as \latin{Go dextrum}, depicted alternative spelling of dextrum: dexterum) forms part of an anatomical line measuring the \latin{Angulus mandibulae},
 as shown in the bottom left.
 Skeletal material courtesy of Dr. Birgit Grosskopf, Department of Historical Anthropology and Human Ecology, University of Göttingen.
@@ -987,7 +992,7 @@ Apart from continuing data entry, future work may involve the inclusion of other
 In addition, tooth parts, deciduous teeth as well as anatomical variants could be added in the future.
 
 Regarding skeletal anatomy, the representation of preservation status through the ontology would be of great use for anthropological work.
-Furthermore, anatomical terms describing aspects of bone morphology or function, such as the Latin word \enquote{processus} which appear numerous times as part of anatomical designations indicating a projection, could be reviewed and flexibly systematized through ANNO, making them analyzable as well.
+Furthermore, anatomical terms describing aspects of bone morphology or function, such as the Latin word \latin{processus} which appear numerous times as part of anatomical designations indicating a projection, could be reviewed and flexibly systematized through ANNO, making them analyzable as well.
 
 ANNO's potential applications include forensic, historical and prehistoric anthropology, as well as pathology and medicine, and the field of computer science, especially medical informatics.
 
