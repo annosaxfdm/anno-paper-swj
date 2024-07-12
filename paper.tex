@@ -129,7 +129,7 @@ These measurements are crucial for discriminant function analysis, a key method 
 Discriminant function analysis identifies differences between predefined groups, such as males and females, by assessing specific bone measurements that typically differ between the sexes, such as the size and shape of certain features.
 The goal is to pinpoint characteristics that significantly differentiate these groups.
 The resulting discriminant function includes measurements as variables and their weights representing these characteristics.
-By inputting these measurements into the formula, the discriminant function calculates a score that classifies skeletal remains into one of the groups, indicating the likelihood of the remains being male or female~\citep{prehistoricanthropology} .
+By inputting these measurements into the formula, the discriminant function calculates a score that classifies skeletal remains into one of the groups, indicating the likelihood of the remains being male or female~\citep{prehistoricanthropology}.
 
 
 The digitization and digitalization of anthropological skeletal materials offer significant advantages.
@@ -203,6 +203,13 @@ In its current version, the ontology refers to standardized normal adult anatomy
 \item ANNO is published over multiple channels, see~\cref{tab:publication}.
 %
 \end{enumerate}
+
+The two components of ANNO (ANNOdc and ANNOds) play different roles and complement each other in the overall framework.
+ANNOdc (\cref{sec:annodc}) is a static part of the ontology that describes a clear structure (core categories and properties) of the knowledge base and was mainly developed by ontologists (in consultation with anthropologists).
+ANNOds (\cref{sec:annods}), on the other hand, is a dynamic (extensible) part that is developed by domain experts in strict compliance with ANNOdc (by providing an appropriate template).
+This means that the ANNOds categories are subcategories of the ANNOdc categories, and only the properties defined in ANNOdc are used.
+Furthermore, such an ontology structure plays a decisive role in the integration of ANNO into AnthroWorks3D (section 4).
+According to the three-ontology method~\citep{threeontologymethod}, the software only has to implement access to the entities (categories/classes and properties) of ANNOdc, while the categories/classes of ANNOds are processed dynamically.
 
 The intended audience for the Anthropological Notation Ontology encompasses all anthropologists and professionals working in related settings, including museums and archaeological contexts.
 This audience is critical as the digitization of skeletal remains and the development of comprehensive data management systems are essential advancements for the sustainability of the discipline.
