@@ -15,6 +15,9 @@
 \newcommand{\gfo}[1]{\href{https://www.onto-med.de/ontologies/gfo/#1}{\texttt{#1}}}
 \newcommand{\fma}[1]{\href{http://purl.org/sig/ont/fma/fma#1}{\texttt{#1}}}
 \newcommand{\latin}[1]{\emph{#1}}
+% uncomment exactly one of the following two lines:
+\newcommand{\revision}[1]{\textcolor{red}{#1}}% for seeing changes in red
+%\newcommand{\revision}[1]{#1}% for final output
 \daurl{anno}{https://annosaxfdm.de/ontology/}
 \daurl{gfo}{https://www.onto-med.de/ontologies/gfo\#}
 \daurl{fma}{http://purl.org/sig/ont/fma/fma}
@@ -276,7 +279,9 @@ Specifically, the main issues encompass a lack of cross-references between conce
 These gaps result in a notable absence of detailed relationships, associations, and concepts that are crucial for a thorough anthropological understanding and analysis.
 Additionally, the distinction between normal anatomy, pathology, and anatomical variants, which is essential, is not adequately addressed by the FMA's architecture.
 %
-Interlinks from ANNO to the FMA are added manually as it requires decisions from the domain experts.
+\revision{%
+Interlinks from ANNO to the FMA are added manually as decisions by the domain experts are required because seemingly equivalent classes may be hypernyms, hyponyms or not related at all.
+}%
 The ANNO-FMA links are used in combination with unofficial FMA-TA2 links from Wikidata to automatically generate links between ANNO and the TA2.
 
 The following examples illustrate the issues described above.
@@ -520,6 +525,12 @@ This means that the domain experts had to insert more specific categories (singl
 %
 The resulting OWL 2 ontology was generated using SMOG~\citep{smog} and validated by the HermiT~\citep{hermit} and Pellet~\citep{pellet} reasoners and SHACL shapes, see \cref{sec:annods}.
 In both cases, the consistency of the ontology was proven.
+\revision{%
+Independent of the proof of consistency by reasoners, no inconsistencies were to be expected for two reasons:
+Firstly, the overall ontology is based on a core component (ANNOdc), which has a clear easy-to-understand structure and was developed by ontology experts.
+Secondly, the methodology we have established for developing domain-specific ontologies based on core ontologies does not allow any consistency violations, see \cref{sec:annods}.
+}
+
 Regarding use cases, we integrated the ontology into the \aw{} software~\citep{aw3d} and were able to successfully realise all three intended use cases.
 Thereby, 14 of the core categories%
 \footnote{Anatomical line, Anatomical point, Anatomical structure, Bone, Bone compound, Bone part, Measurement point, Orientation point, Phenotype, Spatial anatomical entity, Tooth, Tooth part, Phenotype and Relative anatomical location.}
@@ -960,10 +971,12 @@ This has led to modifications in the input forms and lists to accommodate these 
 As a third step, the application was adapted to facilitate the assignment of measurements and markings to concepts from the ontology.
 For instance, measurements taken within the application can be mapped to predefined measurement paths in the ontology.
 To achieve this the users can choose from a list of features from the ontology to be assigned to their measurements and markings.
-Lastly, the import of discriminant functions allowed for their interpretation within the application.
-This includes a form for selecting measurement paths relevant to a particular discriminant function and the computation of these functions based on measurements created and assigned by users.
-This feature notably enhances the application's capability for tasks such as sex determination.
 
+Lastly, the import of discriminant functions allowed for their interpretation within the application.
+\revision{%
+This updates the previous workflow of manually recording the results of the measurements, calculating the discriminant function outside of our application and evaluating the result manually to just selecting the relevant discriminant function, checking if the measurements are correctly assigned to the parts of the function and confirming their input whereupon the resulting classification is shown on the screen.
+}
+This feature notably enhances the application's capability for tasks such as sex determination.
 
 \section{Conclusion and Future Work}
 % "desirablility" add source e.g. https://fipat.library.dal.ca/wp-content/uploads/2021/08/FIPAT-TA2-Part-2.pdf
